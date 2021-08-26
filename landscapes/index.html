@@ -8,29 +8,59 @@
 		</style>
 	</head>
 	<body>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
-		<script>
 		
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+		<script type="module">
 
-            const renderer = new THREE.WebGLRenderer();
-            renderer.setSize( window.innerWidth, window.innerHeight );
-            document.body.appendChild( renderer.domElement );
-		
-            const geometry = new THREE.BoxGeometry();
-            const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-            const cube = new THREE.Mesh( geometry, material );
-            scene.add( cube );
+            import * as THREE from '../three/three.module.js';
 
-            camera.position.z = 5;
+            import { OrbitControls } from '../three/OrbitControls.js';
+            import { PCDLoader } from './three/PCDLoader.js';
 
-            function animate() {
-                requestAnimationFrame( animate );
+            let camera, scene, renderer;
+
+            init();
+            render();
+
+            function init() {
+
+                renderer = new THREE.WebGLRenderer( { antialias: true } );
+                renderer.setPixelRatio( window.devicePixelRatio );
+                renderer.setSize( window.innerWidth, window.innerHeight );
+                document.body.appendChild( renderer.domElement );
+
+                scene = new THREE.Scene();
+
+                camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 40 );
+                camera.position.set( 0, 0, 1 );
+                scene.add( camera );
+
+                const controls = new OrbitControls( camera, renderer.domElement );
+                controls.addEventListener( 'change', render ); // use if there is no animation loop
+                controls.minDistance = 0.5;
+                controls.maxDistance = 10;
+
+                //scene.add( new THREE.AxesHelper( 1 ) );
+
+                const loader = new PCDLoader();
+                loader.load( 'pointcloud.pcd', function ( points ) {
+
+                    points.geometry.center();
+                    points.geometry.rotateX( Math.PI );
+                    scene.add( points );
+
+                    render();
+
+                } );
+
+                window.addEventListener( 'resize', onWindowResize );
+
+                window.addEventListener( 'keypress', keyboard );
+
+            }
+            function render() {
                 renderer.render( scene, camera );
             }
-            animate();
-
+            render();
         </script>
 	</body>
 </html>
