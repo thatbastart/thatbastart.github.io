@@ -104,9 +104,9 @@
                     let intersection = ( intersects.length ) > 0 ? intersects[0] : null;
                     let geometry = pointcloud.geometry;
                     let attributes = geometry.attributes;
-                    sphere.position.set(intersects[0].point);
-                    console.log(intersects[0].point);
                     if ( intersects.length > 0 ) {
+                        console.log(intersects[0].point);
+                        sphere.position.set(intersects[0].point);
                         attributes.color.array[intersection.index] = 0.0;
                         attributes.color.array[intersection.index+1] = 0.0;
                         attributes.color.array[intersection.index+2] = 0.0;
