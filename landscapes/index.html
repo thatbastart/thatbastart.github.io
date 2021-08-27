@@ -42,14 +42,12 @@
 					points.geometry.center();
                     points.material.size=1;
 					scene.add( points );
-
+                    console.log(points);
 					render();
 
 				} );
 
 				window.addEventListener( 'resize', onWindowResize );
-
-				window.addEventListener( 'keypress', keyboard );
 
 			}
 
@@ -59,6 +57,7 @@
 				camera.updateProjectionMatrix();
 
 				renderer.setSize( window.innerWidth, window.innerHeight );
+                render();
 
 			}
 
