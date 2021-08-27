@@ -89,17 +89,20 @@
                 mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
             }
 
-			function render(points) {
-                raycaster.setFromCamera( mouse, camera );
-                intersects = raycaster.intersectObject(points);
-                intersection = ( intersects.length ) > 0 ? intersects[ 0 ] : null;
-                var geometry = points.geometry;
-                var attributes = geometry.attributes;
-                if ( intersects.length > 0 ) {
-                    attributes.color.array[intersection.index] = 0.0;
-                    attributes.color.array[intersection.index+1] = 0.0;
-                    attributes.color.array[intersection.index+2] = 0.0;
-                    attributes.color.needsUpdate = true;
+			function render(p) {
+                console.log(p);
+                if(points != null){
+                    raycaster.setFromCamera( mouse, camera );
+                    intersects = raycaster.intersectObject(p);
+                    intersection = ( intersects.length ) > 0 ? intersects[ 0 ] : null;
+                    var geometry = p.geometry;
+                    var attributes = geometry.attributes;
+                    if ( intersects.length > 0 ) {
+                        attributes.color.array[intersection.index] = 0.0;
+                        attributes.color.array[intersection.index+1] = 0.0;
+                        attributes.color.array[intersection.index+2] = 0.0;
+                        attributes.color.needsUpdate = true;
+                    }
                 }
 
                 composer.render();
