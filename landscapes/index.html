@@ -91,10 +91,10 @@
             }
 
 			function render() {
-                console.log(pointcloud);
                 if(pointcloud != null){
                     raycaster.setFromCamera( mouse, camera );
                     let intersects = raycaster.intersectObject(pointcloud);
+                    console.log(intersects);
                     let intersection = ( intersects.length ) > 0 ? intersects[ 0 ] : null;
                     let geometry = pointcloud.geometry;
                     let attributes = geometry.attributes;
