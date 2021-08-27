@@ -32,10 +32,8 @@
             const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
 			const sphereMaterial = new THREE.MeshBasicMaterial( { color: 0xff0000, opacity: 0.5, transparent: true } );
 			const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
-
-            const p1 = new THREE.Vector3(-28,-26,66);
-            const p2 = new THREE.Vector3(2,-40,-67);
-            const p3 = new THREE.Vector3(18,7,59);
+            
+            let p=[new THREE.Vector3(0,0,0), new THREE.Vector3(-28,-26,66), new THREE.Vector3(2,-40,-67), new THREE.Vector3(18,7,59)];
 
 			init();
 			render();
@@ -107,8 +105,9 @@
                     let geometry = pointcloud.geometry;
                     let attributes = geometry.attributes;
                     if ( intersects.length > 0 ) {
-                        const p0 = new THREE.Vector3(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
-                        sphere.material.color.setRGB(mapRange(p0.distanceTo(p1),0,60,0,1),mapRange(p0.distanceTo(p1),0,60,1,0),0);
+                        p[0] = new THREE.Vector3(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
+                        sphere.material.color.setRGB(mapRange(p[0].distanceTo(p[1]),0,50,0,1),mapRange(p[0].distanceTo(p[1]),0,50,1,0),0);
+
                         sphere.position.set(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
                         attributes.color.array[intersects[0].index*3] = 1.0;
                         attributes.color.array[intersects[0].index*3+1] = 0.0;
