@@ -92,7 +92,7 @@
 
 			function render() {
                 console.log(pointcloud);
-                if(p != null){
+                if(pointcloud != null){
                     raycaster.setFromCamera( mouse, camera );
                     let intersects = raycaster.intersectObject(pointcloud);
                     let intersection = ( intersects.length ) > 0 ? intersects[ 0 ] : null;
