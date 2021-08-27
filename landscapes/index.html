@@ -1,62 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<title>three.js webgl - PCD</title>
 		<meta charset="utf-8">
-		<title>Relational Landscapes</title>
-		<style>
-			body { margin: 0; }
-		</style>
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link type="text/css" rel="stylesheet" href="main.css">
 	</head>
 	<body>
-        <script src="https://threejs.org/build/three.js"></script> 
-        <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script> 
-        <script src="https://cdn.jsdelivr.net/npm/three@0.116.1/examples/js/loaders/PCDLoader.js"></script> 
-		<script>
+		<div id="info">
+			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a>
+			<a href="http://pointclouds.org/documentation/tutorials/pcd_file_format.php#pcd-file-format" target="_blank" rel="noopener">PCD File format</a>
+			<div>PCD loader test by <a href="http://filipecaixeta.com.br" target="_blank" rel="noopener">Filipe Caixeta</a></div>
+			<div>+/-: Increase/Decrease point size</div>
+			<div>c: Change color</div>
+		</div>
 
-            let camera, scene, renderer;
+		<script type="module">
 
-            init();
-            render();
+			import * as THREE from '../build/three.module.js';
 
-            function init() {
+			import { OrbitControls } from '../build/OrbitControls.js';
+			import { PCDLoader } from '../build/PCDLoader.js';
 
-                renderer = new THREE.WebGLRenderer( { antialias: true } );
-                renderer.setPixelRatio( window.devicePixelRatio );
-                renderer.setSize( window.innerWidth, window.innerHeight );
-                document.body.appendChild( renderer.domElement );
+			let camera, scene, renderer;
 
-                scene = new THREE.Scene();
+			init();
+			render();
 
-                camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 40 );
-                camera.position.set( 0, 0, 1 );
-                scene.add( camera );
+			function init() {
 
-                const controls = new THREE.OrbitControls( camera, renderer.domElement );
-                controls.addEventListener( 'change', render ); // use if there is no animation loop
-                controls.minDistance = 0.5;
-                controls.maxDistance = 10;
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( renderer.domElement );
 
-                //scene.add( new THREE.AxesHelper( 1 ) );
+				scene = new THREE.Scene();
 
-                const loader = new THREE.PCDLoader();
-                loader.load( 'pointcloud.pcd', function ( points ) {
+				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 40 );
+				camera.position.set( 0, 0, 1 );
+				scene.add( camera );
 
-                    points.geometry.center();
-                    points.geometry.rotateX( Math.PI );
-                    scene.add( points );
+				const controls = new OrbitControls( camera, renderer.domElement );
+				controls.addEventListener( 'change', render ); // use if there is no animation loop
+				controls.minDistance = 0.5;
+				controls.maxDistance = 10;
 
-                    render();
+				//scene.add( new THREE.AxesHelper( 1 ) );
 
-                } );
+				const loader = new PCDLoader();
+				loader.load( './models/pcd/binary/Zaghetto.pcd', function ( points ) {
 
-                window.addEventListener( 'resize', onWindowResize );
+					points.geometry.center();
+					points.geometry.rotateX( Math.PI );
+					scene.add( points );
 
-                window.addEventListener( 'keypress', keyboard );
+					render();
 
-            }
-            function render() {
-                renderer.render( scene, camera );
-            }
-        </script>
+				} );
+
+				window.addEventListener( 'resize', onWindowResize );
+
+				window.addEventListener( 'keypress', keyboard );
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function keyboard( ev ) {
+
+				const points = scene.getObjectByName( 'Zaghetto.pcd' );
+
+				switch ( ev.key || String.fromCharCode( ev.keyCode || ev.charCode ) ) {
+
+					case '+':
+						points.material.size *= 1.2;
+						break;
+
+					case '-':
+						points.material.size /= 1.2;
+						break;
+
+					case 'c':
+						points.material.color.setHex( Math.random() * 0xffffff );
+						break;
+
+				}
+
+				render();
+
+			}
+
+			function render() {
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
 	</body>
 </html>
