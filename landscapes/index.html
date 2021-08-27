@@ -31,7 +31,7 @@
                 camera.position.set( 0, 0, 1 );
                 scene.add( camera );
 
-                const controls = new OrbitControls( camera, renderer.domElement );
+                const controls = new THREE.OrbitControls( camera, renderer.domElement );
                 controls.addEventListener( 'change', render ); // use if there is no animation loop
                 controls.minDistance = 0.5;
                 controls.maxDistance = 10;
