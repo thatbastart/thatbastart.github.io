@@ -109,7 +109,7 @@
                     if ( intersects.length > 0 ) {
                         const p0 = new THREE.Vector3(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
                         sphere.material.color.setRGB(mapRange(p0.distanceTo(p1),0,20,0,1),mapRange(p0.distanceTo(p1),0,20,1,0),0);
-                        sphere.position.set(p0);
+                        sphere.position.set(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
                         attributes.color.array[intersects[0].index*3] = 1.0;
                         attributes.color.array[intersects[0].index*3+1] = 0.0;
                         attributes.color.array[intersects[0].index*3+2] = 0.0;
