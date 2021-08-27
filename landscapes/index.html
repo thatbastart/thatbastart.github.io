@@ -41,8 +41,8 @@
 
 				const controls = new OrbitControls( camera, renderer.domElement );
 				controls.addEventListener( 'change', render ); // use if there is no animation loop
-				controls.minDistance = 0.5;
-				controls.maxDistance = 50;
+				controls.minDistance = 0.1;
+				controls.maxDistance = 100;
 
 				//scene.add( new THREE.AxesHelper( 1 ) );
 
@@ -51,7 +51,7 @@
 
 					points.geometry.center();
 					points.geometry.rotateX( Math.PI );
-                    points.material.size=10;
+                    points.material.size=5;
 					scene.add( points );
 
 					render();
