@@ -32,7 +32,6 @@
             const sphereGeometry = new THREE.SphereGeometry( 25, 16, 16 );
 			const sphereMaterial = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
 			const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
-            scene.add(sphere);
 
 
 			init();
@@ -76,7 +75,7 @@
 					render();
 
 				} );
-
+                scene.add(sphere);
 				window.addEventListener( 'resize', onWindowResize );
 
 			}
