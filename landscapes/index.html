@@ -94,7 +94,7 @@
                 if(p != null){
                     raycaster.setFromCamera( mouse, camera );
                     let intersects = raycaster.intersectObject(p);
-                    intersection = ( intersects.length ) > 0 ? intersects[ 0 ] : null;
+                    let intersection = ( intersects.length ) > 0 ? intersects[ 0 ] : null;
                     let geometry = p.geometry;
                     let attributes = geometry.attributes;
                     if ( intersects.length > 0 ) {
