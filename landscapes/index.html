@@ -39,6 +39,10 @@
 
 			function init() {
 
+                const p1 = new THREE.Vector3(-28,-26,66);
+                const p2 = new THREE.Vector3(2,-40,-67);
+                const p3 = new THREE.Vector3(18,7,59);
+
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
@@ -101,12 +105,12 @@
                 if(pointcloud != null){
                     raycaster.setFromCamera( mouse, camera );
                     let intersects = raycaster.intersectObject(pointcloud);
-                    let intersection = ( intersects.length ) > 0 ? intersects[0] : null;
                     let geometry = pointcloud.geometry;
                     let attributes = geometry.attributes;
                     if ( intersects.length > 0 ) {
-                        console.log(intersects[0].point);
-                        sphere.position.set(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
+                        const p0 = new THREE.Vector3(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
+                        sphere.material.color.setRGB(mapRange(p0.distanceTo(p1),0,20,0,1),mapRange(p0.distanceTo(p1),0,20,1,0),0);
+                        sphere.position.set(p0);
                         attributes.color.array[intersects[0].index*3] = 1.0;
                         attributes.color.array[intersects[0].index*3+1] = 0.0;
                         attributes.color.array[intersects[0].index*3+2] = 0.0;
