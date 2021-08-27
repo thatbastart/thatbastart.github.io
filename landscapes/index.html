@@ -33,15 +33,14 @@
 			const sphereMaterial = new THREE.MeshBasicMaterial( { color: 0xff0000, opacity: 0.5, transparent: true } );
 			const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
 
+            const p1 = new THREE.Vector3(-28,-26,66);
+            const p2 = new THREE.Vector3(2,-40,-67);
+            const p3 = new THREE.Vector3(18,7,59);
 
 			init();
 			render();
 
 			function init() {
-
-                const p1 = new THREE.Vector3(-28,-26,66);
-                const p2 = new THREE.Vector3(2,-40,-67);
-                const p3 = new THREE.Vector3(18,7,59);
 
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
