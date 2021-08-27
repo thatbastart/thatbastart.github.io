@@ -4,7 +4,6 @@
 		<title>three.js webgl - PCD</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link type="text/css" rel="stylesheet" href="main.css">
 	</head>
 	<body>
 		<div id="info">
@@ -20,7 +19,7 @@
 			import * as THREE from '../build/three.module.js';
 
 			import { OrbitControls } from '../build/OrbitControls.js';
-			import { PCDLoader } from '../build/PCDLoader.js';
+			import { PCDLoader } from './build/PCDLoader.js';
 
 			let camera, scene, renderer;
 
@@ -48,7 +47,7 @@
 				//scene.add( new THREE.AxesHelper( 1 ) );
 
 				const loader = new PCDLoader();
-				loader.load( './models/pcd/binary/Zaghetto.pcd', function ( points ) {
+				loader.load( './pointcloud.pcd', function ( points ) {
 
 					points.geometry.center();
 					points.geometry.rotateX( Math.PI );
