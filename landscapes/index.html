@@ -106,7 +106,7 @@
                     let attributes = geometry.attributes;
                     if ( intersects.length > 0 ) {
                         console.log(intersects[0].point);
-                        sphere.position.set(intersects[0].point);
+                        sphere.position.set(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
                         console.log(sphere.position);
                         attributes.color.array[intersection.index] = 0.0;
                         attributes.color.array[intersection.index+1] = 0.0;
