@@ -16,7 +16,7 @@
             import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
 			import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
-			let camera, scene, renderer, composer, points;
+			let camera, scene, renderer, composer;
 
             const params = {
 				exposure: 0.8,
@@ -65,7 +65,7 @@
 					points.geometry.center();
                     points.material.size=1;
 					scene.add( points );
-					render();
+					render(points);
 
 				} );
 
@@ -89,7 +89,7 @@
                 mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
             }
 
-			function render() {
+			function render(points) {
                 raycaster.setFromCamera( mouse, camera );
                 intersects = raycaster.intersectObject(points);
                 intersection = ( intersects.length ) > 0 ? intersects[ 0 ] : null;
