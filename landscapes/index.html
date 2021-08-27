@@ -29,7 +29,7 @@
             const mouse = new THREE.Vector2();
 
 
-            const sphereGeometry = new THREE.SphereGeometry( 0.1, 32, 32 );
+            const sphereGeometry = new THREE.SphereGeometry( 25, 16, 16 );
 			const sphereMaterial = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
 			const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
 
@@ -104,7 +104,7 @@
                     let intersection = ( intersects.length ) > 0 ? intersects[0] : null;
                     let geometry = pointcloud.geometry;
                     let attributes = geometry.attributes;
-                    console.log(intersects[0]);
+                    sphere.position(intersects[0].point);
                     if ( intersects.length > 0 ) {
                         attributes.color.array[intersection.index] = 0.0;
                         attributes.color.array[intersection.index+1] = 0.0;
