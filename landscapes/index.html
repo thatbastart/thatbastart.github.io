@@ -88,14 +88,14 @@
             function onMouseMove( event ) {
                 mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
                 mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+                render();
             }
 
 			function render() {
                 if(pointcloud != null){
                     raycaster.setFromCamera( mouse, camera );
                     let intersects = raycaster.intersectObject(pointcloud);
-                    console.log(intersects);
-                    let intersection = ( intersects.length ) > 0 ? intersects[ 0 ] : null;
+                    let intersection = ( intersects.length ) > 0 ? intersects[0] : null;
                     let geometry = pointcloud.geometry;
                     let attributes = geometry.attributes;
                     if ( intersects.length > 0 ) {
