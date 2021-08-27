@@ -38,7 +38,7 @@
 
                 //scene.add( new THREE.AxesHelper( 1 ) );
 
-                const loader = new PCDLoader();
+                const loader = new THREE.PCDLoader();
                 loader.load( 'pointcloud.pcd', function ( points ) {
 
                     points.geometry.center();
