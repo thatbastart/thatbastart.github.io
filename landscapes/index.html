@@ -12,8 +12,18 @@
 
 			import { OrbitControls } from '../build/OrbitControls.js';
 			import { PCDLoader } from './PCDLoader.js';
+            import { EffectComposer } from './EffectComposer.js';
+            import { RenderPass } from './RenderPass.js';
+			import { UnrealBloomPass } from './UnrealBloomPass.js';
 
-			let camera, scene, renderer;
+			let camera, scene, renderer, composer;
+
+            const params = {
+				exposure: 1,
+				bloomStrength: 1.5,
+				bloomThreshold: 0,
+				bloomRadius: 0
+			};
 
 			init();
 			render();
@@ -31,10 +41,20 @@
 				camera.position.set( 130, 0, 250 );
 				scene.add( camera );
 
+                const renderScene = new RenderPass( scene, camera );
+
+				const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
+				bloomPass.threshold = params.bloomThreshold;
+				bloomPass.strength = params.bloomStrength;
+				bloomPass.radius = params.bloomRadius;
+
+				composer = new EffectComposer( renderer );
+				composer.addPass( renderScene );
+				composer.addPass( bloomPass );
+
 				const controls = new OrbitControls( camera, renderer.domElement );
 				controls.addEventListener( 'change', render ); // use if there is no animation loop
 
-				//scene.add( new THREE.AxesHelper( 1 ) );
 
 				const loader = new PCDLoader();
 				loader.load( './pointcloud.pcd', function ( points ) {
@@ -56,13 +76,14 @@
 				camera.updateProjectionMatrix();
 
 				renderer.setSize( window.innerWidth, window.innerHeight );
+                composer.setSize( window.innerWidth, window.innerHeight );
                 render();
 
 			}
 
 			function render() {
-
-				renderer.render( scene, camera );
+                composer.render();
+				//renderer.render( scene, camera );
 
 			}
 
