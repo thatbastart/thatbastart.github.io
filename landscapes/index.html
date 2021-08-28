@@ -108,9 +108,9 @@
                         p[0] = new THREE.Vector3(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
                         let d=[p[0].distanceTo(p[1]),p[0].distanceTo(p[2]),p[0].distanceTo(p[3])];
                         sphere.material.color.setRGB(clamp(mapRange(d[0],0,50,0,1/d.length),0,1/d.length)+clamp(mapRange(d[1],0,50,0,1/d.length),0,1/d.length)+clamp(mapRange(d[2],0,50,0,1/d.length),0,1/d.length), clamp(mapRange(d[0],0,50,1/d.length,0),0,1/d.length)+clamp(mapRange(d[2],0,50,1/d.length,0),0,1/d.length)+clamp(mapRange(d[3],0,50,1/d.length,0),0,1/d.length),0);
-                        console.log(clamp(mapRange(d[0],0,50,0,1/d.length),0,1/d.length)*clamp(mapRange(d[0],0,50,0,1),0,1));
-                        console.log(clamp(mapRange(d[1],0,50,0,1/d.length),0,1/d.length)*clamp(mapRange(d[1],0,50,0,1),0,1));
-                        console.log(clamp(mapRange(d[2],0,50,0,1/d.length),0,1/d.length)*clamp(mapRange(d[2],0,50,0,1),0,1));
+                        console.log(clamp(mapRange(d[0],0,50,0,1/d.length),0,1/d.length)*clamp(mapRange(d[0],0,50,1,0),0,1));
+                        console.log(clamp(mapRange(d[1],0,50,0,1/d.length),0,1/d.length)*clamp(mapRange(d[1],0,50,1,0),0,1));
+                        console.log(clamp(mapRange(d[2],0,50,0,1/d.length),0,1/d.length)*clamp(mapRange(d[2],0,50,1,0),0,1));
                         console.log("-----");
                         sphere.position.set(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
                         attributes.color.array[intersects[0].index*3] = 1.0;
