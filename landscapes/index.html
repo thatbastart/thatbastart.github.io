@@ -17,6 +17,7 @@
 			import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
 			let camera, scene, renderer, composer, pointcloud;
+            let d=[];
 
             const params = {
 				exposure: 0.8,
@@ -30,7 +31,7 @@
 
 
             const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
-			const sphereMaterial = new THREE.MeshBasicMaterial( { color: 0xff0000, opacity: 0.35, transparent: true } );
+			const sphereMaterial = new THREE.MeshBasicMaterial( { color: 0xff0000, opacity: 0.45, transparent: true } );
 			const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
             
             let p=[new THREE.Vector3(0,0,0), new THREE.Vector3(-28,-26,66), new THREE.Vector3(2,-40,-67), new THREE.Vector3(18,7,59)];
@@ -106,12 +107,12 @@
                     let attributes = geometry.attributes;
                     if ( intersects.length > 0 ) {
                         p[0] = new THREE.Vector3(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
-                        let d=[p[0].distanceTo(p[1]),p[0].distanceTo(p[2]),p[0].distanceTo(p[3])];
-                        sphere.material.color.setRGB(clamp(mapRange(Math.min(...d),0,50,0,1),0,1), clamp(mapRange(Math.min(...d),0,50,1,0),0,1),0);
+                        d=[p[0].distanceTo(p[1]),p[0].distanceTo(p[2]),p[0].distanceTo(p[3])];
+                        sphere.material.color.setRGB(clamp(mapRange(Math.min(...d),0,50,0,0.8),0,0.8), clamp(mapRange(Math.min(...d),0,50,0.8,0),0,0.8),0);
                         if(Math.min(...d)<2){
                             sphere.material.opacity=1;
                         } else {
-                            sphere.material.opacity=0.35;
+                            sphere.material.opacity=0.45;
                         }
                         sphere.position.set(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
                         attributes.color.array[intersects[0].index*3] = 1.0;
