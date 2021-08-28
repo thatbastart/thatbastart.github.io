@@ -110,7 +110,8 @@
                         d=[p[0].distanceTo(p[1]),p[0].distanceTo(p[2]),p[0].distanceTo(p[3])];
                         sphere.material.color.setRGB(clamp(mapRange(Math.min(...d),0,50,0,0.8),0,0.8), clamp(mapRange(Math.min(...d),0,50,0.8,0),0,0.8),0);
                         if(Math.min(...d)<2){
-                            sphere.material.opacity=1;
+                            sphere.material.opacity=0.8;
+                            console.log(sphere);
                         } else {
                             sphere.material.opacity=0.45;
                         }
