@@ -111,7 +111,7 @@
                         sphere.material.color.setRGB(clamp(mapRange(Math.min(...d),0,50,0,0.8),0,0.8), clamp(mapRange(Math.min(...d),0,50,0.8,0),0,0.8),0);
                         if(Math.min(...d)<2){
                             sphere.material.opacity=0.8;
-                            sphere.scale(1.25,1.25,1.25);
+                            sphere.scale.set(1.25,1.25,1.25);
                         } else {
                             sphere.material.opacity=0.45;
                             sphere.scale.set(0.8,0.8,0.8);
