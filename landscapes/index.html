@@ -114,7 +114,7 @@
                             sphere.scale(1.25,1.25,1.25);
                         } else {
                             sphere.material.opacity=0.45;
-                            sphere.scale(0.8,0.8,0.8);
+                            sphere.scale.set(0.8,0.8,0.8);
                         }
                         sphere.position.set(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
                         attributes.color.array[intersects[0].index*3] = 1.0;
