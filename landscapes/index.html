@@ -111,11 +111,10 @@
                         p[0] = new THREE.Vector3(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
                         d=[p[0].distanceTo(p[1]),p[0].distanceTo(p[2]),p[0].distanceTo(p[3])];
                         sphere.material.color.lerpColors(c2,c1,clamp(mapRange(Math.min(...d),0,50,0,1),0,1));
+                        sphere.material.opacity=clamp(mapRange(Math.min(...d),0,50,0.4,0.8),0.4,0.8);
                         if(Math.min(...d)<2){
-                            sphere.material.opacity=0.75;
                             sphere.scale.set(1.25,1.25,1.25);
                         } else {
-                            sphere.material.opacity=0.5;
                             sphere.scale.set(0.8,0.8,0.8);
                         }
                         sphere.position.set(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
