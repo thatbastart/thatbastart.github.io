@@ -111,7 +111,7 @@
                         p[0] = new THREE.Vector3(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
                         d=[p[0].distanceTo(p[1]),p[0].distanceTo(p[2]),p[0].distanceTo(p[3])];
                         sphere.material.color.copy(c1.lerp(c2,clamp(mapRange(Math.min(...d),0,50,0,1),0,1)));
-                        console.log(c1.lerp(c2,clamp(mapRange(Math.min(...d),0,50,0,1),0,1)));
+                        console.log(clamp(mapRange(Math.min(...d),0,50,0,1),0,1));
                         if(Math.min(...d)<2){
                             sphere.material.opacity=0.75;
                             sphere.scale.set(1.25,1.25,1.25);
