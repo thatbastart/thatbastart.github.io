@@ -104,6 +104,7 @@
 				} );
                 scene.add(sphere);
                 scene.add(sphTarget);
+                sphTarget.scale.set(0.5,0.5,0.5);
                 sphTarget.visible=false;
 				window.addEventListener( 'resize', onWindowResize );
 
@@ -163,7 +164,6 @@
                             sphere.scale.set(1.25,1.25,1.25);
                             let n=d.indexOf(Math.min(...d));
                             sphTarget.visible=true;
-                            sphere.scale.set(0.5,0.5,0.5);
                             sphTarget.position.set(p[n+1].x,p[n+1].y,p[n+1].z);
                             if (n==0){
                                 document.getElementById("title").innerHTML="Point One";
