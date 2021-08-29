@@ -123,6 +123,9 @@
 
             function onPointerUp( event ) {
                 console.log(event.button);
+                if(drag==true && event.button!=0){
+                    drag=false;
+                }
                 if(Math.min(...d)<2){
                     let n=d.indexOf(Math.min(...d));
                     document.getElementById("main").style.display="inline";
