@@ -106,10 +106,11 @@
 				bloomPass.radius = 0.0;
 
                 outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
-                outlinePass.edgeStrength=4;
-                outlinePass.edgeThickness=2;
+                outlinePass.edgeStrength=6;
+                outlinePass.edgeThickness=4;
                 outlinePass.edgeGlow=1;
                 outlinePass.pulsePeriod=1;
+                outlinePass.visibleEdgeColor.set(0xff6a00);
 
 				composer = new EffectComposer( renderer );
 				composer.addPass( renderScene );
