@@ -98,6 +98,9 @@
 
                 let sphPMaterial=sphereMaterial.clone();
                 sphP = new THREE.Mesh( sphereGeometry, sphPMaterial );
+                sphP.material.uniforms.p.value=1.5;
+                sphP.material.uniforms.c.value=0.5;
+                sphP.material.uniforms.glowColor.value=new THREE.Color(0xffffff);
                 sphP.position.set(p[1].x,p[1].y,p[1].z);
 
                 const renderScene = new RenderPass( scene, camera );
@@ -206,6 +209,7 @@
                         sphere.material.uniforms.glowColor.value=c3;
                         sphere.material.uniforms.c.value=clamp(mapRange(Math.min(...d),0,50,1,0),0,1);
                         sphere.material.uniforms.viewVector.value=new THREE.Vector3().subVectors( camera.position, sphere.position );
+                        sphP.material.uniforms.viewVector.value=new THREE.Vector3().subVectors( camera.position, sphere.position );
                         if(Math.min(...d)<d_thr){
                             sphere.scale.set(1.25,1.25,1.25);
                             let n=d.indexOf(Math.min(...d));
