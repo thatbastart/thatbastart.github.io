@@ -16,6 +16,7 @@
 			import { PCDLoader } from './three/examples/jsm/loaders/PCDLoader.js';
             import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer.js';
             import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
+            import { ShaderPass } from './three/examples/jsm/postprocessing/ShaderPass.js';
 			import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
             import { OutlinePass } from './three/examples/jsm/postprocessing/OutlinePass.js';
 
@@ -28,13 +29,8 @@
             let drag=false;
             const camQuats = new THREE.Vector4();
             let outlinePass;
+            const d_thr=3;
 
-            const params = {
-				exposure: 0.8,
-				bloomStrength: 0.3,
-				bloomThreshold: 0,
-				bloomRadius: 0
-			};
 
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
@@ -65,9 +61,10 @@
                 const renderScene = new RenderPass( scene, camera );
 
 				const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
-				bloomPass.threshold = params.bloomThreshold;
-				bloomPass.strength = params.bloomStrength;
-				bloomPass.radius = params.bloomRadius;
+				bloomPass.exposure = 0.8;
+                bloomPass.threshold = 0.3;
+				bloomPass.strength = 0.0;
+				bloomPass.radius = 0.0;
 
                 outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
 
@@ -131,7 +128,7 @@
                 if(drag==false && event.button!=0){
                     drag=true;
                 }
-                if(Math.min(...d)<2){
+                if(Math.min(...d)<d_thr){
                     let n=d.indexOf(Math.min(...d));
                     document.getElementById("main").style.display="inline";
                     if (n==0){
@@ -160,7 +157,7 @@
                         c3.lerpColors(c2,c1,clamp(mapRange(Math.min(...d),0,50,0,1),0,1));
                         sphere.material.color.copy(c3);
                         sphere.material.opacity=clamp(mapRange(Math.min(...d),0,50,0.8,0.4),0.4,0.8);
-                        if(Math.min(...d)<3){
+                        if(Math.min(...d)<d_thr){
                             sphere.scale.set(1.25,1.25,1.25);
                             let n=d.indexOf(Math.min(...d));
                             outlinePass.selectedObjects=[sphere];
