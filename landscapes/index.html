@@ -84,6 +84,7 @@
                     } else {
                         drag=true;
                     }
+                    console.log(drag);
                 });
 
 
@@ -120,7 +121,6 @@
             }
 
             function onPointerDown( event ) {
-                console.log(Math.min(...d));
                 if(Math.min(...d)<2){
                     let n=d.indexOf(Math.min(...d));
                     document.getElementById("main").style.display="inline";
