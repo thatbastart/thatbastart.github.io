@@ -94,7 +94,7 @@
                 }   );
                 const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
                 sphere = new THREE.Mesh( sphereGeometry, customMaterial );
-                sphere.material.uniforms.p.value=2;
+                sphere.material.uniforms.p.value=1.5;
 
 
                 const renderScene = new RenderPass( scene, camera );
@@ -106,6 +106,9 @@
 				bloomPass.radius = 0.0;
 
                 outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
+                outlinePass.edgeStrength=2;
+                outlinePass.edgeGlow=1;
+                outlinePass.pulsePeriod=1;
 
 				composer = new EffectComposer( renderer );
 				composer.addPass( renderScene );
