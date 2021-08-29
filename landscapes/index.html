@@ -96,8 +96,7 @@
                 sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
                 sphere.material.uniforms.p.value=1.5;
 
-                const sphPMaterial=sphereMaterial.copy;
-                sphP = new THREE.Mesh( sphereGeometry, sphPMaterial );
+                sphP = new THREE.Mesh( sphereGeometry, sphereMaterial.clone );
                 sphP.position.set(p[1].x,p[1].y,p[1].z);
 
                 const renderScene = new RenderPass( scene, camera );
