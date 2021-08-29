@@ -96,8 +96,7 @@
                 sphere = new THREE.Mesh( sphereGeometry, customMaterial );
                 sphere.material.uniforms.p.value=1.5;
 
-                const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.5, transparent: true } );
-                sphP = new THREE.Mesh( sphereGeometry, sphereMaterial );
+                sphP = new THREE.Mesh( sphereGeometry, customMaterial );
                 sphP.position.set(p[1].x,p[1].y,p[1].z);
 
                 const renderScene = new RenderPass( scene, camera );
