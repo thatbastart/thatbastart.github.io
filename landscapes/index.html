@@ -6,8 +6,8 @@
 		<style>body { margin: 0; }</style>
 	</head>
 	<body>
-        <h1 id="title" style="color: #ffffff; position: absolute; left:50; top:0;"></h1>
-        <div id="main" style="background-color:#ffffff; border-radius: 25px; border: 2px solid #000000; position: absolute; left:50vw; top:5vh; width: 47vw; height: 90vh; padding: 10px; display: none;"><h3 id="main-title"></h3></div>
+        <h1 id="title" style="color: #ffffff; position: absolute; left:25px; top:0px;"></h1>
+        <div id="main" style="background-color:#ffffff; border-radius: 25px; border: 2px solid #000000; position: absolute; left:50vw; top:5vh; width: 47vw; height: 90vh; padding: 10px; display: none;"><h1 id="main-title"></h1></div>
 		<script type="module">
 
 			import * as THREE from './three/build/three.module.js';
@@ -23,6 +23,7 @@
             const c1=new THREE.Color(0.62,0.125,0.06);
             const c2=new THREE.Color(0.125,0.6,0.36);
             const c3=new THREE.Color(0,0,0);
+            const overMain=false;
 
             const params = {
 				exposure: 0.8,
@@ -117,7 +118,9 @@
                         document.getElementById("main-title").innerHTML="Point Three";
                     }
                 } else {
-                    document.getElementById("main").style.display="none";
+                    if(overMain==false){
+                        document.getElementById("main").style.display="none";
+                    }
                 }
             }
 
@@ -167,8 +170,10 @@
                 return val > max ? max : val < min ? min : val;
             }
 
-            window.addEventListener( 'mousemove', onMouseMove, false );
-            window.addEventListener( 'pointerdown', onPointerDown, false );
+            window.addEventListener( "mousemove", onMouseMove, false );
+            window.addEventListener( "pointerdown", onPointerDown, false );
+            document.getElementById("main").addEventListener("mouseenter", function(){ overMain=true; }, false);
+            document.getElementById("main").addEventListener("mouseleave", function(){ overMain=false; }, false);
 
 		</script>
 	</body>
