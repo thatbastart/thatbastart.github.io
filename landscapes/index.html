@@ -40,9 +40,7 @@
 
             const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
 			const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.5, transparent: true } );
-            const sphTargetMaterial = new THREE.MeshBasicMaterial( { color: 0x9e2010} );
 			const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
-            const sphTarget = new THREE.Mesh( sphereGeometry, sphTargetMaterial );
             
             let p=[new THREE.Vector3(0,0,0), new THREE.Vector3(-28,-26,66), new THREE.Vector3(2,-40,-67), new THREE.Vector3(18,7,59)];
 
@@ -103,9 +101,6 @@
 
 				} );
                 scene.add(sphere);
-                scene.add(sphTarget);
-                sphTarget.scale.set(0.5,0.5,0.5);
-                sphTarget.visible=false;
 				window.addEventListener( 'resize', onWindowResize );
 
 			}
@@ -163,8 +158,6 @@
                         if(Math.min(...d)<2){
                             sphere.scale.set(1.25,1.25,1.25);
                             let n=d.indexOf(Math.min(...d));
-                            sphTarget.visible=true;
-                            sphTarget.position.set(p[n+1].x,p[n+1].y,p[n+1].z);
                             if (n==0){
                                 document.getElementById("title").innerHTML="Point One";
                             } else if (n==1){
@@ -173,7 +166,6 @@
                                 document.getElementById("title").innerHTML="Point Three";
                             }
                         } else {
-                            sphTarget.visible=false;
                             sphere.scale.set(0.8,0.8,0.8);
                             document.getElementById("title").innerHTML="";
                         }
