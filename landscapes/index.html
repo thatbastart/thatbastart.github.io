@@ -94,7 +94,7 @@
                 }   );
                 const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
                 sphere = new THREE.Mesh( sphereGeometry, customMaterial );
-                sphere.material.uniforms.p.value=4;
+                sphere.material.uniforms.p.value=2;
 
 
                 const renderScene = new RenderPass( scene, camera );
@@ -193,9 +193,9 @@
                     if ( intersects.length > 0 ) {
                         p[0] = new THREE.Vector3(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
                         d=[p[0].distanceTo(p[1]),p[0].distanceTo(p[2]),p[0].distanceTo(p[3])];
-                        c3.lerpColors(c2,c1,clamp(mapRange(Math.min(...d),0,50,1,0),0,1));
+                        c3.lerpColors(c2,c1,clamp(mapRange(Math.min(...d),0,50,0,1),0,1));
                         sphere.material.uniforms.glowColor.value=c3;
-                        sphere.material.uniforms.c.value=clamp(mapRange(Math.min(...d),0,50,0,1),0,1);
+                        sphere.material.uniforms.c.value=clamp(mapRange(Math.min(...d),0,50,1,0),0,1);
                         sphere.material.uniforms.viewVector.value=new THREE.Vector3().subVectors( camera.position, sphere.position );
                         if(Math.min(...d)<d_thr){
                             sphere.scale.set(1.25,1.25,1.25);
