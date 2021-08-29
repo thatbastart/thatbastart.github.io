@@ -8,7 +8,32 @@
 	<body>
         <h1 id="title" style="color: #ffffff; position: absolute; left:25px; top:0px; text-shadow: 0 0 5px #000000"></h1>
         <div id="main" style="background-color:#ffffff; border-radius: 25px; position: absolute; left:50vw; top:5vh; width: 47vw; height: 90vh; padding: 10px; box-shadow: 0 0 5px #000000; display: none;"><h1 id="main-title"></h1></div>
-		<script type="module">
+		<script id="vertexShader" type="x-shader/x-vertex">
+            uniform vec3 viewVector;
+            uniform float c;
+            uniform float p;
+            varying float intensity;
+            void main() 
+            {
+                vec3 vNormal = normalize( normalMatrix * normal );
+                vec3 vNormel = normalize( normalMatrix * viewVector );
+                intensity = pow( c - dot(vNormal, vNormel), p );
+                
+                gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+            }
+        </script>
+        
+        <script id="fragmentShader" type="x-shader/x-vertex"> 
+            uniform vec3 glowColor;
+            varying float intensity;
+            void main() 
+            {
+                vec3 glow = glowColor * intensity;
+                gl_FragColor = vec4( glow, 1.0 );
+            }
+        </script>
+
+        <script type="module">
 
 			import * as THREE from './three/build/three.module.js';
 
@@ -34,10 +59,24 @@
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
 
-
+            let customMaterial = new THREE.ShaderMaterial( 
+            {
+                uniforms: 
+                { 
+                    "c":   { type: "f", value: 1.0 },
+                    "p":   { type: "f", value: 1.4 },
+                    glowColor: { type: "c", value: new THREE.Color(0xffff00) },
+                    viewVector: { type: "v3", value: camera.position }
+                },
+                vertexShader:   document.getElementById( 'vertexShader'   ).textContent,
+                fragmentShader: document.getElementById( 'fragmentShader' ).textContent,
+                side: THREE.FrontSide,
+                blending: THREE.AdditiveBlending,
+                transparent: true
+            }   );
             const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
-			const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.5, transparent: true } );
-			const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+			//const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.5, transparent: true } );
+			const sphere = new THREE.Mesh( sphereGeometry, customMaterial );
             
             let p=[new THREE.Vector3(0,0,0), new THREE.Vector3(-28,-26,66), new THREE.Vector3(2,-40,-67), new THREE.Vector3(18,7,59)];
 
@@ -46,7 +85,7 @@
 
 			function init() {
 
-				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true} );
+				renderer = new THREE.WebGLRenderer( { antialias: true} );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				document.body.appendChild( renderer.domElement );
@@ -67,8 +106,11 @@
 				bloomPass.strength = 0.25;
 				bloomPass.radius = 0.0;
 
+                outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
+
 				composer = new EffectComposer( renderer );
 				composer.addPass( renderScene );
+                composer.addPass( outlinePass );
 				composer.addPass( bloomPass );
 
                 const selBloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
@@ -76,15 +118,6 @@
                 selBloomPass.threshold = 0.0;
 				selBloomPass.strength = 4;
 				selBloomPass.radius = 1;
-
-                outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
-
-                comp_sel = new EffectComposer( renderer );
-				comp_sel.addPass( renderScene );
-                composer.addPass( outlinePass );
-				comp_sel.addPass( selBloomPass );
-
-
 
 				const controls = new OrbitControls( camera, renderer.domElement );
                 controls.dampingFactor=0.01;
@@ -195,12 +228,11 @@
                     }
                 }
                 
+                camera.layers.set(1);
+                comp_sel.render();
             
                 camera.layers.set(0);
                 composer.render();
-
-                camera.layers.set(1);
-                comp_sel.render();
 			}
             
             function mapRange (value, a, b, c, d) {
