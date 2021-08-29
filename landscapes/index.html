@@ -99,9 +99,10 @@
                 let sphPMaterial=sphereMaterial.clone();
                 sphP = new THREE.Mesh( sphereGeometry, sphPMaterial );
                 sphP.material.uniforms.p.value=1.5;
-                sphP.material.uniforms.c.value=0.5;
+                sphP.material.uniforms.c.value=0.0;
                 sphP.material.uniforms.glowColor.value=new THREE.Color(0xffffff);
                 sphP.position.set(p[1].x,p[1].y,p[1].z);
+                sphP.scale.set(0.8,0.8,0.8);
 
                 const renderScene = new RenderPass( scene, camera );
 
