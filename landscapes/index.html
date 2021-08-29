@@ -172,7 +172,7 @@
                 if(drag==false && event.button!=0){
                     drag=true;
                 }
-                if(Math.min(...d)<d_thr){
+                if(Math.min(...d)<d_thr && event.button==0){
                     let n=d.indexOf(Math.min(...d));
                     document.getElementById("main").style.display="inline";
                     if (n==0){
