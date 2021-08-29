@@ -96,7 +96,7 @@
                 sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
                 sphere.material.uniforms.p.value=1.5;
 
-                let sphPMaterial=sphereMaterial.clone;
+                let sphPMaterial=sphereMaterial.clone();
                 sphP = new THREE.Mesh( sphereGeometry, sphPMaterial );
                 sphP.position.set(p[1].x,p[1].y,p[1].z);
 
@@ -194,7 +194,6 @@
             }
 
 			function render() {
-                console.log(sphP.material);
                 if(pointcloud != null){
                     raycaster.setFromCamera( mouse, camera );
                     let intersects = raycaster.intersectObject(pointcloud);
