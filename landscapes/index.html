@@ -44,7 +44,7 @@
 			import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
             import { OutlinePass } from './three/examples/jsm/postprocessing/OutlinePass.js';
 
-			let camera, scene, renderer, composer, comp_sel, pointcloud;
+			let camera, scene, renderer, composer, comp_sel, pointcloud, sphere;
             let d=[];
             const c1=new THREE.Color(0.62,0.125,0.06);
             const c2=new THREE.Color(0.125,0.6,0.36);
@@ -94,7 +94,7 @@
                 }   );
                 const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
                 //const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.5, transparent: true } );
-                const sphere = new THREE.Mesh( sphereGeometry, customMaterial );
+                sphere = new THREE.Mesh( sphereGeometry, customMaterial );
 
 
                 const renderScene = new RenderPass( scene, camera );
