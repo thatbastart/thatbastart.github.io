@@ -55,6 +55,7 @@
 
 				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 1000 );
 				camera.position.set( 130, 0, 250 );
+                camera.layers.enable(1);
 				scene.add( camera );
 
                 const renderScene = new RenderPass( scene, camera );
@@ -192,10 +193,10 @@
                         attributes.color.needsUpdate = true;
                     }
                 }
-                camera.layers.set(0);
-                composer.render();
                 camera.layers.set(1);
                 comp_sel.render();
+                camera.layers.set(0);
+                composer.render();
 			}
             
             function mapRange (value, a, b, c, d) {
