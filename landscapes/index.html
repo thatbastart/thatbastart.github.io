@@ -81,7 +81,7 @@
                 });
 
                 controls.addEventListener('end', (e) => {
-                    console.log(e.button);
+                    console.log(e);
                     if (camQuats.x==camera.quaternion.x && camQuats.y==camera.quaternion.y && camQuats.z==camera.quaternion.z && camQuats.w==camera.quaternion.w){
                         drag=false;
                     } else {
