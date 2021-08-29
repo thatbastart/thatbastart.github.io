@@ -60,6 +60,7 @@
             const mouse = new THREE.Vector2();
             
             let p=[new THREE.Vector3(0,0,0), new THREE.Vector3(-28,-26,66), new THREE.Vector3(2,-40,-67), new THREE.Vector3(18,7,59)];
+            let title=["Point One", "Point Two", "Point Three"];
 
 			init();
 			render();
@@ -183,13 +184,7 @@
                 if(Math.min(...d)<d_thr && event.button==0){
                     let n=d.indexOf(Math.min(...d));
                     document.getElementById("main").style.display="inline";
-                    if (n==0){
-                        document.getElementById("main-title").innerHTML="Point One";
-                    } else if (n==1){
-                        document.getElementById("main-title").innerHTML="Point Two";
-                    } else if (n==2){ 
-                        document.getElementById("main-title").innerHTML="Point Three";
-                    }
+                    document.getElementById("main-title").innerHTML=title[n];
                 } else {
                     if(overMain==false && drag==false){
                         document.getElementById("main").style.display="none";
@@ -210,18 +205,12 @@
                         sphere.material.uniforms.glowColor.value=c3;
                         sphere.material.uniforms.c.value=clamp(mapRange(Math.min(...d),0,50,1,0),0,1);
                         sphere.material.uniforms.viewVector.value=new THREE.Vector3().subVectors( camera.position, sphere.position );
-                        sphP.material.uniforms.viewVector.value=new THREE.Vector3().subVectors( camera.position, sphere.position );
+                        sphP.material.uniforms.viewVector.value=new THREE.Vector3().subVectors( camera.position, sphP.position );
                         if(Math.min(...d)<d_thr){
                             sphere.scale.set(1.25,1.25,1.25);
                             let n=d.indexOf(Math.min(...d));
                             outlinePass.selectedObjects=[sphere];
-                            if (n==0){
-                                document.getElementById("title").innerHTML="Point One";
-                            } else if (n==1){
-                                document.getElementById("title").innerHTML="Point Two";
-                            } else if (n==2){ 
-                                document.getElementById("title").innerHTML="Point Three";
-                            }
+                            document.getElementById("title").innerHTML=title[n];
                         } else {
                             outlinePass.selectedObjects=[];
                             sphere.scale.set(0.8,0.8,0.8);
