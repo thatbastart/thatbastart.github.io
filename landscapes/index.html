@@ -81,7 +81,6 @@
                 });
 
                 controls.addEventListener('end', (e) => {
-                    console.log(e);
                     if (camQuats.x==camera.quaternion.x && camQuats.y==camera.quaternion.y && camQuats.z==camera.quaternion.z && camQuats.w==camera.quaternion.w){
                         drag=false;
                     } else {
@@ -123,6 +122,7 @@
             }
 
             function onPointerUp( event ) {
+                console.log(event.button);
                 if(Math.min(...d)<2){
                     let n=d.indexOf(Math.min(...d));
                     document.getElementById("main").style.display="inline";
