@@ -123,8 +123,8 @@
 
             function onPointerUp( event ) {
                 console.log(event.button);
-                if(drag==true && event.button!=0){
-                    drag=false;
+                if(drag==false && event.button!=0){
+                    drag=true;
                 }
                 if(Math.min(...d)<2){
                     let n=d.indexOf(Math.min(...d));
