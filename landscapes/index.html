@@ -55,6 +55,8 @@
 
 				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 1000 );
 				camera.position.set( 130, 0, 250 );
+                camera.layers.enable(0);
+                camera.layers.enable(1);
 				scene.add( camera );
 
                 const renderScene = new RenderPass( scene, camera );
@@ -192,11 +194,10 @@
                         attributes.color.needsUpdate = true;
                     }
                 }
-                renderer.autoClear = false;
-                renderer.clear();
-                camera.layers.set(1);
-                comp_sel.render();
-                renderer.clearDepth();
+                
+                //camera.layers.set(1);
+                //comp_sel.render();
+
                 camera.layers.set(0);
                 composer.render();
 			}
