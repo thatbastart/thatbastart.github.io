@@ -104,7 +104,7 @@
                 render();
             }
 
-            function onMouseClick( event ) {
+            function onMouseDown( event ) {
                 console.log(Math.min(...d));
                 if(Math.min(...d)<2){
                     let n=d.indexOf(Math.min(...d));
@@ -168,7 +168,7 @@
             }
 
             window.addEventListener( 'mousemove', onMouseMove, false );
-            window.addEventListener( 'mouseclick', onMouseClick, false );
+            window.addEventListener( 'mousedown', onMouseDown, false );
 
 		</script>
 	</body>
