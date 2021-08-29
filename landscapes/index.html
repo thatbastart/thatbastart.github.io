@@ -84,7 +84,11 @@
                     if (camQuats.x==camera.quaternion.x && camQuats.y==camera.quaternion.y && camQuats.z==camera.quaternion.z && camQuats.w==camera.quaternion.w){
                         drag=false;
                     } else {
-                        drag=true;
+                        if(e.button==0){
+                            drag=true;
+                        } else {
+                            drag=false;
+                        }
                     }
                 });
 
