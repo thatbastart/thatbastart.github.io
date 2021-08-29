@@ -73,6 +73,18 @@
 				composer.addPass( bloomPass );
                 composer.addPass( outlinePass );
 
+                const selBloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
+				selBloomPass.exposure = 0.8;
+                selBloomPass.threshold = 0.3;
+				selBloomPass.strength = 0.0;
+				selBloomPass.radius = 0.0;
+
+                comp_sel = new EffectComposer( renderer );
+				comp_sel.addPass( renderScene );
+				comp_sel.addPass( selBloomPass );
+
+
+
 				const controls = new OrbitControls( camera, renderer.domElement );
                 controls.dampingFactor=0.01;
 				controls.addEventListener( 'change', render );
@@ -103,6 +115,7 @@
 
 				} );
                 scene.add(sphere);
+                sphere.layers.enable(1);
 				window.addEventListener( 'resize', onWindowResize );
 
 			}
@@ -180,7 +193,9 @@
                         attributes.color.needsUpdate = true;
                     }
                 }
-
+                camera.layers.set(1);
+                comp_sel.render();
+                camera.layers.set(0);
                 composer.render();
 			}
             
