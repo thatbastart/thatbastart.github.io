@@ -76,7 +76,7 @@
 				selBloomPass.exposure = 1;
                 selBloomPass.threshold = 0.0;
 				selBloomPass.strength = 1;
-				selBloomPass.radius = 0.0;
+				selBloomPass.radius = 1;
 
                 comp_sel = new EffectComposer( renderer );
 				comp_sel.addPass( renderScene );
@@ -113,8 +113,8 @@
 					render();
 
 				} );
-                scene.add(sphere);
                 sphere.layers.enable(1);
+                scene.add(sphere);
 				window.addEventListener( 'resize', onWindowResize );
 
 			}
