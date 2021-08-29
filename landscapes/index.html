@@ -6,8 +6,8 @@
 		<style>body { margin: 0; }</style>
 	</head>
 	<body>
-        <h1 id="title" style="color: #ffffff; position: absolute; left:25; top:0;"></h1>
-        <div id="main" style="background-color:#ffffff; border-radius: 25px; border: 2px solid #000000; position: absolute; left:50vw; top:5vh; width: 47vw; height: 90vh;"></div>
+        <h1 id="title" style="color: #ffffff; position: absolute; left:50; top:0;"></h1>
+        <div id="main" style="background-color:#ffffff; border-radius: 25px; border: 2px solid #000000; position: absolute; left:50vw; top:5vh; width: 47vw; height: 90vh; padding: 10px; display: none;"><h3 id="div-title"></h3></div>
 		<script type="module">
 
 			import * as THREE from './three/build/three.module.js';
@@ -104,6 +104,22 @@
                 render();
             }
 
+            function onMouseClick( event ) {
+                if(Math.min(...d)<2){
+                    let n=d.indexOf(Math.min(...d));
+                    document.getElementById("main").style.display="inline";
+                    if (n==0){
+                        document.getElementById("main-title").innerHTML="Point One";
+                    } else if (n==1){
+                        document.getElementById("main-title").innerHTML="Point Two";
+                    } else if (n==2){ 
+                        document.getElementById("main-title").innerHTML="Point Three";
+                    }
+                } else {
+                    document.getElementById("main").style.display="none";
+                }
+            }
+
 			function render() {
                 if(pointcloud != null){
                     raycaster.setFromCamera( mouse, camera );
@@ -120,11 +136,11 @@
                             sphere.scale.set(1.25,1.25,1.25);
                             let n=d.indexOf(Math.min(...d));
                             if (n==0){
-                                document.getElementById("title").innerHTML="Punkt Eins";
+                                document.getElementById("title").innerHTML="Point One";
                             } else if (n==1){
-                                document.getElementById("title").innerHTML="Punkt Zwei";
+                                document.getElementById("title").innerHTML="Point Two";
                             } else if (n==2){ 
-                                document.getElementById("title").innerHTML="Punkt Drei";
+                                document.getElementById("title").innerHTML="Point Three";
                             }
                         } else {
                             sphere.scale.set(0.8,0.8,0.8);
@@ -149,7 +165,9 @@
             function clamp(val, min, max) {
                 return val > max ? max : val < min ? min : val;
             }
+
             window.addEventListener( 'mousemove', onMouseMove, false );
+            window.addEventListener( 'mouseclick', onMouseClick, false );
 
 		</script>
 	</body>
