@@ -76,7 +76,7 @@
 				selBloomPass.exposure = 1.5;
                 selBloomPass.threshold = 0.0;
 				selBloomPass.strength = 4;
-				selBloomPass.radius = 2;
+				selBloomPass.radius = 1;
 
                 comp_sel = new EffectComposer( renderer );
 				comp_sel.addPass( renderScene );
@@ -196,8 +196,8 @@
                 renderer.clear();
                 camera.layers.set(1);
                 comp_sel.render();
-                //camera.layers.set(0);
-                //composer.render();
+                camera.layers.set(0);
+                composer.render();
 			}
             
             function mapRange (value, a, b, c, d) {
