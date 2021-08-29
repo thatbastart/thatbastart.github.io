@@ -24,6 +24,8 @@
             const c2=new THREE.Color(0.125,0.6,0.36);
             const c3=new THREE.Color(0,0,0);
             let overMain=false;
+            let drag=false;
+            const clickCoords = new THREE.Vector2();
 
             const params = {
 				exposure: 0.8,
@@ -71,6 +73,18 @@
 
 				const controls = new OrbitControls( camera, renderer.domElement );
 				controls.addEventListener( 'change', render ); // use if there is no animation loop
+                controls.addEventListener('start', (e) => {
+                    clickCoords.x = e.target.target.x;
+                    clickCoords.y = e.target.target.y;
+                });
+
+                controls.addEventListener('end', (e) => {
+                    if (clickCoords.x == e.target.target.x && clickCoords.y == e.target.target.y){
+                        drag=false;
+                    } else {
+                        drag=true;
+                    }
+                });
 
 
 				const loader = new PCDLoader();
@@ -118,7 +132,7 @@
                         document.getElementById("main-title").innerHTML="Point Three";
                     }
                 } else {
-                    if(overMain==false){
+                    if(overMain==false && drag==false){
                         document.getElementById("main").style.display="none";
                     }
                 }
