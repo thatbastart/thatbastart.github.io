@@ -106,7 +106,8 @@
 				bloomPass.radius = 0.0;
 
                 outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
-                outlinePass.edgeStrength=2;
+                outlinePass.edgeStrength=4;
+                outlinePass.edgeThickness=2;
                 outlinePass.edgeGlow=1;
                 outlinePass.pulsePeriod=1;
 
