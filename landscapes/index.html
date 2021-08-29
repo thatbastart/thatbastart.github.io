@@ -46,7 +46,7 @@
 
 			function init() {
 
-				renderer = new THREE.WebGLRenderer( { antialias: true} );
+				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true} );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				document.body.appendChild( renderer.domElement );
@@ -67,8 +67,6 @@
 				bloomPass.strength = 0.25;
 				bloomPass.radius = 0.0;
 
-                outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
-
 				composer = new EffectComposer( renderer );
 				composer.addPass( renderScene );
 				composer.addPass( bloomPass );
@@ -79,10 +77,12 @@
 				selBloomPass.strength = 4;
 				selBloomPass.radius = 1;
 
+                outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
+
                 comp_sel = new EffectComposer( renderer );
 				comp_sel.addPass( renderScene );
-				comp_sel.addPass( selBloomPass );
                 composer.addPass( outlinePass );
+				comp_sel.addPass( selBloomPass );
 
 
 
@@ -195,11 +195,12 @@
                     }
                 }
                 
+            
+                camera.layers.set(0);
+                composer.render();
+
                 camera.layers.set(1);
                 comp_sel.render();
-
-                //camera.layers.set(0);
-                //composer.render();
 			}
             
             function mapRange (value, a, b, c, d) {
