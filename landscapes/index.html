@@ -200,9 +200,12 @@
                         p[0] = new THREE.Vector3(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
                         d=[p[0].distanceTo(p[1]),p[0].distanceTo(p[2]),p[0].distanceTo(p[3])];
                         c3.lerpColors(c2,c1,clamp(mapRange(Math.min(...d),0,50,0,1),0,1));
-                        console.log(sphere);
-                        sphere.material.color.copy(c3);
-                        sphere.material.opacity=clamp(mapRange(Math.min(...d),0,50,0.8,0.4),0.4,0.8);
+                        console.log(sphere.material.uniforms.glowColor.value);
+                        sphere.material.uniforms.glowColor.value.r(c3.r);
+                        sphere.material.uniforms.glowColor.value.g(c3.g);
+                        sphere.material.uniforms.glowColor.value.b(c3.b);
+                        //sphere.material.color.copy(c3);
+                        //sphere.material.opacity=clamp(mapRange(Math.min(...d),0,50,0.8,0.4),0.4,0.8);
                         if(Math.min(...d)<d_thr){
                             sphere.scale.set(1.25,1.25,1.25);
                             let n=d.indexOf(Math.min(...d));
