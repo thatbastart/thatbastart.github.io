@@ -105,7 +105,6 @@
                 scene.add(sphere);
                 scene.add(sphTarget);
                 //sphTarget.visible=false;
-                console.log(sphTarget);
 				window.addEventListener( 'resize', onWindowResize );
 
 			}
@@ -164,7 +163,7 @@
                             sphere.scale.set(1.25,1.25,1.25);
                             let n=d.indexOf(Math.min(...d));
                             //sphTarget.visible=true;
-                            sphTarget.position.set(p[n+1]);
+                            sphTarget.position.set(...p[n+1]);
                             if (n==0){
                                 document.getElementById("title").innerHTML="Point One";
                             } else if (n==1){
