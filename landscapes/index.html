@@ -58,25 +58,6 @@
 
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
-
-            let customMaterial = new THREE.ShaderMaterial( 
-            {
-                uniforms: 
-                { 
-                    "c":   { type: "f", value: 1.0 },
-                    "p":   { type: "f", value: 1.4 },
-                    glowColor: { type: "c", value: new THREE.Color(0xffff00) },
-                    viewVector: { type: "v3", value: camera.position }
-                },
-                vertexShader:   document.getElementById( 'vertexShader'   ).textContent,
-                fragmentShader: document.getElementById( 'fragmentShader' ).textContent,
-                side: THREE.FrontSide,
-                blending: THREE.AdditiveBlending,
-                transparent: true
-            }   );
-            const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
-			//const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.5, transparent: true } );
-			const sphere = new THREE.Mesh( sphereGeometry, customMaterial );
             
             let p=[new THREE.Vector3(0,0,0), new THREE.Vector3(-28,-26,66), new THREE.Vector3(2,-40,-67), new THREE.Vector3(18,7,59)];
 
@@ -94,9 +75,27 @@
 
 				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 1000 );
 				camera.position.set( 130, 0, 250 );
-                camera.layers.enable(0);
-                camera.layers.enable(1);
 				scene.add( camera );
+
+                let customMaterial = new THREE.ShaderMaterial( 
+                {
+                    uniforms: 
+                    { 
+                        "c":   { type: "f", value: 1.0 },
+                        "p":   { type: "f", value: 1.4 },
+                        glowColor: { type: "c", value: new THREE.Color(0xffff00) },
+                        viewVector: { type: "v3", value: camera.position }
+                    },
+                    vertexShader:   document.getElementById( 'vertexShader'   ).textContent,
+                    fragmentShader: document.getElementById( 'fragmentShader' ).textContent,
+                    side: THREE.FrontSide,
+                    blending: THREE.AdditiveBlending,
+                    transparent: true
+                }   );
+                const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
+                //const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.5, transparent: true } );
+                const sphere = new THREE.Mesh( sphereGeometry, customMaterial );
+
 
                 const renderScene = new RenderPass( scene, camera );
 
@@ -148,7 +147,6 @@
 					render();
 
 				} );
-                sphere.layers.set(1);
                 scene.add(sphere);
 				window.addEventListener( 'resize', onWindowResize );
 
@@ -228,10 +226,6 @@
                     }
                 }
                 
-                camera.layers.set(1);
-                comp_sel.render();
-            
-                camera.layers.set(0);
                 composer.render();
 			}
             
