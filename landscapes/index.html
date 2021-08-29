@@ -46,7 +46,7 @@
 
 			function init() {
 
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				document.body.appendChild( renderer.domElement );
@@ -76,7 +76,6 @@
                 selBloomPass.threshold = 0.0;
 				selBloomPass.strength = 4;
 				selBloomPass.radius = 1;
-                selBloomPass.renderToScreen = true;
 
                 comp_sel = new EffectComposer( renderer );
 				comp_sel.addPass( renderScene );
