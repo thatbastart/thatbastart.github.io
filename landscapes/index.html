@@ -72,6 +72,7 @@
 				composer.addPass( bloomPass );
 
 				const controls = new OrbitControls( camera, renderer.domElement );
+                controls.dampingFactor=0.01;
                 console.log(controls);
 				controls.addEventListener( 'change', render );
                 controls.addEventListener('start', (e) => {
