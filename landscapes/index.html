@@ -104,7 +104,7 @@
 				} );
                 scene.add(sphere);
                 scene.add(sphTarget);
-                //sphTarget.visible=false;
+                sphTarget.visible=false;
 				window.addEventListener( 'resize', onWindowResize );
 
 			}
@@ -162,8 +162,8 @@
                         if(Math.min(...d)<2){
                             sphere.scale.set(1.25,1.25,1.25);
                             let n=d.indexOf(Math.min(...d));
-                            //sphTarget.visible=true;
-                            sphTarget.position.set(...p[n+1]);
+                            sphTarget.visible=true;
+                            sphTarget.position.set(p[n+1].x,p[n+1].y,p[n+1].z);
                             if (n==0){
                                 document.getElementById("title").innerHTML="Point One";
                             } else if (n==1){
@@ -172,7 +172,7 @@
                                 document.getElementById("title").innerHTML="Point Three";
                             }
                         } else {
-                            //sphTarget.visible=false;
+                            sphTarget.visible=false;
                             sphere.scale.set(0.8,0.8,0.8);
                             document.getElementById("title").innerHTML="";
                         }
