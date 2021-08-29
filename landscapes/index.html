@@ -62,7 +62,7 @@
 				const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
 				bloomPass.exposure = 0.8;
                 bloomPass.threshold = 0.0;
-				bloomPass.strength = 0.1;
+				bloomPass.strength = 0.25;
 				bloomPass.radius = 0.0;
 
                 outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
@@ -196,6 +196,7 @@
                 renderer.clear();
                 camera.layers.set(1);
                 comp_sel.render();
+                renderer.clearDepth();
                 camera.layers.set(0);
                 composer.render();
 			}
