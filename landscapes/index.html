@@ -121,7 +121,7 @@
                 render();
             }
 
-            function onPointerDown( event ) {
+            function onPointerUp( event ) {
                 if(Math.min(...d)<2){
                     let n=d.indexOf(Math.min(...d));
                     document.getElementById("main").style.display="inline";
@@ -186,7 +186,7 @@
             }
 
             window.addEventListener( "mousemove", onMouseMove, false );
-            window.addEventListener( "pointerdown", onPointerDown, false );
+            window.addEventListener( "pointerup", onPointerUp, false );
             document.getElementById("main").addEventListener("mouseenter", function(){ overMain=true; }, false);
             document.getElementById("main").addEventListener("mouseleave", function(){ overMain=false; }, false);
 
