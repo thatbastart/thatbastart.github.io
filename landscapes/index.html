@@ -17,6 +17,7 @@
             import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer.js';
             import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
 			import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
+            import { OutlinePass } from './three/examples/jsm/postprocessing/OutlinePass.js';
 
 			let camera, scene, renderer, composer, pointcloud;
             let d=[];
@@ -67,9 +68,12 @@
 				bloomPass.strength = params.bloomStrength;
 				bloomPass.radius = params.bloomRadius;
 
+                const outlinePass = new THREE.OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
+
 				composer = new EffectComposer( renderer );
 				composer.addPass( renderScene );
 				composer.addPass( bloomPass );
+                composer.addPass( outlinePass );
 
 				const controls = new OrbitControls( camera, renderer.domElement );
                 controls.dampingFactor=0.01;
@@ -155,9 +159,10 @@
                         c3.lerpColors(c2,c1,clamp(mapRange(Math.min(...d),0,50,0,1),0,1));
                         sphere.material.color.copy(c3);
                         sphere.material.opacity=clamp(mapRange(Math.min(...d),0,50,0.8,0.4),0.4,0.8);
-                        if(Math.min(...d)<2){
+                        if(Math.min(...d)<3){
                             sphere.scale.set(1.25,1.25,1.25);
                             let n=d.indexOf(Math.min(...d));
+                            outlinePass.selectedObjects=[sphere];
                             if (n==0){
                                 document.getElementById("title").innerHTML="Point One";
                             } else if (n==1){
