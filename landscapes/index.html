@@ -201,11 +201,9 @@
                         d=[p[0].distanceTo(p[1]),p[0].distanceTo(p[2]),p[0].distanceTo(p[3])];
                         c3.lerpColors(c2,c1,clamp(mapRange(Math.min(...d),0,50,0,1),0,1));
                         console.log(sphere.material.uniforms);
-                        sphere.material.uniforms.glowColor.value.r=c3.r;
-                        sphere.material.uniforms.glowColor.value.g=c3.g;
-                        sphere.material.uniforms.glowColor.value.b=c3.b;
-                        //sphere.material.color.copy(c3);
-                        //sphere.material.opacity=clamp(mapRange(Math.min(...d),0,50,0.8,0.4),0.4,0.8);
+                        sphere.material.uniforms.glowColor.value=c3;
+                        sphere.material.uniforms.p.value=clamp(mapRange(Math.min(...d),0,50,0,1),0,1);
+                        sphere.material.uniforms.viewVector.value=camera.position;
                         if(Math.min(...d)<d_thr){
                             sphere.scale.set(1.25,1.25,1.25);
                             let n=d.indexOf(Math.min(...d));
