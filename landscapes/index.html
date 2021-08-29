@@ -108,7 +108,6 @@
 
 					points.geometry.center();
                     points.material.size=1;
-                    points.layers.enable(0);
 					scene.add( points );
                     pointcloud=points;
 					render();
@@ -193,8 +192,8 @@
                         attributes.color.needsUpdate = true;
                     }
                 }
-                camera.layers.set(1);
-                comp_sel.render();
+                //camera.layers.set(1);
+                //comp_sel.render();
                 camera.layers.set(0);
                 composer.render();
 			}
