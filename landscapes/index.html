@@ -25,7 +25,7 @@
             const c3=new THREE.Color(0,0,0);
             let overMain=false;
             let drag=false;
-            const clickCoords = new THREE.Vector2();
+            const camQuats = new THREE.Vector4();
 
             const params = {
 				exposure: 0.8,
@@ -74,17 +74,18 @@
 				const controls = new OrbitControls( camera, renderer.domElement );
 				controls.addEventListener( 'change', render ); // use if there is no animation loop
                 controls.addEventListener('start', (e) => {
-                    clickCoords.x = e.target.target.x;
-                    clickCoords.y = e.target.target.y;
+                    camQuats.x=camera.quaternion.x;
+                    camQuats.y=camera.quaternion.y;
+                    camQuats.z=camera.quaternion.z;
+                    camQuats.w=camera.quaternion.w;
                 });
 
                 controls.addEventListener('end', (e) => {
-                    if (clickCoords.x == e.target.target.x && clickCoords.y == e.target.target.y){
+                    if (camQuats.x==camera.quaternion.x && camQuats.y==camera.quaternion.y && camQuats.z==camera.quaternion.z && camQuats.w==camera.quaternion.w){
                         drag=false;
                     } else {
                         drag=true;
                     }
-                    console.log(camera);
                 });
 
 
