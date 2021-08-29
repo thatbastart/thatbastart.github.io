@@ -95,7 +95,7 @@
                 const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
                 sphere = new THREE.Mesh( sphereGeometry, customMaterial );
                 sphere.material.side=THREE.BackSide;
-                sphere.material.uniforms.p.value=5;
+                sphere.material.uniforms.p.value=1;
 
 
                 const renderScene = new RenderPass( scene, camera );
@@ -103,7 +103,7 @@
 				const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
 				bloomPass.exposure = 0.8;
                 bloomPass.threshold = 0.0;
-				bloomPass.strength = 0.0;
+				bloomPass.strength = 0.25;
 				bloomPass.radius = 0.0;
 
                 outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
@@ -112,12 +112,6 @@
 				composer.addPass( renderScene );
                 composer.addPass( outlinePass );
 				composer.addPass( bloomPass );
-
-                const selBloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
-				selBloomPass.exposure = 1.5;
-                selBloomPass.threshold = 0.0;
-				selBloomPass.strength = 4;
-				selBloomPass.radius = 1;
 
 				const controls = new OrbitControls( camera, renderer.domElement );
                 controls.dampingFactor=0.01;
