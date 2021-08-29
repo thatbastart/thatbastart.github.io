@@ -79,8 +79,8 @@
 
                 comp_sel = new EffectComposer( renderer );
 				comp_sel.addPass( renderScene );
-                composer.addPass( outlinePass );
 				comp_sel.addPass( selBloomPass );
+                composer.addPass( outlinePass );
 
 
 
@@ -192,10 +192,10 @@
                         attributes.color.needsUpdate = true;
                     }
                 }
-                camera.layers.set(1);
-                comp_sel.render();
-                //camera.layers.set(0);
-                //composer.render();
+                //camera.layers.set(1);
+                //comp_sel.render();
+                camera.layers.set(0);
+                composer.render();
 			}
             
             function mapRange (value, a, b, c, d) {
