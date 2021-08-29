@@ -203,7 +203,7 @@
                         console.log(sphere.material.uniforms);
                         sphere.material.uniforms.glowColor.value=c3;
                         sphere.material.uniforms.p.value=clamp(mapRange(Math.min(...d),0,50,0,1),0,1);
-                        sphere.material.uniforms.viewVector.value=camera.position;
+                        sphere.material.uniforms.viewVector.value=new THREE.Vector3().subVectors( camera.position, sphere.position );
                         if(Math.min(...d)<d_thr){
                             sphere.scale.set(1.25,1.25,1.25);
                             let n=d.indexOf(Math.min(...d));
