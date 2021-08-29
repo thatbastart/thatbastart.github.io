@@ -27,6 +27,7 @@
             let overMain=false;
             let drag=false;
             const camQuats = new THREE.Vector4();
+            let outlinePass;
 
             const params = {
 				exposure: 0.8,
@@ -68,7 +69,7 @@
 				bloomPass.strength = params.bloomStrength;
 				bloomPass.radius = params.bloomRadius;
 
-                const outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
+                outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
 
 				composer = new EffectComposer( renderer );
 				composer.addPass( renderScene );
