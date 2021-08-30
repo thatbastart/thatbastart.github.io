@@ -46,7 +46,7 @@
 
 			let camera, scene, renderer, composer, comp_sel, pointcloud, sphere, sphP;
             let d=[];
-            let mainOpen=0;
+            let mainOpen=-1;
             const c1=new THREE.Color(0.62,0.125,0.06);
             const c2=new THREE.Color(0.125,0.6,0.36);
             const c3=new THREE.Color(0,0,0);
@@ -184,13 +184,16 @@
                 }
                 if(Math.min(...d)<d_thr && event.button==0){
                     let n=d.indexOf(Math.min(...d));
+                    sphP.position.set(p[n+1].x,p[n+1].y,p[n+1].z);
+                    sphP.visible=true;
                     document.getElementById("main").style.display="inline";
                     document.getElementById("main-title").innerHTML=title[n];
                     mainOpen=n;
                 } else {
                     if(overMain==false && drag==false){
+                        sphP.visible=false;
                         document.getElementById("main").style.display="none";
-                        mainOpen=0;
+                        mainOpen=-1;
                     }
                 }
             }
