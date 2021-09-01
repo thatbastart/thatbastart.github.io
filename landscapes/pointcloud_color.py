@@ -3,8 +3,8 @@ from colorutils import rgb_to_hsv
 from colorutils import hsv_to_rgb
 
 file="pointcloud_data.ply"
-factor_s=2
-factor_v=1.5
+factor_s=1.5
+factor_v=1
 
 src = open(file, "r")
 out = open(file.split(".")[0]+"_mod.ply", "a")
