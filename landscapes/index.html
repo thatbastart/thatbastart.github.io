@@ -8,7 +8,8 @@
 	<body>
         <h1 id="title" style="color: #ffffff; position: absolute; left:25px; top:0px; text-shadow: 0 0 5px #000000"></h1>
         <div id="main" style="background-color:#ffffff; border-radius: 25px; position: absolute; left:50vw; top:5vh; width: 47vw; height: 90vh; padding: 10px; box-shadow: 0 0 5px #000000; display: none;"><h1 id="main-title"></h1></div>
-		<script id="vertexShader" type="x-shader/x-vertex">
+		
+        <script id="vertexShader" type="x-shader/x-vertex">
             uniform vec3 viewVector;
             uniform float c;
             uniform float p;
@@ -91,7 +92,7 @@
                     vertexShader:   document.getElementById( 'vertexShader'   ).textContent,
                     fragmentShader: document.getElementById( 'fragmentShader' ).textContent,
                     side: THREE.BackSide,
-                    blending: THREE.MultiplyBlending,
+                    blending: THREE.AdditiveBlending,
                     transparent: true
                 }   );
                 const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
@@ -211,7 +212,7 @@
                         d=[p[0].distanceTo(p[1]),p[0].distanceTo(p[2]),p[0].distanceTo(p[3])];
                         c3.lerpColors(c2,c1,clamp(mapRange(Math.min(...d),0,50,0,1),0,1));
                         sphere.material.uniforms.glowColor.value=c3;
-                        sphere.material.uniforms.c.value=clamp(mapRange(Math.min(...d),0,50,1,0),0,1);
+                        sphere.material.uniforms.c.value=clamp(mapRange(Math.min(...d),0,50,1,0.5),0.5,1);
                         sphere.material.uniforms.viewVector.value=new THREE.Vector3().subVectors( camera.position, sphere.position );
                         sphP.material.uniforms.viewVector.value=new THREE.Vector3().subVectors( camera.position, sphP.position );
                         if(Math.min(...d)<d_thr){
