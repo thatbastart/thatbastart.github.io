@@ -441,6 +441,19 @@ float: left;
        }
 
 
+       .stadt_container > div {
+        margin: 1%;
+        width: 31.3%;
+        padding-top: 25%;
+        background-size: 130%;
+      }
+
+      .stadt_container > div:hover {
+        transition: all 0.5s;
+        background-size: 140%;
+      }
+
+
                        .s1 {grid-column: 1/3; grid-row: 1; margin: 1em; border: 8px dotted #F5FF02;}
        .s1:hover {border: 8px dotted black;}
        .s2:hover {border: 8px dotted black;}

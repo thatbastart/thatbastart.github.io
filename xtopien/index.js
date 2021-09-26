@@ -16,6 +16,7 @@ function changeCity(id,s){
     }
     document.getElementById("stadt_" + id).style.boxShadow="inset 0px 0px 0px 8px #F5FF02";
     document.getElementById("stadt_img").style.backgroundImage = "url('" + data[id].overview +"')";
+    document.getElementById("stadt_img").setAttribute("onclick", "javascript: stadtImg(1," + id + ");");
     document.getElementById("stadt_audio").src=data[id].audio;
     document.getElementById("stadt_titel").innerHTML=data[id].descr;
     let spz=data[id].spz.split(", ");
