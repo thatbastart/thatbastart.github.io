@@ -6,7 +6,6 @@ window.onload = function() {
         document.getElementById("stadt_container").innerHTML=document.getElementById("stadt_container").innerHTML + "<div id=\"" + "stadt_" + i + "\"style=\"background-image: url(\'"+ data[i].thumb + "\');\" onClick=\"changeCity(" + i +",1)\"><span class=\"stadt_container_nmb\">" + data[i].nmb + "</span><br><span class=\"stadt_container_ort\">" + data[i].ort + "</span></div>"
         amt=i;
     }
-    document.getElementById("stadt_img")
     changeCity(0,0);
 }
 
