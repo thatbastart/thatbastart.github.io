@@ -3,7 +3,7 @@ let amt=0;
 let h=[0,0]
 window.onload = function() {
     for (let i=0; i<data.length;i++){
-        document.getElementById("stadt_container").innerHTML=document.getElementById("stadt_container").innerHTML + "<div id=\"" + "stadt_" + i + "\"style=\"background-image: url(\'"+ data[i].thumb + "\');\" onClick=\"changeCity(" + i +",1)\"><span class=\"stadt_container_text\">" + data[i].descr + "</span></div>"
+        document.getElementById("stadt_container").innerHTML=document.getElementById("stadt_container").innerHTML + "<div id=\"" + "stadt_" + i + "\"style=\"background-image: url(\'"+ data[i].thumb + "\');\" onClick=\"changeCity(" + i +",1)\"><span class=\"stadt_container_nmb\">" + data[i].nmb + "</span><br><span class=\"stadt_container_ort\">" + data[i].ort + "</span></div>"
         amt=i;
     }
     document.getElementById("stadt_img")
@@ -12,7 +12,6 @@ window.onload = function() {
 
 function changeCity(id,s){
     h.unshift(id);
-    console.log(h);
     counter=0;
     document.getElementById("stadt_" + h[1]).style.boxShadow="inset 0px 0px 0px 0px #F5FF02";
     document.getElementById("stadt_" + h[1]).style.backgroundSize="130%";
@@ -25,16 +24,22 @@ function changeCity(id,s){
     document.getElementById("stadt_" + id).style.color="#F5FF02";
 
     document.getElementById("stadt_img").style.backgroundImage = "url('" + data[id].overview +"')";
-    //document.getElementById("stadt_img").setAttribute("onclick", "javascript: stadtImg(1," + id + ");");
+    document.getElementById("stadt_img").onclick = function clickEvent(e) {
+        let rect = document.getElementById("stadt_img").getBoundingClientRect();
+        let x = e.clientX - rect.left;
+        if (x<rect.width/2){
+            stadtImg(-1,id);
+        } else {
+            stadtImg(1,id);
+        }
+      }
     document.getElementById("stadt_audio").src=data[id].audio;
-    document.getElementById("stadt_titel").innerHTML=data[id].descr;
+    document.getElementById("stadt_titel").innerHTML=data[id].ort + " " + data[id].nmb;
     let spz=data[id].spz.split(", ");
     document.getElementById("stadt_spz_pics").innerHTML="";
     for (let i=0; i<spz.length;i++){
         document.getElementById("stadt_spz_pics").innerHTML=document.getElementById("stadt_spz_pics").innerHTML+ "<div><img id=\"spz_pics_" + i + "\" src=\"alleindiestadt/spz/" + spz[i] + ".png\" class=\"spz_img\" onClick=\"stadtImg2(" + i + "," + id + ")\"></img><span id=\"stadt_spz_" + i + "\" class=\"textcaps\" style=\"cursor: pointer;\" onClick=\"stadtImg2(" + i + "," + id + ")\">" + spz[i] + "</span></div>"
     }
-    document.getElementById("stadt_prev").setAttribute("onclick", "javascript: stadtImg(-1," + id + ");");
-    document.getElementById("stadt_next").setAttribute("onclick", "javascript: stadtImg(1," + id + ");");
     if(s==1){
         window.scrollBy({top: document.getElementById("stadt_titel").getBoundingClientRect().top, left: 0, behavior: 'smooth'});
     }
@@ -47,7 +52,7 @@ function stadtImg(c, id){
     img.unshift(data[id].overview);
     if (counter>=img.length){
         counter=0;
-    }
+    } 
     if (counter<0){
         counter=img.length-1;
     }
