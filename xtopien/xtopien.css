@@ -130,7 +130,7 @@ font-weight: 400;
   background-size: 130%;
   background-position: center;
   position: relative;
-  color: rgba(255,255,255,0);
+  color: #fff;
   filter: saturate(60%);
 }
 .stadt_container > div:hover {
@@ -145,7 +145,7 @@ font-weight: 400;
 }
 
 .stadt_content {
-  padding-top: 50px;
+  padding-top: 100px;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.5em;
 }
@@ -156,6 +156,7 @@ font-weight: 400;
   background-image: url('alleindiestadt/pics/01b.jpeg'); 
   background-size: cover;
   background-position: center;
+  position: relative;
 }
 
 .spz_img {
@@ -171,6 +172,38 @@ font-weight: 400;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0.5em;
 }
+
+.stadt_slide_left {
+  background-color: rgba(0,0,0,0); 
+  border: none; 
+  font-size: 5em; 
+  color: #F5FF02; 
+  cursor: pointer;
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.stadt_slide_left:hover {
+  color: black;
+}
+.stadt_slide_right {
+  background-color: rgba(0,0,0,0); 
+  border: none; 
+  font-size: 5em; 
+  color: #F5FF02; 
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.stadt_slide_right:hover {
+  color: black;
+}
+
 
 audio {
   filter: grayscale(1) invert(70%) sepia(100%) contrast(140%) saturate(150%);
