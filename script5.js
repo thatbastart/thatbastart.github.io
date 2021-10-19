@@ -38,7 +38,7 @@ let arr_img=["https://i.imgur.com/nQYe88F.png",
 "https://media0.giphy.com/media/3o7abu6fFSEbphMu9G/giphy.gif"];
 
 
-let arr_txt=["web design is my Passion", "don't bug me", "y0u hAv3 b3en pAwn3d!", "The Ultimate Trip", "Fuck you, I won't do what you tell me", "the old world is dying and the new one struggles to be born:<br>Now is the Time of Monsters!", "the destruction of art is art itself", "Denn alles, was entsteht, ist wert, dass es zugrunde geht", "Life is a Glitch. Then you Die!", "ACID!", "you can create art and beauty on a computer", "if this is art, than you should", "Why is this happening to You?", "From each according to their Ability. To each according to their Needs.", "Back2Green", "420", "I wish I could talk in Technicolor", "Can't you feel it?", "Hacker haben Hackertoolz", "Kitschige Filmsample, Donner, Schnapsglas, Regen.", "Die Vice als Necronomicon.", "cyber cyber cyber cyber cybersicherheit"];
+let arr_txt=["web design is my Passion", "don't bug me", "y0u hAv3 b3en pAwn3d!", "The Ultimate Trip", "Fuck you, I won't do what you tell me", "the old world is dying and the new one struggles to be born:<br>Now is the Time of Monsters!", "the destruction of art is art itself", "Denn alles, was entsteht, ist wert, dass es zugrunde geht", "Life is a Glitch. Then you Die!", "ACID!", "you can create art and beauty on a computer", "if this is art, than you should", "Why is this happening to You?", "From each according to their Ability. To each according to their Needs.", "Back2Green", "420", "I wish I could talk in Technicolor", "Can't you feel it?", "Hacker haben Hackertoolz", "Kitschige Filmsample, Donner, Schnapsglas, Regen.", "Die Vice als Necronomicon.", "cyber cyber cyber cyber cybersicherheit", "ambiguity of real reality"];
 
 let mX, mY, img, txt, r, f;
 
@@ -57,14 +57,15 @@ function troll() {
     txt.style.position="absolute";
     txt.style.top=mY+"px";
   	txt.style.left=mX+"px";
-    txt.style.fontSize=Math.floor(50+Math.random()*150)+"px";
+    txt.style.fontSize=Math.floor(15+Math.random()*100)+"px";
     txt.style.color="#fff";
     txt.style.fontFamily="f";
+    txt.style.textShadow="2px 2px 4px #000";
     body.appendChild(txt);
   } else {
   	f=false;
 		img = document.createElement("img");
-  	r=100+Math.random()*700;
+  	r=100+Math.random()*600;
   	let c=Math.floor(Math.random()*(arr_img.length));
   	img.src=arr_img[c];
   	body.appendChild(img);
