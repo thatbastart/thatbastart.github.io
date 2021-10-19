@@ -57,14 +57,14 @@ function troll() {
     txt.style.position="absolute";
     txt.style.top=mY+"px";
   	txt.style.left=mX+"px";
-    txt.style.fontSize=Math.floor(50+Math.random()*250)+"px";
+    txt.style.fontSize=Math.floor(50+Math.random()*150)+"px";
     txt.style.color="#fff";
     txt.style.fontFamily="f";
     body.appendChild(txt);
   } else {
   	f=false;
 		img = document.createElement("img");
-  	r=100+Math.random()*1000;
+  	r=100+Math.random()*700;
   	let c=Math.floor(Math.random()*(arr_img.length));
   	img.src=arr_img[c];
   	body.appendChild(img);
