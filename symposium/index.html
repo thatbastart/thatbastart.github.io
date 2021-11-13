@@ -18,9 +18,7 @@
             import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
 			import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
-			let camera, scene, renderer, composer, comp_sel, pointcloud, sphere, sphP;
-            let d=[];
-            let drag=false;
+			let camera, scene, renderer, composer, pointcloud;
             const camQuats = new THREE.Vector4();
 
 
@@ -59,7 +57,7 @@
 
 				const controls = new OrbitControls( camera, renderer.domElement );
                 controls.enableDamping=true;
-                controls.dampingFactor=0.025;
+                controls.dampingFactor=0.005;
 				controls.addEventListener( 'change', render );
                 controls.addEventListener('start', (e) => {
                     camQuats.x=camera.quaternion.x;
