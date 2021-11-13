@@ -42,15 +42,15 @@
 				scene = new THREE.Scene();
 
 				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
-				camera.position.set( 130, 0, 250 );
+				camera.position.set( -40.636, -55.799, 727.167 );
 				scene.add( camera );
 
                 const renderScene = new RenderPass( scene, camera );
 
-				const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.0, 0.4, 0.85 );
-				bloomPass.exposure = 0.5;
+				const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 0.8, 0.4, 0.85 );
+				bloomPass.exposure = 0.0;
                 bloomPass.threshold = 0.0;
-				bloomPass.strength = 0.25;
+				bloomPass.strength = 0.15;
 				bloomPass.radius = 0.0;
 
 				composer = new EffectComposer( renderer );
@@ -58,7 +58,8 @@
 				composer.addPass( bloomPass );
 
 				const controls = new OrbitControls( camera, renderer.domElement );
-                controls.dampingFactor=0.005;
+                controls.enableDamping=true;
+                controls.dampingFactor=0.025;
 				controls.addEventListener( 'change', render );
                 controls.addEventListener('start', (e) => {
                     camQuats.x=camera.quaternion.x;
