@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Relational Landscapes</title>
+		<meta charset="utf-8">
+		<style>body { margin: 0; }</style>
+	</head>
+	<body>
+        <h1 id="title" style="color: #ffffff; position: absolute; left:25px; top:0px; text-shadow: 0 0 5px #000000"></h1>
+        <div id="main" style="background-color:#ffffff; border-radius: 25px; position: absolute; left:50vw; top:5vh; width: 47vw; height: 90vh; padding: 10px; box-shadow: 0 0 5px #000000; display: none;"><h1 id="main-title"></h1></div>
+		
+        <script id="vertexShader" type="x-shader/x-vertex">
+            uniform vec3 viewVector;
+            uniform float c;
+            uniform float p;
+            varying float intensity;
+            void main() 
+            {
+                vec3 vNormal = normalize( normalMatrix * normal );
+                vec3 vNormel = normalize( normalMatrix * viewVector );
+                intensity = pow( c - dot(vNormal, vNormel), p );
+                
+                gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+            }
+        </script>
+        
+        <script id="fragmentShader" type="x-shader/x-vertex"> 
+            uniform vec3 glowColor;
+            varying float intensity;
+            void main() 
+            {
+                vec3 glow = glowColor * intensity;
+                gl_FragColor = vec4( glow, 1.0 );
+            }
+        </script>
+
+        <script type="module">
+
+			import * as THREE from './three/build/three.module.js';
+
+			import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
+			import { PCDLoader } from './three/examples/jsm/loaders/PCDLoader.js';
+            import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer.js';
+            import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
+			import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
+            import { OutlinePass } from './three/examples/jsm/postprocessing/OutlinePass.js';
+
+			let camera, scene, renderer, composer, comp_sel, pointcloud, sphere, sphP;
+            let d=[];
+            let mainOpen=-1;
+            const c1=new THREE.Color(0.45,0.09,0.03);
+            const c2=new THREE.Color(0.09,0.45,0.28);
+            const c3=new THREE.Color(0,0,0);
+            let overMain=false;
+            let drag=false;
+            const camQuats = new THREE.Vector4();
+            let outlinePass;
+            const d_thr=3;
+
+
+            const raycaster = new THREE.Raycaster();
+            const mouse = new THREE.Vector2();
+            
+            let p=[new THREE.Vector3(0,0,0), new THREE.Vector3(-28,-26,66), new THREE.Vector3(2,-40,-67), new THREE.Vector3(18,7,59)];
+            let title=["Point One", "Point Two", "Point Three"];
+
+			init();
+			render();
+
+			function init() {
+
+				renderer = new THREE.WebGLRenderer( { antialias: true} );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( renderer.domElement );
+
+				scene = new THREE.Scene();
+
+				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 1000 );
+				camera.position.set( 130, 0, 250 );
+				scene.add( camera );
+
+                let sphereMaterial = new THREE.ShaderMaterial( 
+                {
+                    uniforms: 
+                    { 
+                        "c":   { type: "f", value: 1.0 },
+                        "p":   { type: "f", value: 1.4 },
+                        glowColor: { type: "c", value: new THREE.Color(0x9e2010) },
+                        viewVector: { type: "v3", value: camera.position }
+                    },
+                    vertexShader:   document.getElementById( 'vertexShader'   ).textContent,
+                    fragmentShader: document.getElementById( 'fragmentShader' ).textContent,
+                    side: THREE.BackSide,
+                    blending: THREE.AdditiveBlending,
+                    transparent: true
+                }   );
+                const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
+                sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+                sphere.material.uniforms.p.value=1.5;
+
+                let sphPMaterial=sphereMaterial.clone();
+                sphP = new THREE.Mesh( sphereGeometry, sphPMaterial );
+                sphP.material.uniforms.p.value=1.5;
+                sphP.material.uniforms.c.value=0.0;
+                sphP.material.uniforms.glowColor.value=new THREE.Color(0xffffff);
+                sphP.position.set(p[1].x,p[1].y,p[1].z);
+                sphP.scale.set(0.8,0.8,0.8);
+                sphP.visible=false;
+
+                const renderScene = new RenderPass( scene, camera );
+
+				const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
+				bloomPass.exposure = 0.8;
+                bloomPass.threshold = 0.0;
+				bloomPass.strength = 0.25;
+				bloomPass.radius = 0.0;
+
+                outlinePass = new OutlinePass(new THREE.Vector2(window.innerWidth, window.innerHeight), scene, camera);
+                outlinePass.edgeStrength=4;
+                outlinePass.edgeThickness=2;
+                outlinePass.edgeGlow=1;
+                outlinePass.pulsePeriod=1;
+                outlinePass.visibleEdgeColor.set(0xff6a00);
+
+				composer = new EffectComposer( renderer );
+				composer.addPass( renderScene );
+                composer.addPass( outlinePass );
+				composer.addPass( bloomPass );
+
+				const controls = new OrbitControls( camera, renderer.domElement );
+                controls.dampingFactor=0.01;
+				controls.addEventListener( 'change', render );
+                controls.addEventListener('start', (e) => {
+                    camQuats.x=camera.quaternion.x;
+                    camQuats.y=camera.quaternion.y;
+                    camQuats.z=camera.quaternion.z;
+                    camQuats.w=camera.quaternion.w;
+                });
+
+                controls.addEventListener('end', (e) => {
+                    if (camQuats.x==camera.quaternion.x && camQuats.y==camera.quaternion.y && camQuats.z==camera.quaternion.z && camQuats.w==camera.quaternion.w){
+                        drag=false;
+                    } else {
+                        drag=true;
+                    }
+                });
+
+
+				const loader = new PCDLoader();
+				loader.load( './pointcloud.pcd', function ( points ) {
+
+					points.geometry.center();
+                    points.material.size=1;
+					scene.add( points );
+                    pointcloud=points;
+					render();
+
+				} );
+                scene.add(sphere);
+                scene.add(sphP);
+				window.addEventListener( 'resize', onWindowResize );
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+                composer.setSize( window.innerWidth, window.innerHeight );
+                render();
+
+			}
+
+            function onMouseMove( event ) {
+                mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+                mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+                render();
+            }
+
+            function onPointerUp( event ) {
+                if(drag==false && event.button!=0){
+                    drag=true;
+                }
+                if(Math.min(...d)<d_thr && event.button==0){
+                    let n=d.indexOf(Math.min(...d));
+                    sphP.position.set(p[n+1].x,p[n+1].y,p[n+1].z);
+                    sphP.visible=true;
+                    document.getElementById("main").style.display="inline";
+                    document.getElementById("main-title").innerHTML=title[n];
+                    mainOpen=n;
+                } else {
+                    if(overMain==false && drag==false){
+                        sphP.visible=false;
+                        document.getElementById("main").style.display="none";
+                        mainOpen=-1;
+                    }
+                }
+                render();
+            }
+
+			function render() {
+                if(pointcloud != null){
+                    raycaster.setFromCamera( mouse, camera );
+                    let intersects = raycaster.intersectObject(pointcloud);
+                    let geometry = pointcloud.geometry;
+                    let attributes = geometry.attributes;
+                    if ( intersects.length > 0 ) {
+                        p[0] = new THREE.Vector3(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
+                        d=[p[0].distanceTo(p[1]),p[0].distanceTo(p[2]),p[0].distanceTo(p[3])];
+                        c3.lerpColors(c2,c1,clamp(mapRange(Math.min(...d),0,50,0,1),0,1));
+                        sphere.material.uniforms.glowColor.value=c3;
+                        sphere.material.uniforms.c.value=clamp(mapRange(Math.min(...d),0,50,1,0.5),0.5,1);
+                        sphere.material.uniforms.viewVector.value=new THREE.Vector3().subVectors( camera.position, sphere.position );
+                        sphP.material.uniforms.viewVector.value=new THREE.Vector3().subVectors( camera.position, sphP.position );
+                        if(Math.min(...d)<d_thr){
+                            let n=d.indexOf(Math.min(...d));
+                            if(n==mainOpen){
+                                sphere.visible=false;
+                            } else {
+                                outlinePass.selectedObjects=[sphere];
+                                sphere.scale.set(1.25,1.25,1.25);
+                                document.getElementById("title").innerHTML=title[n];
+                            }
+                        } else {
+                            sphere.visible=true;
+                            outlinePass.selectedObjects=[];
+                            sphere.scale.set(0.8,0.8,0.8);
+                            document.getElementById("title").innerHTML="";
+                        }
+                        sphere.position.set(intersects[0].point.x,intersects[0].point.y,intersects[0].point.z);
+                        attributes.color.array[intersects[0].index*3] = 1.0;
+                        attributes.color.array[intersects[0].index*3+1] = 0.0;
+                        attributes.color.array[intersects[0].index*3+2] = 0.0;
+                        attributes.color.needsUpdate = true;
+                    }
+                }
+                
+                composer.render();
+			}
+            
+            function mapRange (value, a, b, c, d) {
+                value = (value - a) / (b - a);
+                return c + value * (d - c);
+            }
+
+            function clamp(val, min, max) {
+                return val > max ? max : val < min ? min : val;
+            }
+
+            window.addEventListener( "mousemove", onMouseMove, false );
+            window.addEventListener( "pointerup", onPointerUp, false );
+            document.getElementById("main").addEventListener("mouseenter", function(){ overMain=true; }, false);
+            document.getElementById("main").addEventListener("mouseleave", function(){ overMain=false; }, false);
+
+		</script>
+	</body>
+</html>

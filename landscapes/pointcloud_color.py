@@ -2,7 +2,7 @@ from colorutils import Color
 from colorutils import rgb_to_hsv
 from colorutils import hsv_to_rgb
 
-file="pointcloud_data.ply"
+file="points.ply"
 factor_s=1.5
 factor_v=1
 
