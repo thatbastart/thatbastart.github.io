@@ -56,6 +56,8 @@
 				composer.addPass( bloomPass );
 
 				const controls = new OrbitControls( camera, renderer.domElement );
+                controls.enableDamping=true;
+                controls.dampingFactor=0.35;
 				controls.addEventListener( 'change', render );
                 controls.addEventListener('start', (e) => {
                     camQuats.x=camera.quaternion.x;
@@ -69,7 +71,7 @@
 				loader.load( './pointcloud.pcd', function ( points ) {
 
 					points.geometry.center();
-                    points.material.size=1.8;
+                    points.material.size=1.75;
 					scene.add( points );
                     pointcloud=points;
 					render();
