@@ -26,7 +26,8 @@
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
             
-            let p=[new THREE.Vector3(-64, -38, 685)];
+            let p=[new THREE.Vector3(-64, -38, 685), // Schedule
+                    ];
 
 			init();
 			render();
@@ -88,7 +89,7 @@
                 const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.85, transparent: true } );
                 sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
                 scene.add(sphere);
-                sphere.position.set(-64, -38, 685);
+                sphere.position.set(33, 19, 473);
 
 
 			}
