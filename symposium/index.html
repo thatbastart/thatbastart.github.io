@@ -19,7 +19,7 @@
             import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
 			import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
-			let camera, scene, renderer, composer, pointcloud, controls, sphere;
+			let camera, scene, renderer, composer, pointcloud, controls, sphere, intersects;
             let sph=[];
             const camQuats = new THREE.Vector4();
 
@@ -32,15 +32,15 @@
                     new THREE.Vector3(33, 20, 326), // About
                     new THREE.Vector3(-67, 16, 348), // Imprint
                     new THREE.Vector3(-55, -36, 650), // Intro
-                    new THREE.Vector3(-60, -34, 620), // Mod
+                    new THREE.Vector3(-60, -35, 620), // Mod
                     new THREE.Vector3(-58, -35, 550), // Pres 1
                     new THREE.Vector3(-54, -34, 510), // Pres 2
                     new THREE.Vector3(-62, -34, 490), // QA
                     new THREE.Vector3(-59, -36, 460), // Mod
                     new THREE.Vector3(-66, -35, 430), // Pres 3
-                    new THREE.Vector3(-55, -35, 390), // Pres 4
-                    new THREE.Vector3(-58, -36, 320), // QA
-                    new THREE.Vector3(-64, -35, 280), // Interview
+                    new THREE.Vector3(-55, -33, 390), // Pres 4
+                    new THREE.Vector3(-58, -34, 320), // QA
+                    new THREE.Vector3(-64, -33, 280), // Interview
                 ];
 
             const c0=new THREE.Color(1,1,1);
@@ -134,9 +134,9 @@
                             new THREE.TextGeometry( "About", {font: font, size: 3, height: 0, curveSegments: 12,}),
                             new THREE.TextGeometry( "Imprint", {font: font, size: 3, height: 0, curveSegments: 12,})];
 
-                    let mesh = [new THREE.Mesh( title[0], textMaterial ),
-                                new THREE.Mesh( title[1], textMaterial ),
-                                new THREE.Mesh( title[2], textMaterial ),
+                    let mesh = [new THREE.Mesh( title[0], textMaterial1 ),
+                                new THREE.Mesh( title[1], textMaterial1 ),
+                                new THREE.Mesh( title[2], textMaterial1 ),
                                 new THREE.Mesh( text[0], textMaterial2 ),
                                 new THREE.Mesh( text[1], textMaterial2 ),
                                 new THREE.Mesh( text[2], textMaterial2 ),
@@ -212,9 +212,24 @@
                 render();
             }
 
+            function onMouseMove( event ) {
+                render();
+            }
+
+            function onPointerUp( event ) {
+                render();
+            }
+
 			function render() {
-                console.log(camera.position);
-                console.log(camera.target);
+                raycaster.setFromCamera( mouse, camera );
+                for(let i=0; i<=p.length-1; i++){
+                    intersects[i] = raycaster.intersectObject(sph[i]);
+                }
+                console.log(intersects);
+                
+
+
+
                 composer.render();
 			}
             
@@ -227,6 +242,9 @@
                 return val > max ? max : val < min ? min : val;
             }
 
+
+            window.addEventListener( "mousemove", onMouseMove, false );
+            window.addEventListener( "pointerup", onPointerUp, false );
 		</script>
 	</body>
 </html>
