@@ -40,7 +40,7 @@
 				scene = new THREE.Scene();
 
 				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
-				camera.position.set( -58.62, -26.58, 757.65 );
+				camera.position.set( -390.93, 48.89, 863.21 );
 				scene.add( camera );
 
                 const renderScene = new RenderPass( scene, camera );
@@ -67,7 +67,6 @@
                     camQuats.z=camera.quaternion.z;
                     camQuats.w=camera.quaternion.w;
                 });
-                console.log(controls.target);
 
 				const loader = new PCDLoader();
 				loader.load( './pointcloud.pcd', function ( points ) {
@@ -101,7 +100,6 @@
             }
 
 			function render() {
-                console.log(camera.position);
                 composer.render();
 			}
             
