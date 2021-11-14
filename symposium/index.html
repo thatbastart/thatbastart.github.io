@@ -4,6 +4,7 @@
 		<title>Relational Landscapes</title>
 		<meta charset="utf-8">
 		<style>body { margin: 0; }</style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
 	</head>
 	<body>
         <div id="main" style="background-color:#ffffff; border-radius: 25px; position: absolute; left:50vw; top:5vh; width: 47vw; height: 90vh; padding: 10px; box-shadow: 0 0 5px #000000; display: none;"><h1 id="main-title"></h1></div>
@@ -102,20 +103,21 @@
                 const fontloader = new THREE.FontLoader();
                 fontloader.load( "tiny.json", function ( font ) {
 
-                let textGeometry = new THREE.TextGeometry( "text", {
+                    let textGeometry = new THREE.TextGeometry( "Relational\nLandscapes\nSymposium", {
+                        font: font,
+                        size: 35,
+                        height: 0,
+                        curveSegments: 12,
 
-                    font: font,
+                    });
 
-                    size: 50,
-                    height: 0,
-                    curveSegments: 12,
+                    const textMaterial = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,255,255)} );
+                    let mesh = new THREE.Mesh( textGeometry, textMaterial );
+                    mesh.position.set(-57,-3,632);
+                    mesh.rotation.set(0,0,Math.PI/4);
 
-                });
-
-                let mesh = new THREE.Mesh( textGeometry, sphereMaterial );
-                mesh.position.set(-57,-3,632);
-
-                scene.add( mesh );
+                    scene.add( mesh );
+                    render();
 
                 });
                 
