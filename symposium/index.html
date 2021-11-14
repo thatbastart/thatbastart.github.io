@@ -46,7 +46,7 @@
 				scene = new THREE.Scene();
 
 				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
-				camera.position.set( -382, 18, 877 );
+				camera.position.set( -340, 43, 900 );
 				scene.add( camera );
 
                 const renderScene = new RenderPass( scene, camera );
@@ -64,7 +64,7 @@
 				controls = new OrbitControls( camera, renderer.domElement );
                 controls.enableDamping=true;
                 controls.dampingFactor=0.5;
-                controls.target.set(-58.62, -26.58, 500.00);
+                controls.target.set(-60, 0, 450.00);
                 controls.update();
 				controls.addEventListener( 'change', render );
                 controls.addEventListener('start', (e) => {
@@ -113,7 +113,7 @@
 
                     const textMaterial = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,255,255)} );
                     let mesh = new THREE.Mesh( textGeometry, textMaterial );
-                    mesh.position.set(210,140,90);
+                    mesh.position.set(150,140,0);
                     mesh.rotation.set(0,-Math.PI/4,0);
 
                     scene.add( mesh );
