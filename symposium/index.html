@@ -108,29 +108,6 @@
                                 new THREE.TextGeometry( "Symposium", {font: font, size: 30, height: 0, curveSegments: 12,})];
 
                     const textMaterial = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,255,255)} );
-                    let mesh = [new THREE.Mesh( title[0], textMaterial ),
-                                new THREE.Mesh( title[1], textMaterial ),
-                                new THREE.Mesh( title[2], textMaterial )];
-
-                    mesh[0].position.set(100,200,265);
-                    mesh[0].rotation.set(0,-Math.PI/4,0);
-                    mesh[1].position.set(100,170,265);
-                    mesh[1].rotation.set(0,-Math.PI/4,0);
-                    mesh[2].position.set(100,140,265);
-                    mesh[2].rotation.set(0,-Math.PI/4,0);
-
-                    scene.add(mesh[0]);
-                    scene.add(mesh[1]);
-                    scene.add(mesh[2]);
-                    render();
-
-                });
-                fontloader.load( "tiny100.json", function ( font ) {
-
-                    let date = [new THREE.TextGeometry( "02.12.2021", {font: font, size: 20, height: 0, curveSegments: 12,}),
-                                new THREE.TextGeometry( "5-7.30pm", {font: font, size: 20, height: 0, curveSegments: 12,})];
-
-                    const textMaterial = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,255,255)} );
                     const textMaterial2 = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,0,0)} );
 
                     let text=[new THREE.TextGeometry( "Schedule", {font: font, size: 5, height: 0, curveSegments: 12,}),
@@ -138,24 +115,49 @@
                             new THREE.TextGeometry( "About", {font: font, size: 5, height: 0, curveSegments: 12,}),
                             new THREE.TextGeometry( "Imprint", {font: font, size: 5, height: 0, curveSegments: 12,})];
 
-                    let mesh = [new THREE.Mesh( date[0], textMaterial ),
-                                new THREE.Mesh( date[1], textMaterial ),
+                    let mesh = [new THREE.Mesh( title[0], textMaterial ),
+                                new THREE.Mesh( title[1], textMaterial ),
+                                new THREE.Mesh( title[2], textMaterial ),
                                 new THREE.Mesh( text[0], textMaterial2 ),
                                 new THREE.Mesh( text[1], textMaterial2 ),
                                 new THREE.Mesh( text[2], textMaterial2 ),
-                                new THREE.Mesh( text[3], textMaterial2 ),
+                                new THREE.Mesh( text[3], textMaterial2 )];
+
+                    mesh[0].position.set(100,200,265);
+                    mesh[0].rotation.set(0,-Math.PI/4,0);
+                    mesh[1].position.set(100,170,265);
+                    mesh[1].rotation.set(0,-Math.PI/4,0);
+                    mesh[2].position.set(100,140,265);
+                    mesh[2].rotation.set(0,-Math.PI/4,0);
+                    mesh[3].position.set(-60, -38, 685);
+
+                    scene.add(mesh[0]);
+                    scene.add(mesh[1]);
+                    scene.add(mesh[2]);
+                    scene.add(mesh[3]);
+                    render();
+
+                });
+
+                fontloader.load( "tiny100.json", function ( font ) {
+
+                    let date = [new THREE.TextGeometry( "02.12.2021", {font: font, size: 20, height: 0, curveSegments: 12,}),
+                                new THREE.TextGeometry( "5-7.30pm", {font: font, size: 20, height: 0, curveSegments: 12,})];
+
+                    const textMaterial = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,255,255)} );
+
+                    let mesh = [new THREE.Mesh( date[0], textMaterial ),
+                                new THREE.Mesh( date[1], textMaterial )
                                 ];
 
                     mesh[0].position.set(100,110,265);
                     mesh[0].rotation.set(0,-Math.PI/4,0);
                     mesh[1].position.set(100,80,265);
                     mesh[1].rotation.set(0,-Math.PI/4,0);
-                    mesh[2].position.set(-64, -38, 685);
 
 
                     scene.add(mesh[0]);
                     scene.add(mesh[1]);
-                    scene.add(mesh[2]);
 
 
                     render();
