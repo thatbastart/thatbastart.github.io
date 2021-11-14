@@ -116,11 +116,8 @@
 
                 });
 
-                let textMaterial = new THREE.MeshPhongMaterial( 
-                    { color: 0xff0000, specular: 0xffffff }
-                );
-
-                let mesh = new THREE.Mesh( textGeometry, textMaterial );
+                let mesh = new THREE.Mesh( textGeometry, sphereMaterial );
+                mesh.position.set(-57,-3,632);
 
                 scene.add( mesh );
 
