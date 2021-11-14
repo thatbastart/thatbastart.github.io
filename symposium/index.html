@@ -110,10 +110,10 @@
                     const textMaterial = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,255,255)} );
                     const textMaterial2 = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,0,0)} );
 
-                    let text=[new THREE.TextGeometry( "Schedule", {font: font, size: 5, height: 0, curveSegments: 12,}),
-                            new THREE.TextGeometry( "Speakers", {font: font, size: 5, height: 0, curveSegments: 12,}),
-                            new THREE.TextGeometry( "About", {font: font, size: 5, height: 0, curveSegments: 12,}),
-                            new THREE.TextGeometry( "Imprint", {font: font, size: 5, height: 0, curveSegments: 12,})];
+                    let text=[new THREE.TextGeometry( "Schedule", {font: font, size: 3, height: 0, curveSegments: 12,}),
+                            new THREE.TextGeometry( "Speakers", {font: font, size: 3, height: 0, curveSegments: 12,}),
+                            new THREE.TextGeometry( "About", {font: font, size: 3, height: 0, curveSegments: 12,}),
+                            new THREE.TextGeometry( "Imprint", {font: font, size: 3, height: 0, curveSegments: 12,})];
 
                     let mesh = [new THREE.Mesh( title[0], textMaterial ),
                                 new THREE.Mesh( title[1], textMaterial ),
