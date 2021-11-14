@@ -1,4 +1,4 @@
-import * as THREE from '../symposium/three/build/three.module.js';
+import * as THREE from '../three/build/three.module.js';
 import { GlyphsGeometry } from './GlyphsGeometry.js'
 import { createTextDerivedMaterial } from './TextDerivedMaterial.js'
 import { getTextRenderInfo } from './TextBuilder.js'
