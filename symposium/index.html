@@ -58,7 +58,7 @@
 				const controls = new OrbitControls( camera, renderer.domElement );
                 controls.enableDamping=true;
                 controls.dampingFactor=0.5;
-                controls.target = new THREE.Vector3(-58.62, -26.58, 550.00);
+                controls.target.set(-58.62, -26.58, 550.00);
                 controls.update();
 				controls.addEventListener( 'change', render );
                 controls.addEventListener('start', (e) => {
@@ -101,7 +101,7 @@
             }
 
 			function render() {
-                console.log(camera.position);
+                console.log(controls.target);
                 composer.render();
 			}
             
