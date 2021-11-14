@@ -64,7 +64,7 @@
 				controls = new OrbitControls( camera, renderer.domElement );
                 controls.enableDamping=true;
                 controls.dampingFactor=0.5;
-                controls.target.set(-60, 35, 525.00);
+                controls.target.set(-60, 50, 525.00);
                 controls.update();
 				controls.addEventListener( 'change', render );
                 controls.addEventListener('start', (e) => {
@@ -112,11 +112,11 @@
                                 new THREE.Mesh( title[1], textMaterial ),
                                 new THREE.Mesh( title[2], textMaterial )];
 
-                    mesh[0].position.set(100,180,275);
+                    mesh[0].position.set(100,200,265);
                     mesh[0].rotation.set(0,-Math.PI/4,0);
-                    mesh[1].position.set(100,140,275);
+                    mesh[1].position.set(100,170,265);
                     mesh[1].rotation.set(0,-Math.PI/4,0);
-                    mesh[2].position.set(100,100,275);
+                    mesh[2].position.set(100,140,265);
                     mesh[2].rotation.set(0,-Math.PI/4,0);
 
                     scene.add(mesh[0]);
