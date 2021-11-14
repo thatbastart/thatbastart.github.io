@@ -215,9 +215,7 @@
             }
 
             function onPointerUp( event ) {
-                let n=intersects.indexOf(Math.min(...intersects));
-                console.log(intersects[0]);
-                if(n==0){
+                if(intersects[0].length==1){
                     for(let i=4; i<=13; i++){
                         if(sph[4].visible==false){
                             sph[i].visible=true;
