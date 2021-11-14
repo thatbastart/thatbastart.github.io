@@ -98,6 +98,34 @@
                     sph[i].position.set(p[i].x,p[i].y,p[i].z);
                 }
 
+
+
+                let loader = new THREE.FontLoader();
+                loader.load( "tiny.json", function ( font ) {
+
+                let textGeometry = new THREE.TextGeometry( "text", {
+
+                    font: font,
+
+                    size: 50,
+                    height: 10,
+                    curveSegments: 12,
+
+                    bevelThickness: 1,
+                    bevelSize: 1,
+                    bevelEnabled: true
+
+                });
+
+                let textMaterial = new THREE.MeshPhongMaterial( 
+                    { color: 0xff0000, specular: 0xffffff }
+                );
+
+                let mesh = new THREE.Mesh( textGeometry, textMaterial );
+
+                scene.add( mesh );
+
+                });
                 
 
 
