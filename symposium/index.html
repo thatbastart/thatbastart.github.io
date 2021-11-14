@@ -18,7 +18,7 @@
             import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
 			import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
-			let camera, scene, renderer, composer, pointcloud, controls, sph;
+			let camera, scene, renderer, composer, pointcloud, controls, sphere;
             const camQuats = new THREE.Vector4();
 
 
@@ -109,6 +109,7 @@
             }
 
 			function render() {
+                console.log(camera.position);
                 composer.render();
 			}
             
