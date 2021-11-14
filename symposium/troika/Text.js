@@ -1,31 +1,22 @@
-import {
-  Color,
-  DoubleSide,
-  Matrix4,
-  Mesh,
-  MeshBasicMaterial,
-  PlaneBufferGeometry,
-  Vector3,
-  Vector2,
-} from 'three'
+import * as THREE from '../symposium/three/build/three.module.js';
 import { GlyphsGeometry } from './GlyphsGeometry.js'
 import { createTextDerivedMaterial } from './TextDerivedMaterial.js'
 import { getTextRenderInfo } from './TextBuilder.js'
 
 const Text = /*#__PURE__*/(() => {
 
-  const defaultMaterial = new MeshBasicMaterial({
+  const defaultMaterial = new THREE.MeshBasicMaterial({
     color: 0xffffff,
-    side: DoubleSide,
+    side: THREE.DoubleSide,
     transparent: true
   })
   const defaultStrokeColor = 0x808080
 
-  const tempMat4 = new Matrix4()
-  const tempVec3a = new Vector3()
-  const tempVec3b = new Vector3()
+  const tempMat4 = new THREE.Matrix4()
+  const tempVec3a = new THREE.Vector3()
+  const tempVec3b = new THREE.Vector3()
   const tempArray = []
-  const origin = new Vector3()
+  const origin = new THREE.Vector3()
   const defaultOrient = '+x+y'
 
   function first(o) {
@@ -33,16 +24,16 @@ const Text = /*#__PURE__*/(() => {
   }
 
   let getFlatRaycastMesh = () => {
-    const mesh = new Mesh(
-      new PlaneBufferGeometry(1, 1),
+    const mesh = new THREE.Mesh(
+      new THREE.PlaneBufferGeometry(1, 1),
       defaultMaterial
     )
     getFlatRaycastMesh = () => mesh
     return mesh
   }
   let getCurvedRaycastMesh = () => {
-    const mesh = new Mesh(
-      new PlaneBufferGeometry(1, 1, 32, 1),
+    const mesh = new THREE.Mesh(
+      new THREE.PlaneBufferGeometry(1, 1, 32, 1),
       defaultMaterial
     )
     getCurvedRaycastMesh = () => mesh
@@ -88,7 +79,7 @@ const Text = /*#__PURE__*/(() => {
    * A ThreeJS Mesh that renders a string of text on a plane in 3D space using signed distance
    * fields (SDF).
    */
-  class Text extends Mesh {
+  class Text extends THREE.Mesh {
     constructor() {
       const geometry = new GlyphsGeometry()
       super(geometry, null)
@@ -631,7 +622,7 @@ const Text = /*#__PURE__*/(() => {
       if (color == null) {
         delete material.color //inherit from base
       } else {
-        const colorObj = material.hasOwnProperty('color') ? material.color : (material.color = new Color())
+        const colorObj = material.hasOwnProperty('color') ? material.color : (material.color = new THREE.Color())
         if (color !== colorObj._input || typeof color === 'object') {
           colorObj.set(colorObj._input = color)
         }
@@ -668,7 +659,7 @@ const Text = /*#__PURE__*/(() => {
     /**
      * Translate a point in local space to an x/y in the text plane.
      */
-    localPositionToTextCoords(position, target = new Vector2()) {
+    localPositionToTextCoords(position, target = new THREE.Vector2()) {
       target.copy(position) //simple non-curved case is 1:1
       const r = this.curveRadius
       if (r) { //flatten the curve
@@ -680,7 +671,7 @@ const Text = /*#__PURE__*/(() => {
     /**
      * Translate a point in world space to an x/y in the text plane.
      */
-    worldPositionToTextCoords(position, target = new Vector2()) {
+    worldPositionToTextCoords(position, target = new THREE.Vector2()) {
       tempVec3a.copy(position)
       return this.localPositionToTextCoords(this.worldToLocal(tempVec3a), target)
     }
