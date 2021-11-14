@@ -29,6 +29,7 @@
             let p=[ new THREE.Vector3(-64, -38, 685), // Schedule
                     new THREE.Vector3(33, 19, 473), // Speakers
                     new THREE.Vector3(33, 20, 326), // Imprint
+                    new THREE.Vector3(-67, 16, 348), // About
                 ];
 
 			init();
@@ -89,9 +90,14 @@
 
                 const sphereGeometry = new THREE.SphereGeometry( 2, 32, 32 );
                 const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.85, transparent: true } );
-                sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
-                scene.add(sphere);
-                sphere.position.set(-67, 16, 348);
+                
+                for(let i=0; i<=3; i++){
+                    sph[i] = new THREE.Mesh( sphereGeometry, sphereMaterial );
+                    scene.add(sph[i]);
+                    sphere.position=p[i];
+                }
+
+                
 
 
 			}
