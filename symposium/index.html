@@ -113,7 +113,7 @@
 
                     const textMaterial = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,255,255)} );
                     let mesh = new THREE.Mesh( textGeometry, textMaterial );
-                    mesh.position.set(220,130,230);
+                    mesh.position.set(210,140,90);
                     mesh.rotation.set(0,-Math.PI/4,0);
 
                     scene.add( mesh );
@@ -144,6 +144,7 @@
 
 			function render() {
                 console.log(camera.position);
+                console.log(camera.target);
                 composer.render();
 			}
             
