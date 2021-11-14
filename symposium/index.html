@@ -100,8 +100,8 @@
 
 
 
-                let loader = new THREE.FontLoader();
-                loader.load( "tiny.json", function ( font ) {
+                const fontloader = new THREE.FontLoader();
+                fontloader.load( "tiny.json", function ( font ) {
 
                 let textGeometry = new THREE.TextGeometry( "text", {
 
