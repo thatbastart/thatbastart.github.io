@@ -33,8 +33,8 @@
                     new THREE.Vector3(33, 20, 326), // About
                     new THREE.Vector3(-67, 16, 348), // Imprint
                     new THREE.Vector3(-55, -36, 650), // Intro
-                    new THREE.Vector3(-60, -35, 620), // Mod
-                    new THREE.Vector3(-58, -35, 550), // Pres 1
+                    new THREE.Vector3(-60, -37, 620), // Mod
+                    new THREE.Vector3(-58, -36, 550), // Pres 1
                     new THREE.Vector3(-54, -34, 510), // Pres 2
                     new THREE.Vector3(-62, -34, 490), // QA
                     new THREE.Vector3(-59, -36, 460), // Mod
@@ -112,6 +112,7 @@
                         sph[i] = new THREE.Mesh( sphereGeometry2, sphereMaterial2 );
                     } else {
                         sph[i] = new THREE.Mesh( sphereGeometry3, sphereMaterial3 );
+                        sph[i].visible=false;
                     }
                     scene.add(sph[i]);
                     sph[i].position.set(p[i].x,p[i].y,p[i].z);
@@ -214,6 +215,16 @@
             }
 
             function onPointerUp( event ) {
+                let n=intersects.indexOf(Math.min(...intersects));
+                if(n==0){
+                    for(let i=4; i<=13; i++){
+                        if(sph[4].visible==false){
+                            sph[i].visible=true;
+                        } else {
+                            sph[i].visible=false;
+                        }
+                    }
+                }
                 render();
             }
 
@@ -222,10 +233,6 @@
                 for(let i=0; i<=p.length-1; i++){
                     intersects[i] = raycaster.intersectObject(sph[i]);
                 }
-                console.log(intersects);
-                
-
-
 
                 composer.render();
 			}
