@@ -46,7 +46,7 @@
 
             const c0=new THREE.Color(1,1,1);
             const c1=new THREE.Color(1.0,0,0);
-            const c2=new THREE.Color(0.76,0.25,1.0);
+            const c2=new THREE.Color(0.55,0.0,1.0);
 
 			init();
 			render();
@@ -217,7 +217,7 @@
             function onPointerUp( event ) {
                 if(intersects[0].length==1){
                     for(let i=4; i<=13; i++){
-                        if(sph[4].visible==false){
+                        if(sph[i].visible==false){
                             sph[i].visible=true;
                         } else {
                             sph[i].visible=false;
