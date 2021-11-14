@@ -18,7 +18,7 @@
             import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
 			import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
-			let camera, scene, renderer, composer, pointcloud;
+			let camera, scene, renderer, composer, pointcloud, controls, sph;
             const camQuats = new THREE.Vector4();
 
 
@@ -55,7 +55,7 @@
 				composer.addPass( renderScene );
 				composer.addPass( bloomPass );
 
-				const controls = new OrbitControls( camera, renderer.domElement );
+				controls = new OrbitControls( camera, renderer.domElement );
                 controls.enableDamping=true;
                 controls.dampingFactor=0.5;
                 controls.target.set(-58.62, -26.58, 500.00);
@@ -79,6 +79,15 @@
 
 				} );
 				window.addEventListener( 'resize', onWindowResize );
+
+
+                const c1=new THREE.Color(1.0,0,0);
+
+                const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 );
+                const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.5, transparent: true } );
+                sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+                scene.add(sphere);
+
 
 			}
 
