@@ -127,8 +127,8 @@
                 });
                 fontloader.load( "tiny100.json", function ( font ) {
 
-                    let date = [new THREE.TextGeometry( "02.12.2021", {font: font, size: 30, height: 0, curveSegments: 12,}),
-                                new THREE.TextGeometry( "5-7.30pm", {font: font, size: 30, height: 0, curveSegments: 12,})];
+                    let date = [new THREE.TextGeometry( "02.12.2021", {font: font, size: 20, height: 0, curveSegments: 12,}),
+                                new THREE.TextGeometry( "5-7.30pm", {font: font, size: 20, height: 0, curveSegments: 12,})];
 
                     const textMaterial = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,255,255)} );
                     let mesh = [new THREE.Mesh( date[0], textMaterial ),
