@@ -40,7 +40,7 @@
 				scene = new THREE.Scene();
 
 				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
-				camera.position.set( -390.93, 48.89, 863.21 );
+				camera.position.set( -382, 18, 877 );
 				scene.add( camera );
 
                 const renderScene = new RenderPass( scene, camera );
@@ -87,6 +87,7 @@
                 const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.5, transparent: true } );
                 sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
                 scene.add(sphere);
+                sphere.position.set(-64, -36, 691);
 
 
 			}
@@ -109,7 +110,6 @@
             }
 
 			function render() {
-                console.log(camera.position);
                 composer.render();
 			}
             
