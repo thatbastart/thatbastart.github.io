@@ -64,7 +64,7 @@
 				controls = new OrbitControls( camera, renderer.domElement );
                 controls.enableDamping=true;
                 controls.dampingFactor=0.5;
-                controls.target.set(-60, 30, 550.00);
+                controls.target.set(-60, 35, 525.00);
                 controls.update();
 				controls.addEventListener( 'change', render );
                 controls.addEventListener('start', (e) => {
@@ -103,20 +103,25 @@
                 const fontloader = new THREE.FontLoader();
                 fontloader.load( "tiny.json", function ( font ) {
 
-                    let textGeometry = new THREE.TextGeometry( "Relational Landscapes Symposium", {
-                        font: font,
-                        size: 30,
-                        height: 0,
-                        curveSegments: 12,
-
-                    });
+                    let title = [new THREE.TextGeometry( "Relational", {font: font, size: 30, height: 0, curveSegments: 12,}),
+                                new THREE.TextGeometry( "Landscapes", {font: font, size: 30, height: 0, curveSegments: 12,}),
+                                new THREE.TextGeometry( "Symposium", {font: font, size: 30, height: 0, curveSegments: 12,})];
 
                     const textMaterial = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,255,255)} );
-                    let mesh = new THREE.Mesh( textGeometry, textMaterial );
-                    mesh.position.set(150,140,0);
-                    mesh.rotation.set(0,-Math.PI/4,0);
+                    let mesh = [new THREE.Mesh( title[0], textMaterial ),
+                                new THREE.Mesh( title[1], textMaterial ),
+                                new THREE.Mesh( title[2], textMaterial )];
 
-                    scene.add( mesh );
+                    mesh[0].position.set(100,180,100);
+                    mesh[0].rotation.set(0,-Math.PI/4,0);
+                    mesh[1].position.set(100,140,100);
+                    mesh[1].rotation.set(0,-Math.PI/4,0);
+                    mesh[2].position.set(100,100,100);
+                    mesh[2].rotation.set(0,-Math.PI/4,0);
+
+                    scene.add(mesh[0]);
+                    scene.add(mesh[1]);
+                    scene.add(mesh[2]);
                     render();
 
                 });
