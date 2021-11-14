@@ -46,7 +46,7 @@
 				scene = new THREE.Scene();
 
 				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
-				camera.position.set( -340, 43, 900 );
+				camera.position.set( -390, 21, 850 );
 				scene.add( camera );
 
                 const renderScene = new RenderPass( scene, camera );
@@ -64,7 +64,7 @@
 				controls = new OrbitControls( camera, renderer.domElement );
                 controls.enableDamping=true;
                 controls.dampingFactor=0.5;
-                controls.target.set(-60, 0, 450.00);
+                controls.target.set(-60, 30, 450.00);
                 controls.update();
 				controls.addEventListener( 'change', render );
                 controls.addEventListener('start', (e) => {
