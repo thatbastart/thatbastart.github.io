@@ -29,8 +29,8 @@
             
             let p=[ new THREE.Vector3(-64, -38, 685), // Schedule
                     new THREE.Vector3(33, 22, 473), // Speakers
-                    new THREE.Vector3(33, 20, 326), // Imprint
-                    new THREE.Vector3(-67, 16, 348), // About
+                    new THREE.Vector3(33, 20, 326), // About
+                    new THREE.Vector3(-67, 16, 348), // Imprint
                 ];
 
 			init();
@@ -132,12 +132,15 @@
                     mesh[3].position.set(-60, -38, 685);
                     mesh[4].position.set(33, 26, 473);
                     mesh[4].rotation.set(0,-Math.PI/4,0);
+                    mesh[5].position.set(31, 13, 328);
+                    mesh[5].rotation.set(0,-Math.PI/4,0);
 
                     scene.add(mesh[0]);
                     scene.add(mesh[1]);
                     scene.add(mesh[2]);
                     scene.add(mesh[3]);
                     scene.add(mesh[4]);
+                    scene.add(mesh[5]);
                     render();
 
                 });
