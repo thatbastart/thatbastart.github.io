@@ -31,7 +31,12 @@
                     new THREE.Vector3(33, 22, 473), // Speakers
                     new THREE.Vector3(33, 20, 326), // About
                     new THREE.Vector3(-67, 16, 348), // Imprint
+                    new THREE.Vector3(-55, -38, 600), // Intro
                 ];
+
+            const c0=new THREE.Color(1,1,1);
+            const c1=new THREE.Color(1.0,0,0);
+            const c2=new THREE.Color(0.76,0.25,1.0);
 
 			init();
 			render();
@@ -87,13 +92,17 @@
 				window.addEventListener( 'resize', onWindowResize );
 
 
-                const c1=new THREE.Color(1.0,0,0);
-
-                const sphereGeometry = new THREE.SphereGeometry( 3, 32, 32 );
-                const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.85, transparent: true } );
+                const sphereGeometry2 = new THREE.SphereGeometry( 3, 32, 32 );
+                const sphereGeometry3 = new THREE.SphereGeometry( 2, 32, 32 );
+                const sphereMaterial2 = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.85, transparent: true } );
+                const sphereMaterial3 = new THREE.MeshBasicMaterial( { color: c2, opacity: 0.85, transparent: true } );
                 
-                for(let i=0; i<=3; i++){
-                    sph[i] = new THREE.Mesh( sphereGeometry, sphereMaterial );
+                for(let i=0; i<=p.length-1; i++){
+                    if(i<=3){
+                        sph[i] = new THREE.Mesh( sphereGeometry2, sphereMaterial2 );
+                    } else {
+                        sph[i] = new THREE.Mesh( sphereGeometry3, sphereMaterial3 );
+                    }
                     scene.add(sph[i]);
                     sph[i].position.set(p[i].x,p[i].y,p[i].z);
                 }
@@ -107,8 +116,9 @@
                                 new THREE.TextGeometry( "Landscapes", {font: font, size: 30, height: 0, curveSegments: 12,}),
                                 new THREE.TextGeometry( "Symposium", {font: font, size: 30, height: 0, curveSegments: 12,})];
 
-                    const textMaterial = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,255,255)} );
-                    const textMaterial2 = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,0,0)} );
+                    const textMaterial1 = new THREE.MeshBasicMaterial( { color: c0} );
+                    const textMaterial2 = new THREE.MeshBasicMaterial( { color: c1} );
+                    const textMaterial3 = new THREE.MeshBasicMaterial( { color: c2} );
 
                     let text=[new THREE.TextGeometry( "Schedule", {font: font, size: 3, height: 0, curveSegments: 12,}),
                             new THREE.TextGeometry( "Speakers", {font: font, size: 3, height: 0, curveSegments: 12,}),
@@ -150,9 +160,9 @@
                 fontloader.load( "tiny100.json", function ( font ) {
 
                     let date = [new THREE.TextGeometry( "02.12.2021", {font: font, size: 20, height: 0, curveSegments: 12,}),
-                                new THREE.TextGeometry( "5-7.30pm", {font: font, size: 20, height: 0, curveSegments: 12,})];
+                                new THREE.TextGeometry( "5-7:30pm", {font: font, size: 20, height: 0, curveSegments: 12,})];
 
-                    const textMaterial = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,255,255)} );
+                    const textMaterial = new THREE.MeshBasicMaterial( { color: c0} );
 
                     let mesh = [new THREE.Mesh( date[0], textMaterial ),
                                 new THREE.Mesh( date[1], textMaterial )
