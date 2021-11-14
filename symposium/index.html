@@ -103,7 +103,7 @@
                 const fontloader = new THREE.FontLoader();
                 fontloader.load( "tiny.json", function ( font ) {
 
-                    let textGeometry = new THREE.TextGeometry( "Relational\nLandscapes\nSymposium", {
+                    let textGeometry = new THREE.TextGeometry( "Relational Landscapes Symposium", {
                         font: font,
                         size: 30,
                         height: 0,
@@ -113,8 +113,8 @@
 
                     const textMaterial = new THREE.MeshBasicMaterial( { color: new THREE.Color(255,255,255)} );
                     let mesh = new THREE.Mesh( textGeometry, textMaterial );
-                    mesh.position.set(-57,-3,632);
-                    mesh.rotation.set(0,Math.PI/4,0);
+                    mesh.position.set(220,130,230);
+                    mesh.rotation.set(0,-Math.PI/4,0);
 
                     scene.add( mesh );
                     render();
