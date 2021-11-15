@@ -32,6 +32,7 @@
                     new THREE.Vector3(33, 22, 473), // Speakers
                     new THREE.Vector3(33, 20, 326), // About
                     new THREE.Vector3(-67, 16, 348), // Imprint
+
                     new THREE.Vector3(-55, -36, 650), // Intro
                     new THREE.Vector3(-60, -37, 620), // Mod
                     new THREE.Vector3(-58, -36, 550), // Pres 1
@@ -230,11 +231,13 @@
                 if(intersects[0].length==1){
                     for(let i=4; i<=13; i++){
                         if(sph[i].visible==false){
+                            controls.target.set(-64, -33, 250);
                             sph[i].visible=true;
                         } else {
                             sph[i].visible=false;
                         }
                     }
+                    controls.update();
                 }
                 render();
             }
