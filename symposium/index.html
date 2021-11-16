@@ -80,11 +80,11 @@
 
                 const renderScene = new RenderPass( scene, camera );
 
-				const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 0.25, 0.25, 0.65 );
-				bloomPass.exposure = 0.15;
+				const bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 0.0, 0.0, 0.0 );
+				bloomPass.exposure = 0.0;
                 bloomPass.threshold = 0.0;
-				bloomPass.strength = 0.2;
-				bloomPass.radius = 0.15;
+				bloomPass.strength = 0.0;
+				bloomPass.radius = 0.0;
 
 				composer = new EffectComposer( renderer );
 				composer.addPass( renderScene );
