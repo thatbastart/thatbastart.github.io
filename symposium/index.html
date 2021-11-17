@@ -255,6 +255,7 @@
                     animSrc[3]=controls.target.x;
                     animSrc[4]=controls.target.y;
                     animSrc[5]=controls.target.z;
+                    console.log(controls.target.x)
                     for(let i=4; i<=13; i++){
                         if(sph[i].visible==false){
                             sph[i].visible=true;
@@ -297,7 +298,6 @@
             function animate() {
                 requestAnimationFrame(animate);
                 camAnim();
-                console.log(controls);
                 render();
             }
 
