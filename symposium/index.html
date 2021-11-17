@@ -104,7 +104,7 @@
                     camQuats.z=camera.quaternion.z;
                     camQuats.w=camera.quaternion.w;
                 });
-
+                console.log(controls);
 				const loader = new PCDLoader();
 				loader.load( './pointcloud.pcd', function ( points ) {
 
@@ -290,7 +290,6 @@
                     controls.target.set(tar.x, tar.y, tar.z);
                     controls.update();
                     camera.position.set(pos.x,pos.y,pos.z);
-                    console.log(controls);
                 }
             }
 
