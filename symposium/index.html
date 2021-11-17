@@ -279,6 +279,7 @@
             function camAnim(){
                 let pos = new THREE.Vector3;
                 let tar = new THREE.Vector3;
+                let f=0;
                 if(animClick[0][0]==1){
                     pos.lerpVectors(new THREE.Vector3(animSrc[0],animSrc[1],animSrc[2]),new THREE.Vector3(animClick[0][1],animClick[0][2],animClick[0][3]), animProg);               
                     tar.lerpVectors(new THREE.Vector3(animSrc[3],animSrc[4],animSrc[5]),new THREE.Vector3(p[0].x, p[0].y, p[0].z), animProg);
@@ -289,9 +290,17 @@
                         animClick[0][0]=0;
                     } else {
                         animProg+=0.025;
+                        f=(animProg, 0.0, 1.0, 1.0)
+                        console.log(f);
                     }
                 }
             }
+
+
+            function easeOutSine (t, b, c, d) {
+                return c * Math.sin(t / d * (Math.PI / 2)) + b;
+            }
+
 
 
             function animate() {
