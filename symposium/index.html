@@ -10,7 +10,6 @@
             font-family: sans-serif;
             padding: 2px;
             background: rgba( 0, 0, 0, .6 );
-            display: block !important;
         }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
@@ -209,8 +208,6 @@
 
                 labelRenderer = new CSS2DRenderer();
 				labelRenderer.setSize( window.innerWidth, window.innerHeight );
-                labelRenderer.domElement.style.position = 'absolute';
-                labelRenderer.domElement.style.top = '0px';
 				document.getElementById("main").appendChild( labelRenderer.domElement );
 
 			}
