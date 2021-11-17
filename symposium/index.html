@@ -278,8 +278,8 @@
                 }
                 if(animClick[0][0]==1){
                     p.lerpVectors(camera.position,new Three.Vector3(animClick[0][1],animClick[0][2],animClick[0][3]), animProg);
+                    camera.position.set(p);
                 }
-                camera.position=p;
             }
 
 
