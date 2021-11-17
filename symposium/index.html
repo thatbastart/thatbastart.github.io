@@ -172,7 +172,7 @@
                     scene.add(mesh[0]);
                     scene.add(mesh[1]);
                     scene.add(mesh[2]);
-
+                    render();
                 });
 
                 fontloader.load( "tiny100.json", function ( font ) {
@@ -194,9 +194,7 @@
 
                     scene.add(mesh[0]);
                     scene.add(mesh[1]);
-
-
-
+                    render();
                 });
                 
 
@@ -206,7 +204,7 @@
 				earthDiv.textContent = 'Earth';
 				const earthLabel = new CSS2DObject( earthDiv );
 				earthLabel.position.set(p[0].x, p[0].y, p[0].z);
-				scene.add( earthLabel );
+				sph[0].add( earthLabel );
                 console.log(earthLabel);
 
                 labelRenderer = new CSS2DRenderer();
