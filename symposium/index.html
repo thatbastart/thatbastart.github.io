@@ -23,7 +23,8 @@
             let intersects=[];
             let sph=[];
             const camQuats = new THREE.Vector4();
-
+            let animClick=[[0,60,25,764],0,0,0];
+            let animProg=0.0;
 
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
@@ -246,16 +247,16 @@
 
             function onPointerUp( event ) {
                 if(intersects[0].length==1){
+                    animClick[0][0]=1;
                     for(let i=4; i<=13; i++){
                         if(sph[i].visible==false){
-                            controls.target.set(-64, -33, 300);
                             sph[i].visible=true;
                         } else {
                             sph[i].visible=false;
                         }
                     }
-                    controls.update();
                 } else if(intersects[1].length==1){
+                    animClick[1][0]=1;
                     for(let i=14; i<=23; i++){
                         if(sph[i].visible==false){
                             sph[i].visible=true;
@@ -267,10 +268,23 @@
                 render();
             }
 
+            function camAnim(){
+                let p = new THREE.Vector3;
+                if(animProg==1.0){
+                    animProg=0.0;
+                    animClick[0][0]=0;
+                } else {
+                    animProg+=0.1;
+                }
+                if(animClick[0][0]==1){
+                    p.lerpVectors(camera.position,new Three.Vector3(animClick[0][1],animClick[0][2],animClick[0][3]), animProg);
+                }
+                camera.position=p;
+            }
+
 
             function animate() {
                 requestAnimationFrame(animate);
-
                 render();
             }
 
