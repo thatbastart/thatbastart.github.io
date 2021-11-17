@@ -65,7 +65,7 @@
             const c3=new THREE.Color(1.0,0.78,0.0);
 
 			init();
-			animate();
+			
 
 			function init() {
 
@@ -227,8 +227,6 @@
             }
 
             function onPointerUp( event ) {
-                console.log(camera.position);
-                console.log(controls.target);
                 if(intersects[0].length==1){
                     animClick[0][0]=1;
                     animSrc[0]=camera.position.x;
@@ -237,7 +235,7 @@
                     animSrc[3]=controls.target.x;
                     animSrc[4]=controls.target.y;
                     animSrc[5]=controls.target.z;
-                    
+                    animate();
                     for(let i=4; i<=13; i++){
                         if(sph[i].visible==false){
                             sph[i].visible=true;
@@ -284,10 +282,12 @@
 
 
             function animate() {
-                requestAnimationFrame(animate);
-                camAnim();
-                controls.update();
-                render();
+                if(animClick[0][0]==1){
+                    requestAnimationFrame(animate);
+                    camAnim();
+                    controls.update();
+                    render();
+                }
             }
 
 
