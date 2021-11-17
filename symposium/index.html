@@ -23,14 +23,14 @@
             let intersects=[];
             let sph=[];
             const camQuats = new THREE.Vector4();
-            let animClick=[[0,60,0,764],0,0,0];
+            let animClick=[[0,-60,0,764],0,0,0];
             let animProg=0.0;
             let animSrc=[0,0,0,0,0,0]
 
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
             
-            let p=[ new THREE.Vector3(64, -38, 685), // Schedule
+            let p=[ new THREE.Vector3(-64, -38, 685), // Schedule
                     new THREE.Vector3(33, 22, 473), // Speakers
                     new THREE.Vector3(33, 20, 326), // About
                     new THREE.Vector3(-67, 16, 348), // Imprint
