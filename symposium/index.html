@@ -227,6 +227,8 @@
             }
 
             function onPointerUp( event ) {
+                console.log(camera.position);
+                console.log(controls.target);
                 if(intersects[0].length==1){
                     animClick[0][0]=1;
                     animSrc[0]=camera.position.x;
@@ -264,7 +266,6 @@
                     tar.lerpVectors(new THREE.Vector3(animSrc[3],animSrc[4],animSrc[5]),new THREE.Vector3(p[0].x, p[0].y+10, p[0].z), animProg);
                     controls.target.set(tar.x, tar.y, tar.z);
                     camera.position.set(pos.x,pos.y,pos.z);
-                    console.log(animProg);
                     if(animTime>=1.0){
                         animTime=0.0;
                         animClick[0][0]=0;
