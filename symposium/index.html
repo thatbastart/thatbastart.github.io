@@ -136,7 +136,7 @@
 				window.addEventListener( 'resize', onWindowResize );
 
 
-                const sphereGeometry2 = new THREE.SphereGeometry( 10, 32, 32 );
+                const sphereGeometry2 = new THREE.SphereGeometry( 8, 32, 32 );
                 const sphereGeometry3 = new THREE.SphereGeometry( 2, 32, 32 );
                 const sphereMaterial2 = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.65, transparent: true } );
                 const sphereMaterial3 = new THREE.MeshBasicMaterial( { color: c2, opacity: 0.85, transparent: true } );
@@ -214,7 +214,7 @@
                 scheduleWrap.innerHTML="<div class='content'><center>Schedule</center></div><div class='line'></div>"
 
 				const objSchedule = new CSS2DObject( scheduleWrap );
-				objSchedule.position.set(0, 5, 0);
+				objSchedule.position.set(0, 10, 0);
 				sph[0].add( objSchedule );
 
                 labelRenderer = new CSS2DRenderer();
