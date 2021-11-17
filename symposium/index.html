@@ -149,21 +149,10 @@
                                 new THREE.TextGeometry( "Symposium", {font: font, size: 30, height: 0, curveSegments: 12,})];
 
                     const textMaterial1 = new THREE.MeshBasicMaterial( { color: c0} );
-                    const textMaterial2 = new THREE.MeshBasicMaterial( { color: c1} );
-                    const textMaterial3 = new THREE.MeshBasicMaterial( { color: c2} );
-
-                    let text=[new THREE.TextGeometry( "Schedule", {font: font, size: 3, height: 0, curveSegments: 12,}),
-                            new THREE.TextGeometry( "Speakers", {font: font, size: 3, height: 0, curveSegments: 12,}),
-                            new THREE.TextGeometry( "About", {font: font, size: 3, height: 0, curveSegments: 12,}),
-                            new THREE.TextGeometry( "Imprint", {font: font, size: 3, height: 0, curveSegments: 12,})];
 
                     let mesh = [new THREE.Mesh( title[0], textMaterial1 ),
                                 new THREE.Mesh( title[1], textMaterial1 ),
-                                new THREE.Mesh( title[2], textMaterial1 ),
-                                new THREE.Mesh( text[0], textMaterial2 ),
-                                new THREE.Mesh( text[1], textMaterial2 ),
-                                new THREE.Mesh( text[2], textMaterial2 ),
-                                new THREE.Mesh( text[3], textMaterial2 )];
+                                new THREE.Mesh( title[2], textMaterial1 )];
 
                     mesh[0].position.set(100,200,265);
                     mesh[0].rotation.set(0,-Math.PI/4,0);
@@ -171,20 +160,10 @@
                     mesh[1].rotation.set(0,-Math.PI/4,0);
                     mesh[2].position.set(100,140,265);
                     mesh[2].rotation.set(0,-Math.PI/4,0);
-                    mesh[3].position.set(-60, -38, 685);
-                    mesh[4].position.set(33, 26, 473);
-                    mesh[4].rotation.set(0,-Math.PI/4,0);
-                    mesh[5].position.set(27, 14, 327);
-                    mesh[5].rotation.set(0,-Math.PI/4,0);
-                    mesh[6].position.set(-82, 15.5, 348);
 
                     scene.add(mesh[0]);
                     scene.add(mesh[1]);
                     scene.add(mesh[2]);
-                    scene.add(mesh[3]);
-                    scene.add(mesh[4]);
-                    scene.add(mesh[5]);
-                    scene.add(mesh[6]);
                     render();
 
                 });
@@ -200,9 +179,9 @@
                                 new THREE.Mesh( date[1], textMaterial )
                                 ];
 
-                    mesh[0].position.set(100,110,265);
+                    mesh[0].position.set(100,-100,265);
                     mesh[0].rotation.set(0,-Math.PI/4,0);
-                    mesh[1].position.set(100,80,265);
+                    mesh[1].position.set(100,-130,265);
                     mesh[1].rotation.set(0,-Math.PI/4,0);
 
 
