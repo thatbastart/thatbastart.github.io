@@ -102,7 +102,7 @@
 				composer.addPass( renderScene );
 				composer.addPass( bloomPass );
 
-				controls = new OrbitControls( camera, labelRenderer.domElement );
+				controls = new OrbitControls( camera, renderer.domElement );
                 controls.enableDamping=true;
                 controls.dampingFactor=0.5;
                 controls.target.set(-48, 0, 528);
@@ -204,10 +204,9 @@
                 const earthDiv = document.createElement( 'div' );
 				earthDiv.className = 'label';
 				earthDiv.textContent = 'Earth';
-				earthDiv.style.marginTop = '-1em';
 				const earthLabel = new CSS2DObject( earthDiv );
 				earthLabel.position.set(p.x, p.y, p.z);
-				sph[0].add( earthLabel );
+				scene.add( earthLabel );
 
 
                 labelRenderer = new CSS2DRenderer();
