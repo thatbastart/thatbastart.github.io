@@ -18,8 +18,9 @@
             import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer.js';
             import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
 			import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
+            import { CSS2DRenderer, CSS2DObject } from './three/examples/jsm/renderers/CSS2DRenderer.js';
 
-			let camera, scene, renderer, composer, pointcloud, controls, sphere;
+			let camera, scene, renderer, composer, pointcloud, controls, sphere, labelRenderer;
             let intersects=[];
             let sph=[];
             const camQuats = new THREE.Vector4();
@@ -192,6 +193,21 @@
                 
 
 
+                const earthDiv = document.createElement( 'div' );
+				earthDiv.className = 'label';
+				earthDiv.textContent = 'Earth';
+				earthDiv.style.marginTop = '-1em';
+				const earthLabel = new CSS2DObject( earthDiv );
+				earthLabel.position.set(p.x, p.y, p.z);
+				sph[0].add( earthLabel );
+
+
+                labelRenderer = new CSS2DRenderer();
+				labelRenderer.setSize( window.innerWidth, window.innerHeight );
+				labelRenderer.domElement.style.position = 'absolute';
+				labelRenderer.domElement.style.top = '0px';
+				document.body.appendChild( labelRenderer.domElement );
+
 			}
 
 			function onWindowResize() {
@@ -292,6 +308,7 @@
 
 			function render() {
                 composer.render();
+                labelRenderer.render( scene, camera );
             }
 
 
