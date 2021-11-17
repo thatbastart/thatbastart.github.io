@@ -211,6 +211,10 @@
             function onMouseMove( event ) {
                 mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
                 mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+                raycaster.setFromCamera( mouse, camera );
+                for(let i=0; i<=p.length-1; i++){
+                    intersects[i] = raycaster.intersectObject(sph[i]);
+                }
                 let mouseIntersect=false;
                 for(let i=0; i<=intersects.length-1;i++){
                     if(intersects[i].length==1){
@@ -223,7 +227,6 @@
                 } else {
                     document.body.style.cursor="default";
                 }
-                render();
             }
 
             function onPointerUp( event ) {
@@ -292,10 +295,6 @@
 
 
 			function render() {
-                raycaster.setFromCamera( mouse, camera );
-                for(let i=0; i<=p.length-1; i++){
-                    intersects[i] = raycaster.intersectObject(sph[i]);
-                }
                 composer.render();
             }
 
