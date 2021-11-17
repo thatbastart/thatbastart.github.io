@@ -290,15 +290,15 @@
                         animClick[0][0]=0;
                     } else {
                         animTime+=0.025;
-                        animProg=easeOutSine(animTime, 0.0, 1.0, 1.0);
+                        animProg=easeOutCubic(animTime, 0.0, 1.0, 1.0);
                         console.log(animProg);
                     }
                 }
             }
 
 
-            function easeOutSine (t, b, c, d) {
-                return c * Math.sin(t / d * (Math.PI / 2)) + b;
+            function easeOutCubic (t, b, c, d) {
+                return c * ((t = t / d - 1) * t * t + 1) + b;
             }
 
 
