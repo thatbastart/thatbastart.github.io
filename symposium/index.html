@@ -25,6 +25,7 @@
             const camQuats = new THREE.Vector4();
             let animClick=[[0,60,25,764],0,0,0];
             let animProg=0.0;
+            let animSrc=[0,0,0,0,0,0]
 
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
@@ -248,6 +249,12 @@
             function onPointerUp( event ) {
                 if(intersects[0].length==1){
                     animClick[0][0]=1;
+                    animSrc[0]=camera.position.x;
+                    animSrc[1]=camera.position.y;
+                    animSrc[2]=camera.position.z;
+                    animSrc[3]=controls.target.x;
+                    animSrc[4]=controls.target.y;
+                    animSrc[5]=controls.target.z;
                     for(let i=4; i<=13; i++){
                         if(sph[i].visible==false){
                             sph[i].visible=true;
@@ -278,10 +285,10 @@
                     } else {
                         animProg+=0.01;
                     }
-                    console.log(animProg);
-                    pos.lerpVectors(camera.position,new THREE.Vector3(animClick[0][1],animClick[0][2],animClick[0][3]), animProg);
+                    pos.lerpVectors(new THREE.Vector3(animSrc[0],animSrc[1],animSrc[2]),new THREE.Vector3(animClick[0][1],animClick[0][2],animClick[0][3]), animProg);
                     camera.position.set(pos.x,pos.y,pos.z);
-                    tar.lerpVectors(controls.target,new THREE.Vector3(p[0].x, p[0].y, p[0].z, animProg));
+                    console.log(pos);
+                    tar.lerpVectors(new THREE.Vector3(animSrc[3],animSrc[4],animSrc[5]),new THREE.Vector3(p[0].x, p[0].y, p[0].z, animProg));
                     controls.target.set(tar.x, tar.y, tar.z);
                     controls.update();
                 }
@@ -300,7 +307,6 @@
                 for(let i=0; i<=p.length-1; i++){
                     intersects[i] = raycaster.intersectObject(sph[i]);
                 }
-                console.log(camera.position);
                 composer.render();
             }
 
