@@ -10,6 +10,7 @@
             font-family: sans-serif;
             padding: 2px;
             background: rgba( 0, 0, 0, .6 );
+            display: block !important;
         }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
@@ -203,7 +204,6 @@
                 const earthDiv = document.createElement( 'div' );
 				earthDiv.className = 'label';
 				earthDiv.textContent = 'Earth';
-                earthDiv.style.display="block";
 				const earthLabel = new CSS2DObject( earthDiv );
 				earthLabel.position.set(p[0].x, p[0].y, p[0].z);
 				sph[0].add( earthLabel );
@@ -222,6 +222,7 @@
 
 				renderer.setSize( window.innerWidth, window.innerHeight );
                 composer.setSize( window.innerWidth, window.innerHeight );
+                labelRenderer.setSize( window.innerWidth, window.innerHeight );
                 render();
 
 			}
