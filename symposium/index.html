@@ -270,6 +270,7 @@
 
             function camAnim(){
                 let p = new THREE.Vector3;
+                let t = new THREE.Vector3;
                 if(animClick[0][0]==1){
                     if(animProg>=1.0){
                         animProg=0.0;
@@ -280,6 +281,9 @@
                     console.log(animProg);
                     p.lerpVectors(camera.position,new THREE.Vector3(animClick[0][1],animClick[0][2],animClick[0][3]), animProg);
                     camera.position.set(p.x,p.y,p.z);
+                    p.lerpVectors(controls.target,new THREE.Vector3(p[0].x, p[0].y, p[0].z, animProg));
+                    contros.target.set(t.x, t.y, t.z);
+                    controls.update();
                 }
             }
 
