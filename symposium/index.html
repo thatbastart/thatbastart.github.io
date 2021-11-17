@@ -78,7 +78,7 @@
 				scene = new THREE.Scene();
 
 				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
-				camera.position.set( -390, 21, 850 );
+				camera.position.set( -356, 62, 870 );
 				scene.add( camera );
 
                 const renderScene = new RenderPass( scene, camera );
@@ -96,7 +96,7 @@
 				controls = new OrbitControls( camera, renderer.domElement );
                 controls.enableDamping=true;
                 controls.dampingFactor=0.5;
-                controls.target.set(-60, 50, 525.00);
+                controls.target.set(-38, -4, 539);
                 controls.update();
 				controls.addEventListener( 'change', render );
                 controls.addEventListener('start', (e) => {
@@ -154,11 +154,11 @@
                                 new THREE.Mesh( title[1], textMaterial1 ),
                                 new THREE.Mesh( title[2], textMaterial1 )];
 
-                    mesh[0].position.set(100,200,265);
+                    mesh[0].position.set(100,130,265);
                     mesh[0].rotation.set(0,-Math.PI/4,0);
-                    mesh[1].position.set(100,170,265);
+                    mesh[1].position.set(100,100,265);
                     mesh[1].rotation.set(0,-Math.PI/4,0);
-                    mesh[2].position.set(100,140,265);
+                    mesh[2].position.set(100,70,265);
                     mesh[2].rotation.set(0,-Math.PI/4,0);
 
                     scene.add(mesh[0]);
@@ -179,9 +179,9 @@
                                 new THREE.Mesh( date[1], textMaterial )
                                 ];
 
-                    mesh[0].position.set(100,-100,265);
+                    mesh[0].position.set(100,-170,265);
                     mesh[0].rotation.set(0,-Math.PI/4,0);
-                    mesh[1].position.set(100,-130,265);
+                    mesh[1].position.set(100,-200,265);
                     mesh[1].rotation.set(0,-Math.PI/4,0);
 
 
