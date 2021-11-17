@@ -62,7 +62,7 @@
             const c3=new THREE.Color(1.0,0.78,0.0);
 
 			init();
-			render();
+			animate();
 
 			function init() {
 
@@ -267,6 +267,14 @@
                 render();
             }
 
+
+            function animate() {
+                requestAnimationFrame(animate);
+
+                render();
+            }
+
+
 			function render() {
                 raycaster.setFromCamera( mouse, camera );
                 for(let i=0; i<=p.length-1; i++){
@@ -274,12 +282,6 @@
                 }
                 console.log(camera.position);
                 composer.render();
-			}
-            
-            function animate() {
-                requestAnimationFrame(animate)
-
-                render()
             }
 
 
