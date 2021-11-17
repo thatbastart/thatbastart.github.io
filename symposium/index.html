@@ -276,6 +276,13 @@
                 composer.render();
 			}
             
+            function animate() {
+                requestAnimationFrame(animate)
+
+                render()
+            }
+
+
             function mapRange (value, a, b, c, d) {
                 value = (value - a) / (b - a);
                 return c + value * (d - c);
