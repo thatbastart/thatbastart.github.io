@@ -5,10 +5,11 @@
 		<meta charset="utf-8">
 		<style>
         body { margin: 0; }
-        .label {
-            color: #FFF;
-            font-family: sans-serif;
-            padding: 5px;
+        .wrapper {
+            width: 10vw;
+            height: 25vh;
+            border-radius: 5px;
+            border: 1px solid black;
             background: rgba( 0, 0, 0, .6 );
         }
 		</style>
@@ -198,10 +199,10 @@
                 
 
 
-                const earthDiv = document.createElement( 'div' );
-				earthDiv.className = 'label';
-				earthDiv.textContent = 'Earth';
-				const earthLabel = new CSS2DObject( earthDiv );
+                const scheduleWrap = document.createElement( 'div' );
+				scheduleWrap.className = 'wrapper';
+                scheduleWrap.id = 'scheduleWrap';
+				const objSchedule = new CSS2DObject( scheduleWrap );
 				earthLabel.position.set(0, 0, 0);
 				sph[0].add( earthLabel );
                 console.log(earthLabel);
