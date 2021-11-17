@@ -102,7 +102,7 @@
 				composer.addPass( renderScene );
 				composer.addPass( bloomPass );
 
-				controls = new OrbitControls( camera, renderer.domElement );
+				controls = new OrbitControls( camera, labelRenderer.domElement );
                 controls.enableDamping=true;
                 controls.dampingFactor=0.5;
                 controls.target.set(-48, 0, 528);
