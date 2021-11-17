@@ -275,7 +275,7 @@
                         animProg=0.0;
                         animClick[0][0]=0;
                     } else {
-                        animProg+=0.1;
+                        animProg+=0.01;
                     }
                     console.log(animProg);
                     p.lerpVectors(camera.position,new THREE.Vector3(animClick[0][1],animClick[0][2],animClick[0][3]), animProg);
