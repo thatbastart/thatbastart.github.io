@@ -291,7 +291,6 @@
                     console.log(tar);
                     console.log(pos);
                     controls.target.set(tar.x, tar.y, tar.z);
-                    controls.update();
                     camera.position.set(pos.x,pos.y,pos.z);
                 }
             }
@@ -300,6 +299,7 @@
             function animate() {
                 requestAnimationFrame(animate);
                 camAnim();
+                controls.update();
                 render();
             }
 
