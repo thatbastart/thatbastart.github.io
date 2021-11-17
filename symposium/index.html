@@ -10,6 +10,7 @@
             font-family: sans-serif;
             padding: 2px;
             background: rgba( 0, 0, 0, .6 );
+            display: block;
         }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
@@ -205,8 +206,8 @@
 				earthDiv.textContent = 'Earth';
 				const earthLabel = new CSS2DObject( earthDiv );
 				earthLabel.position.set(p.x, p.y, p.z);
-				scene.add( earthLabel );
-
+				sph[0].add( earthLabel );
+                console.log(earthLabel);
 
                 labelRenderer = new CSS2DRenderer();
 				labelRenderer.setSize( window.innerWidth, window.innerHeight );
