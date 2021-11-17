@@ -282,7 +282,7 @@
                     pos.lerpVectors(camera.position,new THREE.Vector3(animClick[0][1],animClick[0][2],animClick[0][3]), animProg);
                     camera.position.set(pos.x,pos.y,pos.z);
                     tar.lerpVectors(controls.target,new THREE.Vector3(p[0].x, p[0].y, p[0].z, animProg));
-                    contros.target.set(tar.x, tar.y, tar.z);
+                    controls.target.set(tar.x, tar.y, tar.z);
                     controls.update();
                 }
             }
