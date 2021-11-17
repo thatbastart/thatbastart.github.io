@@ -113,7 +113,6 @@
                     points.material.size=2.25;
 					scene.add( points );
                     pointcloud=points;
-					render();
 
 				} );
 				window.addEventListener( 'resize', onWindowResize );
@@ -164,7 +163,6 @@
                     scene.add(mesh[0]);
                     scene.add(mesh[1]);
                     scene.add(mesh[2]);
-                    render();
 
                 });
 
@@ -189,7 +187,6 @@
                     scene.add(mesh[1]);
 
 
-                    render();
 
                 });
                 
@@ -256,7 +253,6 @@
                         }
                     }
                 }
-                render();
             }
 
             function camAnim(){
