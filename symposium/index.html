@@ -42,7 +42,7 @@
             <span class="nav" onClick="setAnim(2);">About</span><br><br>
             <span class="nav" onClick="setAnim(0);">Schedule</span><br><br>
             <span class="nav" onClick="setAnim(1);">Speakers</span><br><br>
-            <span class="nav" onClick="setAnim(3);">Imprint</span><br><br>
+            <span class="nav" onClick="setAnim(3);">Imprint</span>
         </div>
         <script type="module">
             window.setAnim=setAnim;
@@ -335,8 +335,10 @@
             }
 
             function setAnim(c){
-                animClick[c][0]=1;
-                animate();
+                if(animTime==0.0){
+                    animClick[c][0]=1;
+                    animate();
+                }
             }
 
             function camAnim(){
