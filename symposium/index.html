@@ -259,7 +259,7 @@
                 }
             }
 
-            function onMouseClick( event ) {
+            function onPointerDown( event ) {
                 if(intersects[0].length==1){
                     animClick[0][0]=1;
                     animSrc[0]=camera.position.x;
@@ -340,7 +340,7 @@
 
 
             window.addEventListener( "mousemove", onMouseMove, false );
-            window.addEventListener( "click", onMouseClick, false );
+            window.addEventListener( "pointerdown", onMouseClick, false );
 		</script>
 	</body>
 </html>
