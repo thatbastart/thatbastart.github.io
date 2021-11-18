@@ -72,10 +72,10 @@
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
             
-            let p=[ new THREE.Vector3(-64, -38, 585), // Schedule
-                    new THREE.Vector3(33, 22, 473), // Speakers
-                    new THREE.Vector3(33, 20, 326), // About
-                    new THREE.Vector3(-67, 16, 348), // Imprint
+            let p=[ new THREE.Vector3(-64, -20, 585), // Schedule
+                    new THREE.Vector3(33, 25, 473), // Speakers
+                    new THREE.Vector3(33, 20, 350), // About
+                    new THREE.Vector3(-67, 16, 320), // Imprint
                 ];
 
             const c0=new THREE.Color(0,0,0);
@@ -104,7 +104,7 @@
 				controls = new OrbitControls( camera, renderer.domElement );
                 controls.enableDamping=true;
                 controls.dampingFactor=0.5;
-                controls.target.set(-48, 0, 550);
+                controls.target.set(-48, 0, 560);
                 controls.update();
 				controls.addEventListener( 'change', render );
                 
