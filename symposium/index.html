@@ -39,6 +39,7 @@
         }
         .title{
             font-family: coastline;
+            font-size: 5em;
             text-align: center;
         }
 		</style>
@@ -187,7 +188,7 @@
                 const titleWrap = document.createElement( 'div' );
 				titleWrap.className = 'title';
                 titleWrap.id = 'titleWrap';
-                titleWrap.textContent="Relational Landscapes\nSymposium";
+                titleWrap.innerHTML="Relational Landscapes<br>Symposium";
 				const objTitle = new CSS2DObject( titleWrap );
 				objTitle.position.set(50, 80, 330);
 				scene.add( objTitle );
