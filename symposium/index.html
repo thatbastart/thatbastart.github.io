@@ -301,13 +301,14 @@
             }
 
             function onPointerDown( event ) {
-                console.log(camera.position);
-                animSrc[0]=camera.position.x;
-                animSrc[1]=camera.position.y;
-                animSrc[2]=camera.position.z;
-                animSrc[3]=controls.target.x;
-                animSrc[4]=controls.target.y;
-                animSrc[5]=controls.target.z;
+                if(animTime==0){
+                    animSrc[0]=camera.position.x;
+                    animSrc[1]=camera.position.y;
+                    animSrc[2]=camera.position.z;
+                    animSrc[3]=controls.target.x;
+                    animSrc[4]=controls.target.y;
+                    animSrc[5]=controls.target.z;
+                }
 
                 if(intersects[0].length==1){
                     setAnim(0);
