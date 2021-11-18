@@ -224,6 +224,22 @@
 				objSpeakers.position.set(0, 10, 0);
 				sph[1].add( objSpeakers );
 
+                const aboutWrap = document.createElement( 'div' );
+				aboutWrap.className = 'wrapper';
+                aboutWrap.id = 'aboutWrap';
+                aboutWrap.innerHTML="<div class='content'><center>About</center></div><div class='line'></div>"
+				const objAbout = new CSS2DObject( aboutWrap );
+				objAbout.position.set(0, 10, 0);
+				sph[2].add( objAbout );
+
+                const imprintWrap = document.createElement( 'div' );
+				imprintWrap.className = 'wrapper';
+                imprintWrap.id = 'imprintWrap';
+                imprintWrap.innerHTML="<div class='content'><center>Imprint</center></div><div class='line'></div>"
+				const objImprint = new CSS2DObject( imprintWrap );
+				objImprint.position.set(0, 10, 0);
+				sph[3].add( objImprint );
+
                 labelRenderer = new CSS2DRenderer();
 				labelRenderer.setSize( window.innerWidth, window.innerHeight );
                 labelRenderer.domElement.style.position = 'absolute';
