@@ -41,7 +41,7 @@
             let intersects=[];
             let sph=[];
             const camQuats = new THREE.Vector4();
-            let animClick=[[0,-60,-20,764],[0,-17,145,395]];
+            let animClick=[[0,-60,-20,764],[0,-17,145,395],[0,41,68,480],[0,-101,55,186]];
             let animProg=0.0;
             let animTime=0.0;
             let animSrc=[0,0,0,0,0,0]
@@ -288,6 +288,12 @@
                             sph[i].visible=false;
                         }
                     }
+                } else if(intersects[2].length==1){
+                    animClick[2][0]=1;
+                    animate();
+                } else if(intersects[3].length==1){
+                    animClick[3][0]=1;
+                    animate();
                 }
             }
 
