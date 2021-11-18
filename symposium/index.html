@@ -39,20 +39,13 @@
 	<body>
         <div id="main"></div>
         <div style="position:absolute; left:0px; bottom:0px; padding: 25px">
-            <span class="nav" id="navAbout">About</span><br><br>
-            <span class="nav" id="navSchedule">Schedule</span><br><br>
-            <span class="nav" id="navSpeakers">Speakers</span><br><br>
-            <span class="nav" id="navImprint">Imprint</span><br><br>
+            <span class="nav" onClick="setAnim(2);">About</span><br><br>
+            <span class="nav" onClick="setAnim(0);">Schedule</span><br><br>
+            <span class="nav" onClick="setAnim(1);">Speakers</span><br><br>
+            <span class="nav" onClick="setAnim(3);">Imprint</span><br><br>
         </div>
         <script type="module">
-
-            window.onload = function() {
-                document.getElementById("navAbout").addEventListener("click", setAnim(2), false);
-                document.getElementById("navSchedule").addEventListener("click", setAnim(0), false);
-                document.getElementById("navSpeakers").addEventListener("click", setAnim(1), false);
-                document.getElementById("navImprint").addEventListener("click", setAnim(3), false);
-            };
-
+            window.setAnim=setAnim;
 			import * as THREE from './three/build/three.module.js';
 
 			import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
@@ -344,7 +337,6 @@
             function setAnim(c){
                 animClick[c][0]=1;
                 animate();
-                console.log(c);
             }
 
             function camAnim(){
