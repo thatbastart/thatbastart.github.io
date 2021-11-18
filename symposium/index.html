@@ -318,11 +318,13 @@
 
 
             function animate() {
-                if(animClick[0][0]==1){
-                    requestAnimationFrame(animate);
-                    camAnim();
-                    controls.update();
-                    render();
+                for(let i=0; i<animClick.length;i++){
+                    if(animClick[i][0]==1){
+                        requestAnimationFrame(animate);
+                        camAnim();
+                        controls.update();
+                        render();
+                    }
                 }
             }
 
