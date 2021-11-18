@@ -31,17 +31,18 @@
             color: #ff0000;
             font-size: 25px;
             text-shadow: 0px 0px 2px #000;
+            cursor: pointer;
         }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
 	</head>
 	<body>
         <div id="main"></div>
-        <div style="position:absolute; left:0px; bottom:0px; padding: 5px">
-            <span class="nav">About</span><br>
-            <span class="nav">Schedule</span><br>
-            <span class="nav">Speakers</span><br>
-            <span class="nav">Imprint</span><br>
+        <div style="position:absolute; left:0px; bottom:0px; padding: 25px">
+            <span class="nav" onClick="setAnim(2);">About</span><br><br>
+            <span class="nav" onClick="setAnim(0);">Schedule</span><br><br>
+            <span class="nav" onClick="setAnim(1);">Speakers</span><br><br>
+            <span class="nav" onClick="setAnim(3);">Imprint</span><br><br>
         </div>
         <script type="module">
 
@@ -309,8 +310,7 @@
                 animSrc[5]=controls.target.z;
 
                 if(intersects[0].length==1){
-                    animClick[0][0]=1;
-                    animate();
+                    setAnim(0);
                     for(let i=4; i<=13; i++){
                         if(sph[i].visible==false){
                             sph[i].visible=true;
@@ -319,8 +319,7 @@
                         }
                     }
                 } else if(intersects[1].length==1){
-                    animClick[1][0]=1;
-                    animate();
+                    setAnim(1);
                     for(let i=14; i<=23; i++){
                         if(sph[i].visible==false){
                             sph[i].visible=true;
@@ -329,12 +328,15 @@
                         }
                     }
                 } else if(intersects[2].length==1){
-                    animClick[2][0]=1;
-                    animate();
+                    setAnim(2);
                 } else if(intersects[3].length==1){
-                    animClick[3][0]=1;
-                    animate();
+                    setAnim(3);
                 }
+            }
+
+            function setAnim(c){
+                animClick[c][0]=1;
+                animate();
             }
 
             function camAnim(){
