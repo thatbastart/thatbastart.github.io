@@ -212,10 +212,17 @@
 				scheduleWrap.className = 'wrapper';
                 scheduleWrap.id = 'scheduleWrap';
                 scheduleWrap.innerHTML="<div class='content'><center>Schedule</center></div><div class='line'></div>"
-
 				const objSchedule = new CSS2DObject( scheduleWrap );
 				objSchedule.position.set(0, 10, 0);
 				sph[0].add( objSchedule );
+
+                const speakersWrap = document.createElement( 'div' );
+				speakersWrap.className = 'wrapper';
+                speakersWrap.id = 'speakersWrap';
+                speakersWrap.innerHTML="<div class='content'><center>Speakers</center></div><div class='line'></div>"
+				const objSpeakers = new CSS2DObject( speakersWrap );
+				objSpeakers.position.set(0, 10, 0);
+				sph[1].add( objSpeakers );
 
                 labelRenderer = new CSS2DRenderer();
 				labelRenderer.setSize( window.innerWidth, window.innerHeight );
