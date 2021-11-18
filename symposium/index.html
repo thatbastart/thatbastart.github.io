@@ -154,11 +154,11 @@
 				window.addEventListener( 'resize', onWindowResize );
 
 
-                const sphereGeometry2 = new THREE.SphereGeometry( 8, 32, 32 );
-                const sphereGeometry3 = new THREE.SphereGeometry( 5, 32, 32 );
-                const sphereMaterial2 = new THREE.MeshBasicMaterial( { color: c1, opacity: 0.65, transparent: true } );
-                const sphereMaterial3 = new THREE.MeshBasicMaterial( { color: c2, opacity: 0.85, transparent: true } );
-                const sphereMaterial4 = new THREE.MeshBasicMaterial( { color: c3, opacity: 0.85, transparent: true } );
+                const sphereGeometry2 = new THREE.SphereGeometry( 4, 32, 32 );
+                const sphereGeometry3 = new THREE.SphereGeometry( 3, 32, 32 );
+                const sphereMaterial2 = new THREE.MeshBasicMaterial( { color: c1 } );
+                const sphereMaterial3 = new THREE.MeshBasicMaterial( { color: c2 } );
+                const sphereMaterial4 = new THREE.MeshBasicMaterial( { color: c3 } );
                 
                 for(let i=0; i<=p.length-1; i++){
                     if(i<=3){
@@ -177,7 +177,7 @@
 
 
                 const fontloader = new THREE.FontLoader();
-                fontloader.load( "tiny140.json", function ( font ) {
+                fontloader.load( "Coastline_Regular.json", function ( font ) {
 
                     let title = [new THREE.TextGeometry( "Relational", {font: font, size: 30, height: 0, curveSegments: 12,}),
                                 new THREE.TextGeometry( "Landscapes", {font: font, size: 30, height: 0, curveSegments: 12,}),
