@@ -64,7 +64,7 @@
 			let camera, scene, renderer, pointcloud, controls, sphere, labelRenderer;
             let intersects=[];
             let sph=[];
-            let animClick=[[0,-60,-20,764],[0,-17,145,395],[0,41,68,480],[0,-101,55,186]];
+            let animClick=[[0,-60,-20,664],[0,-17,145,395],[0,41,68,480],[0,-101,55,186]];
             let animProg=0.0;
             let animTime=0.0;
             let animSrc=[0,0,0,0,0,0]
@@ -72,7 +72,7 @@
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
             
-            let p=[ new THREE.Vector3(-64, -38, 685), // Schedule
+            let p=[ new THREE.Vector3(-64, -38, 585), // Schedule
                     new THREE.Vector3(33, 22, 473), // Speakers
                     new THREE.Vector3(33, 20, 326), // About
                     new THREE.Vector3(-67, 16, 348), // Imprint
@@ -120,22 +120,11 @@
 				window.addEventListener( 'resize', onWindowResize );
 
 
-                const sphereGeometry2 = new THREE.SphereGeometry( 4, 32, 32 );
-                const sphereGeometry3 = new THREE.SphereGeometry( 3, 32, 32 );
-                const sphereMaterial2 = new THREE.MeshBasicMaterial( { color: c1 } );
-                const sphereMaterial3 = new THREE.MeshBasicMaterial( { color: c2 } );
-                const sphereMaterial4 = new THREE.MeshBasicMaterial( { color: c3 } );
+                const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 );
+                const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1 } );
                 
                 for(let i=0; i<=p.length-1; i++){
-                    if(i<=3){
-                        sph[i] = new THREE.Mesh( sphereGeometry2, sphereMaterial2 );
-                    } else if(i<=13) {
-                        sph[i] = new THREE.Mesh( sphereGeometry3, sphereMaterial3 );
-                        sph[i].visible=false;
-                    } else {
-                        sph[i] = new THREE.Mesh( sphereGeometry3, sphereMaterial4 );
-                        sph[i].visible=false;
-                    }
+                    sph[i] = new THREE.Mesh( sphereGeometry, sphereMaterial );
                     scene.add(sph[i]);
                     sph[i].position.set(p[i].x,p[i].y,p[i].z);
                 }
@@ -192,6 +181,7 @@
             }
 
             function onPointerDown( event ) {
+                console.log(camera.position);
                 if(animTime==0){
                     animSrc[0]=camera.position.x;
                     animSrc[1]=camera.position.y;
