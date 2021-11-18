@@ -8,6 +8,10 @@
             font-family: akademieBold;
             src: url(nb_akademie_std_bold.ttf);
         }
+        @font-face {
+            font-family: coastline;
+            src: url(Coastline-Regular.otf);
+        }
         body { margin: 0; }
         .wrapper {
             width: 10vw;
@@ -32,6 +36,10 @@
             font-size: 25px;
             text-shadow: 0px 0px 2px #000;
             cursor: pointer;
+        }
+        .title{
+            font-family: coastline;
+            text-align: center;
         }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
@@ -108,7 +116,7 @@
 				renderer = new THREE.WebGLRenderer( { antialias: true, logarithmicDepthBuffer: true} );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
-                renderer.setClearColor(0xffffff);
+                renderer.setClearColor(0xd0caca);
 				document.getElementById("main").appendChild( renderer.domElement );
 
 				scene = new THREE.Scene();
@@ -173,90 +181,16 @@
                     scene.add(sph[i]);
                     sph[i].position.set(p[i].x,p[i].y,p[i].z);
                 }
-
-
-
-                const fontloader = new THREE.FontLoader();
-                fontloader.load( "Coastline_Regular.json", function ( font ) {
-
-                    let title = [new THREE.TextGeometry( "Relational", {font: font, size: 30, height: 0, curveSegments: 12,}),
-                                new THREE.TextGeometry( "Landscapes", {font: font, size: 30, height: 0, curveSegments: 12,}),
-                                new THREE.TextGeometry( "Symposium", {font: font, size: 30, height: 0, curveSegments: 12,})];
-
-                    const textMaterial1 = new THREE.MeshBasicMaterial( { color: c0} );
-
-                    let mesh = [new THREE.Mesh( title[0], textMaterial1 ),
-                                new THREE.Mesh( title[1], textMaterial1 ),
-                                new THREE.Mesh( title[2], textMaterial1 )];
-
-                    mesh[0].position.set(50,110,330);
-                    mesh[0].rotation.set(0,-Math.PI/4,0);
-                    mesh[1].position.set(50,80,330);
-                    mesh[1].rotation.set(0,-Math.PI/4,0);
-                    mesh[2].position.set(50,50,330);
-                    mesh[2].rotation.set(0,-Math.PI/4,0);
-
-                    scene.add(mesh[0]);
-                    scene.add(mesh[1]);
-                    scene.add(mesh[2]);
-                    render();
-                });
-
-                fontloader.load( "tiny100.json", function ( font ) {
-
-                    let date = [new THREE.TextGeometry( "02.12.2021", {font: font, size: 20, height: 0, curveSegments: 12,}),
-                                new THREE.TextGeometry( "5-7:30pm", {font: font, size: 20, height: 0, curveSegments: 12,})];
-
-                    const textMaterial = new THREE.MeshBasicMaterial( { color: c0} );
-
-                    let mesh = [new THREE.Mesh( date[0], textMaterial ),
-                                new THREE.Mesh( date[1], textMaterial )
-                                ];
-
-                    mesh[0].position.set(50,-160,330);
-                    mesh[0].rotation.set(0,-Math.PI/4,0);
-                    mesh[1].position.set(50,-190,330);
-                    mesh[1].rotation.set(0,-Math.PI/4,0);
-
-
-                    scene.add(mesh[0]);
-                    scene.add(mesh[1]);
-                    render();
-                });
                 
 
 
-                const scheduleWrap = document.createElement( 'div' );
-				scheduleWrap.className = 'wrapper';
-                scheduleWrap.id = 'scheduleWrap';
-                scheduleWrap.innerHTML="<div class='content'><center>Schedule</center></div><div class='line'></div>"
-				const objSchedule = new CSS2DObject( scheduleWrap );
-				objSchedule.position.set(0, 10, 0);
-				sph[0].add( objSchedule );
-
-                const speakersWrap = document.createElement( 'div' );
-				speakersWrap.className = 'wrapper';
-                speakersWrap.id = 'speakersWrap';
-                speakersWrap.innerHTML="<div class='content'><center>Speakers</center></div><div class='line'></div>"
-				const objSpeakers = new CSS2DObject( speakersWrap );
-				objSpeakers.position.set(0, 10, 0);
-				sph[1].add( objSpeakers );
-
-                const aboutWrap = document.createElement( 'div' );
-				aboutWrap.className = 'wrapper';
-                aboutWrap.id = 'aboutWrap';
-                aboutWrap.innerHTML="<div class='content'><center>About</center></div><div class='line'></div>"
-				const objAbout = new CSS2DObject( aboutWrap );
-				objAbout.position.set(0, 10, 0);
-				sph[2].add( objAbout );
-
-                const imprintWrap = document.createElement( 'div' );
-				imprintWrap.className = 'wrapper';
-                imprintWrap.id = 'imprintWrap';
-                imprintWrap.innerHTML="<div class='content'><center>Imprint</center></div><div class='line'></div>"
-				const objImprint = new CSS2DObject( imprintWrap );
-				objImprint.position.set(0, 10, 0);
-				sph[3].add( objImprint );
+                const titleWrap = document.createElement( 'div' );
+				titleWrap.className = 'title';
+                titleWrap.id = 'titleWrap';
+                titleWrap.textContent="Relational Landscapes\nSymposium";
+				const objTitle = new CSS2DObject( titleWrap );
+				objTitle.position.set(50, 80, 330);
+				scene.add( objTitle );
 
                 labelRenderer = new CSS2DRenderer();
 				labelRenderer.setSize( window.innerWidth, window.innerHeight );
