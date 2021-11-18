@@ -11,7 +11,7 @@
         body { margin: 0; }
         .wrapper {
             width: 10vw;
-            height: 25vh;
+            height: 20vh;
         }
         .line {
             width: 50%;
@@ -26,11 +26,23 @@
             font-size: 25px;
             text-shadow: 0px 0px 2px #000;
         }
+        .nav {
+            font-family: akademieBold;
+            color: #ff0000;
+            font-size: 25px;
+            text-shadow: 0px 0px 2px #000;
+        }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
 	</head>
 	<body>
         <div id="main"></div>
+        <div style="position:absolute; left:0px; bottom:0px; padding: 5px">
+            <span class="nav">About</span><br>
+            <span class="nav">Schedule</span><br>
+            <span class="nav">Speakers</span><br>
+            <span class="nav">Imprint</span><br>
+        </div>
         <script type="module">
 
 			import * as THREE from './three/build/three.module.js';
