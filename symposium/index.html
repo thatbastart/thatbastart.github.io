@@ -33,7 +33,7 @@
         .nav {
             font-family: yoppa;
             color: #000bff;
-            font-size: 2.5em;
+            font-size: 2em;
             cursor: pointer;
         }
         .navWrap {
@@ -55,10 +55,10 @@
 	<body>
         <div id="main"></div>
         <div class="navWrap">
-            <span class="nav" onClick="setAnim(2);">About</span><br><br>
-            <span class="nav" onClick="setAnim(0);">Schedule</span><br><br>
-            <span class="nav" onClick="setAnim(1);">Speakers</span><br><br>
-            <span class="nav" onClick="setAnim(3);">Imprint</span>
+            <span class="nav" onClick="setAnim(2);">about</span><br><br>
+            <span class="nav" onClick="setAnim(0);">schedule</span><br><br>
+            <span class="nav" onClick="setAnim(1);">speakers</span><br><br>
+            <span class="nav" onClick="setAnim(3);">imprint</span>
         </div>
         <script type="module">
             window.setAnim=setAnim;
@@ -87,8 +87,6 @@
 
             const c0=new THREE.Color(0,0,0);
             const c1=new THREE.Color(0.0,0.04,1.00);
-            const c2=new THREE.Color(0.55,0.0,1.0);
-            const c3=new THREE.Color(1.0,0.78,0.0);
 
 			init();
 			
