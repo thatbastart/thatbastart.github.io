@@ -171,10 +171,11 @@
                 const scheduleWrap = document.createElement( 'div' );
 				scheduleWrap.className = 'schedule';
                 scheduleWrap.id = 'scheduleWrap';
-                scheduleWrap.innerHTML="Symposium";
 				const objSchedule = new CSS2DObject( scheduleWrap );
-				objTitle2.position.set(0,0,0);
+				objSchedule.position.set(0,0,0);
+                objSchedule.visible=false;
 				sph[0].add( objSchedule );
+                console.log(sph[0]);
 
 
                 labelRenderer = new CSS2DRenderer();
@@ -274,6 +275,7 @@
                         if(animTime>=1.0){
                             animTime=0.0;
                             animClick[i][0]=0;
+                            }
                         } else {
                             animTime+=0.015;
                             animProg=easeOutCubic(animTime, 0.0, 1.0, 1.0);
