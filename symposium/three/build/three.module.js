@@ -6568,6 +6568,9 @@ class Object3D extends EventDispatcher {
 			},
 			normalMatrix: {
 				value: new Matrix3()
+			},
+			offset: {
+				value: {x: "-50%", y: "-50%"}
 			}
 		} );
 

@@ -14,8 +14,6 @@ class CSS2DObject extends Object3D {
 
 		this.element.style.position = 'absolute';
 		this.element.style.userSelect = 'none';
-		this.offset.x="-50%";
-		this.offset.y="-50%";
 
 		this.element.setAttribute( 'draggable', false );
 
