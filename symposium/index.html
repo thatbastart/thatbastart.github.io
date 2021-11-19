@@ -46,7 +46,11 @@
         .title {
             font-family: yoppa;
             font-size: max(6vh,6vw);
-            color: #fff600
+            color: #fff600;
+            pointer-events: none;
+            position: absolute;
+            top: 5vh;
+            left: 5vh;
         }
         .schedule {
             height: 90vh;
@@ -69,6 +73,7 @@
             <span class="nav" onClick="setAnim(1);">speakers</span><br><br>
             <span class="nav" onClick="setAnim(3);">imprint</span>
         </div>
+        <span class="title">Relational<br>Landscapes</span>
         <script type="module">
             window.setAnim=setAnim;
 			import * as THREE from './three/build/three.module.js';
@@ -142,34 +147,6 @@
                     scene.add(sph[i]);
                     sph[i].position.set(p[i].x,p[i].y,p[i].z);
                 }
-                
-
-
-                const titleWrap = document.createElement( 'div' );
-				titleWrap.className = 'title';
-                titleWrap.id = 'titleWrap';
-                titleWrap.innerHTML="Relational<br>Landscapes";
-				const objTitle = new CSS2DObject( titleWrap );
-				objTitle.position.set(-10, 60, 0);
-				scene.add( objTitle );
-
-                const title2Wrap = document.createElement( 'div' );
-				title2Wrap.className = 'title';
-                title2Wrap.id = 'title2Wrap';
-                title2Wrap.innerHTML="Symposium";
-				const objTitle2 = new CSS2DObject( title2Wrap );
-				objTitle2.position.set(-59, 0, -25);
-				scene.add( objTitle2 );
-
-                const dateWrap = document.createElement( 'div' );
-				dateWrap.className = 'title';
-                dateWrap.id = 'title2Wrap';
-                dateWrap.innerHTML="02.12.21<br>5-7:30pm";
-				const objDate = new CSS2DObject( dateWrap );
-				objDate.position.set(-60, -40, -100);
-                objDate.offset.x="0%";
-                objDate.offset.y="-50%";
-				scene.add( objDate );
 
 
                 const scheduleWrap = document.createElement( 'div' );
