@@ -102,14 +102,14 @@
 				scene = new THREE.Scene();
 
 				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
-				camera.position.set( -350, 64, -200 );
+				camera.position.set( -273, 45, -224 );
 				scene.add( camera );
 
 
 				controls = new OrbitControls( camera, renderer.domElement );
                 controls.enableDamping=true;
                 controls.dampingFactor=0.5;
-                controls.target.set(-37, -7, -25);
+                controls.target.set(-43, -6, -17);
                 controls.update();
 				controls.addEventListener( 'change', render );
                 
