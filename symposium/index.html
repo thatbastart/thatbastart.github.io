@@ -45,7 +45,7 @@
         }
         .title{
             font-family: yoppa;
-            font-size: 7.5vh;
+            font-size: 6vh;
             color: #fff600
         }
 		</style>
@@ -140,8 +140,16 @@
                 titleWrap.id = 'titleWrap';
                 titleWrap.innerHTML="Relational<br>Landscapes";
 				const objTitle = new CSS2DObject( titleWrap );
-				objTitle.position.set(-10, 60, 18);
+				objTitle.position.set(-10, 60, 15);
 				scene.add( objTitle );
+
+                const title2Wrap = document.createElement( 'div' );
+				title2Wrap.className = 'title';
+                title2Wrap.id = 'title2Wrap';
+                title2Wrap.innerHTML="Symposium";
+				const objTitle2 = new CSS2DObject( title2Wrap );
+				objTitle2.position.set(-62, 0, -37);
+				scene.add( objTitle2 );
 
                 labelRenderer = new CSS2DRenderer();
 				labelRenderer.setSize( window.innerWidth, window.innerHeight );
