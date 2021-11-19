@@ -43,10 +43,16 @@
             padding: 25px;
             text-align: right;
         }
-        .title{
+        .title {
             font-family: yoppa;
             font-size: max(6vh,6vw);
             color: #fff600
+        }
+        .schedule {
+            height: 60vh;
+            aspect-ratio: 1 / 1.5;
+            background-image: url("schedule.jpg");
+            background-size: contain;
         }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
@@ -160,6 +166,16 @@
                 objDate.offset.x="0%";
                 objDate.offset.y="-50%";
 				scene.add( objDate );
+
+
+                const scheduleWrap = document.createElement( 'div' );
+				scheduleWrap.className = 'schedule';
+                scheduleWrap.id = 'scheduleWrap';
+                scheduleWrap.innerHTML="Symposium";
+				const objSchedule = new CSS2DObject( scheduleWrap );
+				objTitle2.position.set(0,0,0);
+				sph[0].add( objSchedule );
+
 
                 labelRenderer = new CSS2DRenderer();
 				labelRenderer.setSize( window.innerWidth, window.innerHeight );
