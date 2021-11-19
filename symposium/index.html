@@ -53,6 +53,12 @@
             aspect-ratio: 1 / 1.6;
             background-image: url("schedule.jpg");
             background-size: contain;
+            opacity: 0.0;
+            -webkit-transition: opacity 0.3s ease-in-out;
+            -moz-transition: opacity 0.3s ease-in-out;
+            -ms-transition: opacity 0.3s ease-in-out;
+            -o-transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.3s ease-in-out;
         }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
@@ -277,6 +283,7 @@
                             animClick[i][0]=0;
                             if(i==0){
                                 sph[0].children[0].visible=true;
+                                sph[0].children[0].style.opacity="1.0";
                             }
                         } else {
                             animTime+=0.015;
