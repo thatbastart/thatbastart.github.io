@@ -270,7 +270,6 @@
             function camAnim(){
                 let pos = new THREE.Vector3;
                 let tar = new THREE.Vector3;
-                //sph[0].children[0].element.style.display="block";
                 for(let i=0; i<animClick.length;i++){
                     if(animClick[i][0]==1){
                         pos.lerpVectors(new THREE.Vector3(animSrc[0],animSrc[1],animSrc[2]),new THREE.Vector3(animClick[i][1],animClick[i][2],animClick[i][3]), animProg);               
@@ -280,10 +279,11 @@
                         if(animTime>=1.0){
                             animTime=0.0;
                             animClick[i][0]=0;
-                            //if(i==0){
-                            //    sph[0].children[0].visible=true;
+                            if(i==0){
+                                sph[0].children[0].visible=true;
+                            //    sph[0].children[0].element.style.display="block";
                             //    sph[0].children[0].element.style.opacity="1.0";
-                            //}
+                            }
                         } else {
                             animTime+=0.015;
                             animProg=easeOutCubic(animTime, 0.0, 1.0, 1.0);
