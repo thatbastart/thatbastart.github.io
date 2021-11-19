@@ -79,7 +79,7 @@
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
             
-            let p=[ new THREE.Vector3(-61, -30, -91), // Schedule
+            let p=[ new THREE.Vector3(-59, -32, 14), // Schedule
                     new THREE.Vector3(15, 23, -34), // Speakers
                     new THREE.Vector3(21, 23, 111), // About
                     new THREE.Vector3(-61, 7, 126), // Imprint
@@ -187,6 +187,7 @@
 
             function onPointerDown( event ) {
                 console.log(camera.position);
+                console.log(controls.target);
                 if(animTime==0){
                     animSrc[0]=camera.position.x;
                     animSrc[1]=camera.position.y;
