@@ -122,7 +122,7 @@ class CSS2DRenderer {
 				if ( /apple/i.test( navigator.vendor ) ) {
 
 					// https://github.com/mrdoob/three.js/issues/21415
-					element.style.transform = 'translate(-50%,-100%) translate(' + Math.round( _vector.x * _widthHalf + _widthHalf ) + 'px,' + Math.round( - _vector.y * _heightHalf + _heightHalf ) + 'px)';
+					element.style.transform = 'translate(-50%,-50%) translate(' + Math.round( _vector.x * _widthHalf + _widthHalf ) + 'px,' + Math.round( - _vector.y * _heightHalf + _heightHalf ) + 'px)';
 
 				} else {
 
