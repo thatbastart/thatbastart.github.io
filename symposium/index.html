@@ -32,15 +32,15 @@
         }
         .nav {
             font-family: akademieBold;
-            color: #ff0000;
+            color: #000bff;
             font-size: 25px;
-            text-shadow: 0px 0px 2px #000;
             cursor: pointer;
         }
         .title{
             font-family: coastline;
             font-size: 5em;
             text-align: center;
+            color: #fff600
         }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
@@ -75,11 +75,11 @@
             let p=[ new THREE.Vector3(-64, -20, 585), // Schedule
                     new THREE.Vector3(33, 25, 473), // Speakers
                     new THREE.Vector3(33, 20, 350), // About
-                    new THREE.Vector3(-67, 16, 320), // Imprint
+                    new THREE.Vector3(-67, 16, 380), // Imprint
                 ];
 
             const c0=new THREE.Color(0,0,0);
-            const c1=new THREE.Color(1.0,0,0);
+            const c1=new THREE.Color(0.0,0.04,1.00);
             const c2=new THREE.Color(0.55,0.0,1.0);
             const c3=new THREE.Color(1.0,0.78,0.0);
 
@@ -91,7 +91,7 @@
 				renderer = new THREE.WebGLRenderer( { antialias: true, logarithmicDepthBuffer: true} );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
-                renderer.setClearColor(0xd0caca);
+                renderer.setClearColor(0xcacad0);
 				document.getElementById("main").appendChild( renderer.domElement );
 
 				scene = new THREE.Scene();
