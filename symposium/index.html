@@ -151,6 +151,14 @@
 				objTitle2.position.set(-59, 0, -25);
 				scene.add( objTitle2 );
 
+                const dateWrap = document.createElement( 'div' );
+				dateWrap.className = 'title';
+                dateWrap.id = 'title2Wrap';
+                dateWrap.innerHTML="02.12.21<br>5-7:30pm";
+				const objDate = new CSS2DObject( date2Wrap );
+				objDate.position.set(-105, 47, -127);
+				scene.add( objDate );
+
                 labelRenderer = new CSS2DRenderer();
 				labelRenderer.setSize( window.innerWidth, window.innerHeight );
                 labelRenderer.domElement.style.position = 'absolute';
