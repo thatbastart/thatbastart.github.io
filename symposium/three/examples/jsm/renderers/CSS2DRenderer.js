@@ -126,7 +126,7 @@ class CSS2DRenderer {
 
 				} else {
 
-					element.style.transform = 'translate(-50%,-100%) translate(' + ( _vector.x * _widthHalf + _widthHalf ) + 'px,' + ( - _vector.y * _heightHalf + _heightHalf ) + 'px)';
+					element.style.transform = 'translate(-50%,-50%) translate(' + ( _vector.x * _widthHalf + _widthHalf ) + 'px,' + ( - _vector.y * _heightHalf + _heightHalf ) + 'px)';
 
 				}
 

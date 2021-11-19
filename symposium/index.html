@@ -31,10 +31,17 @@
             text-shadow: 0px 0px 2px #000;
         }
         .nav {
-            font-family: akademieBold;
+            font-family: yoppa;
             color: #000bff;
-            font-size: 25px;
+            font-size: 2.5em;
             cursor: pointer;
+        }
+        .navWrap {
+            position: absolute; 
+            right: 0px; 
+            bottom: 0px; 
+            padding: 25px;
+            text-align: right;
         }
         .title{
             font-family: yoppa;
@@ -47,7 +54,7 @@
 	</head>
 	<body>
         <div id="main"></div>
-        <div style="position:absolute; left:0px; bottom:0px; padding: 25px">
+        <div class="navWrap">
             <span class="nav" onClick="setAnim(2);">About</span><br><br>
             <span class="nav" onClick="setAnim(0);">Schedule</span><br><br>
             <span class="nav" onClick="setAnim(1);">Speakers</span><br><br>
@@ -229,7 +236,7 @@
                 for(let i=0; i<animClick.length;i++){
                     if(animClick[i][0]==1){
                         pos.lerpVectors(new THREE.Vector3(animSrc[0],animSrc[1],animSrc[2]),new THREE.Vector3(animClick[i][1],animClick[i][2],animClick[i][3]), animProg);               
-                        tar.lerpVectors(new THREE.Vector3(animSrc[3],animSrc[4],animSrc[5]),new THREE.Vector3(p[i].x, p[i].y+10, p[i].z), animProg);
+                        tar.lerpVectors(new THREE.Vector3(animSrc[3],animSrc[4],animSrc[5]),new THREE.Vector3(p[i].x, p[i].y, p[i].z), animProg);
                         controls.target.set(tar.x, tar.y, tar.z);
                         camera.position.set(pos.x,pos.y,pos.z);
                         if(animTime>=1.0){
