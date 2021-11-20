@@ -430,9 +430,12 @@
 
             function setAnim(c){
                 if(animTime==0){
-                    for(let i=0;i<p.length;i++){
-                        sph[i].children[0].visible=false;
-                    }
+                    sph[0].children[0].visible=false;
+                    sph[1].children[0].visible=false;
+                    sph[3].children[0].visible=false;
+                    //for(let i=0;i<p.length;i++){
+                    //    sph[i].children[0].visible=false;
+                    //}
                     animClick[c][0]=1;
                     animate();
                 }
