@@ -124,6 +124,7 @@
             font-size: max(2.2vh,18px);
             padding-bottom: 0.8vh;
             display: block;
+            cursor: pointer;
         }
         .schTitle {
             font-family: akademieMed;
@@ -131,19 +132,23 @@
             padding-bottom: 0.4vh;
             line-height: 1.2;
             display: block;
+            cursor: pointer;
         }
         .schSpeaker {
             font-family: akademieItalic;
             font-size: max(1.8vh,14px);
             line-height: 1.2;
             display: block;
+            cursor: pointer;
         }
         .schClose {
             font-family: yoppa;
             font-size: max(2.2vh,18px);
+            color: #fff600;
             position: absolute;
             top: 3%;
             right: 3%;
+            cursor: pointer;
         }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
@@ -405,6 +410,7 @@
             window.addEventListener( "pointerdown", onPointerDown, false );
 
             window.onload=function(){
+                document.getElementsByClassName("schClose")[0].onclick=function(){sph[1].children[0].visible=false;};
                 let nav=document.getElementsByClassName("nav");
                 let navC=document.getElementsByClassName("navCircle");
                 for(let i=0; i<nav.length;i++) {
