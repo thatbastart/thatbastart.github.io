@@ -319,7 +319,7 @@
                         "</div><div class='schField schLeft'>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "</div><div class='schField schLeft'>" +
-                        "<span class='schTime'>05:10 pm</span><span class='schTitle'>Moderator</span><span class='schSpeaker'>Alexandra Toland &#9679;</span>" +
+                        "<span onclick='openPanel(0)'><span class='schTime'>05:10 pm</span><span class='schTitle'>Moderator</span><span class='schSpeaker'>Alexandra Toland &#9679;</span></span>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "<span class='schTime'>05:15 pm</span><span class='schTitle'>Seeing the Forest in the Trees: Cosmological Imperialism in<br>Global Forest Monitoring</span><span class='schSpeaker'>&#9679; Birgit Schneider<br>and Lynda C. Olman</span>" +
                         "</div><div class='schField schLeft'>" +
@@ -508,7 +508,12 @@
             }
 
             function openPanel(s){
-                console.log(sph[1].children[1]);
+                if(s==0){
+                    sph[1].children[1].offset.x="-150%";
+                } else {
+                    sph[1].children[1].offset.x="50%";
+                }
+                
                 sph[1].children[1].visible=true;
                 render();
             }
