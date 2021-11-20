@@ -288,7 +288,7 @@
 
                 aboutWrap.innerHTML=""+
                 "<div class='headline'>About</div><div class='cont'>" +
-                "<span class='schClose' onclick='closePanel(0)'>X</span>" +
+                "<span class='schClose' onclick='closePanel(0)'>x</span>" +
                 "<span class='subHeadline'>Relational Landscapes Symposium</span><br><br><br>"+
                 "<span class='text'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.</span>"
 
@@ -307,15 +307,15 @@
                 scheduleWrap.innerHTML=""+
                 "<div class='headline'>Schedule</div><div style='width:100%; height:87%;'>" +
                     "<div class='schLine'></div>" +
-                    "<span class='schClose' onclick='closePanel(1)'>X</span>" +
+                    "<span class='schClose' onclick='closePanel(1)'>x</span>" +
                     "<div class='schRow'><div class='schField schRight'>" +
-                        "<span class='schTime'>05:00 pm</span><span class='schTitle'>Introduction</span><span class='schSpeaker'>&#9679; Myriel Milicevic</span>" +
+                        "<span class='schTime'>05:00 pm</span><span class='schTitle'>Introduction</span><span class='schSpeaker'>&#9679; Myriel Milićević</span>" +
                         "</div><div class='schField schLeft'>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "</div><div class='schField schLeft'>" +
                         "<span class='schTime'>05:10 pm</span><span class='schTitle'>Moderator</span><span class='schSpeaker'>Alexandra Toland &#9679;</span>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
-                        "<span class='schTime'>05:15 pm</span><span class='schTitle'>Seeing the Forest in the Trees: Cosmological Imperialism in<br>Global Forest Monitoring</span><span class='schSpeaker'>&#9679; Birgit Schneider<br>and Lynda Olman</span>" +
+                        "<span class='schTime'>05:15 pm</span><span class='schTitle'>Seeing the Forest in the Trees: Cosmological Imperialism in<br>Global Forest Monitoring</span><span class='schSpeaker'>&#9679; Birgit Schneider<br>and Lynda C. Olman</span>" +
                         "</div><div class='schField schLeft'>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "</div><div class='schField schLeft'>" +
@@ -345,7 +345,29 @@
 				speakerWrap.className = 'panel panelSpeaker';
                 speakerWrap.id = 'speakerWrap';
 
-                speakerWrap.innerHTML="";
+                speakerWrap.innerHTML=""+
+                "<div class='headline'>Speakers</div><div class='cont'>" +
+                "<span class='schClose' onclick='closePanel(2)'>x</span>" +
+                "<span class='text'>Andrés Burbano</span><br>"+
+                "<span class='impOrg'>Universidad de los Andes</span><br><br>"+
+                "<span class='text'>Arturo Escobar</span><br>"+
+                "<span class='impOrg'>University of North Carolina at Chapel Hill, USA</span><br><br>"+
+                "<span class='text'>Amy Franceschini</span><br>"+
+                "<span class='impOrg'>Futurefarmers</span><br><br>"+
+                "<span class='text'>Barbara Marcel</span><br>"+
+                "<span class='impOrg'></span><br><br>"+
+                "<span class='text'>Prof. Myriel Milicevic</span><br>"+
+                "<span class='impOrg'>University of Applied Sciences Potsdam</span><br><br>"+
+                "<span class='text'>Thiago de Oliveira</span><br>"+
+                "<span class='impOrg'>Ethnological Museum Berlin and Botanical Garden Berlin</span><br><br>"+
+                "<span class='text'>Lynda Olman</span><br>"+
+                "<span class='impOrg'>University of Nevada, Reno</span><br><br>"+
+                "<span class='text'>Alexandra Toland</span><br>"+
+                "<span class='impOrg'>Bauhaus-University Weimar</span><br><br>"+
+                "<span class='text'>Birgit Schneider</span><br>"+
+                "<span class='impOrg'>University of Potsdam</span>"+
+                "</div>"
+
                 const objSpeaker = new CSS2DObject( speakerWrap );
 				objSpeaker.position.set(0,0,0);
                 objSpeaker.visible=false;
@@ -358,12 +380,12 @@
 
                 imprintWrap.innerHTML=""+
                 "<div class='headline'>Imprint</div><div class='cont'>" +
-                "<span class='schClose' onclick='closePanel(3)'>X</span>" +
+                "<span class='schClose' onclick='closePanel(3)'>x</span>" +
                 "<span class='subHeadline'>Organizers</span><br><br><br>"+
                 "<span class='text'>Andrés Burbano</span><br>"+
-                "<span class='impOrg'>Universidad de los Andes</span><br>"+
-                "<span class='text'>Prof. Myriel Milicevic</span><br>"+
-                "<span class='impOrg'>University of Applied Sciences Potsdam</span><br>"+
+                "<span class='impOrg'>Universidad de los Andes</span><br><br>"+
+                "<span class='text'>Myriel Milićević</span><br>"+
+                "<span class='impOrg'>University of Applied Sciences Potsdam</span><br><br>"+
                 "<span class='text'>Thiago de Oliveira</span><br>"+
                 "<span class='impOrg'>Ethnological Museum Berlin and Botanical Garden Berlin</span><br><br><br><br>"+
                 "<span class='subHeadline'>Web Design</span><br><br><br>"+
@@ -372,7 +394,7 @@
                 "<span class='subHeadline'>Contact</span><br><br><br>"+
                 "<div class='fhpLogo'></div><br>"+
                 "<span class='text'>University of Applied Sciences Potsdam<br>Kiepenheuerallee 5<br>14469 Potsdam</span><br><br><br><span class='impOrg'>The University of Applied Sciences Potsdam is a public corporation. <br>It is represented by the President Prof. Dr. Eva Schmitt-Rodermund.</span><br><br>"+
-                "<span class='text'><a href='https://www.fh-potsdam.de/impressum'>Legal Notice</a><br><br><a href='https://www.fh-potsdam.de/datenschutzhinweis'>Data Protection</a><br><br>For questions, please email us:<br> <a href='mailto:rlsymposium2021@gmail.com'>rlsymposium2021@gmail.com</a></span><br>"+
+                "<span class='text'><a href='https://www.fh-potsdam.de/impressum'>Legal Notice</a><br><a href='https://www.fh-potsdam.de/datenschutzhinweis'>Data Protection</a><br><br>For questions, please email us: <a href='mailto:rlsymposium2021@gmail.com'>rlsymposium2021@gmail.com</a></span><br>"+
                 "</div>"
                 
 
