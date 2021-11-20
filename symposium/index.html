@@ -39,6 +39,9 @@
             color: #000bff;
             font-size: max(3vh,30px);
             cursor: pointer;
+            -moz-user-select: none; 
+            -webkit-user-select: none;
+            user-select: none;
         }
         .navWrap {
             position: absolute; 
@@ -426,6 +429,7 @@
                     animSrc[4]=controls.target.y;
                     animSrc[5]=controls.target.z;
                 }
+                console.log("hello");
 
                 mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
                 mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
