@@ -96,6 +96,7 @@
 			let camera, scene, renderer, pointcloud, controls, sphere, labelRenderer;
             let intersects=[];
             let sph=[];
+            let sphereMaterial1, sphereMaterial2;
             let animClick=[[0,-136,87,139],[0,-60,-30,147],[0,-41,148,-132],[0,-161,29,183]];
             let animProg=0.0;
             let animTime=0.0;
@@ -152,8 +153,8 @@
 
 
                 const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 );
-                const sphereMaterial1 = new THREE.MeshBasicMaterial( { color: c1 } );
-                const sphereMaterial2 = new THREE.MeshBasicMaterial( { color: c2 } );
+                sphereMaterial1 = new THREE.MeshBasicMaterial( { color: c1 } );
+                sphereMaterial2 = new THREE.MeshBasicMaterial( { color: c2 } );
                 
                 for(let i=0; i<=p.length-1; i++){
                     sph[i] = new THREE.Mesh( sphereGeometry, sphereMaterial1 );
