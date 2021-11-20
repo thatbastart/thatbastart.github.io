@@ -224,15 +224,10 @@
                 mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
                 mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
                 raycaster.setFromCamera( mouse, camera );
-                console.log()
-                if(intersects[0].length==1){
-                    setAnim(0);
-                } else if(intersects[1].length==1){
-                    setAnim(1);
-                } else if(intersects[2].length==1){
-                    setAnim(2);
-                } else if(intersects[3].length==1){
-                    setAnim(3);
+                for(let i=0; i<p.length; i++){
+                    if(raycaster.intersectObject(sph[i]).length==1){
+                        setAnim(i);
+                    }
                 }
             }
 
