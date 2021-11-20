@@ -36,9 +36,6 @@
             font-size: 3.5vh;
             cursor: pointer;
         }
-        .nav:hover{
-            color: #72ff0d;
-        }
         .navWrap {
             position: absolute; 
             right: 3vh; 
@@ -53,9 +50,6 @@
             background-color:#000bff;
             display:inline-block; 
             transform: translate(0%,10%);
-        }
-        .navCircle:hover{
-            background-color: #72ff0d;
         }
         .title {
             font-family: yoppa;
@@ -80,10 +74,10 @@
 	<body>
         <div id="main"></div>
         <div class="navWrap">
-            <span class="nav" onClick="setAnim(2);"><div class="navCircle"></div>about</span><br><br>
-            <span class="nav" onClick="setAnim(0);"><div class="navCircle"></div>schedule</span><br><br>
-            <span class="nav" onClick="setAnim(1);"><div class="navCircle"></div>speakers</span><br><br>
-            <span class="nav" onClick="setAnim(3);"><div class="navCircle"></div>imprint</span>
+            <span id="navAbout" class="nav" onClick="setAnim(2);"><div id="circleAbout" class="navCircle"></div>about</span><br><br>
+            <span id="navSchedule" class="nav" onClick="setAnim(0);"><div id="circleSchedule" class="navCircle"></div>schedule</span><br><br>
+            <span id="navSpeakers" class="nav" onClick="setAnim(1);"><div id="circleSpeakers" class="navCircle"></div>speakers</span><br><br>
+            <span id="navImprint" class="nav" onClick="setAnim(3);"><div id="circleImprint" class="navCircle"></div>imprint</span>
         </div>
         <span class="title" style="top: 3vh; left: 3vh; transform: translate(0%,-10%);">Relational<br>Landscapes</span>
         <span class="title" style="top: 50vh; right: 3vh; transform: translate(0%,-50%);">Symposium</span>
@@ -321,6 +315,21 @@
 
             window.addEventListener( "mousemove", onMouseMove, false );
             window.addEventListener( "pointerdown", onPointerDown, false );
+
+
+            for(el in document.getElementsByClassName("nav")){
+                el.addEventListener( "mouseout", setColor(this.id,0), false );
+                el.addEventListener( "mousein", setColor(this.id,1), false );
+            }
+            for(el in document.getElementsByClassName("navCircle")){
+                el.addEventListener( "mouseout", setColor(this.id,0), false );
+                el.addEventListener( "mousein", setColor(this.id,1), false );
+            }
+
+
+            function setColor(id,c){
+                console.log(id);
+            }
 		</script>
 	</body>
 </html>
