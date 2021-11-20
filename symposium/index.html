@@ -189,11 +189,6 @@
             box-sizing: border-box;
             padding: 3% 16% 6% 16%;
         }
-        .schSubHeadline {
-            font-size: max(3vh,20px);
-            font-family: yoppa; 
-            text-align: center;
-        }
         .schClose {
             font-family: yoppa;
             font-size: max(2.5vh,18px);
@@ -377,8 +372,13 @@
                 let schCont=[
                 "<div class='schCont'>" +
                 "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
-                "<span class='schSubHeadline'>" + bios[4][0] + "</span><br><br><br>"+
+                "<span class='subHeadline'><center>" + bios[4][0] + "</center></span><br>"+
                 "<span class='text'>" + bios[4][1] + "</span>",
+
+                "<div class='schCont'>" +
+                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='subHeadline'><center>" + bios[7][0] + "</center></span><br>"+
+                "<span class='text'>" + bios[7][1] + "</span>",
 
 
 
