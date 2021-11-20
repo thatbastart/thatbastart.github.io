@@ -73,12 +73,13 @@
             pointer-events: none;
             position: absolute;
         }
-        .schedule {
+        .panel {
             height: 100vh;
             width: calc(100vw/3);
-            background-color: #000bff;
-            background-size: contain;
             pointer-events: auto;
+        }
+        .panelSchedule {
+            background-color: #000bff;
         }
         .schHeadline {
             width: 94%; 
@@ -242,13 +243,13 @@
 
 
                 const scheduleWrap = document.createElement( 'div' );
-				scheduleWrap.className = 'schedule';
+				scheduleWrap.className = 'panel panelSchedule';
                 scheduleWrap.id = 'scheduleWrap';
 
                 scheduleWrap.innerHTML=""+
                 "<div class='schHeadline'>Schedule</div><div style='width:100%; height:87%;'>" +
                     "<div class='schLine'></div>" +
-                    "<span class='schClose' onClick='closePanel'>X</span>" +
+                    "<span class='schClose' onclick='closePanel()'>X</span>" +
                     "<div class='schRow'><div class='schField schRight'>" +
                         "<span class='schTime'>05:00 pm</span><span class='schTitle'>Introduction</span><span class='schSpeaker'>&#9679; Myriel Milicevic</span>" +
                         "</div><div class='schField schLeft'>" +
