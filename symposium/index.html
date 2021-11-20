@@ -261,7 +261,7 @@
                         "</div><div class='schField schLeft'>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "</div><div class='schField schLeft'>" +
-                        "<span class='schTime'>05:30 pm</span><span class='schTitle'>Presentation</span><span class='schSpeaker'>Barbara Marcel&#9679;</span>" +
+                        "<span class='schTime'>05:30 pm</span><span class='schTitle'>Presentation</span><span class='schSpeaker'>Barbara Marcel &#9679;</span>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "<span class='schTime'>05:00 pm</span><span class='schTitle'>Moderator</span><span class='schSpeaker'>&#9679; Andrés Burbano</span>" +
                         "</div><div class='schField schLeft'>" +
@@ -409,9 +409,8 @@
                 return val > max ? max : val < min ? min : val;
             }
 
-            let cv=document.getElementsByTagName("canvas")
-            cv[0].addEventListener( "mousemove", onMouseMove, false );
-            cv[0].addEventListener( "pointerdown", onPointerDown, false );
+            window.addEventListener( "mousemove", onMouseMove, false );
+            window.addEventListener( "pointerdown", onPointerDown, false );
 
             window.onload=function(){
                 let nav=document.getElementsByClassName("nav");
