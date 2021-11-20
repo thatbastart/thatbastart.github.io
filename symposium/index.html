@@ -170,8 +170,7 @@
 				const objSchedule = new CSS2DObject( scheduleWrap );
 				objSchedule.position.set(0,0,0);
                 objSchedule.visible=false;
-				sph[0].add( objSchedule );
-                console.log(sph[0]);
+				sph[1].add( objSchedule );
 
 
                 labelRenderer = new CSS2DRenderer();
@@ -216,8 +215,6 @@
             }
 
             function onPointerDown( event ) {
-                console.log(camera.position);
-                console.log(controls.target);
                 if(animTime==0){
                     animSrc[0]=camera.position.x;
                     animSrc[1]=camera.position.y;
@@ -311,7 +308,6 @@
             window.onload=function(){
                 let nav=document.getElementsByClassName("nav");
                 let navC=document.getElementsByClassName("navCircle");
-                console.log(nav);
                 for(let i=0; i<nav.length;i++) {
                     nav[i].onmouseover=function(){setNavColor(i,1)};
                     nav[i].onmouseout=function(){setNavColor(i,0)};
@@ -326,10 +322,12 @@
                         nav[id].style.color="#000bff";
                         navC[id].style.backgroundColor="#000bff";
                         sph[id].material=sphereMaterial1;
+                        render();
                     } else {
                         nav[id].style.color="#72ff0d";
                         navC[id].style.backgroundColor="#72ff0d";
                         sph[id].material=sphereMaterial2;
+                        render();
                     }
                 }
             }
