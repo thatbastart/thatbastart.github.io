@@ -201,7 +201,7 @@
                         document.body.style.cursor="pointer";
                         sph[i].material=sphereMaterial2;
                         render();
-                    } else {
+                    } else if(sph[i].material==sphereMaterial2) {
                         document.body.style.cursor="default";
                         sph[i].material=sphereMaterial1;
                         render();
@@ -219,6 +219,10 @@
                     animSrc[5]=controls.target.z;
                 }
 
+                mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+                mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+                raycaster.setFromCamera( mouse, camera );
+                console.log()
                 if(intersects[0].length==1){
                     setAnim(0);
                 } else if(intersects[1].length==1){
