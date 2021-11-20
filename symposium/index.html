@@ -192,7 +192,9 @@
         <span class="title" style="top: 3vh; left: 3vh; transform: translate(0%,-10%);">Relational<br>Landscapes</span>
         <span class="title" style="top: 50vh; right: 3vh; transform: translate(0%,-50%);">Symposium</span>
         <span class="title" style="bottom: 5vh; left: 3vh; transform: translate(0%,10%);">Dec 2nd 2021<br>5-7:30pm</span>
-        <script>
+        <script type="module">
+            window.setAnim=setAnim;
+            window.closePanel=closePanel;
 
 			import * as THREE from './three/build/three.module.js';
 
@@ -423,7 +425,7 @@
 
             function setAnim(c){
                 if(animTime==0){
-                    console.log(sph[0].children[0]);
+                    console.log(sph[0].children);
                     for(let i=0; i<p.length;i++){
                         sph[i].children[0].visible=false;
                     }
@@ -433,6 +435,7 @@
             }
 
             function closePanel(id){
+                console.log("hello");
                 sph[id].children[0].visible=false;
             }
 
