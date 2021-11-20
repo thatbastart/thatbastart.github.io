@@ -9,6 +9,14 @@
             src: url(nb_akademie_std_bold.ttf);
         }
         @font-face {
+            font-family: akademieReg;
+            src: url(nb_akademie_std_regular.ttf);
+        }
+        @font-face {
+            font-family: akademieItalic;
+            src: url(nb_akademie_std_italic.ttf);
+        }
+        @font-face {
             font-family: yoppa;
             src: url(Yoppa-Regular.otf);
         }
@@ -87,7 +95,14 @@
         }
         .scheduleField {
             width: 100%;
-            height: 12.5%
+            height: 12.5%;
+            display: inline-block;
+            text-align: right;
+            color: #fff600;
+            padding: 2% 10% 2% 10%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
         }
         .scheduleLine {
             position: absolute; 
@@ -195,7 +210,9 @@
                                         "<div class='scheduleLine'></div>" +
                                         "<div class='columns'>" +
                                             "<div class='scheduleField'>" +
-                                                "05:00pm<br>Introduction<br>&#9679; Myriel Milicevic" +
+                                                "<span style='font-family: yoppa;'>05:00pm</span><br>" +
+                                                "<span style='font-family: akademieReg;'>Introduction</span><br>" +
+                                                "&#9679; <span style='font-family: akademieItalic;'>Myriel Milicevic</span>" +
                                             "</div><div class='scheduleField'>" +
                                             "</div><div class='scheduleField'>" +
                                             "</div><div class='scheduleField'>" +
