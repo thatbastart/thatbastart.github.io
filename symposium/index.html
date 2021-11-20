@@ -62,8 +62,8 @@
             position: absolute;
         }
         .schedule {
-            height: 90vh;
-            aspect-ratio: 1 / 1.6;
+            height: 100vh;
+            width: calc(100vw/3);
             background-color: #000bff;
             background-size: contain;
             /*opacity: 0.0;
@@ -73,12 +73,17 @@
         }
         .headline {
             width: 94%; 
-            height: 5vh; 
+            height: 5%; 
             font-family: yoppa; 
             font-size: 3.5vh;
             text-align: center;
             margin: 3%;
             color: #fff600;
+        }
+        .columns {
+            display: inline-block;
+            width: 50%;
+            height: 100%;
         }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
@@ -175,7 +180,7 @@
                 const scheduleWrap = document.createElement( 'div' );
 				scheduleWrap.className = 'schedule';
                 scheduleWrap.id = 'scheduleWrap';
-                scheduleWrap.innerHTML="<div class='headline'>Schedule</div>"
+                scheduleWrap.innerHTML="<div class='headline'>Schedule</div><div style='width:100%; height:90%;'><div class='columns' style='border-right: 4px solid #fff600;'></div><div class='columns'></div></div><div style='width:100%; height:5%;'></div>"
 				const objSchedule = new CSS2DObject( scheduleWrap );
 				objSchedule.position.set(0,0,0);
                 objSchedule.visible=false;
