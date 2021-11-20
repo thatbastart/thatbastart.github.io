@@ -537,13 +537,13 @@
             }
 
             function openPanel(s, id){
-                console.log(schCont);
                 if(s==0){
                     sph[1].children[1].offset.x="-150%";
                 } else {
                     sph[1].children[1].offset.x="50%";
                 }
                 sph[1].children[1].innerHTML=schCont[id];
+                console.log(sph[1].children[1]);
                 sph[1].children[1].visible=true;
                 render();
             }
