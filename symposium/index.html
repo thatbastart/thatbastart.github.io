@@ -80,17 +80,17 @@
             width: calc(100vw/3);
             pointer-events: auto;
         }
+        .panelAbout {
+            background-color: #000bff;
+            color: #fff600;
+        }
         .panelSchedule {
             background-color: #000bff;
             color: #fff600;
         }
-        .panelAbout {
+        .panelImprint {
             background-color: #000bff;
             color: #fff600;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 3%;
         }
 
 
@@ -112,6 +112,18 @@
             line-height: 1.2;
         }
 
+        .cont {
+            width: 100%;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 3%;
+        }
+
+        .impOrg {
+            font-family: akademieItalic;
+            font-size: max(1.8vh,14px);
+        }
 
         .schRow {
             display: inline-block;
@@ -271,7 +283,8 @@
                 aboutWrap.id = 'aboutWrap';
 
                 aboutWrap.innerHTML=""+
-                "<div class='headline'>About</div><div style='width:100%; height:87%;'><br><br>" +
+                "<div class='headline'>About</div><div class='cont'><br><br>" +
+                "<span class='schClose' onclick='closePanel(0)'>X</span>" +
                 "<span class='subHeadline'>Relational Landscapes Symposium</span><br><br><br>"+
                 "<span class='text'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.</span>"
 
@@ -322,6 +335,24 @@
 				objSchedule.position.set(0,0,0);
                 objSchedule.visible=false;
 				sph[1].add( objSchedule );
+
+
+
+                const imprintWrap = document.createElement( 'div' );
+				imprintWrap.className = 'panel panelImprint';
+                imprintWrap.id = 'imprintWrap';
+
+                imprintWrap.innerHTML=""+
+                "<div class='headline'>Imprint</div><div style='cont'><br><br>" +
+                "<span class='schClose' onclick='closePanel(0)'>X</span>" +
+                "<span class='subHeadline'>Organizers</span><br><br><br>"+
+                "<span class='text'>Andrés Burbano</span>"+
+                "<span class='impOrg'>Universidad de los Andes</span></div>"
+
+                const objImprint = new CSS2DObject( imprintWrap );
+				objImprint.position.set(0,0,0);
+                objImprint.visible=false;
+				sph[3].add( objImprint );
 
 
                 labelRenderer = new CSS2DRenderer();
