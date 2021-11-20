@@ -316,27 +316,29 @@
             window.addEventListener( "mousemove", onMouseMove, false );
             window.addEventListener( "pointerdown", onPointerDown, false );
 
+            window.onload=function(){
+                let nav=document.getElementsByClassName("nav");
+                let navC=document.getElementsByClassName("navCircle");
+                for(let i=0; i<nav.length;i++) {
+                    nav[i].addEventListener( "mouseout", setColor(i,0), false );
+                    nav[i].addEventListener( "mouseover", setColor(i,1), false );
+                }
+                for(let i=0; i<navC.length;i++) {
+                    navC[i].addEventListener( "mouseout", setColor(i,0), false );
+                    navC[i].addEventListener( "mouseover", setColor(i,1), false );
+                }
 
-            let nav=document.getElementsByClassName("nav");
-            let navC=document.getElementsByClassName("navCircle");
-            for(let i=0; i<nav.length;i++) {
-                nav[i].addEventListener( "mouseout", setColor(i,0), false );
-                nav[i].addEventListener( "mouseover", setColor(i,1), false );
-            }
-            for(let i=0; i<navC.length;i++) {
-                navC[i].addEventListener( "mouseout", setColor(i,0), false );
-                navC[i].addEventListener( "mouseover", setColor(i,1), false );
-            }
-
-            function setColor(id,c){
-                if(c==0){
-                    nav[id].style.color="#000bff";
-                    navC[id].style.backgroundColor="#000bff";
-                } else {
-                    nav[id].style.color="#72ff0d";
-                    navC[id].style.backgroundColor="#72ff0d";
+                function setColor(id,c){
+                    if(c==0){
+                        nav[id].style.color="#000bff";
+                        navC[id].style.backgroundColor="#000bff";
+                    } else {
+                        nav[id].style.color="#72ff0d";
+                        navC[id].style.backgroundColor="#72ff0d";
+                    }
                 }
             }
+            
 		</script>
 	</body>
 </html>
