@@ -540,7 +540,10 @@
                     const diffY = Math.abs(event.pageY - startY);
 
                     if (diffX < delta && diffY < delta) {
-                        console.log("click");
+                        for(let i=0;i<p.length;i++){
+                            sph[i].children[0].visible=false;
+                        }
+                        render();
                     }
                 });
 
