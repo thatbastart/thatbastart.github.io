@@ -200,6 +200,7 @@
                 for(let i=0; i<p.length; i++){
                     intersects[i] = raycaster.intersectObject(sph[i])[0];
                 }
+                console.log(intersects);
                 for(let i=0; i<intersects.length;i++){
                     if(intersects[i].length==1){
                         document.body.style.cursor="pointer";
