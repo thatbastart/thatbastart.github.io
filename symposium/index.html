@@ -305,10 +305,12 @@
                 for(let i=0; i<nav.length;i++) {
                     nav[i].onmouseover=function(){setNavColor(i,1)};
                     nav[i].onmouseout=function(){setNavColor(i,0)};
+                    nav[i].onmouseup=function(){setNavColor(i,0)};
                 }
                 for(let i=0; i<navC.length;i++) {
                     navC[i].onmouseover=function(){setNavColor(i,1)};
                     navC[i].onmouseout=function(){setNavColor(i,0)};
+                    nav[i].onmouseup=function(){setNavColor(i,0)};
                 }
 
                 function setNavColor(id, c){
