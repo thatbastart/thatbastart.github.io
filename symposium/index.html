@@ -73,6 +73,8 @@
             pointer-events: none;
             position: absolute;
         }
+
+
         .panel {
             height: 100vh;
             width: calc(100vw/3);
@@ -80,16 +82,33 @@
         }
         .panelSchedule {
             background-color: #000bff;
+            color: #fff600;
         }
-        .schHeadline {
+        .panelAbout {
+            background-color: #000bff;
+            color: #fff600;
+        }
+
+
+        .headline {
             width: 94%; 
             height: 5%; 
             font-family: yoppa; 
             font-size: max(3.5vh,25px);
             text-align: center;
             margin: 3%;
-            color: #fff600;
         }
+        .subHeadline {
+            font-size: max(3vh,20px);
+            font-family: yoppa; 
+        }
+        .text {
+            font-family: akademieMed;
+            font-size: max(1.8vh,14px);
+            line-height: 1.2;
+        }
+
+
         .schRow {
             display: inline-block;
             width: 100%;
@@ -98,7 +117,6 @@
             width: 50%;
             height: 100%;
             display: inline-block;
-            color: #fff600;
             padding: 0.75% 4% 0.75% 4%;
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
@@ -142,7 +160,6 @@
         .schClose {
             font-family: yoppa;
             font-size: max(2.5vh,18px);
-            color: #fff600;
             position: absolute;
             top: 3%;
             right: 3%;
@@ -242,12 +259,32 @@
                 }
 
 
+
+
+
+                const aboutWrap = document.createElement( 'div' );
+				aboutWrap.className = 'panel panelAbout';
+                aboutWrap.id = 'aboutWrap';
+
+                aboutWrap.innerHTML=""+
+                "<div class='headline'>About</div><div style='width:100%; height:87%;'>" +
+                "<span class='subHeadline'>Relational Landscapes Symposium</span><br>"+
+                "<span class='text'>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.</span>"
+
+                const objAbout = new CSS2DObject( aboutWrap );
+				objAbout.position.set(0,0,0);
+                objAbout.visible=false;
+				sph[0].add( objAbout );
+
+
+
+
                 const scheduleWrap = document.createElement( 'div' );
 				scheduleWrap.className = 'panel panelSchedule';
                 scheduleWrap.id = 'scheduleWrap';
 
                 scheduleWrap.innerHTML=""+
-                "<div class='schHeadline'>Schedule</div><div style='width:100%; height:87%;'>" +
+                "<div class='headline'>Schedule</div><div style='width:100%; height:87%;'>" +
                     "<div class='schLine'></div>" +
                     "<span class='schClose' onclick='closePanel()'>X</span>" +
                     "<div class='schRow'><div class='schField schRight'>" +
@@ -275,7 +312,7 @@
                         "</div><div class='schField schLeft'>" +
                         "<span class='schTime'>07:00 pm</span><span class='schTitle'>Interview with Arturo Escobar</span><span class='schSpeaker'>Arturo Escobar &#9679;</span> " +
                         "</div></div>" + 
-                    "</div>"
+                    "</div>";
 
 				const objSchedule = new CSS2DObject( scheduleWrap );
 				objSchedule.position.set(0,0,0);
@@ -364,7 +401,9 @@
                         if(animTime>=1.0){
                             animTime=0.0;
                             animClick[i][0]=0;
-                            if(i==1){
+                            if(i==0){
+                                sph[0].children[0].visible=true;
+                            } else if(i==1){
                                 sph[1].children[0].visible=true;
                             }
                         } else {
