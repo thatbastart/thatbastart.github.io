@@ -230,6 +230,7 @@
             let animTime=0.0;
             let animSrc=[0,0,0,0,0,0]
             let hover=[0,0,0,0];
+            let schCont=[];
 
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
@@ -369,7 +370,7 @@
                             ["Birgit Schneider","Birgit Schneider is a media and visual studies scholar with a strong interest in environmental humanities. She is professor for knowledge cultures and media environments at Potsdam University, Institute for Arts and Media, European media studies. Her research focus are technical and scientific images with a strong focus on questions of media aesthetics, techné, ecology, maps, diagrams and textility from 17th century till the present. Her current research focuses on the visual communication of climate since 1800 and a genealogy of climate change visualization inbetween science, aesthetics and politics. Her monograph on the subject was published in 2018, entitled Klimabilder. Eine Genealogie der Bildpolitiken von Klima und Klimawandel. Another book on the subject is the edited volume „Image Politics of Climate Change“ (Bielefeld 2014)."],
                 ];
 
-                let schCont=[
+                schCont=[
                 "<div class='schCont'>" +
                 "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + bios[4][0] + "</center></span><br>"+
