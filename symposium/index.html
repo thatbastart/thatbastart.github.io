@@ -331,14 +331,13 @@
                     navC[i].onmouseout=function(i){setNavColor(i,0)};
                 }
 
-                function setNavColor(id,c){
-                    console.log(id);
+                function setNavColor(e,c){
                     if(c==0){
-                        nav[id].style.color="#000bff";
-                        navC[id].style.backgroundColor="#000bff";
+                        e.srcElement.style.color="#000bff";
+                        e.srcElement.style.backgroundColor="#000bff";
                     } else {
-                        nav[id].style.color="#72ff0d";
-                        navC[id].style.backgroundColor="#72ff0d";
+                        e.srcElement.style.color="#72ff0d";
+                        e.srcElement.style.backgroundColor="#72ff0d";
                     }
                 }
             }
