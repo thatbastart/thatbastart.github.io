@@ -77,9 +77,9 @@
 	<body>
         <div id="main"></div>
         <div class="navWrap">
-            <span id="navAbout" class="nav" onClick="setAnim(2);"><div id="circleAbout" class="navCircle"></div>About</span><br><br>
-            <span id="navSchedule" class="nav" onClick="setAnim(0);"><div id="circleSchedule" class="navCircle"></div>Schedule</span><br><br>
-            <span id="navSpeakers" class="nav" onClick="setAnim(1);"><div id="circleSpeakers" class="navCircle"></div>Speakers</span><br><br>
+            <span id="navAbout" class="nav" onClick="setAnim(0);"><div id="circleAbout" class="navCircle"></div>About</span><br><br>
+            <span id="navSchedule" class="nav" onClick="setAnim(1);"><div id="circleSchedule" class="navCircle"></div>Schedule</span><br><br>
+            <span id="navSpeakers" class="nav" onClick="setAnim(2);"><div id="circleSpeakers" class="navCircle"></div>Speakers</span><br><br>
             <span id="navImprint" class="nav" onClick="setAnim(3);"><div id="circleImprint" class="navCircle"></div>Imprint</span>
         </div>
         <span class="title" style="top: 3vh; left: 3vh; transform: translate(0%,-10%);">Relational<br>Landscapes</span>
@@ -96,7 +96,7 @@
 			let camera, scene, renderer, pointcloud, controls, sphere, labelRenderer;
             let intersects=[];
             let sph=[];
-            let animClick=[[0,-60,-30,147],[0,-41,148,-132],[0,-136,87,139],[0,-161,29,183]];
+            let animClick=[[0,-136,87,139],[0,-60,-30,147],[0,-41,148,-132],[0,-161,29,183]];
             let animProg=0.0;
             let animTime=0.0;
             let animSrc=[0,0,0,0,0,0]
@@ -104,14 +104,15 @@
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
             
-            let p=[ new THREE.Vector3(-59, -32, 14), // Schedule
+            let p=[ new THREE.Vector3(21, 23, 111), // About
+                    new THREE.Vector3(-59, -32, 14), // Schedule
                     new THREE.Vector3(15, 23, -34), // Speakers
-                    new THREE.Vector3(21, 23, 111), // About
                     new THREE.Vector3(-61, 7, 126), // Imprint
                 ];
 
             const c0=new THREE.Color(0,0,0);
-            const c1=new THREE.Color(0.0,0.04,1.00);
+            const c1=new THREE.Color(0.0,0.04,1.0);
+            const c2=new THREE.Color(0.447,1.0,0.051);
 
 			init();
 			
@@ -151,10 +152,11 @@
 
 
                 const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 );
-                const sphereMaterial = new THREE.MeshBasicMaterial( { color: c1 } );
+                const sphereMaterial1 = new THREE.MeshBasicMaterial( { color: c1 } );
+                const sphereMaterial2 = new THREE.MeshBasicMaterial( { color: c2 } );
                 
                 for(let i=0; i<=p.length-1; i++){
-                    sph[i] = new THREE.Mesh( sphereGeometry, sphereMaterial );
+                    sph[i] = new THREE.Mesh( sphereGeometry, sphereMaterial1 );
                     scene.add(sph[i]);
                     sph[i].position.set(p[i].x,p[i].y,p[i].z);
                 }
@@ -226,22 +228,8 @@
 
                 if(intersects[0].length==1){
                     setAnim(0);
-                    for(let i=4; i<=13; i++){
-                        if(sph[i].visible==false){
-                            sph[i].visible=true;
-                        } else {
-                            sph[i].visible=false;
-                        }
-                    }
                 } else if(intersects[1].length==1){
                     setAnim(1);
-                    for(let i=14; i<=23; i++){
-                        if(sph[i].visible==false){
-                            sph[i].visible=true;
-                        } else {
-                            sph[i].visible=false;
-                        }
-                    }
                 } else if(intersects[2].length==1){
                     setAnim(2);
                 } else if(intersects[3].length==1){
@@ -333,13 +321,14 @@
                 }
 
                 function setNavColor(id, c){
-                    console.log(id);
                     if(c==0){
                         nav[id].style.color="#000bff";
                         navC[id].style.backgroundColor="#000bff";
+                        sph[id].material=sphereMaterial1;
                     } else {
                         nav[id].style.color="#72ff0d";
                         navC[id].style.backgroundColor="#72ff0d";
+                        sph[id].material=sphereMaterial2;
                     }
                 }
             }
