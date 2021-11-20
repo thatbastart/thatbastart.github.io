@@ -39,15 +39,15 @@
             color: #000bff;
             font-size: max(3vh,30px);
             cursor: pointer;
-            -moz-user-select: none; 
-            -webkit-user-select: none;
-            user-select: none;
         }
         .navWrap {
             position: absolute; 
             right: 3vh; 
             bottom: 3vh; 
             text-align: right;
+            -moz-user-select: none; 
+            -webkit-user-select: none;
+            user-select: none;
         }
         .navCircle {
             width: 2.8vh;
@@ -429,7 +429,6 @@
                     animSrc[4]=controls.target.y;
                     animSrc[5]=controls.target.z;
                 }
-                console.log("hello");
 
                 mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
                 mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
@@ -526,6 +525,25 @@
             window.addEventListener( "pointerdown", onPointerDown, false );
 
             window.onload=function(){
+                const delta = 6;
+                let startX;
+                let startY;
+                let cv=document.getElementsByTagName("canvas")[0];
+
+                cv.addEventListener('mousedown', function (event) {
+                    startX = event.pageX;
+                    startY = event.pageY;
+                });
+
+                cv.addEventListener('mouseup', function (event) {
+                    const diffX = Math.abs(event.pageX - startX);
+                    const diffY = Math.abs(event.pageY - startY);
+
+                    if (diffX < delta && diffY < delta) {
+                        console.log("click");
+                    }
+                });
+
                 let nav=document.getElementsByClassName("nav");
                 let navC=document.getElementsByClassName("navCircle");
                 for(let i=0; i<nav.length;i++) {
