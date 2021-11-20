@@ -200,17 +200,17 @@
                 for(let i=0; i<=p.length-1; i++){
                     intersects[i] = raycaster.intersectObject(sph[i]);
                 }
-                let mouseIntersect=false;
                 for(let i=0; i<=intersects.length-1;i++){
                     if(intersects[i].length==1){
-                        mouseIntersect=true;
+                        sph[i].material=sphereMaterial2;
+                        render();
+                        document.body.style.cursor="pointer";
                         break;
+                    } else {
+                        sph[i].material=sphereMaterial1;
+                        render();
+                        document.body.style.cursor="default";
                     }
-                }
-                if(mouseIntersect==true){
-                    document.body.style.cursor="pointer";
-                } else {
-                    document.body.style.cursor="default";
                 }
             }
 
