@@ -255,25 +255,25 @@
                         "</div><div class='schField schLeft'>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "</div><div class='schField schLeft'>" +
-                        "<span class='schTime'>05:10 pm</span><span class='schTitle'>Moderator</span><span class='schSpeaker'>&#9679; Alexandra Toland</span>" +
+                        "<span class='schTime'>05:10 pm</span><span class='schTitle'>Moderator</span><span class='schSpeaker'>Alexandra Toland &#9679;</span>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "<span class='schTime'>05:15 pm</span><span class='schTitle'>Seeing the Forest in the Trees: Cosmological Imperialism in<br>Global Forest Monitoring</span><span class='schSpeaker'>&#9679; Birgit Schneider<br>and Lynda Olman</span>" +
                         "</div><div class='schField schLeft'>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "</div><div class='schField schLeft'>" +
-                        "<span class='schTime'>05:30 pm</span><span class='schTitle'>Presentation</span><span class='schSpeaker'>&#9679; Barbara Marcel</span>" +
+                        "<span class='schTime'>05:30 pm</span><span class='schTitle'>Presentation</span><span class='schSpeaker'>Barbara Marcel&#9679;</span>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "<span class='schTime'>05:00 pm</span><span class='schTitle'>Moderator</span><span class='schSpeaker'>&#9679; Andrés Burbano</span>" +
                         "</div><div class='schField schLeft'>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "</div><div class='schField schLeft'>" +
-                        "<span class='schTime'>06:10 pm</span><span class='schTitle'>Connect - Comprehend - Communicate.<br>Amazonia as a future laboratory</span><span class='schSpeaker'>&#9679; Thiago da Costa Oliveira<br>and Fidel Thomet</span>" +
+                        "<span class='schTime'>06:10 pm</span><span class='schTitle'>Connect - Comprehend - Communicate.<br>Amazonia as a future laboratory</span><span class='schSpeaker'>Thiago da Costa Oliveira<br>and Fidel Thomet &#9679;</span>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "<span class='schTime'>06:25 pm</span><span class='schTitle'>Presence as Practice</span><span class='schSpeaker'>&#9679; Amy Franceschini</span>" +
                         "</div><div class='schField schLeft'>" +
                         "</div></div><div class='schRow'><div class='schField schRight'>" +
                         "</div><div class='schField schLeft'>" +
-                        "<span class='schTime'>07:00 pm</span><span class='schTitle'>Interview with Arturo Escobar</span><span class='schSpeaker'>&#9679; Arturo Escobar</span> " +
+                        "<span class='schTime'>07:00 pm</span><span class='schTitle'>Interview with Arturo Escobar</span><span class='schSpeaker'>Arturo Escobar &#9679;</span> " +
                         "</div></div>" + 
                     "</div>"
 
@@ -409,9 +409,9 @@
                 return val > max ? max : val < min ? min : val;
             }
 
-
-            window.addEventListener( "mousemove", onMouseMove, false );
-            window.addEventListener( "pointerdown", onPointerDown, false );
+            let cv=document.getElementsByTagName("canvas")
+            cv[0].addEventListener( "mousemove", onMouseMove, false );
+            cv[0].addEventListener( "pointerdown", onPointerDown, false );
 
             window.onload=function(){
                 let nav=document.getElementsByClassName("nav");
