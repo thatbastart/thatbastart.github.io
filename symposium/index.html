@@ -48,7 +48,7 @@
         .nav {
             font-family: yoppa;
             color: #000bff;
-            font-size: 3.5vh;
+            font-size: max(3.5vh,30px);
             cursor: pointer;
         }
         .navWrap {
@@ -78,10 +78,7 @@
             width: calc(100vw/3);
             background-color: #000bff;
             background-size: contain;
-            /*opacity: 0.0;
-            -webkit-transition: opacity 0.3s ease-in-out;
-            -moz-transition: opacity 0.3s ease-in-out;
-            transition: opacity 0.3s ease-in-out;*/
+            pointer-events: auto;
         }
         .schHeadline {
             width: 94%; 
@@ -166,6 +163,8 @@
         <span class="title" style="bottom: 5vh; left: 3vh; transform: translate(0%,10%);">02.12.21<br>5-7:30pm</span>
         <script type="module">
             window.setAnim=setAnim;
+            window.closePanel=closePanel;
+
 			import * as THREE from './three/build/three.module.js';
 
 			import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
@@ -245,12 +244,11 @@
                 const scheduleWrap = document.createElement( 'div' );
 				scheduleWrap.className = 'schedule';
                 scheduleWrap.id = 'scheduleWrap';
-                scheduleWrap.pointerEvents = 'auto';
 
                 scheduleWrap.innerHTML=""+
                 "<div class='schHeadline'>Schedule</div><div style='width:100%; height:87%;'>" +
                     "<div class='schLine'></div>" +
-                    "<span class='schClose'>X</span>" +
+                    "<span class='schClose' onClick='closePanel'>X</span>" +
                     "<div class='schRow'><div class='schField schRight'>" +
                         "<span class='schTime'>05:00 pm</span><span class='schTitle'>Introduction</span><span class='schSpeaker'>&#9679; Myriel Milicevic</span>" +
                         "</div><div class='schField schLeft'>" +
@@ -349,6 +347,10 @@
                 }
             }
 
+            function closePanel(){
+                sph[1].children[0].visible=false;
+            }
+
             function camAnim(){
                 let pos = new THREE.Vector3;
                 let tar = new THREE.Vector3;
@@ -411,7 +413,6 @@
             window.addEventListener( "pointerdown", onPointerDown, false );
 
             window.onload=function(){
-                document.getElementsByClassName("schClose")[0].onclick=function(){sph[1].children[0].visible=false;};
                 let nav=document.getElementsByClassName("nav");
                 let navC=document.getElementsByClassName("navCircle");
                 for(let i=0; i<nav.length;i++) {
