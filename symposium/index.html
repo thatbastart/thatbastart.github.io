@@ -317,12 +317,12 @@
             window.addEventListener( "pointerdown", onPointerDown, false );
 
 
-            let nav=document.getElementsByClassName("nav")
+            let nav=document.getElementsByClassName("nav");
+            let navC=document.getElementsByClassName("navCircle");
             for(let i=0; i<nav.length;i++) {
                 nav[i].addEventListener( "mouseout", setColor(i,0), false );
                 nav[i].addEventListener( "mousein", setColor(i,1), false );
             }
-            let navC=document.getElementsByClassName("navCircle")
             for(let i=0; i<navC.length;i++) {
                 navC[i].addEventListener( "mouseout", setColor(i,0), false );
                 navC[i].addEventListener( "mousein", setColor(i,1), false );
