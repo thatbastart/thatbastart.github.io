@@ -432,9 +432,7 @@
                 raycaster.setFromCamera( mouse, camera );
                 for(let i=0; i<p.length; i++){
                     if(raycaster.intersectObject(sph[i]).length==1){
-                        console.log(camera.position);
-                        console.log(animClick);
-                        if(camera.position.x==animClick[1] && camera.position.y==animClick[2] && camera.position.z==animClick[3]){
+                        if(Math.round(camera.position.x)==animClick[i][1] && Math.round(camera.position.y)==animClick[i][2] && Math.round(camera.position.z)==animClick[i][3]){
                             sph[i].children[0].visible=true;
                             render();
                         } else {
