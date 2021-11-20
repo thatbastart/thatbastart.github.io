@@ -77,6 +77,10 @@
             background-color: #000bff;
             color: #fff600;
         }
+        .panelSpeaker {
+            background-color: #000bff;
+            color: #fff600;
+        }
         .panelImprint {
             background-color: #000bff;
             color: #fff600;
@@ -334,6 +338,16 @@
 				sph[1].add( objSchedule );
 
 
+                const speakerWrap = document.createElement( 'div' );
+				speakerWrap.className = 'panel panelSpeaker';
+                speakerWrap.id = 'speakerWrap';
+
+                speakerWrap.innerHTML="";
+                const objSpeaker = new CSS2DObject( speakerWrap );
+				objSpeaker.position.set(0,0,0);
+                objSpeaker.visible=false;
+				sph[2].add( objSpeaker );
+
 
                 const imprintWrap = document.createElement( 'div' );
 				imprintWrap.className = 'panel panelImprint';
@@ -430,12 +444,9 @@
 
             function setAnim(c){
                 if(animTime==0){
-                    sph[0].children[0].visible=false;
-                    sph[1].children[0].visible=false;
-                    sph[3].children[0].visible=false;
-                    //for(let i=0;i<p.length;i++){
-                    //    sph[i].children[0].visible=false;
-                    //}
+                    for(let i=0;i<p.length;i++){
+                        sph[i].children[0].visible=false;
+                    }
                     animClick[c][0]=1;
                     animate();
                 }
