@@ -93,15 +93,20 @@
             width: 100%;
         }
         .scheduleField {
-            width: 100%;
+            width: 50%;
             height: 100%;
             display: inline-block;
-            text-align: right;
             color: #fff600;
-            padding: 2% 10% 2% 10%;
+            padding: 1% 40% 1% 4%;
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
+        }
+        .scheduleField .schLeft{
+            text-align: left;
+        }
+        .scheduleField .schRight{
+            text-align: right;
         }
         .scheduleLine {
             position: absolute; 
@@ -207,14 +212,31 @@
                 scheduleWrap.id = 'scheduleWrap';
                 scheduleWrap.innerHTML="<div class='headline'>Schedule</div><div style='width:100%; height:87%;'>" +
                                         "<div class='scheduleLine'></div>" +
-                                        "<div class='scheduleRow'><div class='scheduleField'></div><div class='scheduleField'></div></div>" + 
-                                        "<div class='scheduleRow'><div class='scheduleField'></div><div class='scheduleField'></div></div>" + 
-                                        "<div class='scheduleRow'><div class='scheduleField'></div><div class='scheduleField'></div></div>" + 
-                                        "<div class='scheduleRow'><div class='scheduleField'></div><div class='scheduleField'></div></div>" + 
-                                        "<div class='scheduleRow'><div class='scheduleField'></div><div class='scheduleField'></div></div>" + 
-                                        "<div class='scheduleRow'><div class='scheduleField'></div><div class='scheduleField'></div></div>" + 
-                                        "<div class='scheduleRow'><div class='scheduleField'></div><div class='scheduleField'></div></div>" + 
-                                        "<div class='scheduleRow'><div class='scheduleField'></div><div class='scheduleField'></div></div>" + 
+                                        "<div class='scheduleRow'><div class='scheduleField schLeft'>" +
+                                            "<span style='font-family: yoppa;'>05:00pm</span><br><span style='font-family: akademieReg;'>Introduction</span><br>&#9679; <span style='font-family: akademieItalic;'>Myriel Milicevic</span>" +
+                                            "</div><div class='scheduleField schRight'>" +
+                                            "</div></div><div class='scheduleRow'><div class='scheduleField schLeft'>" +
+                                            "</div><div class='scheduleField schRight'>" +
+
+                                            "</div></div><div class='scheduleRow'><div class='scheduleField schLeft'>" +
+
+                                            "</div><div class='scheduleField schRight'>" +
+                                            "</div></div><div class='scheduleRow'><div class='scheduleField schLeft'>" +
+                                            "</div><div class='scheduleField schRight'>" +
+
+                                            "</div></div><div class='scheduleRow'><div class='scheduleField schLeft'>" +
+
+                                            "</div><div class='scheduleField schRight'>" +
+                                            "</div></div><div class='scheduleRow'><div class='scheduleField schLeft'>" +
+                                            "</div><div class='scheduleField schRight'>" +
+
+                                            "</div></div><div class='scheduleRow'><div class='scheduleField schLeft'>" +
+
+                                            "</div><div class='scheduleField schRight'>" +
+                                            "</div></div><div class='scheduleRow'><div class='scheduleField schLeft'>" +
+                                            "</div><div class='scheduleField schRight'>" +
+
+                                            "</div></div>" + 
                                         "</div><div style='width:100%; height:2%;'></div>"
 				const objSchedule = new CSS2DObject( scheduleWrap );
 				objSchedule.position.set(0,0,0);
