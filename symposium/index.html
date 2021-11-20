@@ -74,10 +74,10 @@
 	<body>
         <div id="main"></div>
         <div class="navWrap">
-            <span id="navAbout" class="nav" onClick="setAnim(2);"><div id="circleAbout" class="navCircle"></div>about</span><br><br>
-            <span id="navSchedule" class="nav" onClick="setAnim(0);"><div id="circleSchedule" class="navCircle"></div>schedule</span><br><br>
-            <span id="navSpeakers" class="nav" onClick="setAnim(1);"><div id="circleSpeakers" class="navCircle"></div>speakers</span><br><br>
-            <span id="navImprint" class="nav" onClick="setAnim(3);"><div id="circleImprint" class="navCircle"></div>imprint</span>
+            <span id="navAbout" class="nav" onClick="setAnim(2);"><div id="circleAbout" class="navCircle"></div>About</span><br><br>
+            <span id="navSchedule" class="nav" onClick="setAnim(0);"><div id="circleSchedule" class="navCircle"></div>Schedule</span><br><br>
+            <span id="navSpeakers" class="nav" onClick="setAnim(1);"><div id="circleSpeakers" class="navCircle"></div>Speakers</span><br><br>
+            <span id="navImprint" class="nav" onClick="setAnim(3);"><div id="circleImprint" class="navCircle"></div>Imprint</span>
         </div>
         <span class="title" style="top: 3vh; left: 3vh; transform: translate(0%,-10%);">Relational<br>Landscapes</span>
         <span class="title" style="top: 50vh; right: 3vh; transform: translate(0%,-50%);">Symposium</span>
@@ -317,15 +317,16 @@
             window.addEventListener( "pointerdown", onPointerDown, false );
 
 
-            for(el in document.getElementsByClassName("nav")){
-                el.addEventListener( "mouseout", setColor(this.id,0), false );
-                el.addEventListener( "mousein", setColor(this.id,1), false );
+            let nav=document.getElementsByClassName("nav")
+            for(let i=0; i<nav.length;i++) {
+                nav[i].addEventListener( "mouseout", setColor(this.id,0), false );
+                nav[i].addEventListener( "mousein", setColor(this.id,1), false );
             }
-            for(el in document.getElementsByClassName("navCircle")){
-                el.addEventListener( "mouseout", setColor(this.id,0), false );
-                el.addEventListener( "mousein", setColor(this.id,1), false );
+            let navC=document.getElementsByClassName("navCircle")
+            for(let i=0; i<navC.length;i++) {
+                navC[i].addEventListener( "mouseout", setColor(this.id,0), false );
+                navC[i].addEventListener( "mousein", setColor(this.id,1), false );
             }
-
 
             function setColor(id,c){
                 console.log(id);
