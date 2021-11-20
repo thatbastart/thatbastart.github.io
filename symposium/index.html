@@ -494,12 +494,10 @@
                         if(animTime>=1.0){
                             animTime=0.0;
                             animClick[i][0]=0;
-                            if(i==0){
-                                sph[0].children[0].visible=true;
-                            } else if(i==1){
-                                sph[1].children[0].visible=true;
-                            } else if(i==3){
-                                sph[3].children[0].visible=true;
+                            for(let k=0;k<p.length;k++){
+                                if(i==k){
+                                    sph[k].children[0].visible=true;
+                                }
                             }
                         } else {
                             animTime+=0.015;
