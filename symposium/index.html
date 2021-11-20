@@ -423,17 +423,6 @@
                 }
             }
 
-            function setAnim(c){
-                if(animTime==0){
-                    console.log(sph[0].children);
-                    for(let i=0; i<p.length;i++){
-                        sph[i].children[0].visible=false;
-                    }
-                    animClick[c][0]=1;
-                    animate();
-                }
-            }
-
             function closePanel(id){
                 sph[id].children[0].visible=false;
             }
@@ -530,6 +519,17 @@
                     }
                     render();
                 }
+
+                function setAnim(c){
+                    if(animTime==0){
+                    console.log(sph[0].children);
+                    for(let i=0; i<p.length;i++){
+                        sph[i].children[0].visible=false;
+                    }
+                    animClick[c][0]=1;
+                    animate();
+                }
+            }
             }
             
 		</script>
