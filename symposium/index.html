@@ -38,6 +38,7 @@
             color: #000bff;
             font-size: 3.5vh;
             cursor: pointer;
+            transition: color 1s ease-out;
         }
         .navWrap {
             position: absolute; 
@@ -53,6 +54,7 @@
             background-color:#000bff;
             display:inline-block; 
             transform: translate(0%,10%);
+            transition: background-color 1s ease-out;
         }
         .title {
             font-family: yoppa;
@@ -306,14 +308,13 @@
                     nav[i].onmouseover=function(){setNavColor(i,1)};
                     nav[i].onmouseout=function(){setNavColor(i,0)};
                     nav[i].onmouseup=function(){setNavColor(i,0)};
-                    nav[i].onclick=function(){setNavColor(i,1);window.setTimeout(setNavColor(i,0),100);};
+                    nav[i].onclick=function(){setNavColor(i,1)};
                 }
                 for(let i=0; i<navC.length;i++) {
                     navC[i].onmouseover=function(){setNavColor(i,1)};
                     navC[i].onmouseout=function(){setNavColor(i,0)};
                     navC[i].onmouseup=function(){setNavColor(i,0)};
                     navC[i].onclick=function(){setNavColor(i,1)};
-                    navC[i].onclick=function(){setNavColor(i,1);window.setTimeout(setNavColor(i,0),100);};
                 }
 
                 function setNavColor(id, c){
