@@ -81,7 +81,7 @@
         </div>
         <span class="title" style="top: 3vh; left: 3vh; transform: translate(0%,-10%);">Relational<br>Landscapes</span>
         <span class="title" style="top: 50vh; right: 3vh; transform: translate(0%,-50%);">Symposium</span>
-        <span class="title" style="bottom: 4vh; left: 3vh; transform: translate(0%,10%);">02.12.21<br>5-7:30pm</span>
+        <span class="title" style="bottom: 5vh; left: 3vh; transform: translate(0%,10%);">02.12.21<br>5-7:30pm</span>
         <script type="module">
             window.setAnim=setAnim;
 			import * as THREE from './three/build/three.module.js';
@@ -319,17 +319,23 @@
 
             let nav=document.getElementsByClassName("nav")
             for(let i=0; i<nav.length;i++) {
-                nav[i].addEventListener( "mouseout", setColor(this.id,0), false );
-                nav[i].addEventListener( "mousein", setColor(this.id,1), false );
+                nav[i].addEventListener( "mouseout", setColor(i,0), false );
+                nav[i].addEventListener( "mousein", setColor(i,1), false );
             }
             let navC=document.getElementsByClassName("navCircle")
             for(let i=0; i<navC.length;i++) {
-                navC[i].addEventListener( "mouseout", setColor(this.id,0), false );
-                navC[i].addEventListener( "mousein", setColor(this.id,1), false );
+                navC[i].addEventListener( "mouseout", setColor(i,0), false );
+                navC[i].addEventListener( "mousein", setColor(i,1), false );
             }
 
             function setColor(id,c){
-                console.log(id);
+                if(c==0){
+                    nav[id].style.color="#000bff";
+                    navC[id].style.backgroundColor="#000bff";
+                } else {
+                    nav[id].style.color="#72ff0d";
+                    navC[id].style.backgroundColor="#72ff0d";
+                }
             }
 		</script>
 	</body>
