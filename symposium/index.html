@@ -418,7 +418,11 @@
                 raycaster.setFromCamera( mouse, camera );
                 for(let i=0; i<p.length; i++){
                     if(raycaster.intersectObject(sph[i]).length==1){
+                        if(camera.position.x==animClick[1] && camera.position.y==animClick[2] && camera.position.z==animClick[3]){
+                            sph[i].children[0].visible=true;
+                        } else {
                         setAnim(i);
+                        }
                     }
                 }
             }
@@ -455,7 +459,6 @@
                             } else if(i==3){
                                 sph[3].children[0].visible=true;
                             }
-                            render();
                         } else {
                             animTime+=0.015;
                             animProg=easeOutCubic(animTime, 0.0, 1.0, 1.0);
