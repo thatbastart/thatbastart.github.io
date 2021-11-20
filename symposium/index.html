@@ -202,13 +202,13 @@
                 }
                 for(let i=0; i<=intersects.length-1;i++){
                     if(intersects[i].length==1){
+                        document.body.style.cursor="pointer";
                         sph[i].material=sphereMaterial2;
                         render();
-                        document.body.style.cursor="pointer";
                     } else {
+                        document.body.style.cursor="default";
                         sph[i].material=sphereMaterial1;
                         render();
-                        document.body.style.cursor="default";
                     }
                 }
             }
