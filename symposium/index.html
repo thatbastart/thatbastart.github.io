@@ -314,7 +314,7 @@
                     navC[i].onmouseout=function(){setNavColor(i,0)};
                     navC[i].onmouseup=function(){setNavColor(i,0)};
                     nav[i].touchstart=function(){setNavColor(i,1)};
-                    navC[i].touchend=function(){setNavColor(i,0)};
+                    navC[i].touchend=function(){windows.setTimeout(setNavColor(i,0),100)};
                 }
 
                 function setNavColor(id, c){
