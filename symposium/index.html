@@ -201,7 +201,8 @@
                         document.body.style.cursor="pointer";
                         sph[i].material=sphereMaterial2;
                         render();
-                    } else if(sph[i].material==sphereMaterial2) {
+                        break;
+                    } else {
                         document.body.style.cursor="default";
                         sph[i].material=sphereMaterial1;
                         render();
