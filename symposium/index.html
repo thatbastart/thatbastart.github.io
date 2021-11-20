@@ -94,7 +94,6 @@
             import { CSS2DRenderer, CSS2DObject } from './three/examples/jsm/renderers/CSS2DRenderer.js';
 
 			let camera, scene, renderer, pointcloud, controls, sphere, labelRenderer;
-            let intersects=[];
             let sph=[];
             let sphereMaterial1, sphereMaterial2;
             let animClick=[[0,-136,87,139],[0,-60,-30,147],[0,-41,148,-132],[0,-161,29,183]];
@@ -198,11 +197,7 @@
                 mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
                 raycaster.setFromCamera( mouse, camera );
                 for(let i=0; i<p.length; i++){
-                    intersects[i] = raycaster.intersectObject(sph[i])[0];
-                }
-                console.log(intersects);
-                for(let i=0; i<intersects.length;i++){
-                    if(intersects[i].length==1){
+                    if(raycaster.intersectObject(sph[i]).length==1){
                         document.body.style.cursor="pointer";
                         sph[i].material=sphereMaterial2;
                         render();
