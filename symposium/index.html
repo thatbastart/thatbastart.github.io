@@ -322,6 +322,7 @@
             window.onload=function(){
                 let nav=document.getElementsByClassName("nav");
                 let navC=document.getElementsByClassName("navCircle");
+                console.log(nav);
                 for(let i=0; i<nav.length;i++) {
                     nav[i].onmouseover=function(i){setNavColor(i,1)};
                     nav[i].onmouseout=function(i){setNavColor(i,0)};
