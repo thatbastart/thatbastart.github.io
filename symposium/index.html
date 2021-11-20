@@ -197,11 +197,11 @@
                 mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
                 mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
                 raycaster.setFromCamera( mouse, camera );
-                for(let i=0; i<=p.length-1; i++){
+                for(let i=0; i<p.length; i++){
+                    console.log(raycaster.intersectObject(sph[i]))
                     intersects[i] = raycaster.intersectObject(sph[i]);
                 }
-                console.log(intersects);
-                for(let i=0; i<=intersects.length-1;i++){
+                for(let i=0; i<intersects.length;i++){
                     if(intersects[i].length==1){
                         document.body.style.cursor="pointer";
                         sph[i].material=sphereMaterial2;
