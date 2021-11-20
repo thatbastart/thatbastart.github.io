@@ -316,10 +316,12 @@
                 }
 
                 function setNavColor(id, c){
+                    console.log(id)
                     if(c==0){
                         nav[id].style.color="#000bff";
                         navC[id].style.backgroundColor="#000bff";
                         sph[id].material=sphereMaterial1;
+                        console.log(sph[id].material)
                         render();
                     } else {
                         nav[id].style.color="#72ff0d";
