@@ -38,10 +38,17 @@
         }
         .navWrap {
             position: absolute; 
-            right: 0px; 
-            bottom: 0px; 
-            padding: 25px;
+            right: 3vh; 
+            bottom: 3vh; 
             text-align: right;
+        }
+        .navCircle {
+            width: 2.8vh;
+            height: 2.8vh; 
+            border-radius: 1.4vh; 
+            background-color:#000bff;
+            display:inline-block; 
+            transform: translate(0%,10%);
         }
         .title {
             font-family: yoppa;
@@ -66,14 +73,14 @@
 	<body>
         <div id="main"></div>
         <div class="navWrap">
-            <span class="nav" onClick="setAnim(2);">about</span><br><br>
-            <span class="nav" onClick="setAnim(0);">schedule</span><br><br>
-            <span class="nav" onClick="setAnim(1);">speakers</span><br><br>
-            <span class="nav" onClick="setAnim(3);">imprint</span>
+            <span class="nav" onClick="setAnim(2);"><div class="navCircle"></div>about</span><br><br>
+            <span class="nav" onClick="setAnim(0);"><div class="navCircle"></div>schedule</span><br><br>
+            <span class="nav" onClick="setAnim(1);"><div class="navCircle"></div>speakers</span><br><br>
+            <span class="nav" onClick="setAnim(3);"><div class="navCircle"></div>imprint</span>
         </div>
-        <span class="title" style="top: 5vh; left: 5vh; transform: translate(0%,-10%);">Relational<br>Landscapes</span>
-        <span class="title" style="top: 50vh; right: 5vh; transform: translate(0%,-50%);">Symposium</span>
-        <span class="title" style="bottom: 5vh; left: 5vh; transform: translate(0%,10%);">02.12.21<br>5-7:30pm</span>
+        <span class="title" style="top: 3vh; left: 3vh; transform: translate(0%,-10%);">Relational<br>Landscapes</span>
+        <span class="title" style="top: 50vh; right: 3vh; transform: translate(0%,-50%);">Symposium</span>
+        <span class="title" style="bottom: 3vh; left: 3vh; transform: translate(0%,10%);">02.12.21<br>5-7:30pm</span>
         <script type="module">
             window.setAnim=setAnim;
 			import * as THREE from './three/build/three.module.js';
