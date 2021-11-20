@@ -420,8 +420,9 @@
                     if(raycaster.intersectObject(sph[i]).length==1){
                         if(camera.position.x==animClick[1] && camera.position.y==animClick[2] && camera.position.z==animClick[3]){
                             sph[i].children[0].visible=true;
+                            render();
                         } else {
-                        setAnim(i);
+                            setAnim(i);
                         }
                     }
                 }
@@ -429,7 +430,9 @@
 
             function setAnim(c){
                 if(animTime==0){
-                    sph[0].children[0].visible=false;
+                    for(let i=0;i<p.length;i++){
+                        sph[i].children[0].visible=false;
+                    }
                     animClick[c][0]=1;
                     animate();
                 }
