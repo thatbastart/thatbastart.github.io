@@ -184,10 +184,12 @@
         }
         .schCont {
             width: 100%;
+            height: 100%;
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
-            padding: 3% 16% 6% 16%;
+            padding: 3% 14% 6% 14%;
+            overflow: auto;
         }
         .schClose {
             font-family: yoppa;
@@ -197,6 +199,35 @@
             right: 3%;
             cursor: pointer;
         }
+
+        /* SCROLLBAR */
+        /* Chrome */
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #cacad0;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #72ff0d;
+        }  
+
+        /* Firefox */
+        .scroll {
+            scrollbar-width: 10px;
+            scrollbar-color: #72ff0d transparent;
+        }
+
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
 	</head>
@@ -390,7 +421,7 @@
                 "<div class='schCont'>" +
                 "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + pres[0][0] + "</center></span><br>"+
-                "<span class='text'>" + pres[0][1] + "</span><br><br><br>"+
+                "<span class='text'>" + pres[0][1] + "</span><br><br><br><br>"+
                 "<span class='subHeadline'><center>" + bios[8][0] + " and " + bios[6][0] + "</center></span><br>"+
                 "<span class='text'>" + bios[8][1] + "<br><br>" + bios[6][1] + "</span>",
 
