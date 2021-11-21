@@ -6570,9 +6570,11 @@ class Object3D extends EventDispatcher {
 				value: new Matrix3()
 			},
 			offset: {
+				writable: true,
 				value: {x: "-50%", y: "-50%"}
 			},
 			zIdx: {
+				writable: true,
 				value: "0"
 			}
 		} );
