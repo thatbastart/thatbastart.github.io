@@ -516,6 +516,14 @@
                 const objSpeaker = new CSS2DObject( speakerWrap );
 				objSpeaker.position.set(0,0,0);
                 objSpeaker.visible=false;
+                switch(brk){
+                    case 0,2:
+                        objSpeaker.offset.x="-50%";
+                        break;
+                    case 1:
+                        objSpeaker.offset.x="-100%";
+                        break;
+                }
 				sph[2].add( objSpeaker );
 
                 
@@ -573,17 +581,7 @@
                 const objSpkCont = new CSS2DObject( spkContWrap );
 				objSpkCont.position.set(0,0,0);
                 objSpkCont.visible=false;
-                switch(brk){
-                    case 0:
-                        objSpkCont.offset.x="-150%";
-                        break;
-                    case 1:
-                        objSpkCont.offset.x="-100%";
-                        break;
-                    case 2:
-                        objSpkCont.offset.x="-50%";
-                        break;
-                }
+                objSpkCont.offset.x="-150%";
                 sph[2].add( objSpkCont );
 
 
