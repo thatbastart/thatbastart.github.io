@@ -573,9 +573,18 @@
                 const objSpkCont = new CSS2DObject( spkContWrap );
 				objSpkCont.position.set(0,0,0);
                 objSpkCont.visible=false;
-                objSpkCont.offset.x="-150%";
-				sph[2].add( objSpkCont );
-
+                switch(brk){
+                    case 0:
+                        objSpkCont.offset.x="-150%";
+                        break;
+                    case 1:
+                        objSpkCont.offset.x="-100%";
+                        break;
+                    case 2:
+                        objSpkCont.offset.x="-50%";
+                        break;
+                }
+                sph[2].add( objSpkCont );
 
 
                 const imprintWrap = document.createElement( 'div' );
