@@ -620,9 +620,9 @@
                 if(w>1600){
                     sph[2].children[1].offset.x="-50%";
                 } else if(w<=1600 && w >1100){
-                    sph[2].children[1].offset.x="-100%";
+                    sph[2].children[0].offset.x="-100%";
                 } else if(w<=1100){
-                    sph[2].children[1].offset.x="-50%";
+                    sph[2].children[0].offset.x="-50%";
                 }
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
