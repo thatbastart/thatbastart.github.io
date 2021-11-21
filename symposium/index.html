@@ -252,7 +252,7 @@
             <span id="navAbout" class="nav" onClick="setAnim(0);"><div id="circleAbout" class="navCircle"></div>About</span><br><br>
             <span id="navSchedule" class="nav" onClick="setAnim(1);"><div id="circleSchedule" class="navCircle"></div>Schedule</span><br><br>
             <span id="navSpeakers" class="nav" onClick="setAnim(2);"><div id="circleSpeakers" class="navCircle"></div>Speakers</span><br><br>
-            <span id="navRegister" class="nav" onClick="window.location.href='mailto:rlsymposium2021@gmail.com';"><div id="circleRegister" class="navCircle"></div>Register</span><br><br>
+            <span id="navRegister" class="nav" onClick="window.location.href='mailto:rlsymposium2021@gmail.com?subject=Symposium Registration&body=Hello, I would like to register for the symposium. Please send me the Zoom link.';"><div id="circleRegister" class="navCircle"></div>Register</span><br><br>
             <span id="navImprint" class="nav" onClick="setAnim(3);"><div id="circleImprint" class="navCircle"></div>Imprint</span>
         </div>
         <span class="title" style="top: 3vh; left: 3vh; transform: translate(0%,-10%);">Relational<br>Landscapes</span>
@@ -780,7 +780,6 @@
                     } else if(w<=1100){
                         brk=2;
                     }
-                    console.log(brk);
                 };
                 setBrkPnt();
                 window.onresize=setBrkPnt;
