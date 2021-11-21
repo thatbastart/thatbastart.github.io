@@ -729,23 +729,25 @@
                 }
 
                 function setNavColor(id, c){
-                    if(id!=3){
-                        if(id==4){
-                            id=3;
+                    if(c==0){
+                        nav[id].style.color="#000bff";
+                        navC[id].style.backgroundColor="#000bff";
+                        sph[id].material=sphereMaterial1;
+                        hover[id]=0;
+                    } else {
+                        nav[id].style.color="#72ff0d";
+                        navC[id].style.backgroundColor="#72ff0d";
+                        if(id!=3){
+                            if(id==4){
+                                sph[id-1].material=sphereMaterial2;
+                            } else {
+                                sph[id].material=sphereMaterial2;
+                            }
+                            
                         }
-                        if(c==0){
-                            nav[id].style.color="#000bff";
-                            navC[id].style.backgroundColor="#000bff";
-                            sph[id].material=sphereMaterial1;
-                            hover[id]=0;
-                        } else {
-                            nav[id].style.color="#72ff0d";
-                            navC[id].style.backgroundColor="#72ff0d";
-                            sph[id].material=sphereMaterial2;
-                            hover[id]=1;
-                        }
-                        render();
+                        hover[id]=1;
                     }
+                    render();
                 }
             }
             
