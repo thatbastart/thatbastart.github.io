@@ -264,22 +264,12 @@
             window.openPanel=openPanel;
 
             let brk;
-            function setFlag(x0,x1,x2) {
-                if (x2.matches) {
-                    brk=2;
-                } else if(x1.matches) {
-                    brk=1;
-                } else if(x0.matches) {
-                    brk=0;
-                }
-                console.log(brk);
-            }
             let bp0 = window.matchMedia("(min-width: 1601px)");
             let bp1 = window.matchMedia("(max-width: 1600px)");
             let bp2 = window.matchMedia("(max-width: 1100px)");
-            bp0.addListener(setFlag(bp0,bp1,bp2));
-            bp1.addListener(setFlag(bp0,bp1,bp2));
-            bp2.addListener(setFlag(bp0,bp1,bp2));
+            bp0.addListener(function(x){if(x.matches){brk=0;console.log(brk);}});
+            bp1.addListener(function(x){if(x.matches){brk=1;console.log(brk);}});
+            bp2.addListener(function(x){if(x.matches){brk=2;console.log(brk);}});
 
 
 
