@@ -243,7 +243,7 @@
             <span id="navAbout" class="nav" onClick="setAnim(0);"><div id="circleAbout" class="navCircle"></div>About</span><br><br>
             <span id="navSchedule" class="nav" onClick="setAnim(1);"><div id="circleSchedule" class="navCircle"></div>Schedule</span><br><br>
             <span id="navSpeakers" class="nav" onClick="setAnim(2);"><div id="circleSpeakers" class="navCircle"></div>Speakers</span><br><br>
-            <span id="navRegister" class="nav" onClick="window.location.href='rlsymposium2021@gmail.com';"><div id="circleRegister" class="navCircle"></div>Register</span><br><br>
+            <span id="navRegister" class="nav" onClick="window.location.href='mailto:rlsymposium2021@gmail.com';"><div id="circleRegister" class="navCircle"></div>Register</span><br><br>
             <span id="navImprint" class="nav" onClick="setAnim(3);"><div id="circleImprint" class="navCircle"></div>Imprint</span>
         </div>
         <span class="title" style="top: 3vh; left: 3vh; transform: translate(0%,-10%);">Relational<br>Landscapes</span>
@@ -710,6 +710,7 @@
                         for(let i=0;i<p.length;i++){
                             sph[i].children[0].visible=false;
                         }
+                        sph[1].children[1].visible=false;
                         render();
                     }
                 });
