@@ -263,6 +263,25 @@
             window.closePanel=closePanel;
             window.openPanel=openPanel;
 
+            let brk;
+            function setFlag(x1,x2) {
+                if (x1.matches) {
+                    brk=1;
+                } else if(x2.matches) {
+                    brk=2;
+                } else {
+                    brk=0;
+                }
+                console.log(brk);
+            }
+            let bp1 = window.matchMedia("(max-width: 1600px)");
+            let bp2 = window.matchMedia("(max-width: 1600px)");
+            setFlag(bp1,bp2);
+            bp1.addListener(setFlag);
+            bp2.addListener(setFlag);
+
+
+
 			import * as THREE from './three/build/three.module.js';
 
 			import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
