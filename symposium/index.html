@@ -243,6 +243,7 @@
             <span id="navAbout" class="nav" onClick="setAnim(0);"><div id="circleAbout" class="navCircle"></div>About</span><br><br>
             <span id="navSchedule" class="nav" onClick="setAnim(1);"><div id="circleSchedule" class="navCircle"></div>Schedule</span><br><br>
             <span id="navSpeakers" class="nav" onClick="setAnim(2);"><div id="circleSpeakers" class="navCircle"></div>Speakers</span><br><br>
+            <span id="navRegister" class="nav" onClick="window.location.href='rlsymposium2021@gmail.com';"><div id="circleRegister" class="navCircle"></div>Register</span><br><br>
             <span id="navImprint" class="nav" onClick="setAnim(3);"><div id="circleImprint" class="navCircle"></div>Imprint</span>
         </div>
         <span class="title" style="top: 3vh; left: 3vh; transform: translate(0%,-10%);">Relational<br>Landscapes</span>
@@ -393,7 +394,7 @@
 
 
                 const schContWrap = document.createElement( 'div' );
-				schContWrap.className = 'panel panelSchCont';
+				schContWrap.className = 'panel panelSchCont scroll';
                 schContWrap.id = 'schContWrap';
 
                 let bios=[  ["Andrés Burbano","Andrés Burbano is a scholar and media artist, currently an Associate Professor in the Department of Design at Universidad de los Andes, in Bogota, Colombia. Burbano holds a PhD in Media Arts and Technology from the University of California, and is visiting professor at the Danube University in Krems, Austria. This semester he is a visiting scholar at the University of Applied Sciences Potsdam, Germany."],
@@ -428,11 +429,39 @@
                 "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + pres[0][0] + "</center></span><br>"+
                 "<span class='text'>" + pres[0][1] + "</span><br><br><br><br>"+
-                "<span class='subHeadline'><center>" + bios[8][0] + " and " + bios[6][0] + "</center></span><br>"+
+                "<span class='subHeadline'><center>" + bios[8][0] + " and<br>" + bios[6][0] + "</center></span><br>"+
                 "<span class='text'>" + bios[8][1] + "<br><br>" + bios[6][1] + "</span>",
 
+                "<div class='schCont'>" +
+                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='subHeadline'><center>" + pres[1][0] + "</center></span><br>"+
+                "<span class='text'>" + pres[1][1] + "</span><br><br><br><br>"+
+                "<span class='subHeadline'><center>" + bios[3][0] + "</center></span><br>"+
+                "<span class='text'>" + bios[3][1] + "</span>",
 
+                "<div class='schCont'>" +
+                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='subHeadline'><center>" + bios[0][0] + "</center></span><br>"+
+                "<span class='text'>" + bios[0][1] + "</span>",
 
+                "<div class='schCont'>" +
+                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='subHeadline'><center>" + pres[2][0] + "</center></span><br>"+
+                "<span class='text'>" + pres[2][1] + "</span><br><br><br><br>"+
+                "<span class='subHeadline'><center>" + bios[5][0] + "</center></span><br>"+
+                "<span class='text'>" + bios[5][1] + "</span>",
+
+                "<div class='schCont'>" +
+                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='subHeadline'><center>" + pres[3][0] + "</center></span><br>"+
+                "<span class='text'>" + pres[3][1] + "</span><br><br><br><br>"+
+                "<span class='subHeadline'><center>" + bios[2][0] + "</center></span><br>"+
+                "<span class='text'>" + bios[2][1] + "</span>",
+
+                "<div class='schCont'>" +
+                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='subHeadline'><center>" + bios[1][0] + "</center></span><br>"+
+                "<span class='text'>" + bios[1][1] + "</span>"
                 ];
                 
 
@@ -583,6 +612,9 @@
 
             function closePanel(id,ch){
                 sph[id].children[ch].visible=false;
+                if(sph[1].children[1].visible==true){
+                    sph[1].children[1].visible=false;
+                }
                 render();
             }
 
