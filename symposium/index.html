@@ -782,7 +782,8 @@
                     }
                     console.log(brk);
                 };
-                window.onresize=setBrkPnt();
+                setBrkPnt();
+                window.onresize=setBrkPnt;
 
                 const delta = 6;
                 let startX;
