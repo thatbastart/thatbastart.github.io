@@ -281,7 +281,6 @@
             let hover=[0,0,0,0];
             let schCont=[];
             let spkCont=[];
-            let brk;
 
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
@@ -516,14 +515,6 @@
                 const objSpeaker = new CSS2DObject( speakerWrap );
 				objSpeaker.position.set(0,0,0);
                 objSpeaker.visible=false;
-                switch(brk){
-                    case 0,2:
-                        objSpeaker.offset.x="-50%";
-                        break;
-                    case 1:
-                        objSpeaker.offset.x="-100%";
-                        break;
-                }
 				sph[2].add( objSpeaker );
 
                 
@@ -625,7 +616,14 @@
 			}
 
 			function onWindowResize() {
-
+                let w=window.innerWidth
+                if(w>1600){
+                    sph[2].children[1].offset.x="-50%";
+                } else if(w<=1600 && w >1100){
+                    sph[2].children[1].offset.x="-100%";
+                } else if(w<=1100){
+                    sph[2].children[1].offset.x="-50%";
+                }
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
 
@@ -700,8 +698,6 @@
             }
 
             function openPanel(s, id, c){
-                console.log(id);
-                console.log(spkCont);
                 if(s==0){
                     sph[1].children[1].offset.x="-150%";
                 } else {
@@ -780,18 +776,6 @@
             window.addEventListener( "pointerdown", onPointerDown, false );
 
             window.onload=function(){
-                function setBrkPnt(){
-                    let w=window.innerWidth
-                    if(w>1600){
-                        brk=0;
-                    } else if(w<=1600 && w >1100){
-                        brk=1;
-                    } else if(w<=1100){
-                        brk=2;
-                    }
-                };
-                setBrkPnt();
-                window.onresize=setBrkPnt;
 
                 const delta = 6;
                 let startX;
