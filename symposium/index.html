@@ -513,47 +513,47 @@
 
                 spkCont=[
                 "<div class='schCont'>" +
-                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='schClose' onclick='closePanel(2,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + bios[0][0] + "</center></span><br>"+
                 "<span class='text'>" + bios[0][1] + "</span>",
                 
                 "<div class='schCont'>" +
-                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='schClose' onclick='closePanel(2,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + bios[1][0] + "</center></span><br>"+
                 "<span class='text'>" + bios[1][1] + "</span>",
 
                 "<div class='schCont'>" +
-                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='schClose' onclick='closePanel(2,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + bios[2][0] + "</center></span><br>"+
                 "<span class='text'>" + bios[2][1] + "</span>",
 
                 "<div class='schCont'>" +
-                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='schClose' onclick='closePanel(2,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + bios[3][0] + "</center></span><br>"+
                 "<span class='text'>" + bios[3][1] + "</span>",
 
                 "<div class='schCont'>" +
-                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='schClose' onclick='closePanel(2,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + bios[4][0] + "</center></span><br>"+
                 "<span class='text'>" + bios[4][1] + "</span>",
 
                 "<div class='schCont'>" +
-                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='schClose' onclick='closePanel(2,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + bios[5][0] + "</center></span><br>"+
                 "<span class='text'>" + bios[5][1] + "</span>",
 
                 "<div class='schCont'>" +
-                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='schClose' onclick='closePanel(2,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + bios[6][0] + "</center></span><br>"+
                 "<span class='text'>" + bios[6][1] + "</span>",
 
                 "<div class='schCont'>" +
-                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='schClose' onclick='closePanel(2,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + bios[7][0] + "</center></span><br>"+
                 "<span class='text'>" + bios[7][1] + "</span>",
 
                 "<div class='schCont'>" +
-                "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
+                "<span class='schClose' onclick='closePanel(2,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + bios[8][0] + "</center></span><br>"+
                 "<span class='text'>" + bios[8][1] + "</span>"
                 ];
@@ -674,6 +674,9 @@
                 if(sph[1].children[1].visible==true){
                     sph[1].children[1].visible=false;
                 }
+                if(sph[2].children[1].visible==true){
+                    sph[2].children[1].visible=false;
+                }
                 render();
             }
 
@@ -775,6 +778,7 @@
                             sph[i].children[0].visible=false;
                         }
                         sph[1].children[1].visible=false;
+                        sph[2].children[1].visible=false;
                         render();
                     }
                 });
