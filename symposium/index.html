@@ -268,7 +268,7 @@
             let bp1x = window.matchMedia("(max-width: 1600px)");
             let bp1n = window.matchMedia("(min-width: 1101px)");
             let bp2 = window.matchMedia("(max-width: 1100px)");
-            bp0.addListener(function(x){if(x.matches){brk=0;}console.log(screen.width);});
+            bp0.addListener(function(x){if(x.matches){brk=0;}console.log(window.innerWidth);});
             bp1n.addListener(function(x){if(x.matches){brk=1;}});
             bp1x.addListener(function(x){if(x.matches){brk=1;}});
             bp2.addListener(function(x){if(x.matches){brk=2;}});
