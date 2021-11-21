@@ -263,18 +263,6 @@
             window.closePanel=closePanel;
             window.openPanel=openPanel;
 
-            let brk;
-            let bp0 = window.matchMedia("(min-width: 1601px)");
-            let bp1x = window.matchMedia("(max-width: 1600px)");
-            let bp1n = window.matchMedia("(min-width: 1101px)");
-            let bp2 = window.matchMedia("(max-width: 1100px)");
-            bp0.addListener(function(x){if(x.matches){brk=0;}console.log(window.innerWidth);});
-            bp1n.addListener(function(x){if(x.matches){brk=1;}});
-            bp1x.addListener(function(x){if(x.matches){brk=1;}});
-            bp2.addListener(function(x){if(x.matches){brk=2;}});
-
-
-
 			import * as THREE from './three/build/three.module.js';
 
 			import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
@@ -291,6 +279,7 @@
             let hover=[0,0,0,0];
             let schCont=[];
             let spkCont=[];
+            let brk;
 
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
@@ -782,6 +771,19 @@
             window.addEventListener( "pointerdown", onPointerDown, false );
 
             window.onload=function(){
+                function setBrkPnt(){
+                    let w=window.innerWidth
+                    if(w>1600){
+                        brk=0;
+                    } else if(w<=1600 && w >1100){
+                        brk=1;
+                    } else if(w<=1100){
+                        brk=2;
+                    }
+                    console.log(brk);
+                };
+                window.onresize=setBrkPnt();
+
                 const delta = 6;
                 let startX;
                 let startY;
