@@ -633,15 +633,16 @@
                 }
                 for(let i=0;i<p.length;i++){
                     switch(brk){
-                        case 0: sph[i].children[0].offset.x="0%"; break;
-                        case 1: sph[i].children[0].offset.x="-100%"; break;
+                        case 0: sph[i].children[0].offset.x="-50%"; break;
+                        case 1: sph[i].children[0].offset.x="0%"; break;
                         case 2: sph[i].children[0].offset.x="-50%"; break;
                     }
                 }
                 switch(brk){
                     case 0: 
                         sph[1].children[1].offset.x=(side=="0")?"-150%":"50%"; 
-                        sph[2].children[1].offset.x="-150%"; break;
+                        sph[2].children[1].offset.x="-150%"; 
+                        break;
                     case 1: sph[1].children[1].offset.x="-100%"; sph[2].children[1].offset.x="-100%"; break;
                     case 2: sph[1].children[1].offset.x="-50%"; sph[2].children[1].offset.x="-50%"; break;
                 }
