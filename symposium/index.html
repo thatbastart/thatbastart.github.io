@@ -728,7 +728,7 @@
                     if(raycaster.intersectObject(sph[i]).length==1){
                         if(Math.round(camera.position.x)==animClick[i][1] && Math.round(camera.position.y)==animClick[i][2] && Math.round(camera.position.z)==animClick[i][3]){
                             sph[i].children[0].visible=true;
-                            render();
+                            labelRender();
                         } else {
                             setAnim(i);
                         }
@@ -759,7 +759,7 @@
                 if(sph[2].children[1].visible==true){
                     sph[2].children[1].visible=false;
                 }
-                render();
+                labelRender();
             }
 
             function openPanel(s, id, c){
@@ -781,7 +781,7 @@
                     document.getElementById("spkContWrap").innerHTML=spkCont[0]+bios[id][0]+spkCont[1]+bios[id][1]+spkCont[2];
                     sph[2].children[1].visible=true;
                 }
-                render();
+                labelRender();
             }
 
             function camAnim(){
@@ -830,9 +830,12 @@
 
 			function render() {
                 renderer.render(scene, camera);
-                labelRenderer.render( scene, camera );
+                labelRender();
             }
 
+            function labelRender(){
+                labelRenderer.render( scene, camera );
+            }
 
             function mapRange (value, a, b, c, d) {
                 value = (value - a) / (b - a);
