@@ -616,14 +616,23 @@
 			}
 
 			function onWindowResize() {
-                let w=window.innerWidth
+                let w=window.innerWidth;
+                let brk;
                 if(w>1600){
-                    sph[2].children[1].offset.x="-50%";
+                    brk=0;
                 } else if(w<=1600 && w >1100){
-                    sph[2].children[0].offset.x="-100%";
+                    brk=1;
                 } else if(w<=1100){
-                    sph[2].children[0].offset.x="-50%";
+                    brk=2;
                 }
+                for(let i=0;i<p.length;i++){
+                    switch(brk){
+                        case 0,2: sph[i].children[0].offset.x="-50%"; break;
+                        case 1: sph[i].children[0].offset.x="-100%"; break;
+                    }
+                }
+
+
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
 
@@ -776,7 +785,7 @@
             window.addEventListener( "pointerdown", onPointerDown, false );
 
             window.onload=function(){
-
+                onWindowResize();
                 const delta = 6;
                 let startX;
                 let startY;
