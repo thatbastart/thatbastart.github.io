@@ -249,6 +249,38 @@
             scrollbar-color: var(--green) transparent;
         }
 
+
+        /* TITLE */
+        .title_rl{
+            top: 3vh; 
+            left: 3vh; 
+            transform: translate(0%,-10%);
+        }
+        .title_s{
+            top: 50vh; 
+            right: 3vh; 
+            transform: translate(0%,-50%);
+        }
+        .title_date{
+            bottom: 5vh; 
+            left: 3vh; 
+            transform: translate(0%,5%);
+        }
+
+        @media only screen and (max-width: 1100px) {
+            .title_rl{
+                top: 1vh; 
+                left: 1vh; 
+            }
+            .title_s{
+                top: 50vh; 
+                right: 1vh; 
+            }
+            .title_date{
+                bottom: 2vh; 
+                left: 1vh; 
+            }
+        }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
 	</head>
@@ -261,9 +293,9 @@
             <span id="navRegister" class="nav" onClick="window.location.href='mailto:rlsymposium2021@gmail.com?subject=Symposium Registration&body='+encodeURIComponent('Hello, I would like to register for the symposium. Please send me the Zoom link.');"><div id="circleRegister" class="navCircle"></div>Register</span><br><br>
             <span id="navImprint" class="nav" onClick="setAnim(3);"><div id="circleImprint" class="navCircle"></div>Imprint</span>
         </div>
-        <span class="title" style="top: 3vh; left: 3vh; transform: translate(0%,-10%);">Relational<br>Landscapes</span>
-        <span class="title" style="top: 50vh; right: 3vh; transform: translate(0%,-50%);">Symposium</span>
-        <span class="title" style="bottom: 5vh; left: 3vh; transform: translate(0%,5%);">Online<br>Dec 2nd 2021<br>5-7:30pm</span>
+        <span class="title title_rl">Relational<br>Landscapes</span>
+        <span class="title title_s">Symposium</span>
+        <span class="title title_date">Online<br>Dec 2nd 2021<br>5-7:30pm</span>
         <script type="module">
             window.setAnim=setAnim;
             window.closePanel=closePanel;
