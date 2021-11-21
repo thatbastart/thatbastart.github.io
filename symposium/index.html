@@ -363,8 +363,6 @@
                 const objAbout = new CSS2DObject( aboutWrap );
 				objAbout.position.set(0,0,0);
                 objAbout.visible=false;
-                console.log(objAbout);
-                objAbout.zIdx="1";
 				sph[0].add( objAbout );
 
 
@@ -408,7 +406,6 @@
 				const objSchedule = new CSS2DObject( scheduleWrap );
 				objSchedule.position.set(0,0,0);
                 objSchedule.visible=false;
-                objSchedule.zIdx="1";
 				sph[1].add( objSchedule );
 
 
@@ -523,7 +520,6 @@
                 const objSpeaker = new CSS2DObject( speakerWrap );
 				objSpeaker.position.set(0,0,0);
                 objSpeaker.visible=false;
-                objSpeaker.zIdx="1";
 				sph[2].add( objSpeaker );
 
                 
@@ -613,7 +609,6 @@
                 const objImprint = new CSS2DObject( imprintWrap );
 				objImprint.position.set(0,0,0);
                 objImprint.visible=false;
-                objImprint.zIdx="1";
 				sph[3].add( objImprint );
 
 
@@ -638,9 +633,17 @@
                 }
                 for(let i=0;i<p.length;i++){
                     switch(brk){
-                        case 0: case 2: sph[i].children[0].offset.x="-50%"; break;
+                        case 0: sph[i].children[0].offset.x="0%"; break;
                         case 1: sph[i].children[0].offset.x="-100%"; break;
+                        case 2: sph[i].children[0].offset.x="-50%"; break;
                     }
+                }
+                switch(brk){
+                    case 0: 
+                        sph[1].children[1].offset.x=(side=="0")?"-150%":"50%"; 
+                        sph[2].children[1].offset.x="-150%"; break;
+                    case 1: sph[1].children[1].offset.x="-100%"; sph[2].children[1].offset.x="-100%"; break;
+                    case 2: sph[1].children[1].offset.x="-50%"; sph[2].children[1].offset.x="-50%"; break;
                 }
 
 
@@ -719,8 +722,10 @@
 
             function openPanel(s, id, c){
                 if(s==0){
+                    sph[1].children[1].side="0";
                     sph[1].children[1].offset.x="-150%";
                 } else {
+                    sph[1].children[1].side="1";
                     sph[1].children[1].offset.x="50%";
                 }
                 if(c==0){
