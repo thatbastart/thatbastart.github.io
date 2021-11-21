@@ -326,7 +326,7 @@
 			let camera, scene, renderer, pointcloud, controls, sphere, labelRenderer;
             let sph=[];
             let sphereMaterial1, sphereMaterial2;
-            let animClick=[[0,-136,87,139],[0,-60,-30,147],[0,-41,148,-132],[0,-161,29,183]];
+            let animClick=[[0,-136,87,139],[0,-60,-30,147],[0,-41,148,-132],[0, 25, -65],[0,-161,29,183]];
             let animProg=0.0;
             let animTime=0.0;
             let animSrc=[0,0,0,0,0,0]
@@ -596,6 +596,17 @@
                 sph[2].add( objSpkCont );
 
 
+                const registerWrap = document.createElement( 'div' );
+				registerWrap.className = 'panel panelImprint scroll';
+                registerWrap.id = 'registerWrap';
+
+                const objRegister = new CSS2DObject( registerWrap );
+				objRegister.position.set(0,0,0);
+                objRegister.visible=false;
+				sph[3].add( objRegister );
+
+
+
                 const imprintWrap = document.createElement( 'div' );
 				imprintWrap.className = 'panel panelImprint scroll';
                 imprintWrap.id = 'imprintWrap';
@@ -623,7 +634,7 @@
                 const objImprint = new CSS2DObject( imprintWrap );
 				objImprint.position.set(0,0,0);
                 objImprint.visible=false;
-				sph[3].add( objImprint );
+				sph[4].add( objImprint );
 
 
                 labelRenderer = new CSS2DRenderer();
