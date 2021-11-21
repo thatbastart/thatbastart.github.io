@@ -6571,6 +6571,9 @@ class Object3D extends EventDispatcher {
 			},
 			offset: {
 				value: {x: "-50%", y: "-50%"}
+			},
+			zIdx: {
+				value: "0"
 			}
 		} );
 

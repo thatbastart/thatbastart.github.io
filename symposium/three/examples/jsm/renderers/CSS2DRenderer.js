@@ -91,7 +91,7 @@ class CSS2DRenderer {
 			_viewProjectionMatrix.multiplyMatrices( camera.projectionMatrix, _viewMatrix );
 
 			renderObject( scene, scene, camera );
-			zOrder( scene );
+			//zOrder( scene );
 
 		};
 
@@ -129,6 +129,7 @@ class CSS2DRenderer {
 					element.style.transform = 'translate('+object.offset.x+','+object.offset.y+') translate(' + ( _vector.x * _widthHalf + _widthHalf ) + 'px,' + ( - _vector.y * _heightHalf + _heightHalf ) + 'px)';
 
 				}
+				element.style.zIndex=object.zIdx;
 
 				element.style.display = ( object.visible && _vector.z >= - 1 && _vector.z <= 1 ) ? '' : 'none';
 
@@ -180,7 +181,6 @@ class CSS2DRenderer {
 		}
 
 		function zOrder( scene ) {
-
 			const sorted = filterAndFlatten( scene ).sort( function ( a, b ) {
 
 				const distanceA = cache.objects.get( a ).distanceToCameraSquared;
