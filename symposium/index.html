@@ -327,6 +327,7 @@
             let spkCont=[];
             let bios=[];
             let pres=[];
+            let brk;
 
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
@@ -627,7 +628,6 @@
 
 			function onWindowResize() {
                 let w=window.innerWidth;
-                let brk;
                 if(w>1600){
                     brk=0;
                 } else if(w<=1600 && w >1100){
@@ -730,7 +730,11 @@
             function openPanel(s, id, c){
                 if(s==0){
                     sph[1].children[1].side="0";
-                    sph[1].children[1].offset.x="-150%";
+                    switch(brk){
+                        case 0: sph[1].children[1].offset.x="-150%"; break;
+                        case 1: sph[1].children[1].offset.x="-100%"; break;
+                        case 2: sph[1].children[1].offset.x="-50%"; break;
+                    }
                 } else {
                     sph[1].children[1].side="1";
                     sph[1].children[1].offset.x="50%";
