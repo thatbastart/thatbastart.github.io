@@ -684,10 +684,11 @@
                 }
                 if(c==0){
                     document.getElementById("schContWrap").innerHTML=schCont[id];
+                    sph[1].children[1].visible=true;
                 } else {
                     document.getElementById("spkContWrap").innerHTML=spkCont[id];
+                    sph[2].children[1].visible=true;
                 }
-                sph[1].children[1].visible=true;
                 render();
             }
 
