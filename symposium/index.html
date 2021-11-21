@@ -492,8 +492,8 @@
                 // alexandra
                 "<div class='schCont'>" +
                 "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
-                "<span class='subHeadline'><center>" + bios[7][0] + "</center></span><br>"+
-                "<span class='text'>" + bios[7][1] + "</span>",
+                "<span class='subHeadline'><center>" + bios[8][0] + "</center></span><br>"+
+                "<span class='text'>" + bios[8][1] + "</span>",
 
                 // birgit & lynda
                 "<div class='schCont'>" +
@@ -508,8 +508,8 @@
                 "<span class='schClose' onclick='closePanel(1,1)'>x</span>" +
                 "<span class='subHeadline'><center>" + pres[1][0] + "</center></span><br>"+
                 "<span class='text'>" + pres[1][1] + "</span><br><br><br><br>"+
-                "<span class='subHeadline'><center>" + bios[5][0] + ",<br>" + bios[4][0] + " and<br>" + bios[8][0] + "</center></span><br>"+
-                "<span class='text'>" + bios[5][1] + "<br><br>" + bios[4][1] + "<br><br>" + bios[8][1] + "</span><br><br>",
+                "<span class='subHeadline'><center>" + bios[5][0] + ",<br>" + bios[4][0] + " and<br>" + bios[7][0] + "</center></span><br>"+
+                "<span class='text'>" + bios[5][1] + "<br><br>" + bios[4][1] + "<br><br>" + bios[7][1] + "</span><br><br>",
 
                 // amy
                 "<div class='schCont'>" +
@@ -627,7 +627,7 @@
                 "<span class='impOrg'>Universidad de los Andes</span><br><br>"+
                 "<span class='text'>Myriel Milicevic</span><br>"+
                 "<span class='impOrg'>University of Applied Sciences Potsdam</span><br><br>"+
-                "<span class='text'>Thiago de Oliveira</span><br>"+
+                "<span class='text'>Thiago da Costa Oliveira</span><br>"+
                 "<span class='impOrg'>Ethnological Museum Berlin and Botanical Garden Berlin</span><br><br><br><br>"+
                 "<span class='subHeadline'><center>Web Design</center></span><br>"+
                 "<span class='text'>Lukas Büttenbender, Tilmann Finner,<br>Victor Molina, Peter Schwarz</span><br>"+
@@ -708,6 +708,7 @@
             }
 
             function onPointerDown( event ) {
+                console.log(camera.position);
                 if(animTime==0){
                     animSrc[0]=camera.position.x;
                     animSrc[1]=camera.position.y;
