@@ -689,7 +689,7 @@
 
                 let vh = window.innerHeight * 0.01;
                 document.documentElement.style.setProperty("--vh",vh+"px");
-                
+
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
 
@@ -783,7 +783,7 @@
                     }
                 } else {
                     sph[1].children[1].side="1";
-                    sph[1].children[1].offset.x="50%";
+                    sph[1].children[1].offset.x="-50%";
                 }
                 if(c==0){
                     document.getElementById("schContWrap").innerHTML=schCont[id];
