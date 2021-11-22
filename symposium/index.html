@@ -33,14 +33,9 @@
             font-family: yoppa;
             src: url(Yoppa-Regular.otf);
         }
-        html{
-            height: -webkit-fill-available;
-        }
         body { 
             margin: 0; 
-            background-color: var(--grey); 
-            min-height: 100vh;
-            min-height: -webkit-fill-available;
+            background-color: var(--grey);
         }
         a {
             text-decoration: underline;
@@ -93,6 +88,7 @@
 
         .panel {
                 height: 100vh;
+                height: calc(var(--vh, 1vh)*100);
                 width: calc(100vw/3);
                 pointer-events: auto;
                 overflow: auto;
@@ -691,7 +687,9 @@
                     case 2: sph[1].children[1].offset.x="-50%"; sph[2].children[1].offset.x="-50%"; break;
                 }
 
-
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty("--vh",vh+"px");
+                
 				camera.aspect = window.innerWidth / window.innerHeight;
 				camera.updateProjectionMatrix();
 
