@@ -870,7 +870,7 @@
                     const diffX = Math.abs(event.pageX - startX);
                     const diffY = Math.abs(event.pageY - startY);
 
-                    if (diffX < delta && diffY < delta && clickSphere!=0) {
+                    if (diffX < delta && diffY < delta && clickSphere==0) {
                         for(let i=0;i<p.length;i++){
                             sph[i].children[0].visible=false;
                         }
