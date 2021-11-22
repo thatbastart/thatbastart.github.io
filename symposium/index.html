@@ -339,6 +339,7 @@
             let bios=[];
             let pres=[];
             let brk;
+            let clickSphere=0;
 
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
@@ -732,6 +733,10 @@
                         } else {
                             setAnim(i);
                         }
+                        clickSphere=1;
+                        break;
+                    } else {
+                        clickSphere=0;
                     }
                 }
             }
@@ -747,7 +752,7 @@
                     animate();
                 } else {
                     sph[c].children[0].visible=true;
-                    render();
+                    labelRender();
                 }
             }
 
@@ -865,7 +870,7 @@
                     const diffX = Math.abs(event.pageX - startX);
                     const diffY = Math.abs(event.pageY - startY);
 
-                    if (diffX < delta && diffY < delta) {
+                    if (diffX < delta && diffY < delta && clickSphere!=0) {
                         for(let i=0;i<p.length;i++){
                             sph[i].children[0].visible=false;
                         }
