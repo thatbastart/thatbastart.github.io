@@ -33,9 +33,14 @@
             font-family: yoppa;
             src: url(Yoppa-Regular.otf);
         }
+        html{
+            height: -webkit-fill-available;
+        }
         body { 
             margin: 0; 
             background-color: var(--grey); 
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
         }
         a {
             text-decoration: underline;
