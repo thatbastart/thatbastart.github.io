@@ -356,7 +356,6 @@
             let pres=[];
             let brk;
             let clickSphere=0;
-            let curPanel;
 
             const raycaster = new THREE.Raycaster();
             const mouse = new THREE.Vector2();
@@ -768,7 +767,6 @@
             }
 
             function setAnim(c){
-                curPanel=c;
                 if(animTime==0 && Math.round(camera.position.x)!=animClick[c][1] && Math.round(camera.position.y)!=animClick[c][2] && Math.round(camera.position.z)!=animClick[c][3]){
                     for(let i=0;i<p.length-1;i++){
                         sph[i].children[0].visible=false;
@@ -780,10 +778,6 @@
                 } else if(animTime==0){
                     sph[curPanel].children[0].visible=true;
                     labelRender();
-                } else {
-                    if(c!=curPanel){
-                        setAnim(curPanel);
-                    }
                 }
             }
 
