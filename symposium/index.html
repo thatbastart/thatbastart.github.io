@@ -310,10 +310,11 @@
             font-family: yoppa;
             font-size: max(5.5vh,4.5vw);
             color: var(--yellow);
-            text-align: center;
-            line-height: 100vh;
-            line-height: calc(var(--vh, 1vh)*100);
             z-index: 0;
+        }
+        #loadTxt{
+            position: absolute;
+            
         }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
@@ -330,7 +331,7 @@
         <span class="title title_rl">Relational<br>Landscapes</span>
         <span class="title title_s">Symposium</span>
         <span class="title title_date">Online<br>Dec 2nd 2021<br>5-7:30pm cet</span>
-        <div id="loadScrn">Loading...</div>
+        <div id="loadScrn"><span id="loadTxt">Loading...</span></div>
         <script type="module">
             window.setAnim=setAnim;
             window.closePanel=closePanel;
