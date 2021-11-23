@@ -297,6 +297,16 @@
         .hov:hover {
             color: var(--green);
         }
+
+        #loadScrn{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100vw;
+            height: 100vh;
+            height: calc(var(--vh, 1vh)*100);
+            background-color: var(--blue);
+        }
 		</style>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
 	</head>
@@ -312,6 +322,7 @@
         <span class="title title_rl">Relational<br>Landscapes</span>
         <span class="title title_s">Symposium</span>
         <span class="title title_date">Online<br>Dec 2nd 2021<br>5-7:30pm cet</span>
+        <div id="loadScrn"></div>
         <script type="module">
             window.setAnim=setAnim;
             window.closePanel=closePanel;
@@ -379,7 +390,7 @@
                 
 				const loader = new PCDLoader();
 				loader.load( './pointcloud.pcd', function ( points ) {
-
+                    document.getElementById("loadScrn").style.display="none";
 					points.geometry.center();
                     points.material.size=2.25;
 					scene.add( points );
@@ -539,7 +550,7 @@
                 const objSchCont = new CSS2DObject( schContWrap );
 				objSchCont.position.set(0,0,0);
                 objSchCont.visible=false;
-                objSchCont.zIdx="2";
+                objSchCont.zIdx="3";
 				sph[1].add( objSchCont );
 
 
@@ -596,7 +607,7 @@
 				objSpkCont.position.set(0,0,0);
                 objSpkCont.visible=false;
                 objSpkCont.offset.x="-150%";
-                objSpkCont.zIdx="2";
+                objSpkCont.zIdx="3";
                 sph[2].add( objSpkCont );
 
 

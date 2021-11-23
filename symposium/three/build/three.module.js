@@ -6575,7 +6575,7 @@ class Object3D extends EventDispatcher {
 			},
 			zIdx: {
 				writable: true,
-				value: "1"
+				value: "2"
 			},
 			side: {
 				writable: true,
