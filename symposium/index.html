@@ -722,15 +722,19 @@
                 for(let i=0; i<p.length-1; i++){
                     if(raycaster.intersectObject(sph[i]).length==1){
                         document.body.style.cursor="pointer";
-                        sph[i].material=sphereMaterial2;
+                        if(sph[i].material==sphereMaterial1){
+                            sph[i].material=sphereMaterial2;
+                            render();
+                        }
                         break;
                     } else if(hover[i]==0) {
                         document.body.style.cursor="default";
-                        sph[i].material=sphereMaterial1;
-                        
+                        if(sph[i].material==sphereMaterial2){
+                            sph[i].material=sphereMaterial1;
+                            render();
+                        }
                     }
                 }
-                //render();
             }
 
             function onPointerDown( event ) {
