@@ -413,7 +413,7 @@
                 sphereMaterial1 = new THREE.MeshBasicMaterial( { color: c1 } );
                 sphereMaterial2 = new THREE.MeshBasicMaterial( { color: c2 } );
                 
-                for(let i=0; i<=p.length-1; i++){
+                for(let i=0; i<p.length-1; i++){
                     sph[i] = new THREE.Mesh( sphereGeometry, sphereMaterial1 );
                     scene.add(sph[i]);
                     sph[i].position.set(p[i].x,p[i].y,p[i].z);
@@ -687,7 +687,7 @@
                 } else if(w<=1100){
                     brk=2;
                 }
-                for(let i=0;i<p.length;i++){
+                for(let i=0;i<p.length-1;i++){
                     switch(brk){
                         case 0: sph[i].children[0].offset.x="-50%"; break;
                         case 1: sph[i].children[0].offset.x="0%"; break;
@@ -719,7 +719,7 @@
                 mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
                 mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
                 raycaster.setFromCamera( mouse, camera );
-                for(let i=0; i<p.length; i++){
+                for(let i=0; i<p.length-1; i++){
                     if(raycaster.intersectObject(sph[i]).length==1){
                         document.body.style.cursor="pointer";
                         sph[i].material=sphereMaterial2;
@@ -748,7 +748,7 @@
                 mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
                 mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
                 raycaster.setFromCamera( mouse, camera );
-                for(let i=0; i<p.length; i++){
+                for(let i=0; i<p.length-1; i++){
                     if(raycaster.intersectObject(sph[i]).length==1){
                         if(Math.round(camera.position.x)==animClick[i][1] && Math.round(camera.position.y)==animClick[i][2] && Math.round(camera.position.z)==animClick[i][3]){
                             sph[i].children[0].visible=true;
@@ -766,7 +766,7 @@
 
             function setAnim(c){
                 if(animTime==0 && Math.round(camera.position.x)!=animClick[c][1] && Math.round(camera.position.y)!=animClick[c][2] && Math.round(camera.position.z)!=animClick[c][3]){
-                    for(let i=0;i<p.length;i++){
+                    for(let i=0;i<p.length-1;i++){
                         sph[i].children[0].visible=false;
                     }
                     sph[1].children[1].visible=false;
@@ -828,7 +828,7 @@
                         if(animTime>=1.0){
                             animTime=0.0;
                             animClick[i][0]=0;
-                            for(let k=0;k<p.length;k++){
+                            for(let k=0;k<p.length-1;k++){
                                 if(i==k){
                                     sph[k].children[0].visible=true;
                                 }
@@ -898,7 +898,7 @@
                     const diffY = Math.abs(event.pageY - startY);
 
                     if (diffX < delta && diffY < delta && clickSphere==0) {
-                        for(let i=0;i<p.length;i++){
+                        for(let i=0;i<p.length-1;i++){
                             sph[i].children[0].visible=false;
                         }
                         sph[1].children[1].visible=false;
