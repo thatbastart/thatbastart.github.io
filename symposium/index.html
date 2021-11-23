@@ -80,7 +80,7 @@
             color: var(--yellow);
             pointer-events: none;
             position: absolute;
-            z-index: 0;
+            z-index: 1;
         }
 
         .panel {
@@ -307,6 +307,12 @@
             height: 100vh;
             height: calc(var(--vh, 1vh)*100);
             background-color: var(--blue);
+            font-family: yoppa;
+            font-size: max(5.5vh,4.5vw);
+            color: var(--yellow);
+            text-align: center;
+            line-height: 100vh;
+            line-height: calc(var(--vh, 1vh)*100);
             z-index: 0;
         }
 		</style>
@@ -324,7 +330,7 @@
         <span class="title title_rl">Relational<br>Landscapes</span>
         <span class="title title_s">Symposium</span>
         <span class="title title_date">Online<br>Dec 2nd 2021<br>5-7:30pm cet</span>
-        <div id="loadScrn"></div>
+        <div id="loadScrn">Loading...</div>
         <script type="module">
             window.setAnim=setAnim;
             window.closePanel=closePanel;
