@@ -345,7 +345,7 @@
 			let camera, scene, renderer, pointcloud, controls, sphere, labelRenderer;
             let sph=[];
             let sphereMaterial1, sphereMaterial2;
-            let animClick=[[0,54,74,253],[0,-75,-25,-225],[0,-14,153,-137],[0, -15, 15, -200],[0,-128,32,219]];
+            let animClick=[[0,54,74,253],[0,-75,-25,-225],[0,-14,153,-137],[0, -15, 15, -200],[0,-128,32,219],[0,-250,46.5,-391]];
             let animProg=0.0;
             let animTime=0.0;
             let animSrc=[0,0,0,0,0,0]
@@ -385,7 +385,7 @@
 				scene = new THREE.Scene();
 
 				camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
-				camera.position.set( -250, 46.5, -391 );
+				camera.position.set( -294, 226, -229 );
 				scene.add( camera );
 
 
@@ -403,7 +403,7 @@
                     points.material.size=2.25;
 					scene.add( points );
                     pointcloud=points;
-                    render();
+                    setAnim(5);
 				} );
 				window.addEventListener( 'resize', onWindowResize );
 
