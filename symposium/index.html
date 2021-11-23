@@ -768,6 +768,7 @@
             }
 
             function setAnim(c){
+                curPanel=c;
                 if(animTime==0 && Math.round(camera.position.x)!=animClick[c][1] && Math.round(camera.position.y)!=animClick[c][2] && Math.round(camera.position.z)!=animClick[c][3]){
                     for(let i=0;i<p.length-1;i++){
                         sph[i].children[0].visible=false;
@@ -780,7 +781,9 @@
                     sph[curPanel].children[0].visible=true;
                     labelRender();
                 } else {
-                    curPanel=c;
+                    if(c!=curPanel){
+                        setAnim(curPanel);
+                    }
                 }
             }
 
