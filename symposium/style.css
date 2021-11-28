@@ -1,0 +1,312 @@
+:root {
+    --grey: #cacad0;
+    --yellow: #fff600;
+    --blue: #000bff;
+    --green: #72ff0d;
+}
+
+/* LOAD FONTS */
+@font-face {
+    font-family: akademieMed;
+    src: url('NBAkademieStd-Medium.ttf');
+}
+@font-face {
+    font-family: akademieReg;
+    src: url('NBAkademieStd-Regular.ttf');
+}
+@font-face {
+    font-family: akademieItalic;
+    src: url('NBAkademieStd-Italic.ttf');
+}
+@font-face {
+    font-family: yoppa;
+    src: url('Yoppa_Regular.otf');
+}
+
+body { 
+    margin: 0; 
+    background-color: var(--grey);
+}
+
+/* LINKS */
+a {
+    text-decoration: underline;
+    color: inherit;
+}
+a:visited {
+    text-decoration: underline;
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
+    color: var(--green) !important;
+}
+
+/* TITLE */
+.title {
+    font-family: yoppa;
+    font-size: max(5.5vh,4.5vw);
+    color: var(--yellow);
+    pointer-events: none;
+    position: absolute;
+}
+.title_rl{
+    top: 3vh; 
+    left: 3vh; 
+    transform: translate(0%,-10%);
+}
+.title_s{
+    top: 50vh; 
+    right: 3vh; 
+    transform: translate(0%,-50%);
+}
+.title_date{
+    bottom: 5vh; 
+    left: 3vh; 
+    transform: translate(0%,5%);
+}
+
+@media only screen and (max-width: 1100px) {
+    .title_rl{
+        top: 1.5vh; 
+        left: 1.5vh; 
+    }
+    .title_s{
+        top: 25vh; 
+        right: 1.5vh; 
+    }
+    .title_date{
+        bottom: 30vh; 
+        left: 1.5vh; 
+    }
+}
+
+/* NAVIGATION */
+.nav {
+    font-family: yoppa;
+    color: var(--blue);
+    font-size: max(3vh,30px);
+    cursor: pointer;
+}
+.navWrap {
+    position: absolute; 
+    right: 3vh; 
+    bottom: 3vh; 
+    text-align: right;
+    -moz-user-select: none; 
+    -webkit-user-select: none;
+    user-select: none;
+}
+@media only screen and (max-width: 1100px) {
+    .navWrap {
+        right: 1.5vh;
+        bottom: 1.5vh;
+    }
+}
+.navCircle {
+    width: 2.8vh;
+    height: 2.8vh; 
+    border-radius: 1.4vh; 
+    margin-right: 1vh;
+    background-color:var(--blue);
+    display:inline-block; 
+    transform: translate(0%,10%);
+}
+
+/* PANELS */
+.panel {
+        height: 100vh;
+        height: calc(var(--vh, 1vh)*100);
+        width: calc(100vw/3);
+        pointer-events: auto;
+        overflow: auto;
+    }
+@media only screen and (max-width: 1600px) {
+    .panel {
+        width: calc(100vw/2);
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .panel {
+        width: 100vw;
+    }
+}
+.panelAbout {
+    background-color: var(--blue);
+    color: var(--yellow);
+}
+.panelSchedule {
+    background-color: var(--blue);
+    color: var(--yellow);
+}
+.panelCont {
+    background-color: var(--yellow);
+    color: var(--blue);
+}
+.panelSpeaker {
+    background-color: var(--blue);
+    color: var(--yellow);
+}
+.panelImprint {
+    background-color: var(--blue);
+    color: var(--yellow);
+}
+.cont {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0% 14% 6% 14%;
+}
+
+/* TEXT FORMATS */
+.headline {
+    width: 94%; 
+    height: 5%; 
+    font-family: yoppa; 
+    font-size: max(3vh,25px);
+    text-align: center;
+    margin: 3%;
+}
+.subHeadline {
+    font-size: max(3vh,20px);
+    font-family: yoppa; 
+}
+.text {
+    font-family: akademieMed;
+    font-size: max(1.8vh,14px);
+    line-height: 1.2;
+    hyphens: auto;
+}
+.impOrg {
+    font-family: akademieItalic;
+    font-size: max(1.8vh,14px);
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+}
+
+/* SCHEDULE */
+.schRow {
+    display: inline-block;
+    width: 100%;
+}
+.schField {
+    width: 50%;
+    height: 100%;
+    display: inline-block;
+    padding: 2.3% 4% 2.3% 4%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.schLeft{
+    text-align: left;
+}
+.schRight{
+    text-align: right;
+}
+.schLine {
+    position: absolute; 
+    left: 50%; 
+    width: 0.25%; 
+    height: 87%; 
+    background-color: var(--yellow);
+}
+.schTime {
+    font-family: yoppa;
+    font-size: max(2.2vh,18px);
+    padding-bottom: 0.8vh;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+.schTitle {
+    font-family: akademieMed;
+    font-size: max(1.8vh,14px);
+    padding-bottom: 0.4vh;
+    line-height: 1.2;
+    display: block;
+    cursor: pointer;
+}
+.schSpeaker {
+    font-family: akademieItalic;
+    font-size: max(1.8vh,14px);
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    display: block;
+    cursor: pointer;
+    line-height: 1.2;
+}
+.schCont {
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 3% 14% 6% 14%;
+}
+.schClose {
+    font-family: yoppa;
+    font-size: max(3vh,25px);
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    cursor: pointer;
+}
+
+/* LOGO */
+.fhpLogo {
+    width:30%;
+    height: 55px;
+    background-image: url("fhp-logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
+}
+
+/* SCROLLBAR */
+/* Chrome */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--green);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--grey);
+}  
+
+/* Firefox */
+.scroll {
+    scrollbar-width: 10px;
+    scrollbar-color: var(--green) transparent;
+}
+
+/* HOVER */
+.hov {
+    color: inherit;
+}
+.hov:hover {
+    color: var(--green);
+}
+
+/* LOADING SCREEN */
+#loadScrn{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    height: calc(var(--vh, 1vh)*100);
+    background-color: var(--blue);
+    font-family: yoppa;
+    font-size: max(5.5vh,4.5vw);
+    color: var(--yellow);
+    text-align: center;
+    line-height: 100vh;
+    line-height: calc(var(--vh, 1vh)*100);
+    z-index: 0;
+}
