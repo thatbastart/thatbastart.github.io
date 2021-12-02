@@ -79,6 +79,7 @@ function init() {
         points.material.size=2.25; // square size
         scene.add( points );
         pointcloud=points;
+        console.log(pointcloud);
         setAnim(5); // starting animation
     } );
 
