@@ -7,16 +7,16 @@
 
 /* LOAD FONTS */
 @font-face {
-    font-family: akademieMed;
-    src: url('NBAkademieStd-Medium.ttf');
+    font-family: HKG_bold;
+    src: url('HKGrotesk-Bold.otf');
 }
 @font-face {
-    font-family: akademieReg;
-    src: url('NBAkademieStd-Regular.ttf');
+    font-family: HKG_regular;
+    src: url('HKGrotesk-Regular.otf');
 }
 @font-face {
-    font-family: akademieItalic;
-    src: url('NBAkademieStd-Italic.ttf');
+    font-family: HKG_italic;
+    src: url('HKGrotesk-MediumLegacyItalic');
 }
 @font-face {
     font-family: yoppa;
@@ -173,13 +173,13 @@ a:hover {
     font-family: yoppa; 
 }
 .text {
-    font-family: akademieMed;
+    font-family: HKG_bold;
     font-size: max(1.8vh,14px);
     line-height: 1.2;
     hyphens: auto;
 }
 .impOrg {
-    font-family: akademieItalic;
+    font-family: HKG_italic;
     font-size: max(1.8vh,14px);
     letter-spacing: 0.03em;
     line-height: 1.2;
@@ -221,7 +221,7 @@ a:hover {
     text-decoration: none;
 }
 .schTitle {
-    font-family: akademieMed;
+    font-family: HKG_bold;
     font-size: max(1.8vh,14px);
     padding-bottom: 0.4vh;
     line-height: 1.2;
@@ -229,7 +229,7 @@ a:hover {
     cursor: pointer;
 }
 .schSpeaker {
-    font-family: akademieItalic;
+    font-family: HKG_italic;
     font-size: max(1.8vh,14px);
     letter-spacing: 0.03em;
     line-height: 1.2;
