@@ -1,4 +1,4 @@
-/* 
+
 :root {
     --grey: #cacad0;
 }
@@ -8,4 +8,33 @@
     font-family: HKG_regular;
     src: url('HKGrotesk-Regular.otf');
 }
-*/
+
+body{
+    background-color: #ebe0d3;
+}
+
+
+.link{
+    color: #0c00ff;
+}
+
+.link:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#title{
+    background-image: url(title.png); 
+    background-size: cover; 
+    width:300px; 
+    height: 58px; 
+    position: absolute; 
+    left: 20vw; 
+    top: 15vh;
+    display: block;
+}
+
+#title:hover{
+    background-image: url(title_hover.png);
+    cursor: pointer;
+}
