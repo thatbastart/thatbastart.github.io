@@ -17,13 +17,18 @@
     for(let i=0; i<hr.length; i++){
       if(i==0){
         hr[i].style.marginTop="50px";  
+      } else {
+        hr[i].style.marginTop="100px";
       }
-      hr[i].style.marginTop="100px";
     }
 
     let txt=document.getElementsByClassName("s-text");
     for(let i=0;i<txt.length;i++){
-      txt[i].style.textAlign="justify";
+      if(i==0){
+        txt[i].style.textAlign="center";
+      } else {
+        txt[i].style.textAlign="justify";
+      }
       txt[i].style.margin="0% 10% 0% 10%";
     }
 
