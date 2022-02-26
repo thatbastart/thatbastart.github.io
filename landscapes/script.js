@@ -76,7 +76,7 @@ function init() {
         // callback function when pcd is loaded
         document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
-        points.material.size=2.25; // square size
+        points.material.size=1.5; // square size
         scene.add( points );
         pointcloud=points;
         console.log(pointcloud);
