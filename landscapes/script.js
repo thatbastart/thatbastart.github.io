@@ -542,7 +542,7 @@ function easeOutCubic (t, b, c, d) {
 // THREE RENDER
 function render() {
     renderer.render(scene, camera);
-    labelRenderer.render( scene, camera );
+    //labelRenderer.render( scene, camera );
 }
 
 /*
@@ -588,11 +588,12 @@ function closePanel(id,ch){
     labelRenderer.render( scene, camera );
 }
 */
-/*
+
 // WINDOW LOAD
 window.onload=function(){
     onWindowResize(); // trigger resize event to set breakpoints
-    
+}
+    /*
     // mouse click on canvas to close the panels - mouse drag (orbit nav) leaves panels open
     const delta = 6; // max movement between mouse up and down
     let startX;
