@@ -551,7 +551,7 @@ function easeOutCubic (t, b, c, d) {
 
 // THREE RENDER
 function render() {
-    plane.roation.y=camera.rotation.y;
+    plane.rotation.y=camera.rotation.y;
     renderer.render(scene, camera);
     //labelRenderer.render( scene, camera );
 }
