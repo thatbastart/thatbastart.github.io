@@ -80,7 +80,7 @@ function init() {
         scene.add( points );
         pointcloud=points;
         console.log(pointcloud);
-        setAnim(5); // starting animation
+        //setAnim(5); // starting animation
     } );
 
 
