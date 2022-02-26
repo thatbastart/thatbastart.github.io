@@ -6,14 +6,7 @@
       hdln[i].style.textAlign="center";
     }
 
-    document.getElementsByClassName("project__headline")[0].innerHTML="Ich hab' zu Hause alle Wände erst <span style='color:black; background:black'>Schwarz</span>, dann <span style='background: green; color: green;''>Grün</span> angestrichen. - <a href='https://www.youtube.com/watch?v=Bybm2nh02X4'>Du nich</a>";
-
-    [...document.styleSheets[0].cssRules].find(x=> x.selectorText==".c-images__letterbox").style.backgroundColor= "red";
-
-    let img=document.getElementsByClassName("c-images__letterbox");
-    for(let i=0; i<img.length; i++){
-      img[i].style.background="transparent";
-    }
+    document.getElementsByClassName("project__headline")[0].innerHTML="Ich hab' zu Hause alle Wände erst <span style='color:#100000; background:#100000'>Schwarz</span>, dann <span style='background: #82bb45; color: #82bb45;'>Grün</span> angestrichen. - <a href='https://www.youtube.com/watch?v=Bybm2nh02X4'>Du nich</a>";
 
     let thmb=document.getElementsByClassName("c-images__thumbnails");
     for(let i=0; i<thmb.length; i++){
@@ -22,15 +15,34 @@
 
     let hr=document.getElementsByTagName("hr");
     for(let i=0; i<hr.length; i++){
+      if(i==0){
+        hr[i].style.marginTop="50px";  
+      }
       hr[i].style.marginTop="100px";
+    }
+
+    let txt=document.getElementsByClassName("s-text");
+    for(let i=0;i<txt.length;i++){
+      txt[i].style.textAlign="justify";
+      txt[i].style.margin="0% 10% 0% 10%";
+    }
+
+    let pgh=document.getElementsByTagName("p");
+    for(let i=0; i<pgh.length; i++){
+      pgh[i].style.maxWidth="45em";
+    }
+
+    let img=document.getElementsByClassName("c-images__letterbox");
+    for(let i=0; i<img.length; i++){
+      img[i].style.background="transparent";
     }
 
     img[0].style.padding="5% 10% 5% 10%";
     img[1].style.padding="5% 10% 5% 10%";
     img[2].style.padding="5% 10% 5% 10%";
     img[3].style.padding="5% 10% 5% 10%";
-    img[4].style.padding="5% 0% 5% 0%";
-    img[5].style.padding="5% 20% 10% 20%";
+    img[4].style.padding="5% 10% 5% 10%";
+    img[5].style.padding="5% 10% 10% 10%";
     img[6].style.padding="5% 10% 5% 10%";
     img[7].style.padding="5% 35% 5% 35%";
     img[8].style.padding="5% 10% 5% 10%";
