@@ -1,7 +1,7 @@
 // function referrers to window scope
-window.setAnim=setAnim;
-window.closePanel=closePanel;
-window.openPanel=openPanel;
+//window.setAnim=setAnim;
+//window.closePanel=closePanel;
+//window.openPanel=openPanel;
 
 // import three and modules
 import * as THREE from './three/build/three.module.js';
