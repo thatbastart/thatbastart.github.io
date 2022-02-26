@@ -24,6 +24,7 @@ let bios=[]; // speaker biographies
 let pres=[]; // presentation titles/abstracts
 let brk; // current breakpoint
 let clickSphere=0; // if a sphere was clicked
+let plane;
 
 const raycaster = new THREE.Raycaster(); // finding out over which 3d-object the cursor is
 const mouse = new THREE.Vector2(); // cursor screen position
@@ -88,7 +89,7 @@ function init() {
     let planeGeometry = new THREE.PlaneGeometry(94.4, 108.0, 1, 1);
     let texture = new THREE.TextureLoader().load("tree.png");
     let planeMaterial = new THREE.MeshBasicMaterial( { map: texture, transparent: true } );
-    let plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.position.set(0,30,0);
     scene.add(plane);
 
@@ -550,6 +551,7 @@ function easeOutCubic (t, b, c, d) {
 
 // THREE RENDER
 function render() {
+    plane.roation.y=camera.rotation.y;
     renderer.render(scene, camera);
     //labelRenderer.render( scene, camera );
 }
