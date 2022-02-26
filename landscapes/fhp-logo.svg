@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Ebene_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 192.7 76.699997"
+   xml:space="preserve"
+   sodipodi:docname="FHP-logo.svg"
+   width="192.7"
+   height="76.699997"
+   inkscape:version="1.0.2 (1.0.2+r75+1)"><metadata
+   id="metadata123"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
+   id="defs121" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1680"
+   inkscape:window-height="922"
+   id="namedview119"
+   showgrid="true"
+   inkscape:zoom="2.3876962"
+   inkscape:cx="82.344872"
+   inkscape:cy="52.543332"
+   inkscape:window-x="2116"
+   inkscape:window-y="67"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="g116"
+   inkscape:document-rotation="0"><inkscape:grid
+     type="xygrid"
+     id="grid15" /></sodipodi:namedview>
+<style
+   type="text/css"
+   id="style2">
+	.st0{fill:#1D1D1B;}
+</style>
+<g
+   id="g116"
+   transform="translate(0,-0.7)">
+	<g
+   id="g16"
+   style="fill:#fff600;fill-opacity:1">
+		<g
+   id="g8"
+   style="fill:#fff600;fill-opacity:1">
+			<path
+   class="st0"
+   d="m 130.3,57.2 c 0,8.2 -1.9,14.4 -9.3,20.2 l -8.1,-6.8 c 4.2,-4 5.6,-7 5.7,-11.9 h -6.5 V 40.3 h 18.2 z"
+   id="path4"
+   style="fill:#fff600;fill-opacity:1" />
+			<rect
+   x="112.3"
+   y="9.8000002"
+   class="st0"
+   width="18"
+   height="18.299999"
+   id="rect6"
+   style="fill:#fff600;fill-opacity:1" />
+		</g>
+		<polygon
+   class="st0"
+   points="43.6,0.7 43.6,14.5 17.5,14.5 17.5,24.7 41.6,24.7 41.6,38.5 17.5,38.5 17.5,58.7 0,58.7 0,0.7 "
+   id="polygon10"
+   style="fill:#fff600;fill-opacity:1" />
+		<path
+   class="st0"
+   d="M 84.3,58.7 V 36 h -17 V 58.7 H 49.4 V 0.7 H 67.3 V 21.1 H 84.2 V 0.7 h 18 v 58 z"
+   id="path12"
+   style="fill:#fff600;fill-opacity:1" />
+		<path
+   class="st0"
+   d="m 140.5,58.7 v -58 h 24.8 c 11.4,0 16.3,1.2 19.8,3.5 5.1,3.4 7.6,8.9 7.6,16.1 0,6.7 -2.6,12.5 -7.3,15.9 -4,2.9 -9.3,4.3 -18.3,4.3 h -8.8 V 58.7 Z M 165.1,27 c 3.5,0 6,-0.5 7.4,-1.6 1.3,-1.1 1.8,-2.7 1.8,-4.6 0,-1.8 -0.5,-3.4 -1.8,-4.6 -1.3,-1.2 -3.4,-1.6 -7.1,-1.6 h -7.1 V 27 Z"
+   id="path14"
+   style="fill:#fff600;fill-opacity:1" />
+	</g>
+	
+</g>
+</svg>
