@@ -38,7 +38,7 @@
     }
 
     let imgC=document.getElementsByClassName("c-images");
-    for(let i=0; i<img.length; i++){
+    for(let i=0; i<imgC.length; i++){
       imgC[i].style.marginBottom="5%";
     }
 
