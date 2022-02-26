@@ -401,7 +401,7 @@ function onWindowResize() {
     camera.updateProjectionMatrix();
 
     renderer.setSize( window.innerWidth, window.innerHeight );
-    labelRenderer.setSize( window.innerWidth, window.innerHeight );
+    //labelRenderer.setSize( window.innerWidth, window.innerHeight );
     render();
 
 }
