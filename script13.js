@@ -37,6 +37,11 @@
       pgh[i].style.maxWidth="45em";
     }
 
+    let imgC=document.getElementsByClassName("c-images");
+    for(let i=0; i<img.length; i++){
+      imgC[i].style.marginBottom="5%";
+    }
+
     let img=document.getElementsByClassName("c-images__letterbox");
     for(let i=0; i<img.length; i++){
       img[i].style.background="transparent";
