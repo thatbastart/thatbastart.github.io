@@ -89,7 +89,7 @@ function init() {
     let texture = new THREE.TextureLoader().load("tree.png");
     let planeMaterial = new THREE.MeshBasicMaterial( { map: texture, transparent: true } );
     let plane = new THREE.Mesh(planeGeometry, planeMaterial);
-    plane.position.set(0,0,54);
+    plane.position.set(0,54,0);
     scene.add(plane);
 
 
