@@ -553,7 +553,7 @@ function easeOutCubic (t, b, c, d) {
 function render() {
     plane.rotation.y=camera.rotation.y;
     console.log(plane.rotation.y);
-    console.log(camerarotation.y);
+    console.log(camera.rotation.y);
     console.log("---");
     renderer.render(scene, camera);
     //labelRenderer.render( scene, camera );
