@@ -363,6 +363,7 @@ function onWindowResize() {
     // >1600px: 3 columns
     // >1100px: 2 columns
     // <1100px: 1 column
+    /*
     let w=window.innerWidth;
     if(w>1600){
         brk=0;
@@ -390,7 +391,7 @@ function onWindowResize() {
         case 1: sph[1].children[1].offset.x="-100%"; sph[2].children[1].offset.x="-100%"; break;
         case 2: sph[1].children[1].offset.x="-50%"; sph[2].children[1].offset.x="-50%"; break;
     }
-
+    */
     // custom css variable with correct vh for webkit mobile
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh",vh+"px");
@@ -411,7 +412,7 @@ function onMouseMove( event ) {
     // mouse position
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-
+    /*
     // raycaster intersect
     raycaster.setFromCamera( mouse, camera );
     for(let i=0; i<p.length-1; i++){ // test intersection of mouse against spheres
@@ -430,9 +431,11 @@ function onMouseMove( event ) {
             }
         }
     }
+    */
+   render();
 }
 
-
+/*
 // POINTER DOWN
 function onPointerDown( event ) {
     // set animation source to current cam pos and orbit target
@@ -466,8 +469,8 @@ function onPointerDown( event ) {
         }
     }
 }
-
-
+*/
+/*
 // INITIATE ANIMATION
 function setAnim(c){
     // only if cam not already there and anim not running
@@ -487,8 +490,8 @@ function setAnim(c){
         labelRenderer.render( scene, camera );
     }
 }
-
-
+*/
+/*
 // THREE ANIMATE
 function animate() {
     for(let i=0; i<animClick.length;i++){
@@ -534,7 +537,7 @@ function camAnim(){
 function easeOutCubic (t, b, c, d) {
     return c * ((t = t / d - 1) * t * t + 1) + b;
 }
-
+*/
 
 // THREE RENDER
 function render() {
@@ -542,7 +545,7 @@ function render() {
     labelRenderer.render( scene, camera );
 }
 
-
+/*
 // OPEN CONTENT PANEL - schedule or speakers
 function openPanel(s, id, c){
     if(s==0){ // left side
@@ -584,8 +587,8 @@ function closePanel(id,ch){
     }
     labelRenderer.render( scene, camera );
 }
-
-
+*/
+/*
 // WINDOW LOAD
 window.onload=function(){
     onWindowResize(); // trigger resize event to set breakpoints
@@ -645,3 +648,4 @@ window.onload=function(){
         render();
     }
 }
+*/
