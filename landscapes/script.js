@@ -84,6 +84,14 @@ function init() {
     } );
 
 
+    // TREE
+    let planeGeometry = new THREE.PlaneGeometry(94.4, 108.0, 1, 1);
+    let texture = new THREE.TextureLoader().load("/tree.png");
+    let planeMaterial = new THREE.MeshBasicMaterial( { map: texture } );
+    let plane = new THREE.Mesh(planeGeometry, planeMaterial);
+    scene.add(plane);
+    
+
     // SPHERES
     /*const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 ); // sphere radius and subdivs
     matBlue = new THREE.MeshBasicMaterial( { color: blue } ); // blue default
