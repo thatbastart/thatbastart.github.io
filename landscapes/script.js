@@ -86,7 +86,7 @@ function init() {
 
 
     // TREE
-    let planeGeometry = new THREE.PlaneGeometry(94.4, 108.0, 1, 1);
+    let planeGeometry = new THREE.PlaneGeometry(103.4, 141.5, 1, 1);
     let texture = new THREE.TextureLoader().load("tree.png");
     let planeMaterial = new THREE.MeshBasicMaterial( { map: texture, transparent: true } );
     plane = new THREE.Mesh(planeGeometry, planeMaterial);
