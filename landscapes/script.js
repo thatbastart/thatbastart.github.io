@@ -92,14 +92,10 @@ function init() {
         'ayahuasca.glb',
         // called when the resource is loaded
         function ( gltf ) {
-    
-            scene.add( gltf.scene );
-            gltf.animations; // Array<THREE.AnimationClip>
-		gltf.scene; // THREE.Group
-		gltf.scenes; // Array<THREE.Group>
-		gltf.cameras; // Array<THREE.Camera>
-		gltf.asset; // Object
-        console.log(gltf);
+            let vine=gltf.scene.children[0]
+            scene.add( vine );
+            vine.scale.set(5,5,5);
+            console.log(vine);
     
         }
     );
