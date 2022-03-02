@@ -99,6 +99,7 @@ function init() {
 		gltf.scenes; // Array<THREE.Group>
 		gltf.cameras; // Array<THREE.Camera>
 		gltf.asset; // Object
+        console.log(gltf);
     
         }
     );
