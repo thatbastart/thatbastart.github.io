@@ -87,7 +87,7 @@ function init() {
 
 
     const glloader = new GLTFLoader();
-    loader.load(
+    glloader.load(
         // resource URL
         'ayahuasca.glb',
         // called when the resource is loaded
