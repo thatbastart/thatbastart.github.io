@@ -96,7 +96,8 @@ function init() {
             scene.add( vine );
             vine.scale.set(5,5,5);
             vine.position.set(100,0,100);
-            vine.material.type="MeshBasicMaterial";
+            let texture = new THREE.TextureLoader().load("vine.png");
+            let vineMaterial = new THREE.MeshBasicMaterial( { map: texture, transparent: true, side: THREE.FrontSide } );
             console.log(vine);
     
         }
