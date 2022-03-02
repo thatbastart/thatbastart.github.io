@@ -96,6 +96,7 @@ function init() {
     matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
     let sphere=new THREE.Mesh( sphereGeometry, matBlue );
     plane.add(sphere);
+    sphere.position.set(30,0,0);
 
     // SPHERES
     /*const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 ); // sphere radius and subdivs
