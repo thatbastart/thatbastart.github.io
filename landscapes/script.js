@@ -8,6 +8,7 @@ import * as THREE from './three/build/three.module.js';
 
 import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
 import { PCDLoader } from './three/examples/jsm/loaders/PCDLoader.js';
+import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js';
 import { CSS2DRenderer, CSS2DObject } from './three/examples/jsm/renderers/CSS2DRenderer.js';
 
 let camera, scene, renderer, pointcloud, controls, sphere, labelRenderer;
