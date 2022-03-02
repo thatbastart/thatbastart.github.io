@@ -89,7 +89,7 @@ function init() {
     const glloader = new GLTFLoader();
     loader.load(
         // resource URL
-        'ayahuasca.gltf',
+        'ayahuasca.glb',
         // called when the resource is loaded
         function ( gltf ) {
     
