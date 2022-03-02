@@ -92,7 +92,10 @@ function init() {
     plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.position.set(0,30,0);
     scene.add(plane);
-
+    const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 ); 
+    matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
+    let sphere=new THREE.Mesh( sphereGeometry, matBlue );
+    plane.add(sphere);
 
     // SPHERES
     /*const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 ); // sphere radius and subdivs
