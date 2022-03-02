@@ -94,7 +94,11 @@ function init() {
         function ( gltf ) {
     
             scene.add( gltf.scene );
-            gltf.asset; // Object
+            gltf.animations; // Array<THREE.AnimationClip>
+		gltf.scene; // THREE.Group
+		gltf.scenes; // Array<THREE.Group>
+		gltf.cameras; // Array<THREE.Camera>
+		gltf.asset; // Object
     
         }
     );
