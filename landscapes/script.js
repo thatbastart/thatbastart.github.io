@@ -85,6 +85,19 @@ function init() {
     } );
 
 
+    const glloader = new GLTFLoader();
+    loader.load(
+        // resource URL
+        'ayahuasca.gltf',
+        // called when the resource is loaded
+        function ( gltf ) {
+    
+            scene.add( gltf.scene );
+            gltf.asset; // Object
+    
+        }
+    );
+
     // TREE
     let planeGeometry = new THREE.PlaneGeometry(103.4, 141.5, 1, 1);
     let texture = new THREE.TextureLoader().load("tree.png");
