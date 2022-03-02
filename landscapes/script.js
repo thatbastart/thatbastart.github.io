@@ -94,7 +94,6 @@ function init() {
         function ( gltf ) {
             let vine=gltf.scene.children[0]
             scene.add( vine );
-            vine.scale.set(5,5,5);
             vine.position.set(100,0,100);
             let texture = new THREE.TextureLoader().load("vine.png");
             texture.wrapS=THREE.RepeatWrapping;
