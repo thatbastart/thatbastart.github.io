@@ -19,3 +19,39 @@
     background-position: center;
     background-size: cover;
 }
+
+.meteor{
+    background-image: url('images/gif_obj1.gif'); 
+    background-size: cover; 
+    background-position: center; 
+    width: 583px; 
+    height: 583px; 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    margin: auto;
+}
+
+.green{
+    background-image: url('images/green_thingy1.gif'); 
+    background-size: cover; 
+    background-position: center; 
+    width: 450px; 
+    height: 450px; 
+    position: absolute; 
+    top: 10vh; 
+    right: 10vw;; 
+}
+
+.rock{
+    background-image: url('images/rock_gif.gif'); 
+    background-size: cover; 
+    background-position: center; 
+    width: 600px; 
+    height: 400px; 
+    position: absolute; 
+    bottom: 0; 
+    left: 10vw;; 
+}
