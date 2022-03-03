@@ -5,8 +5,8 @@
 
 
 @font-face {
-    font-family: HKG_regular;
-    src: url('HKGrotesk-Regular.otf');
+    font-family: courier;
+    src: url('fonts/CourierStd.otf');
 }
 
 .main{
@@ -78,6 +78,28 @@
     left: 20vw;
 }
 
+.dots{
+    background-image: url('images/dots.png'); 
+    background-size: cover; 
+    background-position: center; 
+    width: 350px; 
+    height: 400px; 
+    position: absolute; 
+    bottom: 2vh; 
+    right: 18vw;
+}
+
+.paint_green{
+    background-image: url('images/paint_green.png'); 
+    background-size: cover; 
+    background-position: center; 
+    width: 300px; 
+    height: 300px; 
+    position: absolute; 
+    bottom: 2vh; 
+    left: 30vw;
+}
+
 .header{
     width: 35vw; 
     height: 5vw; 
@@ -88,7 +110,7 @@
     margin: auto;
     display: flex;
     color: #fff;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: courier;
 }
 
 .header1{
