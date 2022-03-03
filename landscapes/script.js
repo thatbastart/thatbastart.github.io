@@ -115,7 +115,7 @@ function init() {
     scene.add(plane);
     const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 ); 
     matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
-    let sphere=new THREE.Mesh( sphereGeometry, matBlue );
+    sphere=new THREE.Mesh( sphereGeometry, matBlue );
     plane.add(sphere);
     sphere.position.set(30,0,0);
 
@@ -470,9 +470,19 @@ function onMouseMove( event ) {
    render();
 }
 
-/*
+
 // POINTER DOWN
 function onPointerDown( event ) {
+    // mouse position
+    mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+    // raycaster intersect
+    raycaster.setFromCamera( mouse, camera );
+    if(raycaster.intersectObject(sphere).length==1){ // pointer down over sphere
+        let texture = new THREE.TextureLoader().load("tree_highlight.png");
+        plane.material.map=texture;
+    }
+    /*
     // set animation source to current cam pos and orbit target
     if(animTime==0){ // if no animation is running
         animSrc[0]=camera.position.x;
@@ -502,9 +512,9 @@ function onPointerDown( event ) {
         } else {
             clickSphere=0; // didn't click on sphere
         }
-    }
+    }*/
 }
-*/
+
 /*
 // INITIATE ANIMATION
 function setAnim(c){
