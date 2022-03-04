@@ -89,7 +89,7 @@ function init() {
             this.txt=undefined;
         }
 
-        draw(){
+        draw(font){
             let sphGeo = new THREE.SphereGeometry( this.size, 16, 16 );
             let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
             this.sph=new THREE.Mesh( sphGeo, matBlue );
@@ -113,7 +113,7 @@ function init() {
     vj_fontloader.load( "fonts/HK Grotesk_Regular.json", function (font) {
         for(let i=0;i<vj_treedata.length;i++){
             vj_treepoints[i]=new vj_treepoint(vj_treedata[i][0],vj_treedata[i][2],vj_treedata[i][3],vj_treedata[i][1],vj_treedata[i][4]);
-            vj_treepoints[i].draw();
+            vj_treepoints[i].draw(font);
         }
     } );
 
