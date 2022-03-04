@@ -104,9 +104,22 @@ function init() {
             } );
             this.txt=new THREE.Mesh(textGeo,matBlue);
             this.txt.geometry.computeBoundingBox();
-            console.log(this.txt);
-            this.txt.center();
-            //this.txt.position.set(1,-0.5,0.1);
+            let center = this.txt.geometry.boundingBox.getCenter(new THREE.Vector3());
+            switch(this.pos){
+                case 0:
+                    this.txt.position.set(-(this.x-center),1,0.1);
+                    break;
+                case 1:
+                    this.txt.position.set(1,-0.5,0.1);
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+            }
+            
             this.sph.add(this.txt);
         }
     }
