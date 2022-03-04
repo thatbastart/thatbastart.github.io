@@ -104,7 +104,8 @@ function init() {
             } );
             this.txt=new THREE.Mesh(textGeo,matBlue);
             console.log(this.txt);
-            this.txt.position.set(0,0,0.1);
+            this.txt.geometry.computeBoundingBox();
+            this.txt.position.set(1,-0.5,0.1);
             this.sph.add(this.txt);
         }
     }
