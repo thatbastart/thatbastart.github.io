@@ -97,7 +97,7 @@ function init() {
             }
             let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
             this.sph=new THREE.Mesh( sphGeo, matBlue );
-            plane.add(this.sph);
+            vj_tree.add(this.sph);
             this.sph.position.set(this.x,this.y,0);
         }
     }
