@@ -473,6 +473,7 @@ function onMouseMove( event ) {
 
 // POINTER DOWN
 function onPointerDown( event ) {
+    console.log("hello");
     // mouse position
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
