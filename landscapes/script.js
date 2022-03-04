@@ -100,11 +100,11 @@ function init() {
                 font: font,
                 size: 1,
                 height: 0,
-                curveSegments: 12
+                curveSegments: 8
             } );
             this.txt=new THREE.Mesh(textGeo,matBlue);
             console.log(this.txt);
-            this.txt.position.set(this.x,this.y,0);
+            this.txt.position.set(0,0,0.1);
             this.sph.add(this.txt);
         }
     }
