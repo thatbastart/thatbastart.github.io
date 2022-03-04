@@ -105,14 +105,13 @@ function init() {
             this.txt=new THREE.Mesh(textGeo,matBlue);
             this.txt.geometry.computeBoundingBox();
             let center = this.txt.geometry.boundingBox.getCenter(new THREE.Vector3());
-            console.log(this.txt.geometry);
-            console.log(center);
+            
             switch(this.pos){
                 case 0:
-                    this.txt.position.set(-center,2,0.1);
+                    this.txt.position.set(-center.x,2,0.1);
                     break;
                 case 1:
-                    this.txt.position.set(1,-0.5,0.1);
+                    this.txt.position.set(1,-0.5,0.5);
                     break;
                 case 2:
 
@@ -121,7 +120,7 @@ function init() {
 
                     break;
             }
-            
+            console.log(this.txt);
             this.sph.add(this.txt);
         }
     }
