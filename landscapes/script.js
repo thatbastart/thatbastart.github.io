@@ -107,7 +107,7 @@ function init() {
             let center = this.txt.geometry.boundingBox.getCenter(new THREE.Vector3());
             switch(this.pos){
                 case 0:
-                    this.txt.position.set(-(this.x-center),1,0.1);
+                    this.txt.position.set(-center,2,0.1);
                     break;
                 case 1:
                     this.txt.position.set(1,-0.5,0.1);
