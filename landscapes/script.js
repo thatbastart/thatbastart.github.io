@@ -105,7 +105,7 @@ function init() {
     matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
 
     for(let i=0;i<vj_treepoints.length;i++){
-        if(treepoints[i].size==2){
+        if(vj_treepoints[i].size==2){
             sph[i]=new THREE.Mesh( sphereGeometry2, matBlue );
         } else {
             sph[i]=new THREE.Mesh( sphereGeometry1, matBlue );
