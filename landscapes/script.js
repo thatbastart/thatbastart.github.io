@@ -12,7 +12,7 @@ import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
 import { PCDLoader } from './three/examples/jsm/loaders/PCDLoader.js';
 import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js';
 
-let camera, scene, renderer, controls;
+let camera, scene, renderer, controls, font;
 const raycaster = new THREE.Raycaster(); // finding out over which 3d-object the cursor is
 const mouse = new THREE.Vector2(); // cursor screen position
 
@@ -89,7 +89,7 @@ function init() {
             this.txt=undefined;
         }
 
-        draw(font){
+        draw(){
             let sphGeo = new THREE.SphereGeometry( this.size, 16, 16 );
             let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
             this.sph=new THREE.Mesh( sphGeo, matBlue );
@@ -103,8 +103,8 @@ function init() {
                 curveSegments: 8
             } );
             this.txt=new THREE.Mesh(textGeo,matBlue);
-            console.log(this.txt);
             this.txt.geometry.computeBoundingBox();
+            console.log(this.txt);
             this.txt.center();
             //this.txt.position.set(1,-0.5,0.1);
             this.sph.add(this.txt);
@@ -113,10 +113,11 @@ function init() {
 
     const vj_fontloader = new THREE.FontLoader();
 
-    vj_fontloader.load( "fonts/HK Grotesk_Regular.json", function (font) {
+    vj_fontloader.load( "fonts/HK Grotesk_Regular.json", function (f) {
+        font=f;
         for(let i=0;i<vj_treedata.length;i++){
             vj_treepoints[i]=new vj_treepoint(vj_treedata[i][0],vj_treedata[i][2],vj_treedata[i][3],vj_treedata[i][1],vj_treedata[i][4]);
-            vj_treepoints[i].draw(font);
+            vj_treepoints[i].draw();
         }
     } );
 
