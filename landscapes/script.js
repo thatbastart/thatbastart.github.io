@@ -26,6 +26,7 @@ let pres=[]; // presentation titles/abstracts
 let brk; // current breakpoint
 let clickSphere=0; // if a sphere was clicked
 let plane;
+let tex_tree=[];
 
 const raycaster = new THREE.Raycaster(); // finding out over which 3d-object the cursor is
 const mouse = new THREE.Vector2(); // cursor screen position
@@ -108,8 +109,9 @@ function init() {
 
     // TREE
     let planeGeometry = new THREE.PlaneGeometry(103.4, 141.5, 1, 1);
-    let texture = new THREE.TextureLoader().load("tree.png");
-    let planeMaterial = new THREE.MeshBasicMaterial( { map: texture, transparent: true } );
+    tex_tree[0] = new THREE.TextureLoader().load("tree.png");
+    tex_tree[1] = new THREE.TextureLoader().load("tree_highlight.png");
+    let planeMaterial = new THREE.MeshBasicMaterial( { map: tex_tree[0], transparent: true } );
     plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.position.set(0,30,0);
     scene.add(plane);
@@ -473,15 +475,13 @@ function onMouseMove( event ) {
 
 // POINTER DOWN
 function onPointerDown( event ) {
-    console.log("hello");
     // mouse position
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
     // raycaster intersect
     raycaster.setFromCamera( mouse, camera );
     if(raycaster.intersectObject(sphere).length==1){ // pointer down over sphere
-        let texture = new THREE.TextureLoader().load("tree_highlight.png");
-        plane.material.map=texture;
+        plane.material.map=tex_tree[1];
     }
     /*
     // set animation source to current cam pos and orbit target
