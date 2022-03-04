@@ -108,10 +108,10 @@ function init() {
             
             switch(this.pos){
                 case 0:
-                    this.txt.position.set(-center.x,2,0.1);
+                    this.txt.position.set(-center.x,1,0.1);
                     break;
                 case 1:
-                    this.txt.position.set(1,-0.5,0.5);
+                    this.txt.position.set(1,-0.4,0.5);
                     break;
                 case 2:
 
