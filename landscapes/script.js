@@ -64,9 +64,10 @@ function init() {
         points.scale.set(0.8,0.8,0.8)
         vj_pointcloud=points;
         scene.add(vj_pointcloud);
+        vj_pointcloud.add(vj_tree);
     } );
 
-
+    
     // tree
     let vj_tree_geo = new THREE.PlaneGeometry(103.4, 141.5, 1, 1);
     vj_tree_tex[0] = new THREE.TextureLoader().load("vj/tree.png");
@@ -74,7 +75,7 @@ function init() {
     let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true } );
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
     vj_tree.position.set(0,30,0);
-    vj_pointcloud.add(vj_tree);
+    
 
 
     class vj_treepoint{
