@@ -22,9 +22,8 @@ const green=new THREE.Color(0.447,1.0,0.051); // green hover
 // vj
 let vj_pointcloud;
 let sph=[]; // sphere mesh objects
-let matBlue;
-let plane;
-let tex_tree=[];
+let vj_tree;
+let vj_tree_tex=[];
 
 init(); // create scene
 
@@ -70,6 +69,16 @@ function init() {
     } );
 
 
+    // tree
+    let vj_tree_geo = new THREE.PlaneGeometry(103.4, 141.5, 1, 1);
+    vj_tree_tex[0] = new THREE.TextureLoader().load("vj/tree.png");
+    vj_tree_tex[1] = new THREE.TextureLoader().load("vj/tree_highlight.png");
+    let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true } );
+    vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
+    vj_tree.position.set(0,30,0);
+    scene.add(vj_tree);
+
+
     class vj_treepoint{
         constructor(title,x,y,size,pos){
             this.title=title;
@@ -81,38 +90,22 @@ function init() {
         }
 
         draw(){
-
+            if(this.size==2){
+                const sphGeo = new THREE.SphereGeometry( 0.8, 16, 16 );     
+            } else {
+                const sphGeo = new THREE.SphereGeometry( 0.6, 16, 16 ); 
+            }
+            let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
+            this.sph=new THREE.Mesh( sphGeo, matBlue );
+            plane.add(this.sph);
+            this.sph.position.set(this.x,this.y,0);
         }
     }
 
     let vj_treepoints=[];
     for(let i=0;i<vj_treedata.length;i++){
         vj_treepoints[i]=new vj_treepoint(vj_treedata[i][0],vj_treedata[i][2],vj_treedata[i][3],vj_treedata[i][1],vj_treedata[i][4]);
-    }
-
-
-    // tree
-    let planeGeometry = new THREE.PlaneGeometry(103.4, 141.5, 1, 1);
-    tex_tree[0] = new THREE.TextureLoader().load("vj/tree.png");
-    tex_tree[1] = new THREE.TextureLoader().load("vj/tree_highlight.png");
-    let planeMaterial = new THREE.MeshBasicMaterial( { map: tex_tree[0], transparent: true } );
-    plane = new THREE.Mesh(planeGeometry, planeMaterial);
-    plane.position.set(0,30,0);
-    scene.add(plane);
-
-    const sphereGeometry1 = new THREE.SphereGeometry( 0.6, 16, 16 ); 
-    const sphereGeometry2 = new THREE.SphereGeometry( 0.8, 16, 16 ); 
-    matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
-
-    for(let i=0;i<vj_treepoints.length;i++){
-        if(vj_treepoints[i].size==2){
-            sph[i]=new THREE.Mesh( sphereGeometry2, matBlue );
-        } else {
-            sph[i]=new THREE.Mesh( sphereGeometry1, matBlue );
-        }
-        
-        plane.add(sph[i]);
-        sph[i].position.set(vj_treepoints[i].x,vj_treepoints[i].y,0);
+        vj_treepoints[i].draw();
     }
 
 
@@ -177,10 +170,10 @@ function onPointerDown( event ) {
     raycaster.setFromCamera( mouse, camera );
     for(let i=0; i<sph.length-1; i++){
         if(raycaster.intersectObject(sph[i]).length==1){ // pointer down over sphere
-            if(plane.material.map==tex_tree[0]){
-                plane.material.map=tex_tree[1];
+            if(vj_tree.material.map==vj_tree_tex[0]){
+                vj_tree.material.map=vj_tree_tex[1];
             } else {
-                plane.material.map=tex_tree[0];
+                vj_tree.material.map=vj_tree_tex[0];
             }
             render();
         }
