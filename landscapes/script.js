@@ -90,11 +90,7 @@ function init() {
         }
 
         draw(){
-            if(this.size==2){
-                var sphGeo = new THREE.SphereGeometry( 0.8, 16, 16 );     
-            } else {
-                var sphGeo = new THREE.SphereGeometry( 0.6, 16, 16 ); 
-            }
+            let sphGeo = new THREE.SphereGeometry( this.size, 16, 16 );
             let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
             this.sph=new THREE.Mesh( sphGeo, matBlue );
             vj_tree.add(this.sph);
@@ -183,7 +179,7 @@ function onPointerDown( event ) {
 
 // THREE RENDER
 function render() {
-    plane.lookAt(camera.position.x,30,camera.position.z);
+    vj_tree.lookAt(camera.position.x,30,camera.position.z);
     renderer.render(scene, camera);
 }
 
