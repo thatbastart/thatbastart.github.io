@@ -20,10 +20,7 @@ const blue=new THREE.Color(0.0,0.04,1.0); // blue default
 const green=new THREE.Color(0.447,1.0,0.051); // green hover
 
 // vj
-let vj_pointcloud;
-let sph=[]; // sphere mesh objects
-let vj_tree;
-let vj_tree_tex=[];
+let vj_pointcloud, vj_tree, vj_tree_tex=[];
 
 init(); // create scene
 
@@ -164,8 +161,8 @@ function onPointerDown( event ) {
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
     // raycaster intersect
     raycaster.setFromCamera( mouse, camera );
-    for(let i=0; i<sph.length-1; i++){
-        if(raycaster.intersectObject(sph[i]).length==1){ // pointer down over sphere
+    for(let i=0; i<vj_treepoints.length; i++){
+        if(raycaster.intersectObject(vj_treepoints[i].sph).length==1){ // pointer down over sphere
             if(vj_tree.material.map==vj_tree_tex[0]){
                 vj_tree.material.map=vj_tree_tex[1];
             } else {
