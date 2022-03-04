@@ -115,7 +115,7 @@ function init() {
         }
     }
     let treepoints=[];
-    treepoints[0]=new treepoint("Sanssouci",-17.436,-53.857);
+    treepoints[0]=new treepoint("Sanssouci",0,-53.857);
     treepoints[1]=new treepoint("Spain",-2.3,-15.781);
     treepoints[2]=new treepoint("spiritual",0.645,49.149);
 
@@ -497,7 +497,7 @@ function onPointerDown( event ) {
     raycaster.setFromCamera( mouse, camera );
     for(let i=0; i<sph.length-1; i++){
         if(raycaster.intersectObject(sph[i]).length==1){ // pointer down over sphere
-            if(plane.material.map=tex_tree[0]){
+            if(plane.material.map==tex_tree[0]){
                 plane.material.map=tex_tree[1];
             } else {
                 plane.material.map=tex_tree[0];
