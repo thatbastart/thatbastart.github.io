@@ -105,6 +105,8 @@ function init() {
             this.txt=new THREE.Mesh(textGeo,matBlue);
             this.txt.geometry.computeBoundingBox();
             let center = this.txt.geometry.boundingBox.getCenter(new THREE.Vector3());
+            console.log(this.txt.geometry);
+            console.log(center);
             switch(this.pos){
                 case 0:
                     this.txt.position.set(-center,2,0.1);
