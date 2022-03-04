@@ -102,9 +102,10 @@ function init() {
                 height: 0,
                 curveSegments: 12
             } );
-            this.txt.position.set(this.x,this.y,0);
-            this.txt.material=matBlue;
-            this.sph.add(this.txt);
+            console.log(this.txt);
+            //this.txt.position.set(this.x,this.y,0);
+            //this.txt.material=matBlue;
+            //this.sph.add(this.txt);
         }
     }
 
