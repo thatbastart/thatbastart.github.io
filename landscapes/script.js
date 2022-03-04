@@ -104,7 +104,7 @@ function init() {
     const sphereGeometry2 = new THREE.SphereGeometry( 0.8, 16, 16 ); 
     matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
 
-    for(let i=0;i<treepoints.length;i++){
+    for(let i=0;i<vj_treepoints.length;i++){
         if(treepoints[i].size==2){
             sph[i]=new THREE.Mesh( sphereGeometry2, matBlue );
         } else {
@@ -112,7 +112,7 @@ function init() {
         }
         
         plane.add(sph[i]);
-        sph[i].position.set(treepoints[i].x,treepoints[i].y,0);
+        sph[i].position.set(vj_treepoints[i].x,vj_treepoints[i].y,0);
     }
 
 
