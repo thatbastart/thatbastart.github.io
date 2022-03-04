@@ -482,6 +482,7 @@ function onPointerDown( event ) {
     raycaster.setFromCamera( mouse, camera );
     if(raycaster.intersectObject(sphere).length==1){ // pointer down over sphere
         plane.material.map=tex_tree[1];
+        render();
     }
     /*
     // set animation source to current cam pos and orbit target
