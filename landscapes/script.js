@@ -98,7 +98,7 @@ function init() {
 
             let textGeo = new THREE.TextGeometry(this.title, {
                 font: font,
-                size: 10,
+                size: 1,
                 height: 0,
                 curveSegments: 12
             } );
