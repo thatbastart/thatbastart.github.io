@@ -91,9 +91,9 @@ function init() {
 
         draw(){
             if(this.size==2){
-                const sphGeo = new THREE.SphereGeometry( 0.8, 16, 16 );     
+                var sphGeo = new THREE.SphereGeometry( 0.8, 16, 16 );     
             } else {
-                const sphGeo = new THREE.SphereGeometry( 0.6, 16, 16 ); 
+                var sphGeo = new THREE.SphereGeometry( 0.6, 16, 16 ); 
             }
             let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
             this.sph=new THREE.Mesh( sphGeo, matBlue );
