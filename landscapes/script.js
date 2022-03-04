@@ -115,9 +115,9 @@ function init() {
         }
     }
     let treepoints=[];
-    treepoints[0]=new treepoint("Sanssouci",0,-53.857);
-    treepoints[1]=new treepoint("Spain",-2.3,-15.781);
-    treepoints[2]=new treepoint("spiritual",0.645,49.149);
+    treepoints[0]=new treepoint("Sanssouci",-17.436,53.857);
+    treepoints[1]=new treepoint("Spain",-2.3,15.781);
+    treepoints[2]=new treepoint("spiritual",0.645,-49.149);
 
     // TREE
     let planeGeometry = new THREE.PlaneGeometry(103.4, 141.5, 1, 1);
