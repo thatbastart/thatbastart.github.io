@@ -20,7 +20,7 @@ const blue=new THREE.Color(0.0,0.04,1.0); // blue default
 const green=new THREE.Color(0.447,1.0,0.051); // green hover
 
 // vj
-let vj_pointcloud, vj_tree, vj_tree_tex=[];
+let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[];
 
 init(); // create scene
 
@@ -95,7 +95,6 @@ function init() {
         }
     }
 
-    let vj_treepoints=[];
     for(let i=0;i<vj_treedata.length;i++){
         vj_treepoints[i]=new vj_treepoint(vj_treedata[i][0],vj_treedata[i][2],vj_treedata[i][3],vj_treedata[i][1],vj_treedata[i][4]);
         vj_treepoints[i].draw();
