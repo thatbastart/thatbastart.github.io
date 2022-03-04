@@ -133,7 +133,7 @@ function init() {
     for(let i=0;i<treepoints.length;i++){
         sph[i]=new THREE.Mesh( sphereGeometry, matBlue );
         plane.add(sph[i]);
-        sph[i].position.set(treepoints[i].x,0,treepoints[i].y);
+        sph[i].position.set(treepoints[i].x,treepoints[i].y,0);
     }
 
     // SPHERES
