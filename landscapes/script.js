@@ -495,9 +495,15 @@ function onPointerDown( event ) {
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
     // raycaster intersect
     raycaster.setFromCamera( mouse, camera );
-    if(raycaster.intersectObject(sphere).length==1){ // pointer down over sphere
-        plane.material.map=tex_tree[1];
-        render();
+    for(let i=0; i<sph.length-1; i++){
+        if(raycaster.intersectObject(sph[i]).length==1){ // pointer down over sphere
+            if(plane.material.map=tex_tree[0]){
+                plane.material.map=tex_tree[1];
+            } else {
+                plane.material.map=tex_tree[0];
+            }
+            render();
+        }
     }
     /*
     // set animation source to current cam pos and orbit target
