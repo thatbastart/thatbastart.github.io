@@ -8,19 +8,19 @@
 /* LOAD FONTS */
 @font-face {
     font-family: HKG_bold;
-    src: url('HKGrotesk-Bold.otf');
+    src: url("fonts/HKGrotesk-Bold.otf");
 }
 @font-face {
     font-family: HKG_regular;
-    src: url('HKGrotesk-Regular.otf');
+    src: url("fonts/HKGrotesk-Regular.otf");
 }
 @font-face {
     font-family: HKG_italic;
-    src: url('HKGrotesk-MediumLegacyItalic.otf');
+    src: url("fonts/HKGrotesk-MediumLegacyItalic.otf");
 }
 @font-face {
     font-family: yoppa;
-    src: url('Yoppa_Regular.otf');
+    src: url("fonts/Yoppa_Regular.otf");
 }
 
 body { 

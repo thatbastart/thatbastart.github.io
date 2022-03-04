@@ -86,6 +86,7 @@ function init() {
             this.size=size;
             this.pos=pos;
             this.sph=undefined;
+            this.txt=undefined;
         }
 
         draw(){
@@ -94,13 +95,28 @@ function init() {
             this.sph=new THREE.Mesh( sphGeo, matBlue );
             vj_tree.add(this.sph);
             this.sph.position.set(this.x,this.y,0);
+
+            this.txt = new TextGeometry(this.title, {
+                font: font,
+                size: 10,
+                height: 0,
+                curveSegments: 12
+            } );
+            this.txt.position.set(this.x,this.y,0);
+            this.txt.material=matBlue;
+            this.sph.add(this.txt);
         }
     }
 
-    for(let i=0;i<vj_treedata.length;i++){
-        vj_treepoints[i]=new vj_treepoint(vj_treedata[i][0],vj_treedata[i][2],vj_treedata[i][3],vj_treedata[i][1],vj_treedata[i][4]);
-        vj_treepoints[i].draw();
-    }
+    const vj_fontloader = new THREE.FontLoader();
+
+    vj_fontloader.load( "fonts/HK Grotesk_Regular.json", function (font) {
+        for(let i=0;i<vj_treedata.length;i++){
+            vj_treepoints[i]=new vj_treepoint(vj_treedata[i][0],vj_treedata[i][2],vj_treedata[i][3],vj_treedata[i][1],vj_treedata[i][4]);
+            vj_treepoints[i].draw();
+        }
+    } );
+
 
 
 
