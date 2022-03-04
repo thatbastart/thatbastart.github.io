@@ -108,16 +108,68 @@ function init() {
     );
 
     class treepoint{
-        constructor(title,x,y){
+        constructor(title,x,y,size){
             this.title=title;
             this.x=x;
             this.y=y;
+            this.size=size;
         }
     }
+
+    let treedata=[["Sanssouci",0.5,-17.437,53.858],
+        ["Preussische Schlösser & Gärten",0.5,-10.535,53.428],
+        ["Warehouse Berlin",0.5,-5.762,53.428],
+        ["Englische Möbel",0.5,-0.258,53.643],
+        ["India Club Restaurant",0.5,4.773,53.643],
+        ["König Wilhelm Friedrich",0.5,-12.728,49.042],
+        ["Germany",1,-2.387,45.537],
+        ["Cuba",0.5,2.107,37.604],
+        ["Belize",0.5,4.859,37.604],
+        ["Honduras",0.5,7.891,37.604],
+        ["Jamaica",0.5,11.008,37.604],
+        ["colonies",1,8.063,33.884],
+        ["Gillows of Lancaster and London",0.5,29.004,44.032],
+        ["cabinet makers",1,21.565,39.066],
+        ["fine furniture",1,17.286,33.884],
+        ["British Colonial Style",1,29.283,33.884],
+        ["England",1,5.633,27.929],
+        ["decoration",1,-17.759,26.058],
+        ["El Escorial Palace",0.5,-10.944,22.618],
+        ["King Philip II of Spain",0.5,-8.02,19.092],
+        ["Spain",1,-2.301,15.781],
+        ["legislation",1,6.902,21.586],
+        ["Mahagony Act",0.5,20.296,23.543],
+        ["Treaty of Paris",0.5,20.275,20.49],
+        ["Taxes",0.5,26.08,23.543],
+        ["CITES",1,-13.782,8.02],
+        ["Appendix II (last updated 2021)",1,-8.256,6.472],
+        ["Carl Linnae (1707-1778)",0.5,-16.77,1.742],
+        ["Nicholas Joseph Jaquen (1727-1817)",0.5,-9.955,1.742],
+        ["classification",1,-4.343,-1.849],
+        ["Hypsipyla robusta",0.5,15.05,6.042],
+        ["pest infestation",1,11.546,2.473],
+        ["India",0.5,15.05,0.258],
+        ["Indonesia",0.5,18.34,0.258],
+        ["Fiji",0.5,21.264,0.258],
+        ["TREE PLANTATION",1,20.146,-5.956],
+        ["planting in local ecosystem",1,5.354,-5.934],
+        ["plantations",1,2.408,-8.192],
+        ["capitalization",1,1.613,-12.728],
+        ["colonisation",1,-0.968,-21.973],
+        ["growing mahagony",1,2.387,-36.83],
+        ["use in indigenous population",1,-3.655,-43.968],
+        ["Cultivation & deforestation companies",1,7.375,-43.968],
+        ["export",1,19.501,-46.505],
+        ["spiritual",1,0.645,-49.149],
+        ["processing material",1,-11.976,-49.171],
+        ["boats",1,-19.006,-53.643],
+        ["repair fabrics",1,-27.714,-50.633]]
+    
     let treepoints=[];
-    treepoints[0]=new treepoint("Sanssouci",-17.436,53.857);
-    treepoints[1]=new treepoint("Spain",-2.3,15.781);
-    treepoints[2]=new treepoint("spiritual",0.645,-49.149);
+    for(let i=0;i<treedata.length;i++){
+        treepoints[i]=new treepoint(treedata[i][0],treedata[i][2],treedata[i][3],treedata[i][1]);
+    }
+
 
     // TREE
     let planeGeometry = new THREE.PlaneGeometry(103.4, 141.5, 1, 1);
@@ -127,11 +179,17 @@ function init() {
     plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.position.set(0,30,0);
     scene.add(plane);
-    const sphereGeometry = new THREE.SphereGeometry( 1, 32, 32 ); 
+    const sphereGeometry1 = new THREE.SphereGeometry( 0.5, 16, 16 ); 
+    const sphereGeometry2 = new THREE.SphereGeometry( 1, 16, 16 ); 
     matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
 
     for(let i=0;i<treepoints.length;i++){
-        sph[i]=new THREE.Mesh( sphereGeometry, matBlue );
+        if(treepoints[i].size==1){
+            sph[i]=new THREE.Mesh( sphereGeometry2, matBlue );
+        } else {
+            sph[i]=new THREE.Mesh( sphereGeometry1, matBlue );
+        }
+        
         plane.add(sph[i]);
         sph[i].position.set(treepoints[i].x,treepoints[i].y,0);
     }
