@@ -107,6 +107,18 @@ function init() {
         }
     );
 
+    class treepoint{
+        constructor(title,x,y){
+            this.title=title;
+            this.x=x;
+            this.y=y;
+        }
+    }
+    let treepoints=[];
+    treepoints[0]=new treepoint("Sanssouci",-17.436,-53.857);
+    treepoints[1]=new treepoint("Spain",-2.3,-15.781);
+    treepoints[2]=new treepoint("spiritual",0.645,49.149);
+
     // TREE
     let planeGeometry = new THREE.PlaneGeometry(103.4, 141.5, 1, 1);
     tex_tree[0] = new THREE.TextureLoader().load("tree.png");
@@ -115,11 +127,14 @@ function init() {
     plane = new THREE.Mesh(planeGeometry, planeMaterial);
     plane.position.set(0,30,0);
     scene.add(plane);
-    const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 ); 
+    const sphereGeometry = new THREE.SphereGeometry( 1, 32, 32 ); 
     matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
-    sphere=new THREE.Mesh( sphereGeometry, matBlue );
-    plane.add(sphere);
-    sphere.position.set(30,0,0);
+
+    for(let i=0;i<treepoints.length;i++){
+        sph[i]=new THREE.Mesh( sphereGeometry, matBlue );
+        plane.add(sph[i]);
+        sph[i].position.set(treepoints[i].x,0,treepoints[i].y);
+    }
 
     // SPHERES
     /*const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 ); // sphere radius and subdivs
