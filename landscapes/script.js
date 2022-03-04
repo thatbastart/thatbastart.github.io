@@ -61,6 +61,7 @@ function init() {
         document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
         points.material.size=1.0; // square size
+        points.scale.set(0.8,0.8,0.8)
         vj_pointcloud=points;
         scene.add(vj_pointcloud);
     } );
@@ -73,7 +74,7 @@ function init() {
     let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true } );
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
     vj_tree.position.set(0,30,0);
-    scene.add(vj_tree);
+    vj_pointcloud.add(vj_tree);
 
 
     class vj_treepoint{
