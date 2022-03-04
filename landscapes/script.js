@@ -383,12 +383,12 @@ function init() {
     labelRenderer.domElement.style.pointerEvents = 'none';
     document.getElementById("main").appendChild( labelRenderer.domElement );
 
-
+    */
     // WINDOW EVENT HANDLERS
     window.addEventListener( 'resize', onWindowResize );
     window.addEventListener( "mousemove", onMouseMove, false );
     window.addEventListener( "pointerdown", onPointerDown, false );
-    */
+    
 }
 
 
