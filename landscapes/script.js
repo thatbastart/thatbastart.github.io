@@ -96,7 +96,7 @@ function init() {
             vj_tree.add(this.sph);
             this.sph.position.set(this.x,this.y,0);
 
-            this.txt = new TextGeometry(this.title, {
+            this.txt = new THREE.TextGeometry(this.title, {
                 font: font,
                 size: 10,
                 height: 0,
