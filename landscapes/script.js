@@ -216,8 +216,9 @@ function onPointerDown( event ) {
 function render() {
     camera.rotation.order="YXZ";
     vj_tree.rotation.set(0,camera.rotation.y,0);
-    camera.rotation.order="XYZ";
     renderer.render(scene, camera);
+    camera.rotation.order="XYZ";
+    
 }
 
 
