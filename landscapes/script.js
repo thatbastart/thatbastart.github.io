@@ -114,7 +114,7 @@ function init() {
                     this.txt.position.set(1,-center.y,0.15);
                     break;
                 case 2:
-                    this.txt.position.set(-center.x,-1.8,0.15);
+                    this.txt.position.set(-center.x,-bBox.max.y-1.2,0.15);
                     break;
                 case 3:
                     this.txt.position.set(-bBox.max.x-1,-center.y,0.15);
