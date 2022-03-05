@@ -213,7 +213,8 @@ function onPointerDown( event ) {
 function render() {
     
     
-    vj_tree.rotation.y.set(camera.rotation.y);
+    vj_tree.rotation.set(0,camera.rotation.y,0);
+    console.log(vj_tree);
     const heading = camera.rotation.y;
     const radians = heading > 0 ? heading : (2 * Math.PI) + heading;
     const degrees = THREE.Math.radToDeg(radians);
