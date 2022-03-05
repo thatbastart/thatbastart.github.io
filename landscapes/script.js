@@ -64,7 +64,7 @@ function init() {
         points.scale.set(0.8,0.65,0.65)
         vj_pointcloud=points;
         scene.add(vj_pointcloud);
-        vj_pointcloud.add(vj_tree);
+        //vj_pointcloud.add(vj_tree);
     } );
 
     
@@ -76,6 +76,7 @@ function init() {
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
     vj_tree.position.set(0,28,0);
     vj_tree.rotation.order="YXZ"; //switch order for rotation follow
+    scene.add(vj_tree);
 
     class vj_treepoint{
         constructor(title,x,y,size,pos){
