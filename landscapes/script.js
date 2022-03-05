@@ -124,7 +124,7 @@ function init() {
     }
 
     const vj_fontloader = new THREE.FontLoader();
-
+/*
     vj_fontloader.load( "fonts/HK Grotesk_Regular.json", function (f) {
         font=f;
         for(let i=0;i<vj_treedata.length;i++){
@@ -132,7 +132,7 @@ function init() {
             vj_treepoints[i].draw();
         }
     } );
-
+*/
 
 
 
