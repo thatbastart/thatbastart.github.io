@@ -213,12 +213,10 @@ function onPointerDown( event ) {
 function render() {
     
     
-    //vj_tree.quaternion.setFromEuler();
+    vj_tree.rotation.y.set(camera.rotation.y);
     const heading = camera.rotation.y;
     const radians = heading > 0 ? heading : (2 * Math.PI) + heading;
     const degrees = THREE.Math.radToDeg(radians);
-    vj_tree.rotateOnWorldAxis(new THREE.Vector3(0,1,0),radians);
-    console.log(degrees);
     renderer.render(scene, camera);
     
 }
