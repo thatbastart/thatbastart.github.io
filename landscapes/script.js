@@ -42,6 +42,9 @@ function init() {
     camera.position.set( -294, 226, -229 ); // starting position
     scene.add( camera );
 
+    vj_tree.rotation.order="ZYX";
+    camera.rotation.order="YXZ";
+
 
     // ORBIT CONTROLS
     controls = new OrbitControls( camera, renderer.domElement );
@@ -211,14 +214,7 @@ function onPointerDown( event ) {
 
 // THREE RENDER
 function render() {
-    //vj_tree.lookAt(camera.position.x,30,camera.position.z);
-    //vj_tree.rotation.set(0,camera.rotation.y,0);
-    
-    //console.log(vj_tree.rotation.y*(180/Math.PI));
-    vj_tree.rotation.order="ZYX";
-    camera.rotation.order="YXZ";
     vj_tree.rotation.set(0,camera.rotation.y,0);
-    console.log(vj_tree);
     renderer.render(scene, camera);
 }
 
