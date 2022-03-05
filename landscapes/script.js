@@ -215,7 +215,7 @@ function render() {
     //vj_tree.rotation.set(0,camera.rotation.y,0);
     
     //console.log(vj_tree.rotation.y*(180/Math.PI));
-    vj_tree.quaternion.set(camera.quaternion.x,0,0,0);
+    vj_tree.quaternion.set(0,0,camera.quaternion.z,0);
     console.log(vj_tree.quaternion);
     renderer.render(scene, camera);
 }
