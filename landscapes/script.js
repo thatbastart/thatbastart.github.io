@@ -121,6 +121,7 @@ function init() {
                     break;
             }
             this.sph.add(this.txt);
+            console.log(this.txt);
         }
     }
 
