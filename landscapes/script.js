@@ -217,7 +217,7 @@ function render() {
     //console.log(vj_tree.rotation.y*(180/Math.PI));
     vj_tree.rotation.order="ZYX";
     camera.rotation.order="YXZ";
-    vj_tree.rotation.set(camera.rotation.y,0,0);
+    vj_tree.rotation.set(0,camera.rotation.y,0);
     console.log(vj_tree);
     renderer.render(scene, camera);
 }
