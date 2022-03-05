@@ -214,6 +214,7 @@ function onPointerDown( event ) {
 
 // THREE RENDER
 function render() {
+    console.log(vj_tree);
     vj_tree.rotation.set(0,camera.rotation.y,0);
     renderer.render(scene, camera);
     
