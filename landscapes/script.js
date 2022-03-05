@@ -161,8 +161,7 @@ function init() {
     window.addEventListener( "pointerdown", onPointerDown, false );
     
 
-    //vj_tree.rotation.order="ZYX";
-    //camera.rotation.order="YXZ";
+    
 }
 
 
@@ -214,7 +213,9 @@ function onPointerDown( event ) {
 
 // THREE RENDER
 function render() {
-    console.log(vj_tree);
+    console.log(new THREE.Euler().setFromQuaternion( camera.quaternion, "XYZ" ));
+    //vj_tree.rotation.order="ZYX";
+    //camera.rotation.order="YXZ";
     vj_tree.rotation.set(0,camera.rotation.y,0);
     renderer.render(scene, camera);
     
