@@ -213,7 +213,7 @@ function onPointerDown( event ) {
 
 // THREE RENDER
 function render() {
-    console.log(new THREE.Euler().setFromQuaternion( camera.quaternion, "XYZ" ));
+    console.log(new THREE.Euler().setFromQuaternion( camera.getWorldQuaternion(), "XYZ" ));
     //vj_tree.rotation.order="ZYX";
     //camera.rotation.order="YXZ";
     vj_tree.rotation.set(0,camera.rotation.y,0);
