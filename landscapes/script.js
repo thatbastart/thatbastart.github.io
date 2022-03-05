@@ -105,7 +105,7 @@ function init() {
             this.txt=new THREE.Mesh(textGeo,matBlue);
             this.txt.geometry.computeBoundingBox();
             let center = this.txt.geometry.boundingBox.getCenter(new THREE.Vector3());
-            
+            let bBox=this.txt.geometry.boundingBox;
             switch(this.pos){
                 case 0:
                     this.txt.position.set(-center.x,-bBox.min.y+1.2,0.15);
@@ -117,7 +117,6 @@ function init() {
                     this.txt.position.set(-center.x,-1.8,0.15);
                     break;
                 case 3:
-                    let bBox=this.txt.geometry.boundingBox;
                     this.txt.position.set(-bBox.max.x-1,-center.y,0.15);
                     break;
             }
