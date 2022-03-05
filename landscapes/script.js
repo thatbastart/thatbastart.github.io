@@ -215,6 +215,8 @@ function onPointerDown( event ) {
 function render() {
     
     vj_tree.rotation.set(0,camera.rotation.y,0);
+    console.log(vj_tree.rotation);
+    console.log(vj_tree.scale);
     renderer.render(scene, camera);
     
 }
