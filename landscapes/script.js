@@ -69,7 +69,7 @@ function init() {
 
     
     // tree
-    let vj_tree_geo = new THREE.PlaneGeometry(103.4, 141.5, 5, 5);
+    let vj_tree_geo = new THREE.PlaneGeometry(103.4, 141.5, 10, 10);
     vj_tree_tex[0] = new THREE.TextureLoader().load("vj/tree.png");
     vj_tree_tex[1] = new THREE.TextureLoader().load("vj/tree_highlight.png");
     let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true, side: THREE.DoubleSide } );
@@ -121,7 +121,6 @@ function init() {
                     break;
             }
             this.sph.add(this.txt);
-            console.log(this.txt);
         }
     }
 
@@ -215,8 +214,6 @@ function onPointerDown( event ) {
 function render() {
     
     vj_tree.rotation.set(0,camera.rotation.y,0);
-    console.log(vj_tree.rotation);
-    console.log(vj_tree.scale);
     renderer.render(scene, camera);
     
 }
