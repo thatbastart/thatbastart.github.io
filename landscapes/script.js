@@ -41,6 +41,7 @@ function init() {
     camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
     camera.position.set( -294, 226, -229 ); // starting position
     scene.add( camera );
+    camera.rotation.order="YXZ";
 
 
     // ORBIT CONTROLS
@@ -75,7 +76,7 @@ function init() {
     let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true } );
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
     vj_tree.position.set(0,30,0);
-    
+    vj_tree.rotation.order="ZYX";
 
 
     class vj_treepoint{
@@ -213,10 +214,7 @@ function onPointerDown( event ) {
 
 // THREE RENDER
 function render() {
-    let quat=new THREE.Euler().setFromQuaternion( camera.quaternion, "XYZ" );
-    console.log(THREE.Math.radToDeg(quat.y));
-    //vj_tree.rotation.order="ZYX";
-    //camera.rotation.order="YXZ";
+    
     vj_tree.rotation.set(0,camera.rotation.y,0);
     renderer.render(scene, camera);
     
