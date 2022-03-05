@@ -41,7 +41,7 @@ function init() {
     camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
     camera.position.set( -294, 226, -229 ); // starting position
     scene.add( camera );
-    camera.rotation.order="YXZ"; //switch order for rotation follow
+    camera.rotation.order="ZYX"; //switch order for rotation follow
 
 
     // ORBIT CONTROLS
@@ -72,10 +72,10 @@ function init() {
     let vj_tree_geo = new THREE.PlaneGeometry(103.4, 141.5, 20, 20);
     vj_tree_tex[0] = new THREE.TextureLoader().load("vj/tree.png");
     vj_tree_tex[1] = new THREE.TextureLoader().load("vj/tree_highlight.png");
-    let vj_tree_mat = new THREE.MeshBasicMaterial( { color: green, transparent: true, side: THREE.DoubleSide } );
+    let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true, side: THREE.DoubleSide } );
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
     vj_tree.position.set(0,28,0);
-    vj_tree.rotation.order="YXZ"; //switch order for rotation follow
+    vj_tree.rotation.order="ZYX"; //switch order for rotation follow
 
     class vj_treepoint{
         constructor(title,x,y,size,pos){
