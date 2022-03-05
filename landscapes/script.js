@@ -124,7 +124,7 @@ function init() {
     }
 
     const vj_fontloader = new THREE.FontLoader();
-/*
+
     vj_fontloader.load( "fonts/HK Grotesk_Regular.json", function (f) {
         font=f;
         for(let i=0;i<vj_treedata.length;i++){
@@ -132,7 +132,7 @@ function init() {
             vj_treepoints[i].draw();
         }
     } );
-*/
+
 
 
 
@@ -212,7 +212,8 @@ function onPointerDown( event ) {
 // THREE RENDER
 function render() {
     
-    vj_tree.rotation.set(0,camera.rotation.y,0);
+    //vj_tree.rotation.set(0,camera.rotation.y,0);
+    vj_tree.quaternion.copy(camera.quaternion);
     console.log(vj_tree);
     renderer.render(scene, camera);
     
