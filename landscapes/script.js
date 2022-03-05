@@ -41,7 +41,7 @@ function init() {
     camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
     camera.position.set( -294, 226, -229 ); // starting position
     scene.add( camera );
-    camera.rotation.order="ZYX"; //switch order for rotation follow
+    camera.rotation.order="YXZ"; //switch order for rotation follow
 
 
     // ORBIT CONTROLS
