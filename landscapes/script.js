@@ -212,9 +212,11 @@ function onPointerDown( event ) {
 // THREE RENDER
 function render() {
     //vj_tree.lookAt(camera.position.x,30,camera.position.z);
-    vj_tree.rotation.set(0,camera.rotation.y,0);
-    console.log(THREE.Math.radToDeg(camera.rotation.y));
+    //vj_tree.rotation.set(0,camera.rotation.y,0);
+    
     //console.log(vj_tree.rotation.y*(180/Math.PI));
+    vj_tree.quaternion.copy(camera.quaternion);
+    console.log(vj_tree.quaternion);
     renderer.render(scene, camera);
 }
 
