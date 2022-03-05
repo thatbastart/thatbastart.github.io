@@ -62,7 +62,7 @@ function init() {
         document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
         points.material.size=1.0; // square size
-        points.scale.set(0.8,0.8,0.8)
+        points.scale.set(0.8,0.65,0.65)
         vj_pointcloud=points;
         scene.add(vj_pointcloud);
         vj_pointcloud.add(vj_tree);
