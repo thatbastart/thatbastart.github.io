@@ -214,7 +214,7 @@ function onPointerDown( event ) {
 // THREE RENDER
 function render() {
     let quat=new THREE.Euler().setFromQuaternion( camera.getWorldQuaternion(), "XYZ" );
-    console.log(quat.y.radToDeg);
+    console.log(THREE.Math.radToDeg(quat.y));
     //vj_tree.rotation.order="ZYX";
     //camera.rotation.order="YXZ";
     vj_tree.rotation.set(0,camera.rotation.y,0);
