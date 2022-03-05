@@ -74,9 +74,8 @@ function init() {
     vj_tree_tex[1] = new THREE.TextureLoader().load("vj/tree_highlight.png");
     let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true, side: THREE.DoubleSide } );
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
-    vj_tree.position.set(0,30,0);
+    vj_tree.position.set(0,28,0);
     vj_tree.rotation.order="ZYX"; //switch order for rotation follow
-    vj_tree.matrixAutoUpdate=false;
 
     class vj_treepoint{
         constructor(title,x,y,size,pos){
@@ -215,6 +214,7 @@ function render() {
     
     vj_tree.rotation.set(0,camera.rotation.y,0);
     vj_tree.quaternion.normalize();
+    vj_tree.matrixWorldNeedsUpdate=true;
     console.log(vj_tree);
     renderer.render(scene, camera);
     
