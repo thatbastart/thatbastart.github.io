@@ -214,6 +214,7 @@ function onPointerDown( event ) {
 function render() {
     
     vj_tree.rotation.set(0,camera.rotation.y,0);
+    vj_tree.quaternion.normalize();
     renderer.render(scene, camera);
     
 }
