@@ -215,6 +215,7 @@ function render() {
     
     vj_tree.rotation.set(0,camera.rotation.y,0);
     vj_tree.quaternion.normalize();
+    console.log(vj_tree);
     renderer.render(scene, camera);
     
 }
