@@ -76,7 +76,7 @@ function init() {
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
     vj_tree.position.set(0,30,0);
     vj_tree.rotation.order="ZYX"; //switch order for rotation follow
-
+    vj_tree.matrixAutoUpdate=false;
 
     class vj_treepoint{
         constructor(title,x,y,size,pos){
