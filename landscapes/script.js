@@ -214,8 +214,10 @@ function render() {
     
     vj_tree.rotation.set(0,camera.rotation.y,0);
     //vj_tree.quaternion.setFromEuler();
-    let rot=new THREE.Euler().setFromQuaternion(camera.quaternion,"YXZ");
-    console.log(THREE.Math.radToDeg(rot.y));
+    const heading = camera.rotation.y;
+    const radians = heading > 0 ? heading : (2 * Math.PI) + heading;
+    const degrees = THREE.Math.radToDeg(radians);
+    console.log(degrees);
     renderer.render(scene, camera);
     
 }
