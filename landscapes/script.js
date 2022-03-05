@@ -114,7 +114,7 @@ function init() {
                     this.txt.position.set(1,-0.3,0.15);
                     break;
                 case 2:
-                    this.txt.position.set(-center.x,-1.5,0.15);
+                    this.txt.position.set(-center.x,-2,0.15);
                     break;
                 case 3:
                     let bBox=this.txt.geometry.boundingBox;
