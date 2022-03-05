@@ -162,7 +162,7 @@ function init() {
     
 
     vj_tree.rotation.order="ZYX";
-    camera.rotation.order="YXZ";
+    //camera.rotation.order="YXZ";
 }
 
 
