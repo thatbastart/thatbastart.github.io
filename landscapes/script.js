@@ -212,7 +212,8 @@ function onPointerDown( event ) {
 
 // THREE RENDER
 function render() {
-    vj_tree.lookAt(camera.position.x,30,camera.position.z);
+    //vj_tree.lookAt(camera.position.x,30,camera.position.z);
+    vj_tree.rotation.set(0,camera.rotation.y,0);
     renderer.render(scene, camera);
 }
 
