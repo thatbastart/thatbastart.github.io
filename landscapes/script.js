@@ -121,7 +121,6 @@ function init() {
                     this.txt.position.set(-bBox.max.x-1,-0.3,0.15);
                     break;
             }
-            console.log(this.txt);
             this.sph.add(this.txt);
         }
     }
@@ -214,6 +213,8 @@ function onPointerDown( event ) {
 function render() {
     //vj_tree.lookAt(camera.position.x,30,camera.position.z);
     vj_tree.rotation.set(0,camera.rotation.y,0);
+    console.log(camera.rotation.y);
+    console.log(vj_tree.rotation.y);
     renderer.render(scene, camera);
 }
 
