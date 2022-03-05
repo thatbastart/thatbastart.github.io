@@ -42,9 +42,6 @@ function init() {
     camera.position.set( -294, 226, -229 ); // starting position
     scene.add( camera );
 
-    vj_tree.rotation.order="ZYX";
-    camera.rotation.order="YXZ";
-
 
     // ORBIT CONTROLS
     controls = new OrbitControls( camera, renderer.domElement );
@@ -163,6 +160,9 @@ function init() {
     window.addEventListener( "mousemove", onMouseMove, false );
     window.addEventListener( "pointerdown", onPointerDown, false );
     
+
+    vj_tree.rotation.order="ZYX";
+    camera.rotation.order="YXZ";
 }
 
 
