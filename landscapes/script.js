@@ -41,7 +41,7 @@ function init() {
     camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
     camera.position.set( -294, 226, -229 ); // starting position
     scene.add( camera );
-    camera.rotation.order="YXZ";
+    camera.rotation.order="YXZ"; //switch order for rotation follow
 
 
     // ORBIT CONTROLS
@@ -50,15 +50,14 @@ function init() {
     controls.dampingFactor=0.5;
     controls.target.set(-1, -35.5, -44.75); // starting navigation target
     controls.update();
-    controls.addEventListener( 'change', render ); // render when controls change
+    controls.addEventListener( "change", render ); // render when controls change
     
 
     // ------------- VIVIEN + JENNY -------------
 
     // pointcloud
     const vj_loader = new PCDLoader();
-    vj_loader.load( './vj/pointcloud.pcd', function (points) {
-        // callback function when pcd is loaded
+    vj_loader.load( "./vj/pointcloud.pcd", function (points) { // callback function when pcd is loaded
         document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
         points.material.size=1.0; // square size
@@ -76,7 +75,7 @@ function init() {
     let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true } );
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
     vj_tree.position.set(0,30,0);
-    vj_tree.rotation.order="ZYX";
+    vj_tree.rotation.order="ZYX"; //switch order for rotation follow
 
 
     class vj_treepoint{
@@ -109,7 +108,7 @@ function init() {
             
             switch(this.pos){
                 case 0:
-                    this.txt.position.set(-center.x,1.2,0.15);
+                    this.txt.position.set(-center.x,-bBox.min.y+1.2,0.15);
                     break;
                 case 1:
                     this.txt.position.set(1,-center.y,0.15);
