@@ -150,7 +150,7 @@ function init() {
 
             if(this.pos==0 || this.pos==2){
                 for(let i=0;i<lines.length;i++){
-                    let offset=linesMesh[longestLine].geometry.boundingBox.getCenter(new THREE.Vector3()) - linesMesh[i].geometry.boundingBox.getCenter(new THREE.Vector3());
+                    let offset=linesMesh[longestLine].geometry.boundingBox.getCenter(new THREE.Vector3()).x - linesMesh[i].geometry.boundingBox.getCenter(new THREE.Vector3().x);
                     linesMesh[i].position.set(0,offset,0);
                     linesMesh[i].updateMatrix();
                     linesMesh[i].geometry.applyMatrix4(linesMesh[i].matrix);
