@@ -11,6 +11,7 @@ import * as THREE from './three/build/three.module.js';
 import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
 import { PCDLoader } from './three/examples/jsm/loaders/PCDLoader.js';
 import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js';
+import { BufferGeometryUtils } from './three/examples/jsm/utils/BufferGeometryUtils.js';
 
 let camera, scene, renderer, controls, font;
 const raycaster = new THREE.Raycaster(); // finding out over which 3d-object the cursor is
@@ -132,10 +133,8 @@ function init() {
                 linesGeo[i]=new THREE.TextGeometry(lines[i], {font: font, size: 0.8, height: 0, curveSegments: 8} );
 
             }
-            let mergedGeo=new THREE.BufferGeometry();
-            mergedGeo.merge(...linesGeo);
-
-            return mergedGeo;
+            
+            return THREE.BufferGeometryUtils.mergeBufferGeometries(linesGeo, false);
         }
     }
 
@@ -227,13 +226,7 @@ function onPointerDown( event ) {
 
 // THREE RENDER
 function render() {
-    
-    
     vj_tree.rotation.set(0,camera.rotation.y,0);
-    console.log(vj_tree);
-    const heading = camera.rotation.y;
-    const radians = heading > 0 ? heading : (2 * Math.PI) + heading;
-    const degrees = THREE.Math.radToDeg(radians);
     renderer.render(scene, camera);
     
 }
