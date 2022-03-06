@@ -157,10 +157,11 @@ function init() {
 
                     linesGeo[i]=linesMesh[i].geometry;
                 }
+                return BufferGeometryUtils.mergeBufferGeometries(linesGeo, false);
             }
 
             
-            return BufferGeometryUtils.mergeBufferGeometries(linesGeo, false);
+            
         }
     }
 
