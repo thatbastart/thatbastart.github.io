@@ -128,7 +128,7 @@ function init() {
         txtAlign(){
             let lines=this.title.split("\n");
             let linesGeo=[];
-            for(i=0;i<lines.length;i++){
+            for(let i=0;i<lines.length;i++){
                 linesGeo[i]=new THREE.TextGeometry(lines[i], {font: font, size: 0.8, height: 0, curveSegments: 8} );
 
             }
