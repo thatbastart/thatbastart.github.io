@@ -98,7 +98,7 @@ function init() {
             let textGeo
 
             if(this.title.includes("\n") && this.pos!=1){
-                textGeo=txtAlign();
+                textGeo=this.txtAlign();
             } else {
                 textGeo = new THREE.TextGeometry(this.title, {font: font, size: 0.8, height: 0, curveSegments: 8} );
             }
