@@ -134,7 +134,7 @@ function init() {
                 let mesh=new THREE.Mesh(geo);
                 mesh.position.set(0,-(i+1)*1.8,0);
                 mesh.updateMatrix();
-                mesh.geometry.applyMatrix(mesh.matrix);
+                mesh.geometry.applyMatrix4(mesh.matrix);
                 linesGeo[i]=mesh.geometry;
 
             }
