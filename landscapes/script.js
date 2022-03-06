@@ -6,12 +6,12 @@
 // vj - vivien+jenny
 
 // import three and modules
-import * as THREE from './three/build/three.module.js';
+import * as THREE from "./three/build/three.module.js";
 
-import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
-import { PCDLoader } from './three/examples/jsm/loaders/PCDLoader.js';
-import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js';
-import { BufferGeometryUtils } from './three/examples/jsm/utils/BufferGeometryUtils.js';
+import { OrbitControls } from "./three/examples/jsm/controls/OrbitControls.js";
+import { PCDLoader } from "./three/examples/jsm/loaders/PCDLoader.js";
+import { GLTFLoader } from "./three/examples/jsm/loaders/GLTFLoader.js";
+import { BufferGeometryUtils } from "./three/examples/jsm/utils/BufferGeometryUtils.js";
 
 let camera, scene, renderer, controls, font;
 const raycaster = new THREE.Raycaster(); // finding out over which 3d-object the cursor is
