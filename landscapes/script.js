@@ -132,7 +132,7 @@ function init() {
             for(let i=0;i<lines.length;i++){
                 let geo=new THREE.TextGeometry(lines[i], {font: font, size: 0.8, height: 0, curveSegments: 8} );
                 let mesh=new THREE.Mesh(geo);
-                mesh.position.set(0,(i+1)*2,0);
+                mesh.position.set(0,-(i+1)*1.8,0);
                 mesh.updateMatrix();
                 mesh.geometry.applyMatrix(mesh.matrix);
                 linesGeo[i]=mesh.geometry;
