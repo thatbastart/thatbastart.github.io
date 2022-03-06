@@ -157,10 +157,18 @@ function init() {
 
                     linesGeo[i]=linesMesh[i].geometry;
                 }
-                return BufferGeometryUtils.mergeBufferGeometries(linesGeo, false);
+            } else { //this.pos==3 → right align
+                for(let i=0;i<lines.length;i++){
+                    let offset=linesMesh[longestLine].geometry.boundingBox.max.x - linesMesh[i].geometry.boundingBox.max.x;
+                    linesMesh[i].position.set(offset,0,0);
+                    linesMesh[i].updateMatrix();
+                    linesMesh[i].geometry.applyMatrix4(linesMesh[i].matrix);
+
+                    linesGeo[i]=linesMesh[i].geometry;
+                }
             }
 
-            
+            return BufferGeometryUtils.mergeBufferGeometries(linesGeo, false);
             
         }
     }
