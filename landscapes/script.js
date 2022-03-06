@@ -130,7 +130,12 @@ function init() {
             let lines=this.title.split("\n");
             let linesGeo=[];
             for(let i=0;i<lines.length;i++){
-                linesGeo[i]=new THREE.TextGeometry(lines[i], {font: font, size: 0.8, height: 0, curveSegments: 8} );
+                let geo=new THREE.TextGeometry(lines[i], {font: font, size: 0.8, height: 0, curveSegments: 8} );
+                let mesh=new THREE.Mesh(geo);
+                mesh.position.set(0,(i+1)*2,0);
+                mesh.updateMatrix();
+                mesh.geometry.applyMatrix(mesh.matrix);
+                linesGeo[i]=mesh.geometry;
 
             }
             
