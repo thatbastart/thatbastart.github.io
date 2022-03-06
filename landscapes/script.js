@@ -132,7 +132,7 @@ function init() {
                 linesGeo[i]=new THREE.TextGeometry(lines[i], {font: font, size: 0.8, height: 0, curveSegments: 8} );
 
             }
-            let mergedGeo=new THREE.Geometry();
+            let mergedGeo=new THREE.BufferGeometry();
             mergedGeo.merge(...linesGeo);
 
             return mergedGeo;
