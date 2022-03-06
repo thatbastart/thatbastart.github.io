@@ -95,12 +95,15 @@ function init() {
             vj_tree.add(this.sph);
             this.sph.position.set(this.x,this.y,0);
 
-            let textGeo = new THREE.TextGeometry(this.title, {
-                font: font,
-                size: 0.8,
-                height: 0,
-                curveSegments: 8
-            } );
+            let textGeo
+
+            if(this.title.includes("\n") && this.pos!=1){
+                textGeo=txtAlign();
+            } else {
+                textGeo = new THREE.TextGeometry(this.title, {font: font, size: 0.8, height: 0, curveSegments: 8} );
+            }
+            
+            
             this.txt=new THREE.Mesh(textGeo,matBlue);
             this.txt.geometry.computeBoundingBox();
             let center = this.txt.geometry.boundingBox.getCenter(new THREE.Vector3());
@@ -120,6 +123,19 @@ function init() {
                     break;
             }
             this.sph.add(this.txt);
+        }
+
+        txtAlign(){
+            let lines=this.title.split("\n");
+            let linesGeo=[];
+            for(i=0;i<lines.length;i++){
+                linesGeo[i]=new THREE.TextGeometry(lines[i], {font: font, size: 0.8, height: 0, curveSegments: 8} );
+
+            }
+            let mergedGeo=new THREE.Geometry();
+            mergedGeo.merge(...linesGeo);
+
+            return mergedGeo;
         }
     }
 
