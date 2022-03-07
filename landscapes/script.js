@@ -63,6 +63,8 @@ function init() {
         points.geometry.center();
         points.material.size=1.0; // square size
         points.scale.set(0.5,0.5,0.5)
+        points.updateMatrix();
+        points.geometry.applyMatrix4(points.matrix);
         vj_pointcloud=points;
         scene.add(vj_pointcloud);
         vj_pointcloud.add(vj_tree);
