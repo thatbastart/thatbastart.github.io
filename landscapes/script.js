@@ -254,7 +254,7 @@ function onPointerDown( event ) {
         let inverseMatrix = new THREE.Matrix4();
         let ray = new THREE.Ray();
         console.log(vj_treepoints[i].txt);
-        inverseMatrix.copy(vj_treepoints[i].txt.geometry.matrixWorld).invert();
+        inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
         ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
         if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.isIntersectionBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
             if(vj_tree.material.map==vj_tree_tex[0]){
