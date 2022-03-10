@@ -165,7 +165,7 @@ function init() {
         }
     }
 
-    
+
     // tree
     let vj_tree_geo = new THREE.PlaneGeometry(103.4, 141.5, 20, 20);
     vj_tree_tex[0] = new THREE.TextureLoader().load("vj/tree.png");
@@ -253,7 +253,7 @@ function onPointerDown( event ) {
     for(let i=0; i<vj_treepoints.length; i++){
         let inverseMatrix = new THREE.Matrix4()
         let ray = new THREE.Ray();
-        inverseMatrix.getInverse(vj_treepoints[i].txt.geometry.matrixWorld);
+        inverseMatrix.copy(vj_treepoints[i].txt.geometry.matrixWorld).invert();
         ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
         if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.isIntersectionBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
             if(vj_tree.material.map==vj_tree_tex[0]){
