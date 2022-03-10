@@ -172,7 +172,7 @@ function init() {
     vj_tree_tex[1] = new THREE.TextureLoader().load("vj/tree_highlight.png");
     let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true, side: THREE.DoubleSide } );
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
-    vj_tree.position.set(0,28,0);
+    vj_tree.position.set(0,25,0);
     vj_tree.rotation.order="YXZ"; //switch order for rotation follow
 
 
@@ -249,20 +249,21 @@ function onPointerDown( event ) {
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
     // raycaster intersect
-    raycaster.setFromCamera( mouse, camera );
-    for(let i=0; i<vj_treepoints.length; i++){
-        let inverseMatrix = new THREE.Matrix4();
-        let ray = new THREE.Ray();
-        console.log(vj_treepoints[i].txt);
-        inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
-        ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
-        if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.isIntersectionBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
-            if(vj_tree.material.map==vj_tree_tex[0]){
-                vj_tree.material.map=vj_tree_tex[1];
-            } else {
-                vj_tree.material.map=vj_tree_tex[0];
+    if(event.which==1){
+        raycaster.setFromCamera( mouse, camera );
+        for(let i=0; i<vj_treepoints.length; i++){
+            let inverseMatrix = new THREE.Matrix4();
+            let ray = new THREE.Ray();
+            inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
+            ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
+            if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectionBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
+                if(vj_tree.material.map==vj_tree_tex[0]){
+                    vj_tree.material.map=vj_tree_tex[1];
+                } else {
+                    vj_tree.material.map=vj_tree_tex[0];
+                }
+                render();
             }
-            render();
         }
     }
 }
