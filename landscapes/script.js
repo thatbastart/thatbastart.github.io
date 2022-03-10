@@ -251,7 +251,7 @@ function onPointerDown( event ) {
     // raycaster intersect
     raycaster.setFromCamera( mouse, camera );
     for(let i=0; i<vj_treepoints.length; i++){
-        let inverseMatrix = new THREE.Matrix4()
+        let inverseMatrix = new THREE.Matrix4();
         let ray = new THREE.Ray();
         inverseMatrix.copy(vj_treepoints[i].txt.geometry.matrixWorld).invert();
         ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
