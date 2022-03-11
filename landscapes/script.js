@@ -168,7 +168,7 @@ function init() {
         openPreview(){
             const container = document.createElement("div");
             container.className = "preview";
-            container.innerHTML="";
+            container.innerHTML="hello world";
 
             const obj = new CSS2DObject(container);
             obj.position.set(0,0,0);
