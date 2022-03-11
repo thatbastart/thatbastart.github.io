@@ -280,6 +280,7 @@ function onPointerDown( event ) {
             inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
             ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
             if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
+                vj_treepoints[i].openPreview();
                 if(vj_tree.material.map==vj_tree_tex[0]){
                     vj_tree.material.map=vj_tree_tex[1];
                 } else {
