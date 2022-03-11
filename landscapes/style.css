@@ -319,4 +319,5 @@ a:hover {
     height: calc(var(--vh, 1vh)*10);
     width: calc(10vw);
     pointer-events: auto;
+    background-color: var(--green);
 }
