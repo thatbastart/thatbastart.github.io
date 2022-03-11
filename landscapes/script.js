@@ -218,12 +218,19 @@ function init() {
     );
 
 
+    // CSS RENDERER
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize( window.innerWidth, window.innerHeight );
+    labelRenderer.domElement.style.position = 'absolute';
+    labelRenderer.domElement.style.top = '0px';
+    labelRenderer.domElement.style.pointerEvents = 'none';
+    document.getElementById("main").appendChild( labelRenderer.domElement );
+
+
     // WINDOW EVENT HANDLERS
     window.addEventListener( 'resize', onWindowResize );
     window.addEventListener( "mousemove", onMouseMove, false );
     window.addEventListener( "pointerdown", onPointerDown, false );
-    
-
     
 }
 
@@ -240,6 +247,7 @@ function onWindowResize() {
     camera.updateProjectionMatrix();
 
     renderer.setSize( window.innerWidth, window.innerHeight );
+    labelRenderer.setSize( window.innerWidth, window.innerHeight );
     render();
 
 }
