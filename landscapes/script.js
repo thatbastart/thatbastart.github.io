@@ -168,7 +168,7 @@ function init() {
         openPreview(){
             const container = document.createElement("div");
             container.className = "preview";
-            scheduleWrap.innerHTML="";
+            container.innerHTML="";
 
             const obj = new CSS2DObject(container);
             obj.position.set(0,0,0);
