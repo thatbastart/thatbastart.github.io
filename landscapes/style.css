@@ -310,3 +310,13 @@ a:hover {
     line-height: calc(var(--vh, 1vh)*100);
     z-index: 0;
 }
+
+
+
+
+.preview{
+    height: 10vh;
+    height: calc(var(--vh, 1vh)*10);
+    width: calc(10vw);
+    pointer-events: auto;
+}

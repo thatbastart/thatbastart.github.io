@@ -11,6 +11,7 @@ import * as THREE from "./three/build/three.module.js";
 import { OrbitControls } from "./three/examples/jsm/controls/OrbitControls.js";
 import { PCDLoader } from "./three/examples/jsm/loaders/PCDLoader.js";
 import { GLTFLoader } from "./three/examples/jsm/loaders/GLTFLoader.js";
+import { CSS2DRenderer, CSS2DObject } from './three/examples/jsm/renderers/CSS2DRenderer.js';
 import * as BufferGeometryUtils from "./three/examples/jsm/utils/BufferGeometryUtils.js";
 
 let camera, scene, renderer, controls, font;
@@ -162,6 +163,16 @@ function init() {
     
             return BufferGeometryUtils.mergeBufferGeometries(linesGeo, false);
             
+        }
+
+        openPreview(){
+            const container = document.createElement("div");
+            container.className = "preview";
+            scheduleWrap.innerHTML="";
+
+            const obj = new CSS2DObject(container);
+            obj.position.set(0,0,0);
+            this.sph.add(obj);
         }
     }
 
