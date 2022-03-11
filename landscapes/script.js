@@ -250,6 +250,18 @@ function onMouseMove( event ) {
     // mouse position
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+    raycaster.setFromCamera( mouse, camera );
+    for(let i=0; i<vj_treepoints.length; i++){
+        let inverseMatrix = new THREE.Matrix4();
+        let ray = new THREE.Ray();
+        inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
+        ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
+        if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
+            document.body.style.cursor="pointer";
+        } else {
+            document.body.style.cursor="default";
+        }
+    }
     render();
 }
 
@@ -267,7 +279,7 @@ function onPointerDown( event ) {
             let ray = new THREE.Ray();
             inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
             ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
-            if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.isIntersectionBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
+            if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
                 if(vj_tree.material.map==vj_tree_tex[0]){
                     vj_tree.material.map=vj_tree_tex[1];
                 } else {
