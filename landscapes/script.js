@@ -14,7 +14,7 @@ import { GLTFLoader } from "./three/examples/jsm/loaders/GLTFLoader.js";
 import { CSS2DRenderer, CSS2DObject } from './three/examples/jsm/renderers/CSS2DRenderer.js';
 import * as BufferGeometryUtils from "./three/examples/jsm/utils/BufferGeometryUtils.js";
 
-let camera, scene, renderer, controls, font;
+let camera, scene, renderer, labelRenderer, controls, font;
 const raycaster = new THREE.Raycaster(); // finding out over which 3d-object the cursor is
 const mouse = new THREE.Vector2(); // cursor screen position
 
