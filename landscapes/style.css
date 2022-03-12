@@ -133,4 +133,5 @@ a:hover {
     color: #fff;
     font-family: HKG_bold;
     flex-basis: 60%;
+    padding-left:10px;
 }
