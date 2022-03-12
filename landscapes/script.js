@@ -180,7 +180,8 @@ function init() {
 
             const preview = new CSS2DObject(container);
             preview.position.set(0,10,0);
-            //preview.offset.set("0%", "0%");
+            preview.offset.x="0%";
+            preview.offset.y="0%";
             this.sph.add(preview);
             console.log(preview);
         }
