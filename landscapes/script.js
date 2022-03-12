@@ -188,6 +188,10 @@ function init() {
         closePreview(){
             this.sph.remove(this.sph.children[0]);
         }
+
+        openStory(){
+            
+        }
     }
 
 
