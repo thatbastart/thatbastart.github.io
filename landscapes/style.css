@@ -110,7 +110,7 @@ a:hover {
 
 
 
-.preview{
+.vj_preview{
     height: 100px;
     width: 250px;
     pointer-events: auto;
@@ -120,4 +120,17 @@ a:hover {
     color: #fff;
     font-family: HKG_bold;
     transform: translate(-50%,-50%);
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.vj_preview_image{
+    background-size: cover;
+    height:100%;
+    flex-basis: 30%;
+}
+
+.vj_preview_text{
+    height:100%;
+    flex-basis: 70%;
 }
