@@ -23,7 +23,7 @@ const green=new THREE.Color(0.447,1.0,0.051); // green hover
 const brown=new THREE.Color(0.514,0.114,0.114);
 
 // vj
-let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[];
+let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[], vj_treepoints_hover=-1;
 
 init(); // create scene
 
@@ -177,19 +177,13 @@ function init() {
             container.className = "preview";
             container.innerHTML="hello world";
 
-            const obj = new CSS2DObject(container);
-            obj.position.set(0,0,0);
-            this.sph.add(obj);
+            const preview = new CSS2DObject(container);
+            preview.position.set(0,0,0);
+            this.sph.add(preview);
         }
 
-        hover(){
-            const container = document.createElement("div");
-            container.className = "preview";
-            container.innerHTML="hello world";
-
-            const obj = new CSS2DObject(container);
-            obj.position.set(0,0,0);
-            this.sph.add(obj);
+        closePreview(){
+            this.sph.remove(preview);
         }
     }
 
@@ -284,9 +278,6 @@ function onMouseMove( event ) {
             ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
             if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
                 document.body.style.cursor="pointer";
-                if(vj_treepoints[i].pos==-1){
-                    vj_treepoints[i].hover();
-                }
                 break;
             } else {
                 document.body.style.cursor="default";
@@ -294,12 +285,18 @@ function onMouseMove( event ) {
         } else {
             if(raycaster.intersectObject(vj_treepoints[i].sph).length==1){ // pointer down over sphere
                 document.body.style.cursor="pointer";
-                if(vj_treepoints[i].pos==-1){
-                    vj_treepoints[i].hover();
+                if(vj_treepoints[i].pos==-1 && vj_treepoints_hover!=i){
+                        vj_treepoints[vj_treepoints_hover].closePreview();
+                        vj_treepoints[i].openPreview();
+                        vj_treepoints_hover=i;
                 }
                 break;
             } else {
                 document.body.style.cursor="default";
+                if(vj_treepoints_hover!=-1){
+                    vj_treepoints[vj_treepoints_hover].closePreview();
+                    vj_treepoints_hover=-1;
+                }
             }
         }
         
@@ -322,7 +319,6 @@ function onPointerDown( event ) {
             inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
             ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
             if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
-                vj_treepoints[i].openPreview();
                 if(vj_tree.material.map==vj_tree_tex[0]){
                     vj_tree.material.map=vj_tree_tex[1];
                 } else {
