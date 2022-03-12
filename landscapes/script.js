@@ -181,6 +181,16 @@ function init() {
             obj.position.set(0,0,0);
             this.sph.add(obj);
         }
+
+        hover(){
+            const container = document.createElement("div");
+            container.className = "preview";
+            container.innerHTML="hello world";
+
+            const obj = new CSS2DObject(container);
+            obj.position.set(0,0,0);
+            this.sph.add(obj);
+        }
     }
 
 
@@ -273,6 +283,9 @@ function onMouseMove( event ) {
         ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
         if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
             document.body.style.cursor="pointer";
+            if(vj_treepoints[i].pos==-1){
+                vj_treepoints[i].hover();
+            }
             break;
         } else {
             document.body.style.cursor="default";
