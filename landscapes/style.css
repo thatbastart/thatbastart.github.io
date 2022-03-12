@@ -126,6 +126,7 @@ a:hover {
 
 .vj_preview_image{
     background-size: cover;
+    background-position: center;
     height:100%;
     flex-basis: 40%;
 }

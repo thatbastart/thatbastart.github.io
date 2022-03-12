@@ -181,6 +181,7 @@ function init() {
             const preview = new CSS2DObject(container);
             preview.position.set(0,0,0);
             this.sph.add(preview);
+            console.log(preview);
         }
 
         closePreview(){
