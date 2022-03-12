@@ -57,6 +57,38 @@ a:hover {
     transform: translate(0%,-10%);
 }
 
+/* NAVIGATION */
+.nav {
+    font-family: yoppa;
+    color: var(--blue);
+    font-size: max(3vh,30px);
+    cursor: pointer;
+}
+.navWrap {
+    position: absolute; 
+    right: 3vh; 
+    bottom: 3vh; 
+    text-align: right;
+    -moz-user-select: none; 
+    -webkit-user-select: none;
+    user-select: none;
+}
+@media only screen and (max-width: 1100px) {
+    .navWrap {
+        right: 1.5vh;
+        bottom: 1.5vh;
+    }
+}
+.navCircle {
+    width: 2.8vh;
+    height: 2.8vh; 
+    border-radius: 1.4vh; 
+    margin-right: 1vh;
+    background-color:var(--blue);
+    display:inline-block; 
+    transform: translate(0%,10%);
+}
+
 /* LOADING SCREEN */
 #loadScrn{
     position: absolute;
@@ -79,8 +111,8 @@ a:hover {
 
 
 .preview{
-    height: 400px;
-    width: 100px;
+    height: 100px;
+    width: 200px;
     pointer-events: auto;
     background-color: #000;
     padding: 10px;
