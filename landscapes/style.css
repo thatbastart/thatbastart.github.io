@@ -108,6 +108,83 @@ a:hover {
 }
 
 
+/* PANELS */
+.panel {
+    height: 100vh;
+    height: calc(var(--vh, 1vh)*100);
+    width: calc(100vw/3);
+    pointer-events: auto;
+    overflow: auto;
+}
+@media only screen and (max-width: 1600px) {
+    .panel {
+        width: calc(100vw/2);
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .panel {
+        width: 100vw;
+    }
+}
+.panelvj {
+    background-color: var(--blue);
+    color: var(--yellow);
+}
+
+.cont {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0% 14% 6% 14%;
+}
+
+.panelClose {
+    font-family: yoppa;
+    font-size: max(3vh,25px);
+    position: absolute;
+    top: 2%;
+    right: 5%;
+    cursor: pointer;
+}
+
+/* TEXT FORMATS */
+.headline {
+    width: 94%; 
+    height: 5%; 
+    font-family: yoppa; 
+    font-size: max(3vh,25px);
+    text-align: center;
+    margin: 3%;
+}
+.text {
+    font-family: HKG_bold;
+    font-size: max(1.8vh,14px);
+    line-height: 1.2;
+    hyphens: auto;
+}
+
+/* SCROLLBAR */
+/* Chrome */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--green);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--grey);
+}  
+
+/* Firefox */
+.scroll {
+    scrollbar-width: 10px;
+    scrollbar-color: var(--green) transparent;
+}
+
 
 
 .vj_preview{

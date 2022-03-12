@@ -18,19 +18,32 @@
 	</head>
 
 	<body>
-        <div id="main"></div>  <!-- three canvas parent -->
+        <!-- three canvas parent -->
+        <div id="main"></div>  
+
         <!-- navigation -->
         <div class="navWrap"> 
-            <span id="navAbout" class="nav" onClick="setAnim(0);"><div id="circleAbout" class="navCircle"></div>Relation</span><br><br>
-            <span id="navAbout" class="nav" onClick="setAnim(0);"><div id="circleAbout" class="navCircle"></div>Exchange</span><br><br>
-            <span id="navSchedule" class="nav" onClick="setAnim(1);"><div id="circleSchedule" class="navCircle"></div>Perspective</span><br><br>
-            <span id="navSpeakers" class="nav" onClick="setAnim(2);"><div id="circleSpeakers" class="navCircle"></div>Fragility</span><br><br>
-            <span id="navRegister" class="nav" onClick="setAnim(3);"><div id="circleRegister" class="navCircle"></div>Knowledge</span><br><br>
-            <span id="navImprint" class="nav" onClick="setAnim(4);"><div id="circleImprint" class="navCircle"></div>Movement</span><br><br>
-            <span id="navImprint" class="nav" onClick="setAnim(4);"><div id="circleImprint" class="navCircle"></div>Resistance</span>
+            <span id="navRelation" class="nav" onClick="setAnim(0);"><div id="circleRelation" class="navCircle"></div>Relation</span><br><br>
+            <span id="navExchange" class="nav" onClick="setAnim(0);"><div id="circleExchange" class="navCircle"></div>Exchange</span><br><br>
+            <span id="navPerspective" class="nav" onClick="setAnim(1);"><div id="circlePerspective" class="navCircle"></div>Perspective</span><br><br>
+            <span id="navFragility" class="nav" onClick="setAnim(2);"><div id="circleFragility" class="navCircle"></div>Fragility</span><br><br>
+            <span id="navKnowledge" class="nav" onClick="setAnim(3);"><div id="circleKnowledge" class="navCircle"></div>Knowledge</span><br><br>
+            <span id="navMovement" class="nav" onClick="setAnim(4);"><div id="circleMovement" class="navCircle"></div>Movement</span><br><br>
+            <span id="navResistance" class="nav" onClick="setAnim(4);"><div id="circleResistance" class="navCircle"></div>Resistance</span>
         </div>
+
+        <!-- panels -->
+        <div class="panel panelvj scroll">
+            <div class="headline">Register</div>
+            <div class="cont">
+                <span class="panelClose" onclick="">x</span>
+                <span class='text'>For registration please email us. We will send the Zoom link to you before the symposium.<br><br>Register here: 
+            </div>
+        </div>
+
         <!-- title -->
         <span class="title title_rl">Relational<br>Landscapes</span>
+        
         <!-- loading screen -->
         <div id="loadScrn"><span id="loadTxt">Loading...</span></div>
 	</body>
