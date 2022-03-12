@@ -286,7 +286,9 @@ function onMouseMove( event ) {
             if(raycaster.intersectObject(vj_treepoints[i].sph).length==1){ // pointer down over sphere
                 document.body.style.cursor="pointer";
                 if(vj_treepoints[i].pos==-1 && vj_treepoints_hover!=i){
-                        vj_treepoints[vj_treepoints_hover].closePreview();
+                        if(vj_treepoints_hover!=-1){
+                            vj_treepoints[vj_treepoints_hover].closePreview();
+                        }
                         vj_treepoints[i].openPreview();
                         vj_treepoints_hover=i;
                 }
