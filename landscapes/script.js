@@ -176,7 +176,7 @@ function init() {
         openPreview(){
             const container = document.createElement("div");
             container.className = "vj_preview";
-            container.innerHTML="<div class='vj_preview_image' style=\"background-image:url('/vj/preview/" + this.img + "');\"></div><div class='vj_preview_text'>" + this.title + "</div>";
+            container.innerHTML="<div class='vj_preview_image' style=\"background-image:url('vj/preview/" + this.img + "');\"></div><div class='vj_preview_text'>" + this.title + "</div>";
 
             const preview = new CSS2DObject(container);
             preview.position.set(0,0,0);
