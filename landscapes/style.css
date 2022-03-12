@@ -115,6 +115,7 @@ a:hover {
     width: calc(100vw/3);
     pointer-events: auto;
     overflow: auto;
+    position: absolute;
 }
 @media only screen and (max-width: 1600px) {
     .panel {
@@ -129,6 +130,8 @@ a:hover {
 .panelvj {
     background-color: var(--blue);
     color: var(--yellow);
+    top:0;
+    right:0;
 }
 
 .cont {
