@@ -207,7 +207,7 @@ function init() {
         for(let i=0;i<vj_treedata.length;i++){
             let img;
             if(vj_treedata[i].length==6){
-                img=vj_treedata[5];
+                img=vj_treedata[i][5];
             }
             vj_treepoints[i]=new vj_treepoint(vj_treedata[i][0],vj_treedata[i][2],vj_treedata[i][3],vj_treedata[i][1],vj_treedata[i][4],img);
             vj_treepoints[i].draw();
