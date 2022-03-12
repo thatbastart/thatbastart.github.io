@@ -183,8 +183,7 @@ function init() {
         }
 
         closePreview(){
-            console.log(this.sph);
-            this.sph.remove(preview);
+            this.sph.remove(this.sph.children[0]);
         }
     }
 
