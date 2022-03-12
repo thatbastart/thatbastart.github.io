@@ -20,6 +20,7 @@ const mouse = new THREE.Vector2(); // cursor screen position
 
 const blue=new THREE.Color(0.0,0.04,1.0); // blue default
 const green=new THREE.Color(0.447,1.0,0.051); // green hover
+const brown=new THREE.Color(0.514,0.114,0.114);
 
 // vj
 let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[];
@@ -84,39 +85,45 @@ function init() {
     
         draw(){
             let sphGeo = new THREE.SphereGeometry( this.size, 16, 16 );
-            let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
-            this.sph=new THREE.Mesh( sphGeo, matBlue );
-            vj_tree.add(this.sph);
-            this.sph.position.set(this.x,this.y,0);
-    
-            let textGeo
-    
-            if(this.title.includes("\n") && this.pos!=1){
-                textGeo=this.txtAlign();
+            if(this.pos>=0){
+                let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
+                this.sph=new THREE.Mesh( sphGeo, matBlue );
+                vj_tree.add(this.sph);
+                this.sph.position.set(this.x,this.y,0);
+        
+                let textGeo
+                if(this.title.includes("\n") && this.pos!=1){
+                    textGeo=this.txtAlign();
+                } else {
+                    textGeo = new THREE.TextGeometry(this.title, {font: font, size: 0.8, height: 0, curveSegments: 8} );
+                }
+                
+                this.txt=new THREE.Mesh(textGeo,matBlue);
+                this.txt.geometry.computeBoundingBox();
+                let center = this.txt.geometry.boundingBox.getCenter(new THREE.Vector3());
+                let bBox=this.txt.geometry.boundingBox;
+                switch(this.pos){
+                    case 0:
+                        this.txt.position.set(-center.x,-bBox.min.y+1.2,0.15);
+                        break;
+                    case 1:
+                        this.txt.position.set(1,-center.y,0.15);
+                        break;
+                    case 2:
+                        this.txt.position.set(-center.x,-bBox.max.y-1.2,0.15);
+                        break;
+                    case 3:
+                        this.txt.position.set(-bBox.max.x-1,-center.y,0.15);
+                        break;
+                }
+                this.sph.add(this.txt);
             } else {
-                textGeo = new THREE.TextGeometry(this.title, {font: font, size: 0.8, height: 0, curveSegments: 8} );
+                let matBrown = new THREE.MeshBasicMaterial( { color: brown } ); 
+                this.sph=new THREE.Mesh( sphGeo, matBrown );
+                vj_tree.add(this.sph);
+                this.sph.position.set(this.x,this.y,0);
             }
             
-            
-            this.txt=new THREE.Mesh(textGeo,matBlue);
-            this.txt.geometry.computeBoundingBox();
-            let center = this.txt.geometry.boundingBox.getCenter(new THREE.Vector3());
-            let bBox=this.txt.geometry.boundingBox;
-            switch(this.pos){
-                case 0:
-                    this.txt.position.set(-center.x,-bBox.min.y+1.2,0.15);
-                    break;
-                case 1:
-                    this.txt.position.set(1,-center.y,0.15);
-                    break;
-                case 2:
-                    this.txt.position.set(-center.x,-bBox.max.y-1.2,0.15);
-                    break;
-                case 3:
-                    this.txt.position.set(-bBox.max.x-1,-center.y,0.15);
-                    break;
-            }
-            this.sph.add(this.txt);
         }
     
         txtAlign(){
