@@ -273,6 +273,7 @@ function onMouseMove( event ) {
         ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
         if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
             document.body.style.cursor="pointer";
+            break;
         } else {
             document.body.style.cursor="default";
         }
