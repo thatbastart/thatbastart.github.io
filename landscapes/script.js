@@ -175,7 +175,7 @@ function init() {
         openPreview(){
             const container = document.createElement("div");
             container.className = "preview";
-            container.innerHTML="hello world";
+            container.innerHTML=this.title;
 
             const preview = new CSS2DObject(container);
             preview.position.set(0,0,0);
