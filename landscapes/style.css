@@ -160,8 +160,18 @@ a:hover {
     text-align: center;
     margin: 3%;
 }
+.subHeadline {
+    font-family: yoppa; 
+    font-size: max(2.5vh,20px);
+}
 .text {
     font-family: HKG_bold;
+    font-size: max(1.8vh,14px);
+    line-height: 1.2;
+    hyphens: auto;
+}
+.italic {
+    font-family: HKG_italic;
     font-size: max(1.8vh,14px);
     line-height: 1.2;
     hyphens: auto;
