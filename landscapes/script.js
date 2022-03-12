@@ -183,7 +183,6 @@ function init() {
             preview.offset.x="-100%";
             preview.offset.y="-100%";
             this.sph.add(preview);
-            console.log(preview);
         }
 
         closePreview(){
