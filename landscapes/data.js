@@ -60,7 +60,7 @@ let vj_treedata=[
         ["The whale of mahogany",                               1.0,    5.387,          -30.83,         -1,     "The_whale_of_mahagony.jpg"],
         ["Rare Resource",                                       1.0,    10.387,         -32.83,         -1,     "Rare_ressource.jpg"],
         ["Mahogany is fading",                                  1.0,    -2.387,         -35.83,         -1,     "Mahagony_fading.jpg"],
-        ["The unnatural in the natural",                        1.0,    7.375,          -43.968,        -1,     "Deforestation_cultivation_companies.jpg"],
+        ["The unnatural in the natural",                        1.0,    5.375,          -45.968,        -1,     "Deforestation_cultivation_companies.jpg"],
         ["Value Chain",                                         1.0,    14.501,         -40.505,        -1,     "Value_Chain.jpg"],
-        ["Mahogany country",                                    1.0,    2.387,          -36.83,         -1,     "Mahogany_country.jpg"],
-        ["Mahagony markets",                                    1.0,    2.408,          -15.192,        -1,     "Mahogany_markets.jpg"]];
+        ["Mahogany country",                                    1.0,    3.387,          -38.83,         -1,     "Mahogany_country.jpg"],
+        ["Mahagony markets",                                    1.0,    2.408,          -18.192,        -1,     "Mahogany_markets.jpg"]];
