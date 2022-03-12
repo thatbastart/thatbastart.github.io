@@ -117,9 +117,6 @@ a:hover {
     background-color: #000;
     padding: 10px;
     border: 3px solid var(--brown);
-    color: #fff;
-    font-family: HKG_bold;
-    transform: translate(-50%,-50%);
     display: flex;
     flex-wrap: nowrap;
 }
@@ -133,5 +130,7 @@ a:hover {
 
 .vj_preview_text{
     height:100%;
+    color: #fff;
+    font-family: HKG_bold;
     flex-basis: 60%;
 }
