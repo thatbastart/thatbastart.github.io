@@ -112,11 +112,12 @@ a:hover {
 
 .preview{
     height: 100px;
-    width: 200px;
+    width: 250px;
     pointer-events: auto;
     background-color: #000;
     padding: 10px;
     border: 3px solid var(--brown);
     color: #fff;
     font-family: HKG_bold;
+    transform: translate(-50%,-50%);
 }
