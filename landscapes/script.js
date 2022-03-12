@@ -183,6 +183,7 @@ function init() {
         }
 
         closePreview(){
+            console.log(this.sph);
             this.sph.remove(preview);
         }
     }
