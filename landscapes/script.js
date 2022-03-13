@@ -73,7 +73,7 @@ function init() {
     } );
 
     class vj_treepoint{
-        constructor(title,x,y,size,pos,img){
+        constructor(title,x,y,size,pos,img,content){
             this.title=title;
             this.x=x;
             this.y=y;
@@ -82,6 +82,7 @@ function init() {
             this.sph=undefined;
             this.txt=undefined;
             this.img=img;
+            this.content=content;
         }
     
         draw(){
@@ -190,7 +191,9 @@ function init() {
         }
 
         openStory(){
-            
+            document.getElementById("vj_panel").style.display="inline";
+            document.getElementById("vj_headline").innerHTML=this.title;
+            document.getElementById("vj_content").innerHTML=this.content;
         }
     }
 
@@ -211,11 +214,12 @@ function init() {
     vj_fontloader.load( "fonts/HK Grotesk_Regular.json", function (f) {
         font=f;
         for(let i=0;i<vj_treedata.length;i++){
-            let img;
-            if(vj_treedata[i].length==6){
+            let img, cont;
+            if(vj_treedata[i].length==7){
                 img=vj_treedata[i][5];
+                cont=vj_treedata[i][6];
             }
-            vj_treepoints[i]=new vj_treepoint(vj_treedata[i][0],vj_treedata[i][2],vj_treedata[i][3],vj_treedata[i][1],vj_treedata[i][4],img);
+            vj_treepoints[i]=new vj_treepoint(vj_treedata[i][0],vj_treedata[i][2],vj_treedata[i][3],vj_treedata[i][1],vj_treedata[i][4],img,cont);
             vj_treepoints[i].draw();
         }
     } );
@@ -327,17 +331,29 @@ function onPointerDown( event ) {
     if(event.which==1){
         raycaster.setFromCamera( mouse, camera );
         for(let i=0; i<vj_treepoints.length; i++){
-            let inverseMatrix = new THREE.Matrix4();
-            let ray = new THREE.Ray();
-            inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
-            ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
-            if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
-                if(vj_tree.material.map==vj_tree_tex[0]){
-                    vj_tree.material.map=vj_tree_tex[1];
-                } else {
-                    vj_tree.material.map=vj_tree_tex[0];
+            if(vj_treepoints[i].txt!=undefined){
+                let inverseMatrix = new THREE.Matrix4();
+                let ray = new THREE.Ray();
+                inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
+                ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
+                if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
+                    if(vj_tree.material.map==vj_tree_tex[0]){
+                        vj_tree.material.map=vj_tree_tex[1];
+                    } else {
+                        vj_tree.material.map=vj_tree_tex[0];
+                    }
+                    render();
+                    break;
                 }
-                render();
+            } else {
+                if(raycaster.intersectObject(vj_treepoints[i].sph).length==1){
+                    if(vj_tree.material.map==vj_tree_tex[0]){
+                        vj_tree.material.map=vj_tree_tex[1];
+                    }
+                    vj_treepoints[i].openPanel();
+                    render();
+                    break;
+                }
             }
         }
     }
