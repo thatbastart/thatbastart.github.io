@@ -350,7 +350,7 @@ function onPointerDown( event ) {
                     if(vj_tree.material.map==vj_tree_tex[0]){
                         vj_tree.material.map=vj_tree_tex[1];
                     }
-                    vj_treepoints[i].openPanel();
+                    vj_treepoints[i].openStory();
                     render();
                     break;
                 }
