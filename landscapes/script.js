@@ -21,6 +21,7 @@ const mouse = new THREE.Vector2(); // cursor screen position
 const blue=new THREE.Color(0.0,0.04,1.0); // blue default
 const green=new THREE.Color(0.447,1.0,0.051); // green hover
 const brown=new THREE.Color(0.514,0.114,0.114);
+const yellow=new THREE.Color(1.0,0.96,0.0);
 
 // vj
 let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[], vj_treepoints_hover=-1;
@@ -120,8 +121,8 @@ function init() {
                 }
                 this.sph.add(this.txt);
             } else {
-                let matBrown = new THREE.MeshBasicMaterial( { color: brown } ); 
-                this.sph=new THREE.Mesh( sphGeo, matBrown );
+                let matYellow = new THREE.MeshBasicMaterial( { color: yellow } ); 
+                this.sph=new THREE.Mesh( sphGeo, matYellow );
                 vj_tree.add(this.sph);
                 this.sph.position.set(this.x,this.y,0);
             }
