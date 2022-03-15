@@ -83,7 +83,7 @@ function init() {
             this.sph=undefined;
             this.txt=undefined;
             this.img=img;
-            if(vj_treedata.obj[i].type==1){
+            if(story!=undefined){
                 this.content=this.content(story);
             }
         }
