@@ -81,6 +81,7 @@ function init() {
             this.size=size;
             this.pos=pos;
             this.type=type;
+            console.log(this.type);
             this.sph=undefined;
             this.txt=undefined;
             this.img=img;
