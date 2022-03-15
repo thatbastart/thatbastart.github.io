@@ -74,23 +74,24 @@ function init() {
     } );
 
     class vj_treepoint{
-        constructor(title,x,y,size,pos,img,story){
+        constructor(title,x,y,size,pos,type,img,story){
             this.title=title;
             this.x=x;
             this.y=y;
             this.size=size;
             this.pos=pos;
+            this.type=type;
             this.sph=undefined;
             this.txt=undefined;
             this.img=img;
-            if(story!=undefined){
+            if(this.type==1){
                 this.content=this.content(story);
             }
         }
     
         draw(){
             let sphGeo = new THREE.SphereGeometry( this.size, 16, 16 );
-            if(this.pos>=0){
+            if(this.type==0){
                 let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
                 this.sph=new THREE.Mesh( sphGeo, matBlue );
                 vj_tree.add(this.sph);
@@ -200,7 +201,7 @@ function init() {
         }
 
         content(story){
-            let content;
+            let content="";
             for(let k=0;k<story.length;k++){
                 switch(story[k].type){
                     case "subhead":
@@ -228,7 +229,7 @@ function init() {
                         break;
 
                     case "caption":
-                        content+="<span class='italic'>" + story[k].content + "</span>"
+                        content+="<span class='italic'>" + story[k].content + "</span><br><br><br>"
                         break;
 
                     case "youtube":
@@ -265,7 +266,7 @@ function init() {
                 cont=vj_treedata.obj[i].story;
                 pos=vj_treedata.obj[i].align;
             }
-            vj_treepoints[i]=new vj_treepoint(vj_treedata.obj[i].title,vj_treedata.obj[i].x,vj_treedata.obj[i].y,vj_treedata.obj[i].scale,pos,img,cont);
+            vj_treepoints[i]=new vj_treepoint(vj_treedata.obj[i].title,vj_treedata.obj[i].x,vj_treedata.obj[i].y,vj_treedata.obj[i].scale,pos,vj_treedata.obj[i].type,img,cont);
             vj_treepoints[i].draw();
         }
     } );
