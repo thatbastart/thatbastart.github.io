@@ -214,7 +214,7 @@ a:hover {
     border: 3px solid var(--yellow);
     display: flex;
     flex-wrap: nowrap;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 .vj_preview_image{
