@@ -81,14 +81,12 @@ function init() {
             this.size=size;
             this.pos=pos;
             this.type=type;
-            console.log(this.type);
             this.sph=undefined;
             this.txt=undefined;
             this.img=img;
             if(this.type==1){
                 this.content=this.content(story);
             }
-            this.openPreview();
         }
     
         draw(){
@@ -270,6 +268,7 @@ function init() {
             }
             vj_treepoints[i]=new vj_treepoint(vj_treedata.obj[i].title,vj_treedata.obj[i].x,vj_treedata.obj[i].y,vj_treedata.obj[i].scale,pos,vj_treedata.obj[i].type,img,cont);
             vj_treepoints[i].draw();
+            vj_treepoints[i].openPreview();
         }
     } );
 
