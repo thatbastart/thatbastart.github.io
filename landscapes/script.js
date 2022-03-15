@@ -74,7 +74,7 @@ function init() {
     } );
 
     class vj_treepoint{
-        constructor(title,x,y,size,pos,type,img,story){
+        constructor(title,x,y,size,pos,type,img,story,index){
             this.title=title;
             this.x=x;
             this.y=y;
@@ -84,6 +84,7 @@ function init() {
             this.sph=undefined;
             this.txt=undefined;
             this.img=img;
+            this.index=index;
             if(this.type==1){
                 this.content=this.content(story);
             }
@@ -239,8 +240,8 @@ function init() {
             }
             content+="<br>";
             content+="<span class='text'>See connected stories</span><br><br>";
-            content+="<div class='vj_preview' style='width:48%;margin-right:4%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + this.img + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + this.title + "</div></div></div>"+
-                    "<div class='vj_preview' style='width:48%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + this.img + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + this.title + "</div></div></div>";
+            content+="<div class='vj_preview' style='width:48%;margin-right:4%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + vj_treedata.obj[i+1].thumb + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + vj_treedata.obj[i+2].title + "</div></div></div>"+
+                    "<div class='vj_preview' style='width:48%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + vj_treedata.obj[i+2].thumb + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + vj_treedata.obj[i+2].title + "</div></div></div>";
             return content;
         }
     }
@@ -269,7 +270,7 @@ function init() {
             } else {
                 pos=vj_treedata.obj[i].align;
             }
-            vj_treepoints[i]=new vj_treepoint(vj_treedata.obj[i].title,vj_treedata.obj[i].x,vj_treedata.obj[i].y,vj_treedata.obj[i].scale,pos,vj_treedata.obj[i].type,img,cont);
+            vj_treepoints[i]=new vj_treepoint(vj_treedata.obj[i].title,vj_treedata.obj[i].x,vj_treedata.obj[i].y,vj_treedata.obj[i].scale,pos,vj_treedata.obj[i].type,img,cont,i);
             vj_treepoints[i].draw();
         }
     } );
