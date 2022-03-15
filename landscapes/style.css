@@ -211,7 +211,7 @@ a:hover {
     pointer-events: auto;
     background-color: #000;
     padding: 10px;
-    border: 3px solid var(--brown);
+    border: 3px solid var(--yellow);
     display: flex;
     flex-wrap: nowrap;
     box-sizing: content-box;
