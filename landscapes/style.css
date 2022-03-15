@@ -209,7 +209,7 @@ a:hover {
     height: 100px;
     width: 250px;
     pointer-events: auto;
-    background-color: #000;
+    background-color: var(--blue);
     padding: 10px;
     border: 3px solid var(--yellow);
     display: flex;
@@ -221,12 +221,13 @@ a:hover {
     background-size: cover;
     background-position: center;
     height:100%;
+    aspect-ratio: 1/1;
     flex-basis: 40%;
 }
 
 .vj_preview_text{
     height:100%;
-    color: #fff;
+    color: var(--yellow);
     font-family: HKG_bold;
     font-size: 20px;
     flex-basis: 60%;
