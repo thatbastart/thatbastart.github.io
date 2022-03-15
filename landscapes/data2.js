@@ -575,7 +575,8 @@ let vj_treedata={
                     type:"caption",
                     content:"Deforestated area<br>© <a href='https://www.planet-wissen.de/kultur/suedamerika/amazonien/pwiediezerstoerungderregenwaeldersuedamerikas100.html'>planet-wissen.de/kultur/suedamerika/amazonien/pwiediezerstoerungderregenwaeldersuedamerikas100.html</a>"
                 }
-            ]
+            ],
+            connected:[]
         },
         {   title:"Mahogany Mindshift",
             scale:0.8,
@@ -644,7 +645,8 @@ let vj_treedata={
                     type:"text",
                     content:["The idea of protection has been constantly moving to the forefront since 2003. Although the typical coloring continues to be perceived as beautiful, mahogany pieces are burdened with a negative and outdated image. They are associated with tropical deforestation and colonial ideas."]
                 }
-            ]
+            ],
+            connected:[]
         },
         {   title:"Shifted Consequences",
             scale:0.8,
@@ -722,7 +724,8 @@ let vj_treedata={
                     type:"caption",
                     content:"Huni Kuin Man<br>© <a href='https://hunikuin.org/?living-gaia-e-v-2/spende'>hunikuin.org</a>"
                 }
-            ]
+            ],
+            connected:[]
         },
         {   title:"Plantations - Sinner or Savior?",
             scale:0.8,
@@ -804,7 +807,8 @@ let vj_treedata={
                         }
                     ]
                 }
-            ]
+            ],
+            connected:[]
         },
         {   title:"Plantation Problems",
             scale:0.8,
@@ -870,7 +874,8 @@ let vj_treedata={
                         }
                     ]
                 }
-            ]
+            ],
+            connected:[]
         },
         {   title:"The Whale of Mahogany",
             scale:0.8,
@@ -922,7 +927,8 @@ let vj_treedata={
                         }
                     ]
                 }
-            ]
+            ],
+            connected:[]
         },
         {   title:"Rare Resource",
             scale:0.8,
@@ -993,7 +999,8 @@ let vj_treedata={
                     type:"text",
                     content:["Because this makes the salvage of mahogany in the natural deposits very costly, there has been a switch to planting mahogany on plantations."]
                 }
-            ]
+            ],
+            connected:[]
         },
         {   title:"Mahogany is Fading",
             scale:0.8,
@@ -1075,7 +1082,8 @@ let vj_treedata={
                     type:"caption",
                     content:"Rainforest aisle<br>© <a href='https://www.dw.com/en/brazil-registers-huge-spike-in-amazon-deforestation/a-49462773'>dw.com/en/brazil-registers-huge-spike-in-amazon-deforestation/a-49462773</a>"
                 }
-            ]
+            ],
+            connected:[]
         },
         {   title:"The Unnatural in the Natural",
             scale:0.8,
@@ -1151,7 +1159,8 @@ let vj_treedata={
                     type:"caption",
                     content:"Logo of Mahogany Roraima<br>© <a href='https://mahoganyroraima.com.br/about/'>mahoganyroraima.com.br/about</a>"
                 }
-            ]
+            ],
+            connected:[]
         },
         {   title:"Value Chain",
             scale:0.8,
@@ -1201,7 +1210,8 @@ let vj_treedata={
                     type:"caption",
                     content:"Costs and earnings from one mahogany tree<br>© <a href='https://cites.org/sites/default/files/ndf_material/Big-leaf%20mahogany%20%28Swietenia%20macrophylla%29%20in%20the%20Brazilian%20Amazon%20Book%20chapter%20on%20mahogany.pdf'>cites.org/sites/default/files/ndf_material/Big-leaf%20mahogany%20%28Swietenia%20macrophylla%29%20in%20the%20Brazilian%20Amazon%20Book%20chapter%20on%20mahogany.pdf</a>"
                 }
-            ]
+            ],
+            connected:[]
         },
         {   title:"Mahogany Country",
             scale:0.8,
@@ -1283,7 +1293,8 @@ let vj_treedata={
                     type:"caption",
                     content:"Loggers squaring mahogany in Belize, around 1930<br>© <a href='https://ambergriscaye.com/photogallery/140727.html'>ambergriscaye.com/photogallery/140727.html</a>"
                 }
-            ]
+            ],
+            connected:[]
         },
         {   title:"Mahagony Markets",
             scale:0.8,
@@ -1368,7 +1379,8 @@ let vj_treedata={
                         }
                     ]
                 }
-            ]
+            ],
+            connected:[]
         }
     ]
 };

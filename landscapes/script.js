@@ -238,6 +238,9 @@ function init() {
                 }
             }
             content+="<br>";
+            content+="<span class='text'>See connected stories</span><br><br>";
+            content+="<div><div class='vj_preview'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + this.img + "');\"></div><div class='vj_preview_text'>" + this.title + "</div></div>"+
+                    "<div class='vj_preview'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + this.img + "');\"></div><div class='vj_preview_text'>" + this.title + "</div></div></div>";
             return content;
         }
     }
