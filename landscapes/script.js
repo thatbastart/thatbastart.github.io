@@ -268,7 +268,6 @@ function init() {
             }
             vj_treepoints[i]=new vj_treepoint(vj_treedata.obj[i].title,vj_treedata.obj[i].x,vj_treedata.obj[i].y,vj_treedata.obj[i].scale,pos,vj_treedata.obj[i].type,img,cont);
             vj_treepoints[i].draw();
-            vj_treepoints[i].openPreview();
         }
     } );
 
@@ -348,7 +347,7 @@ function onMouseMove( event ) {
         } else {
             if(raycaster.intersectObject(vj_treepoints[i].sph).length==1){ // pointer down over sphere
                 document.body.style.cursor="pointer";
-                if(vj_treepoints[i].pos==-1 && vj_treepoints_hover!=i){
+                if(vj_treepoints[i].type==1 && vj_treepoints_hover!=i){
                         if(vj_treepoints_hover!=-1){
                             vj_treepoints[vj_treepoints_hover].closePreview();
                         }
