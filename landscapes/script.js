@@ -74,7 +74,7 @@ function init() {
     } );
 
     class vj_treepoint{
-        constructor(title,x,y,size,pos,img,content){
+        constructor(title,x,y,size,pos,img,story){
             this.title=title;
             this.x=x;
             this.y=y;
@@ -83,7 +83,9 @@ function init() {
             this.sph=undefined;
             this.txt=undefined;
             this.img=img;
-            this.content=content;
+            if(vj_treedata.obj[i].type==1){
+                this.content=this.content(story);
+            }
         }
     
         draw(){
@@ -196,6 +198,48 @@ function init() {
             document.getElementById("vj_headline").innerHTML=this.title;
             document.getElementById("vj_content").innerHTML=this.content;
         }
+
+        content(story){
+            let content;
+            for(let k=0;k<story.length;k++){
+                switch(story[k].type){
+                    case "subhead":
+                        content+="<br><span class='subHeadline'>" + story[k].content + "</span><br><br></br>";
+                        break;
+
+                    case "text":
+                        content+="<span class='text'>";
+                        for(let p=0;p<story[k].content.length;p++){
+                            content+=story[k].content[p]+"<br><br>";
+                        }
+                        content+="</span>";
+                        break;
+
+                    case "source":
+                        content+="<span class='text'>";
+                        for(let p=0;p<story[k].content.length;p++){
+                            content+="<a href='" + story[k].content[p].link + "'>" + story[k].content[p].preview + "</a><br>";
+                        }
+                        content+="<br></span>";
+                        break;
+
+                    case "image":
+                        content+="<br><img src='" + story[k].content + "' class='panelimg'>"
+                        break;
+
+                    case "caption":
+                        content+="<span class='italic'>" + story[k].content + "</span>"
+                        break;
+
+                    case "youtube":
+                        content+=story[k].content;
+                        break;
+                }
+            }
+            content+="<br>";
+            console.log(content);
+            return content;
+        }
     }
 
 
@@ -214,13 +258,14 @@ function init() {
 
     vj_fontloader.load( "fonts/HK Grotesk_Regular.json", function (f) {
         font=f;
-        for(let i=0;i<vj_treedata.length;i++){
-            let img, cont;
-            if(vj_treedata[i].length==7){
-                img=vj_treedata[i][5];
-                cont=vj_treedata[i][6];
+        for(let i=0;i<vj_treedata.obj.length;i++){
+            let img, cont, pos;
+            if(vj_treedata.obj[i].type==1){
+                img=vj_treedata.obj[i].thumb;
+                cont=vj_treedata.obj[i].story;
+                pos=vj_treedata.obj[i].align;
             }
-            vj_treepoints[i]=new vj_treepoint(vj_treedata[i][0],vj_treedata[i][2],vj_treedata[i][3],vj_treedata[i][1],vj_treedata[i][4],img,cont);
+            vj_treepoints[i]=new vj_treepoint(vj_treedata.obj[i].title,vj_treedata.obj[i].x,vj_treedata.obj[i].y,vj_treedata.obj[i].scale,pos,img,cont);
             vj_treepoints[i].draw();
         }
     } );
