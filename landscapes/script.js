@@ -238,7 +238,6 @@ function init() {
                 }
             }
             content+="<br>";
-            console.log(content);
             return content;
         }
     }
@@ -264,6 +263,7 @@ function init() {
             if(vj_treedata.obj[i].type==1){
                 img=vj_treedata.obj[i].thumb;
                 cont=vj_treedata.obj[i].story;
+            } else {
                 pos=vj_treedata.obj[i].align;
             }
             vj_treepoints[i]=new vj_treepoint(vj_treedata.obj[i].title,vj_treedata.obj[i].x,vj_treedata.obj[i].y,vj_treedata.obj[i].scale,pos,vj_treedata.obj[i].type,img,cont);
