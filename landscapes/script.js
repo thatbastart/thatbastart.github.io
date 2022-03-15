@@ -239,8 +239,8 @@ function init() {
             }
             content+="<br>";
             content+="<span class='text'>See connected stories</span><br><br>";
-            content+="<div class='vj_preview' style='width:48%;margin-right:4%;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + this.img + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + this.title + "</div></div></div>"+
-                    "<div class='vj_preview' style='width:48%;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + this.img + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + this.title + "</div></div></div>";
+            content+="<div class='vj_preview' style='width:48%;margin-right:4%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + this.img + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + this.title + "</div></div></div>"+
+                    "<div class='vj_preview' style='width:48%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + this.img + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + this.title + "</div></div></div>";
             return content;
         }
     }
