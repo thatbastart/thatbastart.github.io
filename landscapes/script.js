@@ -333,7 +333,7 @@ function onMouseMove( event ) {
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
     raycaster.setFromCamera( mouse, camera );
     for(let i=0; i<vj_treepoints.length; i++){
-        if(vj_treepoints[i].txt!=undefined){
+        if(vj_treepoints[i].type==0){
             let inverseMatrix = new THREE.Matrix4();
             let ray = new THREE.Ray();
             inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
