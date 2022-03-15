@@ -87,6 +87,7 @@ function init() {
             if(this.type==1){
                 this.content=this.content(story);
             }
+            this.openPreview();
         }
     
         draw(){
