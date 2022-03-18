@@ -70,7 +70,7 @@ function init() {
         points.scale.set(0.7,0.7,0.7);
         points.updateMatrix();
         points.geometry.applyMatrix4(points.matrix);
-        points.position.set(0,0,40);
+        points.position.set(0,0,45);
         sb_pointcloud=points;
         scene.add(sb_pointcloud);
     } );
