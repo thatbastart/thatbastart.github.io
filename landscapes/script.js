@@ -67,6 +67,7 @@ function init() {
         document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
         points.material.size=1.0; // square size
+        points.scale.set(0.7,0.7,0.7);
         points.updateMatrix();
         points.geometry.applyMatrix4(points.matrix);
         sb_pointcloud=points;
@@ -83,7 +84,7 @@ function init() {
         document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
         points.material.size=1.0; // square size
-        points.scale.set(0.8,0.8,0.8)
+        points.scale.set(0.8,0.8,0.8);
         points.updateMatrix();
         points.geometry.applyMatrix4(points.matrix);
         vj_pointcloud=points;
