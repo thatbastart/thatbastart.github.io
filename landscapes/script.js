@@ -25,6 +25,8 @@ const yellow=new THREE.Color(1.0,0.96,0.0);
 
 // vj
 let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[], vj_treepoints_hover=-1;
+//sb
+let sb_pointcloud;
 
 init(); // create scene
 
@@ -56,6 +58,22 @@ function init() {
     controls.update();
     controls.addEventListener( "change", render ); // render when controls change
     
+
+    // ------------- SABRINA -------------
+
+    // pointcloud
+    const sb_loader = new PCDLoader();
+    sb_loader.load( "./sb/pointcloud.pcd", function (points) { // callback function when pcd is loaded
+        document.getElementById("loadScrn").style.display="none"; // hide loading screen
+        points.geometry.center();
+        points.material.size=1.0; // square size
+        points.updateMatrix();
+        points.geometry.applyMatrix4(points.matrix);
+        sb_pointcloud=points;
+        scene.add(sb_pointcloud);
+    } );
+
+
 
     // ------------- VIVIEN + JENNY -------------
 
