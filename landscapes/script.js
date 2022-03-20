@@ -27,7 +27,7 @@ let matGreen = new THREE.MeshBasicMaterial( { color: green } ); // green hover
 
 
 let navsph=[];
-const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 ); // sphere radius and subdivs
+const sphereGeometry = new THREE.SphereGeometry( 3, 32, 32 ); // sphere radius and subdivs
 
 // vj
 let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[], vj_treepoints_hover=-1;
@@ -83,7 +83,7 @@ function init() {
         sb_pointcloud=points;
         scene.add(sb_pointcloud);
         sb_pointcloud.add(navsph[1]);
-        navsph[1].position.set(0,0,0);
+        navsph[1].position.set(0,0,-5);
     } );
 
 
