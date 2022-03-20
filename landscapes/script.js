@@ -101,7 +101,7 @@ function init() {
         scene.add(vj_pointcloud);
         vj_pointcloud.add(vj_tree);
         vj_pointcloud.add(navsph[2]);
-        navsph[2].position.set(15,-10,25)
+        navsph[2].position.set(15,-10,18)
     } );
 
     class vj_treepoint{
