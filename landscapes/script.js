@@ -77,7 +77,7 @@ function init() {
         points.geometry.center();
         points.material.size=1.0; // square size
         points.scale.set(0.7,0.7,0.7);
-        points.position.set(0,0,45);
+        points.position.set(0,-5,45);
         points.updateMatrix();
         points.geometry.applyMatrix4(points.matrix);
         sb_pointcloud=points;
