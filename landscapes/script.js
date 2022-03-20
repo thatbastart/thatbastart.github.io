@@ -27,6 +27,7 @@ let matGreen = new THREE.MeshBasicMaterial( { color: green } ); // green hover
 
 
 let navsph=[];
+const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 ); // sphere radius and subdivs
 
 // vj
 let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[], vj_treepoints_hover=-1;
@@ -66,6 +67,9 @@ function init() {
 
     // ------------- SABRINA -------------
 
+    // nav sphere
+    navsph[1] = new THREE.Mesh( sphereGeometry, matBlue ); // add sphere objects to array
+
     // pointcloud
     const sb_loader = new PCDLoader();
     sb_loader.load( "./sb/pointcloud.pcd", function (points) { // callback function when pcd is loaded
@@ -78,6 +82,8 @@ function init() {
         points.geometry.applyMatrix4(points.matrix);
         sb_pointcloud=points;
         scene.add(sb_pointcloud);
+        sb_pointcloud.add(navsph[1]);
+        navsph[1].position.set(0,0,0);
     } );
 
 
@@ -85,7 +91,6 @@ function init() {
     // ------------- VIVIEN + JENNY -------------
 
     // nav sphere
-    const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 ); // sphere radius and subdivs
     navsph[2] = new THREE.Mesh( sphereGeometry, matBlue ); // add sphere objects to array
 
     // pointcloud
