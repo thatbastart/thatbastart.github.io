@@ -22,6 +22,11 @@ const blue=new THREE.Color(0.0,0.04,1.0); // blue default
 const green=new THREE.Color(0.447,1.0,0.051); // green hover
 const brown=new THREE.Color(0.514,0.114,0.114);
 const yellow=new THREE.Color(1.0,0.96,0.0);
+matBlue = new THREE.MeshBasicMaterial( { color: blue } ); // blue default
+matGreen = new THREE.MeshBasicMaterial( { color: green } ); // green hover
+
+
+let navsph=[];
 
 // vj
 let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[], vj_treepoints_hover=-1;
@@ -79,6 +84,10 @@ function init() {
 
     // ------------- VIVIEN + JENNY -------------
 
+    // nav sphere
+    const sphereGeometry = new THREE.SphereGeometry( 4, 32, 32 ); // sphere radius and subdivs
+    navsph[2] = new THREE.Mesh( sphereGeometry, matBlue ); // add sphere objects to array
+
     // pointcloud
     const vj_loader = new PCDLoader();
     vj_loader.load( "./vj/pointcloud.pcd", function (points) { // callback function when pcd is loaded
@@ -91,6 +100,7 @@ function init() {
         vj_pointcloud=points;
         scene.add(vj_pointcloud);
         vj_pointcloud.add(vj_tree);
+        vj_pointcloud.add(navsph[2]);
     } );
 
     class vj_treepoint{
@@ -113,7 +123,6 @@ function init() {
         draw(){
             let sphGeo = new THREE.SphereGeometry( this.size, 16, 16 );
             if(this.type==0){
-                let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); 
                 this.sph=new THREE.Mesh( sphGeo, matBlue );
                 vj_tree.add(this.sph);
                 this.sph.position.set(this.x,this.y,0);
