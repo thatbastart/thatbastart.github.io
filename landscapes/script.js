@@ -22,8 +22,8 @@ const blue=new THREE.Color(0.0,0.04,1.0); // blue default
 const green=new THREE.Color(0.447,1.0,0.051); // green hover
 const brown=new THREE.Color(0.514,0.114,0.114);
 const yellow=new THREE.Color(1.0,0.96,0.0);
-matBlue = new THREE.MeshBasicMaterial( { color: blue } ); // blue default
-matGreen = new THREE.MeshBasicMaterial( { color: green } ); // green hover
+let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); // blue default
+let matGreen = new THREE.MeshBasicMaterial( { color: green } ); // green hover
 
 
 let navsph=[];
