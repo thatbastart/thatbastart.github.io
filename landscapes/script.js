@@ -391,6 +391,7 @@ function onMouseMove( event ) {
                         }
                         vj_treepoints[i].openPreview();
                         vj_treepoints_hover=i;
+                        labelRenderer.render( scene, camera );
                 }
                 break;
             } else {
@@ -398,6 +399,7 @@ function onMouseMove( event ) {
                 if(vj_treepoints_hover!=-1){
                     vj_treepoints[vj_treepoints_hover].closePreview();
                     vj_treepoints_hover=-1;
+                    labelRenderer.render( scene, camera );
                 }
             }
         }
