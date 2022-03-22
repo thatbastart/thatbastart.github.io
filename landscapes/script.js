@@ -5,8 +5,6 @@
 // sr - sara
 // vj - vivien+jenny
 
-window.image_preloader=image_preloader;
-
 // import three and modules
 import * as THREE from "./three/build/three.module.js";
 
@@ -28,6 +26,7 @@ let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); // blue default
 let matGreen = new THREE.MeshBasicMaterial( { color: green } ); // green hover
 
 let image_preloader=[];
+window.image_preloader=image_preloader;
 
 let navsph=[];
 const sphereGeometry = new THREE.SphereGeometry( 3, 32, 32 ); // sphere radius and subdivs
