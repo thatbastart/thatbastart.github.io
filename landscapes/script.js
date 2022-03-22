@@ -304,7 +304,7 @@ function init() {
                 img=vj_treedata.obj[i].thumb;
                 cont=vj_treedata.obj[i].story;
                 image_preloader[i]=new Image();
-                image_preloader[i].src=img;
+                image_preloader[i].src="vj/preview/" + img;
                 console.log(image_preloader[i]);
             } else {
                 pos=vj_treedata.obj[i].align;
