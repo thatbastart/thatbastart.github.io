@@ -5,6 +5,8 @@
 // sr - sara
 // vj - vivien+jenny
 
+window.image_preloader=image_preloader;
+
 // import three and modules
 import * as THREE from "./three/build/three.module.js";
 
@@ -25,6 +27,7 @@ const yellow=new THREE.Color(1.0,0.96,0.0);
 let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); // blue default
 let matGreen = new THREE.MeshBasicMaterial( { color: green } ); // green hover
 
+let image_preloader=[];
 
 let navsph=[];
 const sphereGeometry = new THREE.SphereGeometry( 3, 32, 32 ); // sphere radius and subdivs
@@ -294,7 +297,6 @@ function init() {
 
 
     const vj_fontloader = new THREE.FontLoader();
-    let image_preloader=[];
     vj_fontloader.load( "fonts/HK Grotesk_Regular.json", function (f) {
         font=f;
         for(let i=0;i<vj_treedata.obj.length;i++){
