@@ -294,7 +294,7 @@ function init() {
 
 
     const vj_fontloader = new THREE.FontLoader();
-
+    let image_preloader=[];
     vj_fontloader.load( "fonts/HK Grotesk_Regular.json", function (f) {
         font=f;
         for(let i=0;i<vj_treedata.obj.length;i++){
@@ -302,6 +302,8 @@ function init() {
             if(vj_treedata.obj[i].type==1){
                 img=vj_treedata.obj[i].thumb;
                 cont=vj_treedata.obj[i].story;
+                image_preloader[i]=new Image();
+                image_preloader.src=img;
             } else {
                 pos=vj_treedata.obj[i].align;
             }
