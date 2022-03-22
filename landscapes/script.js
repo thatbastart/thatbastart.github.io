@@ -288,6 +288,8 @@ function init() {
     let vj_tree_geo = new THREE.PlaneGeometry(103.4, 141.5, 20, 20);
     vj_tree_tex[0] = new THREE.TextureLoader().load("vj/tree.png");
     vj_tree_tex[1] = new THREE.TextureLoader().load("vj/tree_highlight.png");
+    image_preloader.push(new Image());
+    image_preloader[image_preloader.length-1].src="vj/tree_highlight.png";
     let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true, side: THREE.DoubleSide } );
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
     vj_tree.position.set(0,25,0);
@@ -303,8 +305,8 @@ function init() {
             if(vj_treedata.obj[i].type==1){
                 img=vj_treedata.obj[i].thumb;
                 cont=vj_treedata.obj[i].story;
-                image_preloader[i]=new Image();
-                image_preloader[i].src="vj/preview/" + img;
+                image_preloader.push(new Image());
+                image_preloader[image_preloader.length-1].src="vj/preview/" + img;
             } else {
                 pos=vj_treedata.obj[i].align;
             }
