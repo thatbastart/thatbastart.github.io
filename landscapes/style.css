@@ -117,21 +117,63 @@ a:hover {
     overflow: auto;
     position: absolute;
 }
-@media only screen and (max-width: 1600px) {
-    .panel {
-        width: calc(100vw/2);
-    }
+
+.panelabout {
+    background-color: var(--blue);
+    color: var(--yellow);
+    top:0;
+    left:calc(100vw/3);
 }
-@media only screen and (max-width: 1100px) {
-    .panel {
-        width: 100vw;
-    }
+
+.panelsb {
+    background-color: var(--blue);
+    color: var(--yellow);
+    top:0;
+    left:calc(100vw/3);
 }
+
+.panelsr {
+    background-color: var(--blue);
+    color: var(--yellow);
+    top:0;
+    left:calc(100vw/3);
+}
+
 .panelvj {
     background-color: var(--blue);
     color: var(--yellow);
     top:0;
     right:0;
+}
+
+
+@media only screen and (max-width: 1600px) {
+    .panel {
+        width: calc(100vw/2);
+    }
+    .panelabout {
+        left: calc(100vw/2);
+    }
+    .panelsb {
+        left: calc(100vw/2);
+    }
+    .panelsr {
+        left: calc(100vw/2);
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .panel {
+        width: 100vw;
+    }
+    .panelabout {
+        left: 0;
+    }
+    .panelsb {
+        left: 0;
+    }
+    .panelsr {
+        left: 0;
+    }
 }
 
 .panelimg{

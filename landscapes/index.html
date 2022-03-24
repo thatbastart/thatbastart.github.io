@@ -12,9 +12,8 @@
         <meta name ="description" content = "Relational Landscapes is the conceptual framework that gives shape to a design course at the University of Applied Sciences Potsdam to trace environmental interconnectedness between Berlin-Brandenburg and the Amazon and the Andes.">
 
         <link rel="stylesheet" href="style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
         <script type="module" src="script.js"></script>
-        <script src="data2.js"></script>
+        <script src="data.js"></script>
 	</head>
 
 	<body>
@@ -24,24 +23,48 @@
         <!-- navigation -->
         <div class="navWrap"> 
             <span id="navRelation" class="nav" onClick="setAnim(0);"><div id="circleRelation" class="navCircle"></div>Relation</span><br><br>
-            <span id="navExchange" class="nav" onClick="setAnim(0);"><div id="circleExchange" class="navCircle"></div>Exchange</span><br><br>
-            <span id="navPerspective" class="nav" onClick="setAnim(1);"><div id="circlePerspective" class="navCircle"></div>Perspective</span><br><br>
-            <span id="navFragility" class="nav" onClick="setAnim(2);"><div id="circleFragility" class="navCircle"></div>Fragility</span><br><br>
-            <span id="navKnowledge" class="nav" onClick="setAnim(3);"><div id="circleKnowledge" class="navCircle"></div>Knowledge</span><br><br>
-            <span id="navMovement" class="nav" onClick="setAnim(4);"><div id="circleMovement" class="navCircle"></div>Movement</span><br><br>
-            <!-- <span id="navResistance" class="nav" onClick="setAnim(4);"><div id="circleResistance" class="navCircle"></div>Resistance</span>-->
+            <span id="navExchange" class="nav" onClick="setAnim(1);"><div id="circleExchange" class="navCircle"></div>Exchange</span><br><br>
+            <span id="navPerspective" class="nav" onClick="setAnim(2);"><div id="circlePerspective" class="navCircle"></div>Perspective</span><br><br>
+            <span id="navFragility" class="nav" onClick="setAnim(3);"><div id="circleFragility" class="navCircle"></div>Fragility</span><br><br>
+            <span id="navKnowledge" class="nav" onClick="setAnim(4);"><div id="circleKnowledge" class="navCircle"></div>Knowledge</span><br><br>
+            <span id="navMovement" class="nav" onClick="setAnim(5);"><div id="circleMovement" class="navCircle"></div>Movement</span><br><br>
         </div>
 
         <!-- title -->
         <span class="title title_rl">Relational<br>Landscapes</span>
 
         <!-- panels -->
+        <!-- about -->
+        <div id="about_panel" class="panel panelabout scroll" style="display:none;">
+            <div id="about_headline" class="headline"></div>
+            <span class="panelClose" onclick="document.getElementById('about_panel').style.display='none';">x</span>
+            <div id="about_authors" class="cont text" style="text-align: center;"></div>
+            <img id="about_image" src="" style="width: 100%; height:auto;" class="cont">
+            <div id="about_content" class="cont text"></div>
+        </div>
+
+        <!-- sabrina -->
+        <div id="sb_panel" class="panel panelsb scroll" style="display:none;">
+            <div id="sb_headline" class="headline"></div>
+            <span class="panelClose" onclick="document.getElementById('sb_panel').style.display='none';">x</span>
+            <div id="sb_content" class="cont text"></div>
+        </div>
+
+        <!-- sara -->
+        <div id="sr_panel" class="panel panelsr scroll" style="display:none;">
+            <div id="sr_headline" class="headline"></div>
+            <span class="panelClose" onclick="document.getElementById('sr_panel').style.display='none';">x</span>
+            <div id="sr_content" class="cont text"></div>
+        </div>
+
+        <!-- vivien + jenny -->
         <div id="vj_panel" class="panel panelvj scroll" style="display:none;">
             <div id="vj_headline" class="headline"></div>
             <span class="panelClose" onclick="document.getElementById('vj_panel').style.display='none';">x</span>
-            <div id="vj_content" class="cont">
-            </div>
+            <div id="vj_content" class="cont"></div>
         </div>
+        
+
 
         <!-- loading screen -->
         <div id="loadScrn"><span id="loadTxt">Loading...</span></div>

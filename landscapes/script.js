@@ -1,5 +1,4 @@
 // hv - hannah+victor
-// h - hermann
 // lp - lukas+peter
 // sb - sabrina
 // sr - sara
@@ -7,34 +6,41 @@
 
 // import three and modules
 import * as THREE from "./three/build/three.module.js";
-
 import { OrbitControls } from "./three/examples/jsm/controls/OrbitControls.js";
 import { PCDLoader } from "./three/examples/jsm/loaders/PCDLoader.js";
 import { GLTFLoader } from "./three/examples/jsm/loaders/GLTFLoader.js";
 import { CSS2DRenderer, CSS2DObject } from './three/examples/jsm/renderers/CSS2DRenderer.js';
 import * as BufferGeometryUtils from "./three/examples/jsm/utils/BufferGeometryUtils.js";
 
+// three stuff
 let camera, scene, renderer, labelRenderer, controls, font;
 const raycaster = new THREE.Raycaster(); // finding out over which 3d-object the cursor is
 const mouse = new THREE.Vector2(); // cursor screen position
 
+// colors
 const blue=new THREE.Color(0.0,0.04,1.0); // blue default
 const green=new THREE.Color(0.447,1.0,0.051); // green hover
-const brown=new THREE.Color(0.514,0.114,0.114);
 const yellow=new THREE.Color(1.0,0.96,0.0);
+
+// materials
 let matBlue = new THREE.MeshBasicMaterial( { color: blue } ); // blue default
 let matGreen = new THREE.MeshBasicMaterial( { color: green } ); // green hover
 
+// preloading images
 let image_preloader=[];
 window.image_preloader=image_preloader;
 
+// spheres
 let navsph=[];
-const sphereGeometry = new THREE.SphereGeometry( 3, 32, 32 ); // sphere radius and subdivs
+const about_sphGeo = new THREE.SphereGeometry( 3, 32, 32 ); // sphere radius and subdivs
+const content_sphGeo = new THREE.SphereGeometry( 0.6, 16, 16 );
 
 // vj
 let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[], vj_treepoints_hover=-1;
-//sb
-let sb_pointcloud;
+// sb
+let sb_pointcloud, sb_sph=[];
+// sr
+let sr_pointcloud, sr_sph=[];
 
 init(); // create scene
 
@@ -67,10 +73,38 @@ function init() {
     controls.addEventListener( "change", render ); // render when controls change
     
 
+
+    // ------------- HANNAH + VICTOR -------------
+
+    // nav sphere
+    navsph[0] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
+
+
+    const glloader = new GLTFLoader();
+    glloader.load("hv/ayahuasca.glb", function ( gltf ) {
+            let vine=gltf.scene.children[0]
+            scene.add( vine );
+            vine.position.set(80,-5,80);
+            let texture = new THREE.TextureLoader().load("hv/vine.png");
+            texture.wrapS=THREE.RepeatWrapping;
+            texture.wrapT=THREE.RepeatWrapping;
+            texture.repeat.set(0.5,0.5);
+            let vineMaterial = new THREE.MeshBasicMaterial( { map: texture, transparent: true} );
+            vine.material=vineMaterial;
+    
+        }
+    );
+
+    // ------------- LUKAS + PETER -------------
+
+    // nav sphere
+    navsph[1] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
+
+
     // ------------- SABRINA -------------
 
     // nav sphere
-    navsph[1] = new THREE.Mesh( sphereGeometry, matBlue ); // add sphere objects to array
+    navsph[2] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
 
     // pointcloud
     const sb_loader = new PCDLoader();
@@ -79,13 +113,73 @@ function init() {
         points.geometry.center();
         points.material.size=1.0; // square size
         points.scale.set(0.7,0.7,0.7);
-        points.position.set(0,-1,45);
+        points.position.set(0,-1,50);
         points.updateMatrix();
         points.geometry.applyMatrix4(points.matrix);
+        points.geometry.applyMatrix4(points.matrixWorld);
+        points.scale.set(1,1,1);
         sb_pointcloud=points;
         scene.add(sb_pointcloud);
-        sb_pointcloud.add(navsph[1]);
-        navsph[1].position.set(0,0,-5);
+        sb_pointcloud.add(navsph[2]);
+        navsph[2].position.set(0,0,0);
+
+        for(let i=0; i<sb_content.length; i++){
+            sb_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
+            sb_pointcloud.add(sb_sph[i]);
+            sb_sph[i].position.set(sb_content[i].x,sb_content[i].y,sb_content[i].z);
+        }
+        
+    } );
+
+
+    // ------------- SARA -------------
+
+    /*
+
+        Colonial Period - The ecological imperialism
+
+        Plants
+        Potatoes
+        Tobacco
+
+        Turkey
+
+        Since the XX Century - New determining factors
+
+        Exotic Invasive Species
+        Mink
+        American Red Crab
+
+    */
+
+    // nav sphere
+    navsph[3] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
+
+    // pointcloud
+    const sr_loader = new PCDLoader();
+    sr_loader.load( "./sr/pointcloud.pcd", function (points) { // callback function when pcd is loaded
+        document.getElementById("loadScrn").style.display="none"; // hide loading screen
+        points.geometry.center();
+        points.material.size=1.0; // square size
+        points.scale.set(1.5,1.5,1.5);
+        points.position.set(-10,5,45);
+        points.rotation.order="YXZ"; //switch order for rotation follow
+        points.rotation.set(0,THREE.Math.degToRad(-50),0);
+        points.updateMatrix();
+        points.geometry.applyMatrix4(points.matrix);
+        points.geometry.applyMatrix4(points.matrixWorld);
+        points.scale.set(1,1,1);
+        sr_pointcloud=points;
+        scene.add(sr_pointcloud);
+        sr_pointcloud.add(navsph[3]);
+        navsph[3].position.set(-30,0,40);
+
+        for(let i=0; i<sr_content.length; i++){
+            sr_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
+            sr_pointcloud.add(sr_sph[i]);
+            sr_sph[i].position.set(sr_content[i].x,sr_content[i].y,sr_content[i].z);
+        }
+
     } );
 
 
@@ -93,7 +187,7 @@ function init() {
     // ------------- VIVIEN + JENNY -------------
 
     // nav sphere
-    navsph[2] = new THREE.Mesh( sphereGeometry, matBlue ); // add sphere objects to array
+    navsph[4] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
 
     // pointcloud
     const vj_loader = new PCDLoader();
@@ -104,11 +198,13 @@ function init() {
         points.scale.set(0.8,0.8,0.8);
         points.updateMatrix();
         points.geometry.applyMatrix4(points.matrix);
+        points.geometry.applyMatrix4(points.matrixWorld);
+        points.scale.set(1,1,1);
         vj_pointcloud=points;
         scene.add(vj_pointcloud);
         vj_pointcloud.add(vj_tree);
-        vj_pointcloud.add(navsph[2]);
-        navsph[2].position.set(25,-10,8)
+        vj_pointcloud.add(navsph[4]);
+        navsph[4].position.set(25,-10,8)
     } );
 
     class vj_treepoint{
@@ -277,8 +373,8 @@ function init() {
             }
             content+="<br>";
             content+="<span class='text'>See connected stories</span><br><br>";
-            content+="<div class='vj_preview' style='width:48%;margin-right:4%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + vj_treedata.obj[this.index+1].thumb + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + vj_treedata.obj[this.index+1].title + "</div></div></div>"+
-                    "<div class='vj_preview' style='width:48%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + vj_treedata.obj[this.index+2].thumb + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + vj_treedata.obj[this.index+2].title + "</div></div></div>";
+            content+="<div class='vj_preview' style='width:48%;margin-right:4%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + vj_treedata[this.index+1].thumb + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + vj_treedata[this.index+1].title + "</div></div></div>"+
+                    "<div class='vj_preview' style='width:48%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + vj_treedata[this.index+2].thumb + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + vj_treedata[this.index+2].title + "</div></div></div>";
             return content;
         }
     }
@@ -288,8 +384,6 @@ function init() {
     let vj_tree_geo = new THREE.PlaneGeometry(103.4, 141.5, 20, 20);
     vj_tree_tex[0] = new THREE.TextureLoader().load("vj/tree.png");
     vj_tree_tex[1] = new THREE.TextureLoader().load("vj/tree_highlight.png");
-    image_preloader.push(new Image());
-    image_preloader[image_preloader.length-1].src="vj/tree_highlight.png";
     let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true, side: THREE.DoubleSide } );
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
     vj_tree.position.set(0,25,0);
@@ -300,39 +394,21 @@ function init() {
     const vj_fontloader = new THREE.FontLoader();
     vj_fontloader.load( "fonts/HK Grotesk_Regular.json", function (f) {
         font=f;
-        for(let i=0;i<vj_treedata.obj.length;i++){
+        for(let i=0;i<vj_treedata.length;i++){
             let img, cont, pos;
-            if(vj_treedata.obj[i].type==1){
-                img=vj_treedata.obj[i].thumb;
-                cont=vj_treedata.obj[i].story;
+            if(vj_treedata[i].type==1){
+                img=vj_treedata[i].thumb;
+                cont=vj_treedata[i].story;
                 image_preloader.push(new Image());
                 image_preloader[image_preloader.length-1].src="vj/preview/" + img;
             } else {
-                pos=vj_treedata.obj[i].align;
+                pos=vj_treedata[i].align;
             }
-            vj_treepoints[i]=new vj_treepoint(vj_treedata.obj[i].title,vj_treedata.obj[i].x,vj_treedata.obj[i].y,vj_treedata.obj[i].scale,pos,vj_treedata.obj[i].type,img,cont,i);
+            vj_treepoints[i]=new vj_treepoint(vj_treedata[i].title,vj_treedata[i].x,vj_treedata[i].y,vj_treedata[i].scale,pos,vj_treedata[i].type,img,cont,i);
             vj_treepoints[i].draw();
         }
     } );
 
-
-
-
-    // ------------- HANNAH + VICTOR -------------
-    const glloader = new GLTFLoader();
-    glloader.load("hv/ayahuasca.glb", function ( gltf ) {
-            let vine=gltf.scene.children[0]
-            scene.add( vine );
-            vine.position.set(-100,-12,-100);
-            let texture = new THREE.TextureLoader().load("hv/vine.png");
-            texture.wrapS=THREE.RepeatWrapping;
-            texture.wrapT=THREE.RepeatWrapping;
-            texture.repeat.set(0.5,0.5);
-            let vineMaterial = new THREE.MeshBasicMaterial( { map: texture, transparent: true} );
-            vine.material=vineMaterial;
-    
-        }
-    );
 
 
     // CSS RENDERER
@@ -419,8 +495,41 @@ function onPointerDown( event ) {
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
     // raycaster intersect
-    if(event.which==1){
+    if(event.which==1){ // left click
         raycaster.setFromCamera( mouse, camera );
+
+        for(let i=0; i<navsph.length; i++){
+            if(raycaster.intersectObject(navsph[i]).length==1){
+                document.getElementById("about_panel").style.display="inline";
+                document.getElementById("about_headline").innerHTML=about[i].title;
+                document.getElementById("about_authors").innerHTML=about[i].authors;
+                document.getElementById("about_image").src=about[i].image;
+                document.getElementById("about_content").innerHTML=about[i].content;
+
+                return;
+            }
+        }
+
+        for(let i=0; i<sb_sph.length; i++){
+            if(raycaster.intersectObject(sb_sph[i]).length==1){
+                document.getElementById("sb_panel").style.display="inline";
+                document.getElementById("sb_headline").innerHTML=sb_content[i].title;
+                document.getElementById("sb_content").innerHTML=sb_content[i].content;
+
+                return;
+            }
+        }
+
+        for(let i=0; i<sr_sph.length; i++){
+            if(raycaster.intersectObject(sr_sph[i]).length==1){
+                document.getElementById("sr_panel").style.display="inline";
+                document.getElementById("sr_headline").innerHTML=sr_content[i].title;
+                document.getElementById("sr_content").innerHTML=sr_content[i].content;
+
+                return;
+            }
+        }
+
         for(let i=0; i<vj_treepoints.length; i++){
             if(vj_treepoints[i].txt!=undefined){
                 let inverseMatrix = new THREE.Matrix4();
@@ -434,7 +543,7 @@ function onPointerDown( event ) {
                         vj_tree.material.map=vj_tree_tex[0];
                     }
                     render();
-                    break;
+                    return;
                 }
             } else {
                 if(raycaster.intersectObject(vj_treepoints[i].sph).length==1){
@@ -443,7 +552,7 @@ function onPointerDown( event ) {
                     }
                     vj_treepoints[i].openStory();
                     render();
-                    break;
+                    return;
                 }
             }
         }
