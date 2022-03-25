@@ -3,37 +3,58 @@
 	<head>
 		<title>Teun Website</title>
 		<meta charset="utf-8">
-        <!-- 
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-        <meta property="og:image" content="https://thatbastart.github.io/symposium//preview.jpg" />
-        <meta property="og:description" content="Dec 2nd 2021 5-7:30pm CET Online" />
-        <meta http-equiv="language" content="en">
-        <meta name ="description" content = "Relational Landscapes is the conceptual framework that gives shape to a design course at the University of Applied Sciences Potsdam to trace environmental interconnectedness between Berlin-Brandenburg and the Amazon and the Andes.">
-        -->
 
         <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.js"></script>
         <script src="script.js"></script>
 	</head>
 
 	<body>
-                <div class="main"></div>
+        <!-- background -->
+        <div id="main" class="main"></div>
+        <div id="forms" class="elements"></div>
+        <div class="elements" style="background-image: url('images/elements_2.png'); "></div>
 
-                <div class="green"></div>
-                <div class="rock"></div>
-                <div class="oval"></div>
-                <div class="stone"></div>
-                <div class="dots"></div>
-                <div class="paint_green"></div>
-                <div class="meteor"></div>
+        <!-- bands -->
+        <div class="bandImg" style="background-image: url('images/band_othin.gif');"></div>
+        <div class="bandImg" style="background-image: url('images/band_cram.png');"></div>
+        <div class="bandImg" style="background-image: url('images/band_atomic.png');"></div>
+        <div class="bandImg" style="background-image: url('images/band_penguin.png');"></div>
+        <div class="bandImg" style="background-image: url('images/band_warped.gif');"></div>
+        <div class="bandImg" style="background-image: url('images/band_potash.gif');"></div>
+        <div class="bandImg" style="background-image: url('images/band_duo.gif');"></div>
+        
+        
+        <!-- navigation -->
+        <div class="nav" onclick="toggleNav();"></div>
+        <div id="navExp" class="navExp">
+            <div style="background-image: url('images/symbol_1.png');background-size:contain; background-position: center; background-repeat:no-repeat;height:10%;width:100%;border-bottom: 2px dotted #000; padding-top:10px;padding-bottom:10px;"></div>
+            <div class="navBands">
+                <img src="images/band_othin.gif" style="position:absolute; left:0; height:100%;width:auto;">
+                OTHIN SPAKE</div>
+            <div class="navBands">
+                <img src="images/band_cram.png" style="position:absolute; left:0; height:100%;width:auto;">
+                CRAM RATION</div>
+            <div class="navBands">
+                <img src="images/band_atomic.png" style="position:absolute; left:0; height:100%;width:auto;">
+                THE BOAT/THE BUREAU OF<br>ATOMIC TOURISM</div>
+            <a href="bands/index.html"><div class="navBands">
+                <img src="images/band_penguin.png" style="position:absolute; left:0; height:100%;width:auto;">
+                CHASING PENGUINS</div></a>
+            <div class="navBands">
+                <img src="images/band_warped.gif" style="position:absolute; left:0; height:100%;width:auto;">
+                WARPED DREAMER</div>
+            <div class="navBands">
+                <img src="images/band_potash.gif" style="position:absolute; left:0; height:100%;width:auto;">
+                THE POTASH CORPORATION<br>OF SASKATCHEWAN</div>
+            <div class="navBands">
+                <img src="images/band_duo.gif" style="position:absolute; left:0; height:100%;width:auto;">
+                DUO À L'ENCRE</div>
+            <div style="width:100%;height:calc(100% - 45% - 9 * 20px);background-image: url('images/symbol_2.png');background-size:contain; background-position: center; background-repeat:no-repeat;"></div>
+        </div>
+        <div class="bookings"></div>
+        <a href="about/index.html"><div class="about"></div></a>
 
-                <div class="header1"></div>
-                <div class="header3"></div>
-                <div class="header2"></div>
-                <div class="header">
-                        <div style="flex: 1;transform:translateY(25%);text-align: center;font-size:1.2vw;">bands</div>
-                        <div style="flex: 1;transform:translateY(15%);font-size:1.2vw;text-align:left;"><span style="padding-left:1vw;"></span>what's<br><span style="padding-left:3vw;"></span>happening?</div>
-                        <div style="flex: 1;transform:translateY(45%);text-align: center;font-size:1.2vw;">contact</div>
-                </div>
-                
+
 	</body>
 </html>
