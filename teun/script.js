@@ -22,10 +22,16 @@ window.onload=function(){
         
 
         let bands=document.getElementsByClassName("bandImg");
+        let bandnames=document.getElementsByClassName("bandname");
         for(let i=0;i<bands.length;i++){
-            bands[i].style.top=String(Math.random()*55)+"vh";
-            bands[i].style.left=String(Math.random()*70)+"vw";
-            bands[i].style.width=String(10+Math.random()*15)+"vw";
+            let top=Math.random()*55;
+            let left=Math.random()*70;
+            let width=10+Math.random()*15;
+            bands[i].style.top=String(top)+"vh";
+            bands[i].style.left=String(left)+"vw";
+            bands[i].style.width=String(width)+"vw";
+            bandnames[i].style.top=String(top)+"vh"
+            bandnames[i].style.left=String(left)+"vw"
         }
     }
 };
