@@ -133,14 +133,20 @@ body{
     margin: auto;
 }
 
+.aboutBands{
+    font-family: Gza;
+    font-size: 8vw;
+}
+
 .aboutText{
     font-family: Gza;
     font-size: 1.5vw;
     position: absolute;
     top: 65vh;
-    left: 15%;
-    width: 100%;
+    left: 10%;
+    width: 80%;
     text-align: justify;
+    hyphens:auto;
 }
 
 .mindmap{
