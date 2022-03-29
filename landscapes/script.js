@@ -80,7 +80,8 @@ function init() {
 
     // nav sphere
     navsph[0] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
-
+    scene.add(navsph[0]);
+    navsph[0].position.set(-30,-5,50);
 
     const glloader = new GLTFLoader();
     glloader.load("hv/ayahuasca.glb", function ( gltf ) {
@@ -506,32 +507,29 @@ function onPointerDown( event ) {
 
         for(let i=0; i<navsph.length; i++){
             if(raycaster.intersectObject(navsph[i]).length==1){
-                document.getElementById("about_panel").style.display="inline";
                 document.getElementById("about_headline").innerHTML=about[i].title;
                 document.getElementById("about_authors").innerHTML=about[i].authors;
                 document.getElementById("about_image").src=about[i].image;
                 document.getElementById("about_content").innerHTML=about[i].content;
-
+                document.getElementById("about_panel").style.display="inline";
                 return;
             }
         }
 
         for(let i=0; i<sb_sph.length; i++){
             if(raycaster.intersectObject(sb_sph[i]).length==1){
-                document.getElementById("sb_panel").style.display="inline";
                 document.getElementById("sb_headline").innerHTML=sb_content[i].title;
                 document.getElementById("sb_content").innerHTML=sb_content[i].content;
-
+                document.getElementById("sb_panel").style.display="inline";
                 return;
             }
         }
 
         for(let i=0; i<sr_sph.length; i++){
             if(raycaster.intersectObject(sr_sph[i]).length==1){
-                document.getElementById("sr_panel").style.display="inline";
                 document.getElementById("sr_headline").innerHTML=sr_content[i].title;
                 document.getElementById("sr_content").innerHTML=sr_content[i].content;
-
+                document.getElementById("sr_panel").style.display="inline";
                 return;
             }
         }
