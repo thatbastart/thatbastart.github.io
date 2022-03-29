@@ -32,11 +32,13 @@ window.image_preloader=image_preloader;
 
 // spheres
 let navsph=[];
-const about_sphGeo = new THREE.SphereGeometry( 3, 32, 32 ); // sphere radius and subdivs
+const about_sphGeo = new THREE.SphereGeometry(2, 32, 32 ); // sphere radius and subdivs
 const content_sphGeo = new THREE.SphereGeometry( 0.6, 16, 16 );
 
 // vj
 let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[], vj_treepoints_hover=-1;
+// lp
+let lp_pointcloud;
 // sb
 let sb_pointcloud, sb_sph=[];
 // sr
@@ -84,13 +86,14 @@ function init() {
     glloader.load("hv/ayahuasca.glb", function ( gltf ) {
             let vine=gltf.scene.children[0]
             scene.add( vine );
-            vine.position.set(80,-5,80);
+            vine.position.set(-30,-5,40);
             let texture = new THREE.TextureLoader().load("hv/vine.png");
             texture.wrapS=THREE.RepeatWrapping;
             texture.wrapT=THREE.RepeatWrapping;
             texture.repeat.set(0.5,0.5);
             let vineMaterial = new THREE.MeshBasicMaterial( { map: texture, transparent: true} );
             vine.material=vineMaterial;
+            vine.scale.set(0.6,0.6,0.6);
     
         }
     );
@@ -100,6 +103,24 @@ function init() {
     // nav sphere
     navsph[1] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
 
+    // pointcloud
+    const lp_loader = new PCDLoader();
+    lp_loader.load( "./lp/pointcloud.pcd", function (points) { // callback function when pcd is loaded
+        document.getElementById("loadScrn").style.display="none"; // hide loading screen
+        points.geometry.center();
+        points.material.size=1.2; // square size
+        points.scale.set(4.5,4.5,4.5);
+        points.updateMatrix();
+        points.geometry.applyMatrix4(points.matrix);
+        points.geometry.applyMatrix4(points.matrixWorld);
+        points.scale.set(1,1,1);
+        lp_pointcloud=points;
+        lp_pointcloud.position.set(30,-3,30);
+        scene.add(lp_pointcloud);
+        lp_pointcloud.add(navsph[1]);
+        navsph[1].position.set(0,-2,17);
+        
+    } );
 
     // ------------- SABRINA -------------
 
@@ -111,7 +132,7 @@ function init() {
     sb_loader.load( "./sb/pointcloud.pcd", function (points) { // callback function when pcd is loaded
         document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
-        points.material.size=1.0; // square size
+        points.material.size=1.2; // square size
         points.scale.set(0.7,0.7,0.7);
         points.position.set(0,-1,50);
         points.updateMatrix();
@@ -119,6 +140,7 @@ function init() {
         points.geometry.applyMatrix4(points.matrixWorld);
         points.scale.set(1,1,1);
         sb_pointcloud=points;
+        sb_pointcloud.position.set(0,0,20);
         scene.add(sb_pointcloud);
         sb_pointcloud.add(navsph[2]);
         navsph[2].position.set(0,0,0);
@@ -134,24 +156,6 @@ function init() {
 
     // ------------- SARA -------------
 
-    /*
-
-        Colonial Period - The ecological imperialism
-
-        Plants
-        Potatoes
-        Tobacco
-
-        Turkey
-
-        Since the XX Century - New determining factors
-
-        Exotic Invasive Species
-        Mink
-        American Red Crab
-
-    */
-
     // nav sphere
     navsph[3] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
 
@@ -160,19 +164,20 @@ function init() {
     sr_loader.load( "./sr/pointcloud.pcd", function (points) { // callback function when pcd is loaded
         document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
-        points.material.size=1.0; // square size
-        points.scale.set(1.5,1.5,1.5);
+        points.material.size=1.2; // square size
+        points.scale.set(1.8,1.8,1.8);
         points.position.set(-10,5,45);
         points.rotation.order="YXZ"; //switch order for rotation follow
-        points.rotation.set(0,THREE.Math.degToRad(-50),0);
+        points.rotation.set(0,THREE.Math.degToRad(-80),0);
         points.updateMatrix();
         points.geometry.applyMatrix4(points.matrix);
         points.geometry.applyMatrix4(points.matrixWorld);
         points.scale.set(1,1,1);
+        points.position.set(0,8,0);
         sr_pointcloud=points;
         scene.add(sr_pointcloud);
         sr_pointcloud.add(navsph[3]);
-        navsph[3].position.set(-30,0,40);
+        navsph[3].position.set(-35,-10,40);
 
         for(let i=0; i<sr_content.length; i++){
             sr_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
@@ -194,8 +199,8 @@ function init() {
     vj_loader.load( "./vj/pointcloud.pcd", function (points) { // callback function when pcd is loaded
         document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
-        points.material.size=1.0; // square size
-        points.scale.set(0.8,0.8,0.8);
+        points.material.size=0.6; // square size
+        points.scale.set(0.48,0.48,0.48);
         points.updateMatrix();
         points.geometry.applyMatrix4(points.matrix);
         points.geometry.applyMatrix4(points.matrixWorld);
@@ -204,7 +209,7 @@ function init() {
         scene.add(vj_pointcloud);
         vj_pointcloud.add(vj_tree);
         vj_pointcloud.add(navsph[4]);
-        navsph[4].position.set(25,-10,8)
+        navsph[4].position.set(15,-5,0)
     } );
 
     class vj_treepoint{
@@ -386,7 +391,8 @@ function init() {
     vj_tree_tex[1] = new THREE.TextureLoader().load("vj/tree_highlight.png");
     let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true, side: THREE.DoubleSide } );
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
-    vj_tree.position.set(0,25,0);
+    vj_tree.scale.set(0.5,0.5,0.5);
+    vj_tree.position.set(0,11,0);
     vj_tree.rotation.order="YXZ"; //switch order for rotation follow
 
 

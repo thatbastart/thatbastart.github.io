@@ -78,37 +78,37 @@ let sb_content=[
 
 let sr_content=[
     {
-        x:-30,
+        x:-25,
         y:15,
-        z:35,
+        z:20,
         title:"Colonial Period - The ecological imperialism",
         content:"<img src='sr/sara_8.png' style='width:100%;height:auto'><span class='italic'>The epidemics that reached America</span><br><br><br>To talk about the movement of species in this period, we must mention the Columbian Exchange. This term was first used by Alfred W. Cosby in his book The Columbian Exchange: Biological and Cultural Consequences (1972). The Columbian Exchange is the process lf biological unification between different continents that occured since the first arrival of Columbus (1492). Then, humans started playing the role that geology and climate used to perform. We could say that, gradually, the biosphere started returning to the Pangea, reversing the separation caused by the continental drift. This exchange didn’t just occur in the trading context, but unintentionally, as in the case of several diseases (flu, measles...) that travelled unilaterally from Europe and Asia to the so called “New World”. Albert W. Cosby divided the procces of the Coumbian Exchange in three sections: plants, animals and diseases, but it wasn’t just about that. The different continents exchanged knowledge, culture and habits. Maybe it’s wrong to call it exchange, considering that the way it happened was deeply unequal, having disastrous consequences for the indigenous communities that still linger nowadays. That’s why it would be more accurate to talk about ecological imperialism.<br><br>"
     },
     {
         x:-23,
         y:10,
-        z:45,
+        z:35,
         title:"Plants",
         content:"<img src='sr/sara_10.png' style='width:100%;height:auto'><span class='italic'>The first aclimatation garden in Paris, opened in 1860</span><br><br><br>Since the beginning, the plant species were esentially moved with purposes related to nutrition, so the most of them were Domesticated farmable species. However, some plants (such as the tobacco) were moved with another intention. After the XVIII century, the ornamental use of plants became more common among the wealthier countries (the correlation between the wealth of a country and the arrival of exotic species is a fact). Initially, this ornamental use was focused in the acclimitization gardens. Those institutions were intended to introduce “exotic” species from America in Europe for the pleasure of visitors. This historic episode of Europe is specially cruel because, sometimes, the exhibition also included human beings from the colonized communities. Those people were obliged to lived in a forced situation in a reconstructed enviroment.<br><br>"
     },
     {
-        x:-20,
+        x:-25,
         y:-8,
-        z:42,
+        z:35,
         title:"Potatoes",
         content:"<img src='sr/sara_9.png' style='width:100%;height:auto'><br>The potatoe was first farmed in Peru and Bolivia, and arrived to Germany in 1647. However, due to it’s rapid growth and simple cultivation methods, it was considered a pagan food. That’s why, in the beginning, the potatoe was only used to decorate elegant gardens. But Friedrich II the Great had to introduce it in the normal diet to fight the famines ravaging his empire, whose capital was Potsdam. His marketing campaign was curious but very effective. He started including the potatoe in the royal court dishes, and releasing the edicts of the potatoe, in which he demanded the high society to show how the potatoe was a pleasant food. If it was suitable for the high class, it had to be the same for peasants. He also had the support of the religion, with priests named “tuber preachers”, in charge of spreading all knowledge related to the farming and culinary uses of potatoes. Lastly, he decided to plant it in his personal gardens, establishing strong security to guard it. But nevertheless, he spoke to the guardians to let the people steal the potato without consequences. “If it’s well protected, it must be worth it”, it’s a logical argument, and the people thought the same. With this reverse psychology he achieved the potatoe to be a key food in the feeding of the people, and to make more land dedicated to it’s cultive, fighting effectively the famines. Nowadays it still is very important, being part of the typical German dishes. This part of his reign gained him the nickname of “potatoe king”, and that his grave always has potatoes in his honor.<br><br><img src='sr/sara_2.png' style='width:100%;height:auto'><span class='italic'>Solanum Tuberosum</span><br><br>"
     },
     {
-        x:-18,
+        x:-15,
         y:4,
-        z:44,
+        z:42,
         title:"Tobacco",
         content:"<img src='sr/sara_3.png' style='width:100%;height:auto'><span class='italic'>Moderate tobacco cultivation areas in Brandenburg nowadays</span><br><br><br>The tobacco has it’s origins in the Andes, and arrived to Germany in 1565, where it was called “Heiliges Kraut” (holy grass). It was inhaled, following the trend of England. It was first farmed in Rhineland-Palatinate, where the tradition of the tobacco cultivation lingers nowadays. During the War of the Thirty Years, the soldiers brought tobacco to the High Rin, and the first tobacco factories were initially located around Basel. In 1900 there were around 300 tobacco factories in the High Rin. Another regions that also standed out for the tobacco cultivation were Baden-Würtemberg, Bavaria and Brandenburg. Like other European countries, Germany farmed tobacco because of the import restriction and the strong increase of the demand, all together with the law that obliged to add a percentage of the national product (German tobacco was always for local consumption). Nevertheless, the percentage of cultivated tobacco in the country was still pretty low, because the big factories mainly used tobacco that came from the United States, Cuba or Brasil. In Uckermark (Brandenburg), the French Huguenots introduced the tobacco 400 years ago. There are still farms that cultivate it, but it’s an endangered industry.<br><br><img src='sr/sara_4.png' style='width:100%;height:auto'><span class='italic'>Nicotiana Tabacum</span><br><br>"
     },
     {
         x:-5,
-        y:-10,
-        z:30,
+        y:-15,
+        z:40,
         title:"Turkey",
         content:"<img src='sr/sara_5.png' style='width:100%;height:auto'><br>The turkey was domesticated by the Aztecs in Mexico, where it had a close relationship with humans. Besides, the turkey had great relevance in the symbolic and religious aspects of the Nahuas. The cosmogonies of the ancient Mexico describe them as human beings transformed by a fire deluge. Maybe the connection between the fire and the turkey appears because, according to The legend of the five suns*, it was the only available bird in the drought periods. But the cultural value of the turkey wasn’t only spiritual: it was also an important part of the diet of several indigenous communities.<br><br>The colonists described the turkey as a “ground hen” because of it’s resemblance with the Spanish hens. The Evangelical Friars (who spread Christianity in America) quickly banned the consumption of dog meat. However, the turkeys had great gastronomic success due to their delicious taste and high fat content. It was one of the first species that Columbus presented to the Catholic Kings, and it soon became a popular dish between the Spanish nobility. An example of this is the way Carlos I had them served at the banquet celebrating his coronation in 1530. That’s how gradually the turkey became a common meal for special occasions, not only in USA but also in Germany, where the Thanksgiving (Erntedankfest) is celebrated as a religious and rural tradition.<br><br>Like in the rest of Europe, in Germany there are no wild populations of turkeys. There are only domesticated animals for gastronomic intentions. Even the domestic populations in Germany didn’t have much historical success. For example, the populations in Austria collapsed when they stopped being maintaned due to the WWII. In the XX century there were eleven attempts to settle turkeys in Germany, all of which failed.<br><br>*The Aztec myth describes how the earth and all living things were created and the role played by the gods. Each sun corresponds to a period in which a deity ruled.<br><br><img src='sr/sara_6.png' style='width:100%;height:auto'><span class='italic'>Meleagris gallopavo</span><br><br>"
     },
@@ -121,22 +121,22 @@ let sr_content=[
     },
     {
         x:-10,
-        y:-10,
+        y:-13,
         z:55,
         title:"Exotic Invasive Species",
         content:"<img src='sr/sara_12.png' style='width:100%;height:auto'><span class='italic'>Nasua nasua</span><br><br><br>An invasive species is intentionally or uninentionally introduced into a new habitat, becomes established, and threatens native biodiversity and ecosystems. The expansion of invasive species has worsened because of climate change. The economical impact of such species is huge: in Europe, the cost of fighting and reparing the damages they cause is estimated around 12 billion dollars, besides affecting diverse primary sectors (like the fishing). The threat of these species is also genetic, because they sometimes hybridize with the local ones, giving place to new species that keep altering the habitat- The effects of a biological invasion can affect even human health, creating new allergies or are even toxic (like the giant parsley, for example). The main reason for their arrival is the trade of “exotic” species, a felony that moves around 20 billion dollars every year (even being legal in some countries). The pet release, tourism or fur industry are also responsible, among others.<br><br>"
     },
     {
         x:0,
-        y:-8,
-        z:50,
+        y:-12,
+        z:55,
         title:"Mink",
         content:"<img src='sr/sara_13.png' style='width:100%;height:auto'><br>The american mink is a small predator cataloged as invasive in Europe. It’s indeed a threat for biodiversity due to it’s successful hunting, that puts a strong pressure on many species of fish, amphibians or small mammals. The damage the mink has caused in Germany is huge, insomuch as the cost to repair is estimated around 4.200.000€. The mink has a great colonization capacity, however the cause of it’s presence in Europe is the fur industry. For it’s lustrous and beautiful fur, the mink is the specie most used for the production of clothing (coats, for example). They spread in the 20th century, when the first fur companies were established and many mink disappeared from farms for lack of safety. Due to its adaptability, now they are very common in the country. Nevertheless, the European mink is extinct. And the reason is not his American namesake, but the hunt for his fur. People usually talk about how harmful these animals are to the enviroment and biodiversity, but not about the industry that brought them to Europe in the first place, and which is particularly cruel. In order to make their hair more showy the specie was even genetically modified, creating blue or silver specimens. Fortunately, in Germany the mink farms are about to disappear (many importan tones closed between 2017 and 2018), so the country is getting closer to the state objective of animal protection.<br><br><img src='sr/sara_14.png' style='width:100%;height:auto'><span class='italic'>Neovison vison</span><br><br>"
     },
     {
         x:5,
-        y:-8,
-        z:45,
+        y:-12,
+        z:48,
         title:"American Red Crab",
         content:"<img src='sr/sara_15.png' style='width:100%;height:auto'><br>The American red crab originated in the north of Mexico. These crustaceans aren’t demanding: like other invasive species, they eat almost everything they can find. Worms, fish, snails or non adult amphibians, the species family most affected by extinction. The red crab has a high and quick reproduction rate, and also is carrier of a fungal disease (aphanomyces astaci) which doesn’t affect them but causes great damage to the local crabs. This way, in the waters where this crab has been introduced, the native species will unavoidably become extinct. The red crab also damages the soil and crops (specially rice) because it is a great digger.<br><br>This crustace has relevance in the gastronomic industry and that’s the reason why it has been raised in several parts of the world, escaping from the aquariums. Because of it’s shiny color, it’s also popular as a pet, and probably some specimens were released by their owners when they got tired of them. In Europe it has been first seen in the south of the Iberian Peninsula, but now it’s pretty common in Germany, and they are reaching the north of Europe. The summer of 2017 was pretty damp in Berlin, so some parts were flooded, causing several unexpected effects. One of them was how numerous red crabs wandered in the streets in the area of Tiergarten: they were looking for a new habitat. Although the Berlin authorities reduced them successfully, unfortunately specimens are already in the Havel river (Brandenburg).<br><br><img src='sr/sara_16.png' style='width:100%;height:auto'><span class='italic'>Procambarus clarkii</span><br><br>"
     }
