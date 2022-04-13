@@ -1,3 +1,5 @@
+let bands;
+let anim=[];
 window.onload=function(){
     if(document.getElementsByClassName("main").length!=0){
         document.getElementsByClassName("main")[0].style.backgroundPositionX=String(Math.random()*100)+"%";
@@ -21,17 +23,12 @@ window.onload=function(){
         }
         
 
-        let bands=document.getElementsByClassName("bandImg");
+        bands=document.getElementsByClassName("bandImg");
         let bandnames=document.getElementsByClassName("bandname");
         for(let i=0;i<bands.length;i++){
-            let top=Math.random()*55;
-            let left=Math.random()*70;
             let width=10+Math.random()*15;
-            bands[i].style.top=String(top)+"vh";
-            bands[i].style.left=String(left)+"vw";
             bands[i].style.width=String(width)+"vw";
-            bandnames[i].style.top=String(top)+"vh"
-            bandnames[i].style.left=String(left)+"vw"
+            anim.push([Math.random()*200,Math.random()*200]);
         }
     }
 };
