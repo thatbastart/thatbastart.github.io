@@ -28,7 +28,9 @@ window.onload=function(){
         for(let i=0;i<bands.length;i++){
             let width=10+Math.random()*15;
             bands[i].style.width=String(width)+"vw";
-            anim.push([Math.random()*200,Math.random()*200]);
+            bands[i].style.top="0px";
+            bands[i].style.left="0px";
+            anim.push([Math.random()*1000,Math.random()*1000,1,0]);
         }
     }
 };
