@@ -1,4 +1,4 @@
-let bands;
+let bands,bandnames;
 let anim=[];
 window.onload=function(){
     if(document.getElementsByClassName("main").length!=0){
@@ -24,12 +24,12 @@ window.onload=function(){
         
 
         bands=document.getElementsByClassName("bandImg");
-        let bandnames=document.getElementsByClassName("bandname");
+        bandnames=document.getElementsByClassName("bandname");
         for(let i=0;i<bands.length;i++){
             let width=10+Math.random()*15;
             bands[i].style.width=String(width)+"vw";
-            bands[i].style.top="0px";
-            bands[i].style.left="0px";
+            bands[i].style.top="50vh";
+            bands[i].style.left="50vw";
             anim.push([Math.random()*1000,Math.random()*1000,1,0]);
         }
     }
@@ -52,7 +52,17 @@ function startSC(){
 
 
 
-
+function bandHover(obj, state){
+  if(state==0){ //mouseover
+    obj.attributes.hover.value='1';
+    obj.style.zIndex='2';
+    obj.children[0].style.display="flex";
+  } else {  //mouseout
+    obj.attributes.hover.value='0';
+    obj.style.zIndex='1';
+    obj.children[0].style.display="none";
+  }
+}
 
 
 

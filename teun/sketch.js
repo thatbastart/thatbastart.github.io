@@ -1,5 +1,6 @@
 let hover=-1;
 let hovered=0;
+
 function setup() {
     noiseDetail(1, 0.2);
     frameRate(30);

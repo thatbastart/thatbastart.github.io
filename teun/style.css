@@ -184,7 +184,9 @@ body{
     left: 0;
     top: 0;
     font-family: Gza;
-    font-size: 3vw;
+    font-size: 2vw;
+    width:15vw;
+    height:auto;
     color: #ca95ca;
     display:none;
     pointer-events:none;
