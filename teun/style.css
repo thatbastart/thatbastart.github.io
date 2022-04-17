@@ -92,6 +92,20 @@ body{
     background-size: cover; 
 }
 
+.drums{
+    width:10vw;
+    aspect-ratio: 1/1;
+    position:fixed;
+    right:0;
+    bottom:0;
+    background-image:url("images/drum1.gif");
+    background-position: center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    cursor:url('images/cursor_hov.png'), auto;
+    z-index:100;
+}
+
 .bookings{
     background-image: url("images/bookings.png"); 
     background-size: cover; 
