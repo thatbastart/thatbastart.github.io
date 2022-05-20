@@ -234,63 +234,63 @@ let lp_content=[
         y:-5,
         z:0,
         title:"How do we interact with landscapes?",
-        content:"During one of the first exercises in class, where we should work with satellite images, we realized that the main way to interact with landscapes in South America is in digital space. Most interesting here was the interaction of zooming and scrolling while navigate through landscapes and to get different perspectives on it.<br><br>This led us to the question: Wouldn't it be interesting to have new or alternative ways of interacting with landscapes?"
+        content:"During one of the first exercises in class, where we should work with satellite images, we realized that the main way to interact with landscapes in South America is in digital space. Most interesting here was the interaction of zooming and scrolling while navigate through landscapes and to get different perspectives on it.<br><br>This led us to the question: Wouldn't it be interesting to have new or alternative ways of interacting with landscapes?<br><br><br><img src='lp/pics/landscape_interact_1.png' style='width:100%;height:auto;'><img src='lp/pics/landscape_interact_2.png' style='width:100%;height:auto;'>"
     },
     {
         x:-10,
         y:-3,
         z:18,
         title:"How are artificial landscapes created?",
-        content:"We talked a lot about our natural landscapes on earth that change continuously or getting destroyed. So we started thinking about artificial landscapes and how they are created. On our research we found a technique which starts with a single fragment and generates the whole landscape from this point. There we saw an interesting parallel to the texture of soil and landscapes in the physical world.<br><br></br>So we decided to think about how we could create artificial landscapes."
+        content:"We talked a lot about our natural landscapes on earth that change continuously or getting destroyed. So we started thinking about artificial landscapes and how they are created. On our research we found a technique which starts with a single fragment and generates the whole landscape from this point. There we saw an interesting parallel to the texture of soil and landscapes in the physical world.<br><br></br>So we decided to think about how we could create artificial landscapes.<br><br><br><img src='lp/pics/landscape_created_1.jpg' style='width:100%;height:auto;'><img src='lp/pics/landscape_created_2.jpg' style='width:100%;height:auto;'>"
     },
     {
         x:25,
         y:-5,
         z:0,
         title:"How are Brandenburg and South America connected?",
-        content:"The interconnectedness between Berlin-Brandenburg and the Amazon and the Andes was the main topic we discussed in class. In smaller exercises we created actor networks and analyzed things that traveled through the network. For us, it was interesting to see that the internet is in general a main connection, specially for us today. The internet was one of the main source of information about South America during class. We used it to collaborate in team and for every research we did.<br><br></br>Realizing that, we asked us: How could we create new connections between Berlin-Brandenburg and the Amazon and the Andes, by using the internet?"
+        content:"The interconnectedness between Berlin-Brandenburg and the Amazon and the Andes was the main topic we discussed in class. In smaller exercises we created actor networks and analyzed things that traveled through the network. For us, it was interesting to see that the internet is in general a main connection, specially for us today. The internet was one of the main source of information about South America during class. We used it to collaborate in team and for every research we did.<br><br></br>Realizing that, we asked us: How could we create new connections between Berlin-Brandenburg and the Amazon and the Andes, by using the internet?<br><br><br><img src='lp/pics/landscape_connected.jpg' style='width:100%;height:auto;'>"
     },
     {
         x:22,
         y:-3,
         z:10,
         title:"How do we preserve nature?",
-        content:"Our trip to the Botanical Garden in Berlin was a great inspiration for both of us. Specially the look behind the scenes led our group discussion to the preservation of nature in general. Adding to that we took a deeper look at the Wardian Case, which was also developed to protect and preserve plants (nature) during transportation.<br><br>The Wardian Case as a technology initiated the transport of plants over long distances and thus between continents in the 19th century. Since then it created countless connections and led to a global exchange between different geographic regions. Fragments of landscapes in form of plants and soil were transported around the globe and formed new landscapes.<br><br>With all these questions and thoughts in mind about nature preservation, creation of artificial landscapes and new connections, as well as new possible interactions with landscapes we tried to grow a project.<br><br>At the end of the class we came up with a project which combines all of these thoughts and outlines answers to the questions we had during our whole process."
+        content:"Our trip to the Botanical Garden in Berlin was a great inspiration for both of us. Specially the look behind the scenes led our group discussion to the preservation of nature in general. Adding to that we took a deeper look at the Wardian Case, which was also developed to protect and preserve plants (nature) during transportation.<br><br><img src='lp/pics/landscape_preserve_1.jpg' style='width:100%;height:auto;'><br><br>The Wardian Case as a technology initiated the transport of plants over long distances and thus between continents in the 19th century. Since then it created countless connections and led to a global exchange between different geographic regions. Fragments of landscapes in form of plants and soil were transported around the globe and formed new landscapes.<br><br><img src='lp/pics/landscape_preserve_3.jpeg' style='width:100%;height:auto;'><br><br>With all these questions and thoughts in mind about nature preservation, creation of artificial landscapes and new connections, as well as new possible interactions with landscapes we tried to grow a project.<br><br>At the end of the class we came up with a project which combines all of these thoughts and outlines answers to the questions we had during our whole process."
     },
     {
         x:14,
         y:-1,
         z:18,
-        title:"User Journey I",
-        content:""
+        title:"User Journey 1",
+        content:"<img src='lp/pics/UJ-1a.png' style='width:100%;height:auto;'>Device is used for the first time.<br><br><img src='lp/pics/UJ-1b.png' style='width:100%;height:auto;'>User toggles info-panel.<br><br><img src='lp/pics/UJ-1c.png' style='width:100%;height:auto;'>Single user starts to record a sound with the device. Contour lines are starting to draw a height map.<br><br><img src='lp/pics/UJ-1d.png' style='width:100%;height:auto;'>User pauses recording.<br><br><img src='lp/pics/UJ-1e.png' style='width:100%;height:auto;'>User plays back recorded sound."
     },
     {
         x:8,
         y:-3,
         z:10,
-        title:"User Journey II",
-        content:""
+        title:"User Journey 2",
+        content:"<img src='lp/pics/UJ-2a.png' style='width:100%;height:auto;'>Device is used for the first time.<br><br><img src='lp/pics/UJ-2b.png' style='width:100%;height:auto;'>Two users start recording. One is in Rio Urubu (Brazil), the other one in Briesetal (Germany).<br><br><img src='lp/pics/UJ-2c.png' style='width:100%;height:auto;'>The recording proceeds.<br><br><img src='lp/pics/UJ-2d.png' style='width:100%;height:auto;'>The two generated topographies are starting to intersect with each other.<br><br><img src='lp/pics/UJ-2e.png' style='width:100%;height:auto;'>A complex topography is generated by the two inputs."
     },
     {
         x:5,
         y:-4,
         z:0,
-        title:"User Journey III",
-        content:""
+        title:"User Journey 3",
+        content:"<img src='lp/pics/UJ-3a.png' style='width:100%;height:auto;'>The device has been used before.<br><br><img src='lp/pics/UJ-3b.png' style='width:100%;height:auto;'>User starts recording and generates a new landscape."
     },
     {
         x:0,
         y:6,
         z:8,
         title:"How does the device work?",
-        content:"It uses a sound synthesis method called granular synthesis. With this method sound from Brandenburg landscapes and landscapes from Amazonas and Andes are synthesized from which new sounds are created. The recordings are split into small pieces of around 1 to 100 ms in duration. These small pieces are called grains. Multiple grains may be layered on top of each other, and may play at different speeds, phases, volume, and frequency, among other parameters.<br><br></br>We decided to choose the granular synthesis because it's parallel to the granular of soil."
+        content:"<img src='lp/pics/device_works_1.jpg' style='width:100%;height:auto;'>It uses a sound synthesis method called granular synthesis. With this method sound from Brandenburg landscapes and landscapes from Amazonas and Andes are synthesized from which new sounds are created. The recordings are split into small pieces of around 1 to 100 ms in duration. These small pieces are called grains. Multiple grains may be layered on top of each other, and may play at different speeds, phases, volume, and frequency, among other parameters.<br><br></br>We decided to choose the granular synthesis because it's parallel to the granular of soil.<img src='lp/pics/device_works_2.jpg' style='width:100%;height:auto;'>"
     },
     {
         x:-3,
         y:9,
         z:16,
         title:"The Device",
-        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='lp/demo.mp4' type='video/mp4'></video>"
+        content:"<video width='100%' height='auto' controls><source src='lp/demo.mp4' type='video/mp4'></video><img src='lp/pics/Device.png' style='width:100%;height:auto;'>"
     }
 ];
 
