@@ -1,5 +1,11 @@
 let about=[
     {
+        title:"",
+        authors:"",
+        content:"",
+        image:""
+    },
+    {
         title:"Knowledge traveling networks: Ayahuasca – from ancestral to contemporary",
         authors:"Hannah Machajdik & Victor Molina",
         content:"Ayahuasca is a pan-Amazonian psychoactive brew made out of the Banisteriopsis caapi vine (yagé), the Psychotria viridis shrub (chacruna), and possibly other ingredients. It is used both socially and as ceremonial spiritual medicine among some indigenous peoples of the Amazon. When consumed, it can cause an altered state of consciousness, including visual hallucinations and altered perceptions of reality. Ayahuasca ceremonies are getting increasingly popular around Europe and the United States and since some years tourism to South America for the purpose of taking it has grown a lot. Ayahuasca retreats are now getting founded around the world, enabling everyone to take part in the experience, may it be in a traditional or nontraditional way.<br><br>In this project we wanted to look further into the interconnectedness between Europe and South America, focussing on the boundary object, practice or concept of ayahuasca, contemplating how the cultural, social, geographical and economic landscapes around it have changed throughout the years.<br><br>The result is an augmented reality liana, that can grow anywhere in the world, by just scanning a QR-code with your phone. Once it's placed, you can walk around it and find a lot of information, articles about and experiences of ayahuasca in South America but also Europe, collected on little tokens that are placed in different parts of the plant. Additionally there is an interview with a shaman of the amazonian tribe Shuar in Ecuador who guides traditional ayahuasca experiences in his community, talking about his view on the concept of spirituality, spiritual tourism, the economic profit from it and his own path of learning about ayahuasca.<br><br>We invite you to scan the QR-code and explore the liana yourself!<br><br>",
@@ -37,42 +43,42 @@ let sb_content=[
         y:-5,
         z:10,
         title:"51° 59' 42.3\" N<br>13° 58' 39.8\" E",
-        content:"<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-1.jpg' style='width:100%;height:auto;'><img src='sb/Brandenburg/51.99509, 13.97773/Landscape-2.jpg' style='width:100%;height:auto;'><img src='sb/Brandenburg/51.99509, 13.97773/Landscape-3.jpg' style='width:100%;height:auto;'><img src='sb/Brandenburg/51.99509, 13.97773/Landscape-4.jpg' style='width:100%;height:auto;'><img src='sb/Brandenburg/51.99509, 13.97773/Landscape-5.jpg' style='width:100%;height:auto;'><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.99058,13.94403,10.41,latLng&t=1.89&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-1.jpg' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-2.jpg' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-3.jpg' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-4.jpg' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-5.jpg' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.99058,13.94403,10.41,latLng&t=1.89&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
     },
     {
         x:5,
         y:-5,
         z:19,
         title:"5° 08' 14.0\" S<br>50° 22' 24.1\" W",
-        content:"<img src='sb/Brazil/-5.13722, -50.37335/Landscape-1.jpg' style='width:100%;height:auto;'><img src='sb/Brazil/-5.13722, -50.37335/Landscape-2.jpg' style='width:100%;height:auto;'><img src='sb/Brazil/-5.13722, -50.37335/Landscape-3.jpg' style='width:100%;height:auto;'><img src='sb/Brazil/-5.13722, -50.37335/Landscape-4.jpg' style='width:100%;height:auto;'><img src='sb/Brazil/-5.13722, -50.37335/Landscape-5.jpg' style='width:100%;height:auto;'><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-5.13721,-50.37334,10.539,latLng&t=1.37&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brazil/-5.13722, -50.37335/Landscape-1.jpg' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-5.13722, -50.37335/Landscape-2.jpg' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-5.13722, -50.37335/Landscape-3.jpg' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-5.13722, -50.37335/Landscape-4.jpg' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-5.13722, -50.37335/Landscape-5.jpg' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-5.13721,-50.37334,10.539,latLng&t=1.37&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
     },
     {
         x:2,
         y:-3,
         z:26,
         title:"51° 46' 33.4\" N<br>13° 28' 36.1\" E",
-        content:"<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-1.jpg' style='width:100%;height:auto;'><img src='sb/Brandenburg/51.77595, 13.47670/Landscape-2.jpg' style='width:100%;height:auto;'><img src='sb/Brandenburg/51.77595, 13.47670/Landscape-3.jpg' style='width:100%;height:auto;'><img src='sb/Brandenburg/51.77595, 13.47670/Landscape-4.jpg' style='width:100%;height:auto;'><img src='sb/Brandenburg/51.77595, 13.47670/Landscape-5.jpg' style='width:100%;height:auto;'><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.78327,13.39664,10.232,latLng&t=1.91&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-1.jpg' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-2.jpg' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-3.jpg' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-4.jpg' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-5.jpg' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.78327,13.39664,10.232,latLng&t=1.91&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
     },
     {
         x:2,
         y:-3.5,
         z:38,
         title:"12° 06' 09.9\" S<br>56° 02' 39.6\" W",
-        content:"<img src='sb/Brazil/-12.10274, -56.04432/Landscape-1.jpg' style='width:100%;height:auto;'><img src='sb/Brazil/-12.10274, -56.04432/Landscape-2.jpg' style='width:100%;height:auto;'><img src='sb/Brazil/-12.10274, -56.04432/Landscape-3.jpg' style='width:100%;height:auto;'><img src='sb/Brazil/-12.10274, -56.04432/Landscape-4.jpg' style='width:100%;height:auto;'><img src='sb/Brazil/-12.10274, -56.04432/Landscape-5.jpg' style='width:100%;height:auto;'><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-12.10305,-56.04314,10.472,latLng&t=3.35&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brazil/-12.10274, -56.04432/Landscape-1.jpg' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-12.10274, -56.04432/Landscape-2.jpg' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-12.10274, -56.04432/Landscape-3.jpg' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-12.10274, -56.04432/Landscape-4.jpg' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-12.10274, -56.04432/Landscape-5.jpg' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-12.10305,-56.04314,10.472,latLng&t=3.35&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
     },
     {
         x:-3,
         y:-4,
         z:52,
         title:"51° 38' 56.3\" N<br>13° 25' 10.5\" E",
-        content:"<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-1.jpg' style='width:100%;height:auto;'><img src='sb/Brandenburg/51.64898, 13.41957/Landscape-2.jpg' style='width:100%;height:auto;'><img src='sb/Brandenburg/51.64898, 13.41957/Landscape-3.jpg' style='width:100%;height:auto;'><img src='sb/Brandenburg/51.64898, 13.41957/Landscape-4.jpg' style='width:100%;height:auto;'><img src='sb/Brandenburg/51.64898, 13.41957/Landscape-5.jpg' style='width:100%;height:auto;'><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.62974,13.40538,10.614,latLng&t=3.22&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-1.jpg' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-2.jpg' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-3.jpg' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-4.jpg' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-5.jpg' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.62974,13.40538,10.614,latLng&t=3.22&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
     },
     {
         x:3,
         y:-4,
         z:64,
         title:"6° 31' 30.4\" S<br>52° 11' 56.7\" W",
-        content:"<img src='sb/Brazil/-6.52512, -52.19908/Landscape-1.jpg' style='width:100%;height:auto;'><img src='sb/Brazil/-6.52512, -52.19908/Landscape-2.jpg' style='width:100%;height:auto;'><img src='sb/Brazil/-6.52512, -52.19908/Landscape-3.jpg' style='width:100%;height:auto;'><img src='sb/Brazil/-6.52512, -52.19908/Landscape-4.jpg' style='width:100%;height:auto;'><img src='sb/Brazil/-6.52512, -52.19908/Landscape-5.jpg' style='width:100%;height:auto;'><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-6.52388,-52.20032,10.504,latLng&t=2&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brazil/-6.52512, -52.19908/Landscape-1.jpg' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-6.52512, -52.19908/Landscape-2.jpg' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-6.52512, -52.19908/Landscape-3.jpg' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-6.52512, -52.19908/Landscape-4.jpg' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-6.52512, -52.19908/Landscape-5.jpg' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-6.52388,-52.20032,10.504,latLng&t=2&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
     }
 ];
 
@@ -139,6 +145,152 @@ let sr_content=[
         z:48,
         title:"American Red Crab",
         content:"<img src='sr/sara_15.png' style='width:100%;height:auto'><br>The American red crab originated in the north of Mexico. These crustaceans aren’t demanding: like other invasive species, they eat almost everything they can find. Worms, fish, snails or non adult amphibians, the species family most affected by extinction. The red crab has a high and quick reproduction rate, and also is carrier of a fungal disease (aphanomyces astaci) which doesn’t affect them but causes great damage to the local crabs. This way, in the waters where this crab has been introduced, the native species will unavoidably become extinct. The red crab also damages the soil and crops (specially rice) because it is a great digger.<br><br>This crustace has relevance in the gastronomic industry and that’s the reason why it has been raised in several parts of the world, escaping from the aquariums. Because of it’s shiny color, it’s also popular as a pet, and probably some specimens were released by their owners when they got tired of them. In Europe it has been first seen in the south of the Iberian Peninsula, but now it’s pretty common in Germany, and they are reaching the north of Europe. The summer of 2017 was pretty damp in Berlin, so some parts were flooded, causing several unexpected effects. One of them was how numerous red crabs wandered in the streets in the area of Tiergarten: they were looking for a new habitat. Although the Berlin authorities reduced them successfully, unfortunately specimens are already in the Havel river (Brandenburg).<br><br><img src='sr/sara_16.png' style='width:100%;height:auto'><span class='italic'>Procambarus clarkii</span><br><br>"
+    }
+];
+
+let hv_content=[
+    {
+        x:-10,
+        y:-3,
+        z:-5,
+        title:"Economic Environment",
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/Economic Environment.mp4' type='video/mp4'></video>"
+    },
+    {
+        x:-30,
+        y:37,
+        z:20,
+        title:"How did you get the knowledge about ayahuasca?",
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/How did you get the knowledge about ayahuasca.mp4' type='video/mp4'></video>"
+    },
+    {
+        x:-21,
+        y:7,
+        z:18,
+        title:"How does this manifest itself over the years?",
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/How does this manifest itself over the years.mp4' type='video/mp4'></video>"
+    },
+    {
+        x:-26,
+        y:29,
+        z:24,
+        title:"How would you define the concept of spirituality?",
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/How would you define the concept of spirituality.mp4' type='video/mp4'></video>"
+    },
+    {
+        x:0,
+        y:-5,
+        z:0,
+        title:"Prosperity, economics, money and politics",
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/Prosperity, economics, money and politics.mp4' type='video/mp4'></video>"
+    },
+    {
+        x:0,
+        y:4,
+        z:20,
+        title:"Relationship between South America and Europe",
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/Relationship between South America and Europe.mp4' type='video/mp4'></video>"
+    },
+    {
+        x:-20,
+        y:-2,
+        z:5,
+        title:"Spiritual path, how can it be defined?",
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/Spiritual path, how can it be defined.mp4' type='video/mp4'></video>"
+    },
+    {
+        x:-18,
+        y:15,
+        z:18,
+        title:"What about spiritual trade?",
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/What about spiritual trade.mp4' type='video/mp4'></video>"
+    },
+    {
+        x:-20,
+        y:23,
+        z:20,
+        title:"What is your opinion about spiritual tourism?",
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/What is your opinion about spiritual tourism.mp4' type='video/mp4'></video>"
+    },
+    {
+        x:-38,
+        y:25,
+        z:17.5,
+        title:"What would be an alternative concept?",
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/What would be an alternative concept.mp4' type='video/mp4'></video>"
+    },
+    {
+        x:-20,
+        y:-1,
+        z:25,
+        title:"Who and Where are you from?",
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/Who and Where are you from.mp4' type='video/mp4'></video>"
+    }
+];
+
+let lp_content=[
+    {
+        x:15,
+        y:-5,
+        z:0,
+        title:"How do we interact with landscapes?",
+        content:"During one of the first exercises in class, where we should work with satellite images, we realized that the main way to interact with landscapes in South America is in digital space. Most interesting here was the interaction of zooming and scrolling while navigate through landscapes and to get different perspectives on it.<br><br>This led us to the question: Wouldn't it be interesting to have new or alternative ways of interacting with landscapes?"
+    },
+    {
+        x:-10,
+        y:-3,
+        z:18,
+        title:"How are artificial landscapes created?",
+        content:"We talked a lot about our natural landscapes on earth that change continuously or getting destroyed. So we started thinking about artificial landscapes and how they are created. On our research we found a technique which starts with a single fragment and generates the whole landscape from this point. There we saw an interesting parallel to the texture of soil and landscapes in the physical world.<br><br></br>So we decided to think about how we could create artificial landscapes."
+    },
+    {
+        x:25,
+        y:-5,
+        z:0,
+        title:"How are Brandenburg and South America connected?",
+        content:"The interconnectedness between Berlin-Brandenburg and the Amazon and the Andes was the main topic we discussed in class. In smaller exercises we created actor networks and analyzed things that traveled through the network. For us, it was interesting to see that the internet is in general a main connection, specially for us today. The internet was one of the main source of information about South America during class. We used it to collaborate in team and for every research we did.<br><br></br>Realizing that, we asked us: How could we create new connections between Berlin-Brandenburg and the Amazon and the Andes, by using the internet?"
+    },
+    {
+        x:22,
+        y:-3,
+        z:10,
+        title:"How do we preserve nature?",
+        content:"Our trip to the Botanical Garden in Berlin was a great inspiration for both of us. Specially the look behind the scenes led our group discussion to the preservation of nature in general. Adding to that we took a deeper look at the Wardian Case, which was also developed to protect and preserve plants (nature) during transportation.<br><br>The Wardian Case as a technology initiated the transport of plants over long distances and thus between continents in the 19th century. Since then it created countless connections and led to a global exchange between different geographic regions. Fragments of landscapes in form of plants and soil were transported around the globe and formed new landscapes.<br><br>With all these questions and thoughts in mind about nature preservation, creation of artificial landscapes and new connections, as well as new possible interactions with landscapes we tried to grow a project.<br><br>At the end of the class we came up with a project which combines all of these thoughts and outlines answers to the questions we had during our whole process."
+    },
+    {
+        x:14,
+        y:-1,
+        z:18,
+        title:"User Journey I",
+        content:""
+    },
+    {
+        x:8,
+        y:-3,
+        z:10,
+        title:"User Journey II",
+        content:""
+    },
+    {
+        x:5,
+        y:-4,
+        z:0,
+        title:"User Journey III",
+        content:""
+    },
+    {
+        x:0,
+        y:6,
+        z:8,
+        title:"How does the device work?",
+        content:"It uses a sound synthesis method called granular synthesis. With this method sound from Brandenburg landscapes and landscapes from Amazonas and Andes are synthesized from which new sounds are created. The recordings are split into small pieces of around 1 to 100 ms in duration. These small pieces are called grains. Multiple grains may be layered on top of each other, and may play at different speeds, phases, volume, and frequency, among other parameters.<br><br></br>We decided to choose the granular synthesis because it's parallel to the granular of soil."
+    },
+    {
+        x:-3,
+        y:9,
+        z:16,
+        title:"The Device",
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='lp/demo.mp4' type='video/mp4'></video>"
     }
 ];
 

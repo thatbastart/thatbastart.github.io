@@ -23,11 +23,11 @@
         <!-- navigation -->
         <div class="navWrap"> 
             <span id="navRelation" class="nav" onClick="setAnim(0);"><div id="circleRelation" class="navCircle"></div>Relation</span><br><br>
-            <span id="navExchange" class="nav" onClick="setAnim(1);"><div id="circleExchange" class="navCircle"></div>Exchange</span><br><br>
-            <span id="navPerspective" class="nav" onClick="setAnim(2);"><div id="circlePerspective" class="navCircle"></div>Perspective</span><br><br>
+            <span id="navExchange" class="nav" onClick="setAnim(2);"><div id="circleExchange" class="navCircle"></div>Exchange</span><br><br>
+            <span id="navPerspective" class="nav" onClick="setAnim(5);"><div id="circlePerspective" class="navCircle"></div>Perspective</span><br><br>
             <span id="navFragility" class="nav" onClick="setAnim(3);"><div id="circleFragility" class="navCircle"></div>Fragility</span><br><br>
-            <span id="navKnowledge" class="nav" onClick="setAnim(4);"><div id="circleKnowledge" class="navCircle"></div>Knowledge</span><br><br>
-            <span id="navMovement" class="nav" onClick="setAnim(5);"><div id="circleMovement" class="navCircle"></div>Movement</span><br><br>
+            <span id="navKnowledge" class="nav" onClick="setAnim(1);"><div id="circleKnowledge" class="navCircle"></div>Knowledge</span><br><br>
+            <span id="navMovement" class="nav" onClick="setAnim(4);"><div id="circleMovement" class="navCircle"></div>Movement</span><br><br>
         </div>
 
         <!-- title -->
@@ -41,6 +41,20 @@
             <div id="about_authors" class="cont text" style="text-align: center;"></div>
             <img id="about_image" src="" style="width: 100%; height:auto;" class="cont">
             <div id="about_content" class="cont text"></div>
+        </div>
+
+        <!-- hannah+victor -->
+        <div id="hv_panel" class="panel panelsb scroll" style="display:none;">
+            <div id="hv_headline" class="headline"></div>
+            <span class="panelClose" onclick="document.getElementById('hv_panel').style.display='none';">x</span>
+            <div id="hv_content" class="cont text"></div>
+        </div>
+
+        <!-- lukas+peter -->
+        <div id="lp_panel" class="panel panelsb scroll" style="display:none;">
+            <div id="lp_headline" class="headline"></div>
+            <span class="panelClose" onclick="document.getElementById('lp_panel').style.display='none';">x</span>
+            <div id="lp_content" class="cont text"></div>
         </div>
 
         <!-- sabrina -->

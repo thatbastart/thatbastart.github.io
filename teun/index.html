@@ -9,6 +9,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
         <script src="sketch.js"></script>
         <script src="script.js"></script>
+        <link rel="icon" href="images/favicon.gif" type="image/gif" />
 	</head>
 
 	<body>
@@ -52,10 +53,13 @@
         <!-- navigation -->
         <div class="nav" onclick="toggleNav();"></div>
         <div id="navExp" class="navExp">
-            <div style="background-image: url('images/symbol_1.png');background-size:contain; background-position: center; background-repeat:no-repeat;height:10%;width:100%;border-bottom: 2px dotted #000; padding-top:10px;padding-bottom:10px;"></div>
+            <div style="background-image: url('images/symbol_1.png');background-size:contain; background-position: center; background-repeat:no-repeat;height:5vh;width:100%;border-bottom: 2px dotted #000; padding-top:10px;padding-bottom:10px;"></div>
+            
             <div class="navBands">
-                <img src="images/band_othin.gif" style="position:absolute; left:0; height:100%;width:auto;">
-                OTHIN SPAKE</div>
+                <div class="navImg" style="background-image: url('images/band_othin.gif');"></div>
+                <span class="navTitle">OTHIN SPAKE</span>
+            </div>
+
             <div class="navBands">
                 <img src="images/band_cram.png" style="position:absolute; left:0; height:100%;width:auto;">
                 CRAM RATION</div>
@@ -74,7 +78,10 @@
             <div class="navBands">
                 <img src="images/band_duo.gif" style="position:absolute; left:0; height:100%;width:auto;">
                 DUO À L'ENCRE</div>
-            <div style="width:100%;height:calc(100% - 45% - 9 * 20px);background-image: url('images/symbol_2.png');background-size:contain; background-position: center; background-repeat:no-repeat;"></div>
+
+
+            <div style="width:100%;height:15vh;background-image: url('images/symbol_2.png');background-size:contain; background-position: center; background-repeat:no-repeat;"></div>
+        
         </div>
         <div class="bookings"></div>
         <a href="about/index.html"><div class="about"></div></a>

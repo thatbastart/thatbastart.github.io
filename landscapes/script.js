@@ -1,8 +1,12 @@
+// rl - relation
 // hv - hannah+victor
 // lp - lukas+peter
 // sb - sabrina
 // sr - sara
 // vj - vivien+jenny
+
+// function referrers to window scope
+window.setAnim=setAnim;
 
 // import three and modules
 import * as THREE from "./three/build/three.module.js";
@@ -35,14 +39,25 @@ let navsph=[];
 const about_sphGeo = new THREE.SphereGeometry(2, 32, 32 ); // sphere radius and subdivs
 const content_sphGeo = new THREE.SphereGeometry( 0.6, 16, 16 );
 
+// animation
+let animClick=[[0,-47,12,-72],[0,-3,15,62],[0,48,-7,-2],[0, 4, 3, 4],[0,-75,1,0],[0,65,-27,20],[0,-137,42,-100]]; // animation targets for sphere focus
+let animProg=0.0; // lerp factor for coords
+let animTime=0.0; // anim timer
+let animSrc=[-180,130,-115,0, -5, 0] // animation source with start view coords
+
 // vj
 let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[], vj_treepoints_hover=-1;
 // lp
-let lp_pointcloud;
+let lp_pointcloud, lp_sph=[];
 // sb
 let sb_pointcloud, sb_sph=[];
 // sr
 let sr_pointcloud, sr_sph=[];
+// hv
+let hv_pointcloud, hv_sph=[];
+// rl 
+let rl_pointcloud;
+
 
 init(); // create scene
 
@@ -61,7 +76,7 @@ function init() {
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
-    camera.position.set( -294, 226, -229 ); // starting position
+    camera.position.set( -140,142,-90 ); // starting position
     scene.add( camera );
     camera.rotation.order="YXZ"; //switch order for rotation follow
 
@@ -70,24 +85,48 @@ function init() {
     controls = new OrbitControls( camera, renderer.domElement );
     controls.enableDamping=true; // damping of user camera movement → less sensitivity
     controls.dampingFactor=0.5;
-    controls.target.set(-1, -35.5, -44.75); // starting navigation target
+    controls.target.set(0, 5, 0); // starting navigation target
     controls.update();
     controls.addEventListener( "change", render ); // render when controls change
     
+
+    // ------------- RELATION -------------
+    // nav sphere
+    navsph[0] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
+    scene.add(navsph[0]);
+    navsph[0].position.set(-20,8,-40);
+
+    // pointcloud
+    const rl_loader = new PCDLoader();
+    rl_loader.load( "./rl/pointcloud.pcd", function (points) { // callback function when pcd is loaded
+        document.getElementById("loadScrn").style.display="none"; // hide loading screen
+        points.geometry.center();
+        points.material.size=1; // square size
+        points.scale.set(14,14,14);
+        points.updateMatrix();
+        points.geometry.applyMatrix4(points.matrix);
+        points.geometry.applyMatrix4(points.matrixWorld);
+        points.scale.set(1,1,1);
+        rl_pointcloud=points;
+        rl_pointcloud.position.set(-20,8,-40);
+        rl_pointcloud.rotation.set(THREE.Math.degToRad(-90),0,0);
+        scene.add(rl_pointcloud);
+        
+    } );
 
 
     // ------------- HANNAH + VICTOR -------------
 
     // nav sphere
-    navsph[0] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
-    scene.add(navsph[0]);
-    navsph[0].position.set(-30,-5,50);
+    navsph[1] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
+    scene.add(navsph[1]);
+    navsph[1].position.set(-28,3,40);
 
     const glloader = new GLTFLoader();
     glloader.load("hv/ayahuasca.glb", function ( gltf ) {
             let vine=gltf.scene.children[0]
             scene.add( vine );
-            vine.position.set(-30,-5,40);
+            vine.position.set(-45,-6,40);
             let texture = new THREE.TextureLoader().load("hv/vine.png");
             texture.wrapS=THREE.RepeatWrapping;
             texture.wrapT=THREE.RepeatWrapping;
@@ -99,10 +138,40 @@ function init() {
         }
     );
 
+    // pointcloud
+    const hv_loader = new PCDLoader();
+    hv_loader.load( "./hv/pointcloud.pcd", function (points) { // callback function when pcd is loaded
+        document.getElementById("loadScrn").style.display="none"; // hide loading screen
+        points.geometry.center();
+        points.material.size=2; // square size
+        points.scale.set(3,3,3);
+        points.updateMatrix();
+        points.geometry.applyMatrix4(points.matrix);
+        points.geometry.applyMatrix4(points.matrixWorld);
+        points.scale.set(1,1,1);
+        hv_pointcloud=points;
+        hv_pointcloud.position.set(-20,-4,30);
+        hv_pointcloud.rotation.set(0,THREE.Math.degToRad(-20),0);
+        scene.add(hv_pointcloud);
+        setAnim(6);
+
+        for(let i=0; i<hv_content.length; i++){
+            hv_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
+            hv_pointcloud.add(hv_sph[i]);
+            hv_sph[i].position.set(hv_content[i].x,hv_content[i].y,hv_content[i].z);
+        }
+        
+    } );
+
+
+
+
+
+
     // ------------- LUKAS + PETER -------------
 
     // nav sphere
-    navsph[1] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
+    navsph[2] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
 
     // pointcloud
     const lp_loader = new PCDLoader();
@@ -118,15 +187,21 @@ function init() {
         lp_pointcloud=points;
         lp_pointcloud.position.set(30,-3,30);
         scene.add(lp_pointcloud);
-        lp_pointcloud.add(navsph[1]);
-        navsph[1].position.set(0,-2,17);
+        scene.add(navsph[2]);
+        navsph[2].position.set(30,-5,47);
+
+        for(let i=0; i<lp_content.length; i++){
+            lp_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
+            lp_pointcloud.add(lp_sph[i]);
+            lp_sph[i].position.set(lp_content[i].x,lp_content[i].y,lp_content[i].z);
+        }
         
     } );
 
     // ------------- SABRINA -------------
 
     // nav sphere
-    navsph[2] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
+    navsph[3] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
 
     // pointcloud
     const sb_loader = new PCDLoader();
@@ -143,8 +218,8 @@ function init() {
         sb_pointcloud=points;
         sb_pointcloud.position.set(0,0,20);
         scene.add(sb_pointcloud);
-        sb_pointcloud.add(navsph[2]);
-        navsph[2].position.set(0,0,0);
+        scene.add(navsph[3]);
+        navsph[3].position.set(0,0,20);
 
         for(let i=0; i<sb_content.length; i++){
             sb_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
@@ -158,7 +233,7 @@ function init() {
     // ------------- SARA -------------
 
     // nav sphere
-    navsph[3] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
+    navsph[4] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
 
     // pointcloud
     const sr_loader = new PCDLoader();
@@ -177,8 +252,8 @@ function init() {
         points.position.set(0,8,0);
         sr_pointcloud=points;
         scene.add(sr_pointcloud);
-        sr_pointcloud.add(navsph[3]);
-        navsph[3].position.set(-35,-10,40);
+        scene.add(navsph[4]);
+        navsph[4].position.set(-45,-2,-25);
 
         for(let i=0; i<sr_content.length; i++){
             sr_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
@@ -193,7 +268,7 @@ function init() {
     // ------------- VIVIEN + JENNY -------------
 
     // nav sphere
-    navsph[4] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
+    navsph[5] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
 
     // pointcloud
     const vj_loader = new PCDLoader();
@@ -209,8 +284,8 @@ function init() {
         vj_pointcloud=points;
         scene.add(vj_pointcloud);
         vj_pointcloud.add(vj_tree);
-        vj_pointcloud.add(navsph[4]);
-        navsph[4].position.set(15,-5,0)
+        vj_pointcloud.add(navsph[5]);
+        navsph[5].position.set(15,-5,0)
     } );
 
     class vj_treepoint{
@@ -498,6 +573,17 @@ function onMouseMove( event ) {
 
 // POINTER DOWN
 function onPointerDown( event ) {
+    console.log(camera.position);
+    // set animation source to current cam pos and orbit target
+    if(animTime==0){ // if no animation is running
+        animSrc[0]=camera.position.x;
+        animSrc[1]=camera.position.y;
+        animSrc[2]=camera.position.z;
+        animSrc[3]=controls.target.x;
+        animSrc[4]=controls.target.y;
+        animSrc[5]=controls.target.z;
+    }
+
     // mouse position
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
@@ -512,6 +598,24 @@ function onPointerDown( event ) {
                 document.getElementById("about_image").src=about[i].image;
                 document.getElementById("about_content").innerHTML=about[i].content;
                 document.getElementById("about_panel").style.display="inline";
+                return;
+            }
+        }
+
+        for(let i=0; i<hv_sph.length; i++){
+            if(raycaster.intersectObject(hv_sph[i]).length==1){
+                document.getElementById("hv_headline").innerHTML=hv_content[i].title;
+                document.getElementById("hv_content").innerHTML=hv_content[i].content;
+                document.getElementById("hv_panel").style.display="inline";
+                return;
+            }
+        }
+
+        for(let i=0; i<lp_sph.length; i++){
+            if(raycaster.intersectObject(lp_sph[i]).length==1){
+                document.getElementById("lp_headline").innerHTML=lp_content[i].title;
+                document.getElementById("lp_content").innerHTML=lp_content[i].content;
+                document.getElementById("lp_panel").style.display="inline";
                 return;
             }
         }
@@ -575,4 +679,77 @@ function render() {
 // WINDOW LOAD
 window.onload=function(){
     onWindowResize(); // trigger resize event to set breakpoints
+}
+
+
+// INITIATE ANIMATION
+function setAnim(c){
+    // only if cam not already there and anim not running
+    if(animTime==0 && Math.round(camera.position.x)!=animClick[c][1] && Math.round(camera.position.y)!=animClick[c][2] && Math.round(camera.position.z)!=animClick[c][3]){
+        // hide all panels
+        /*for(let i=0;i<p.length-1;i++){
+            sph[i].children[0].visible=false;
+        }
+        sph[1].children[1].visible=false;
+        sph[2].children[1].visible=false;*/
+        // set anim flag true
+        animClick[c][0]=1;
+        animate();
+    } else if(animTime==0){
+        // show panel
+        /*sph[c].children[0].visible=true;
+        labelRenderer.render( scene, camera );*/
+    }
+}
+
+
+// THREE ANIMATE
+function animate() {
+    for(let i=0; i<animClick.length;i++){
+        if(animClick[i][0]==1){ // check anim flag
+            requestAnimationFrame(animate);
+            camAnim();
+            controls.update(); // updating controls triggers render
+        }
+    }
+}
+
+
+// CAMERA ANIMATION FRAME
+function camAnim(){
+    let pos = new THREE.Vector3; // camera position
+    let tar = new THREE.Vector3; // orbit target
+    for(let i=0; i<animClick.length;i++){ // check which sphere was clicked - not very efficient atm
+        if(animClick[i][0]==1){ // check anim flag
+            // interpolation between source and target; factor animProg with EaseOut
+            pos.lerpVectors(new THREE.Vector3(animSrc[0],animSrc[1],animSrc[2]),new THREE.Vector3(animClick[i][1],animClick[i][2],animClick[i][3]), animProg);               
+            if(i>navsph.length-1){
+                tar.lerpVectors(new THREE.Vector3(animSrc[3],animSrc[4],animSrc[5]),new THREE.Vector3(0,5,0), animProg);
+            } else {
+                tar.lerpVectors(new THREE.Vector3(animSrc[3],animSrc[4],animSrc[5]),new THREE.Vector3(navsph[i].position.x, navsph[i].position.y, navsph[i].position.z), animProg);
+            }
+            
+            controls.target.set(tar.x, tar.y, tar.z);
+            camera.position.set(pos.x,pos.y,pos.z);
+            if(animTime>=1.0){ // reset timers etc after anim finished
+                animTime=0.0;
+                animClick[i][0]=0;
+                for(let k=0;k<navsph.length-1;k++){ // open the panel for the clicked sphere - not so nice either
+                    if(i==k){ 
+                        //sph[k].children[0].visible=true;
+                    }
+                }
+                //labelRenderer.render( scene, camera );
+            } else {
+                animTime+=0.015; // increase timer
+                animProg=easeOutCubic(animTime, 0.0, 1.0, 1.0); // increase interpolation factor
+            }
+        }
+    }
+}
+
+
+// CUBIC EASE
+function easeOutCubic (t, b, c, d) {
+    return c * ((t = t / d - 1) * t * t + 1) + b;
 }
