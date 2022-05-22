@@ -7,6 +7,7 @@
 
 // function referrers to window scope
 window.setAnim=setAnim;
+window.openAbout=openAbout;
 
 // import three and modules
 import * as THREE from "./three/build/three.module.js";
@@ -33,6 +34,8 @@ let matGreen = new THREE.MeshBasicMaterial( { color: green } ); // green hover
 // preloading images
 let image_preloader=[];
 window.image_preloader=image_preloader;
+
+let loaded=[];
 
 // spheres
 let navsph=[];
@@ -90,6 +93,11 @@ function init() {
     controls.addEventListener( "change", render ); // render when controls change
     
 
+
+    vj_tree_tex[0] = new THREE.TextureLoader().load("vj/tree.webp");
+    vj_tree_tex[1] = new THREE.TextureLoader().load("vj/tree_highlight.webp");
+
+    
     // ------------- RELATION -------------
     // nav sphere
     navsph[0] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
@@ -99,7 +107,6 @@ function init() {
     // pointcloud
     const rl_loader = new PCDLoader();
     rl_loader.load( "./rl/pointcloud.pcd", function (points) { // callback function when pcd is loaded
-        document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
         points.material.size=1; // square size
         points.scale.set(14,14,14);
@@ -111,7 +118,8 @@ function init() {
         rl_pointcloud.position.set(-20,8,-40);
         rl_pointcloud.rotation.set(THREE.Math.degToRad(-90),0,0);
         scene.add(rl_pointcloud);
-        
+        loaded.push(1);
+        checkLoad();
     } );
 
 
@@ -134,14 +142,14 @@ function init() {
             let vineMaterial = new THREE.MeshBasicMaterial( { map: texture, transparent: true} );
             vine.material=vineMaterial;
             vine.scale.set(0.6,0.6,0.6);
-    
+            loaded.push(1);
+            checkLoad();
         }
     );
 
     // pointcloud
     const hv_loader = new PCDLoader();
     hv_loader.load( "./hv/pointcloud.pcd", function (points) { // callback function when pcd is loaded
-        document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
         points.material.size=2; // square size
         points.scale.set(3,3,3);
@@ -153,7 +161,8 @@ function init() {
         hv_pointcloud.position.set(-20,-4,30);
         hv_pointcloud.rotation.set(0,THREE.Math.degToRad(-20),0);
         scene.add(hv_pointcloud);
-        setAnim(6);
+        loaded.push(1);
+        checkLoad();
 
         for(let i=0; i<hv_content.length; i++){
             hv_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
@@ -176,7 +185,6 @@ function init() {
     // pointcloud
     const lp_loader = new PCDLoader();
     lp_loader.load( "./lp/pointcloud.pcd", function (points) { // callback function when pcd is loaded
-        document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
         points.material.size=1.2; // square size
         points.scale.set(4.5,4.5,4.5);
@@ -189,6 +197,8 @@ function init() {
         scene.add(lp_pointcloud);
         scene.add(navsph[2]);
         navsph[2].position.set(30,-5,47);
+        loaded.push(1);
+        checkLoad();
 
         for(let i=0; i<lp_content.length; i++){
             lp_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
@@ -206,7 +216,6 @@ function init() {
     // pointcloud
     const sb_loader = new PCDLoader();
     sb_loader.load( "./sb/pointcloud.pcd", function (points) { // callback function when pcd is loaded
-        document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
         points.material.size=1.2; // square size
         points.scale.set(0.7,0.7,0.7);
@@ -220,6 +229,8 @@ function init() {
         scene.add(sb_pointcloud);
         scene.add(navsph[3]);
         navsph[3].position.set(0,0,20);
+        loaded.push(1);
+        checkLoad();
 
         for(let i=0; i<sb_content.length; i++){
             sb_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
@@ -238,7 +249,6 @@ function init() {
     // pointcloud
     const sr_loader = new PCDLoader();
     sr_loader.load( "./sr/pointcloud.pcd", function (points) { // callback function when pcd is loaded
-        document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
         points.material.size=1.2; // square size
         points.scale.set(1.8,1.8,1.8);
@@ -254,6 +264,8 @@ function init() {
         scene.add(sr_pointcloud);
         scene.add(navsph[4]);
         navsph[4].position.set(-45,-2,-25);
+        loaded.push(1);
+        checkLoad();
 
         for(let i=0; i<sr_content.length; i++){
             sr_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
@@ -273,7 +285,6 @@ function init() {
     // pointcloud
     const vj_loader = new PCDLoader();
     vj_loader.load( "./vj/pointcloud.pcd", function (points) { // callback function when pcd is loaded
-        document.getElementById("loadScrn").style.display="none"; // hide loading screen
         points.geometry.center();
         points.material.size=0.6; // square size
         points.scale.set(0.48,0.48,0.48);
@@ -286,6 +297,8 @@ function init() {
         vj_pointcloud.add(vj_tree);
         vj_pointcloud.add(navsph[5]);
         navsph[5].position.set(15,-5,0)
+        loaded.push(1);
+        checkLoad();
     } );
 
     class vj_treepoint{
@@ -463,8 +476,6 @@ function init() {
 
     // tree
     let vj_tree_geo = new THREE.PlaneGeometry(103.4, 141.5, 20, 20);
-    vj_tree_tex[0] = new THREE.TextureLoader().load("vj/tree.png");
-    vj_tree_tex[1] = new THREE.TextureLoader().load("vj/tree_highlight.png");
     let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true, side: THREE.DoubleSide } );
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
     vj_tree.scale.set(0.5,0.5,0.5);
@@ -593,11 +604,8 @@ function onPointerDown( event ) {
 
         for(let i=0; i<navsph.length; i++){
             if(raycaster.intersectObject(navsph[i]).length==1){
-                document.getElementById("about_headline").innerHTML=about[i].title;
-                document.getElementById("about_authors").innerHTML=about[i].authors;
-                document.getElementById("about_image").src=about[i].image;
-                document.getElementById("about_content").innerHTML=about[i].content;
-                document.getElementById("about_panel").style.display="inline";
+                openAbout(i);
+                setAnim(i);
                 return;
             }
         }
@@ -667,6 +675,22 @@ function onPointerDown( event ) {
     }
 }
 
+
+function openAbout(i){
+    document.getElementById("about_headline").innerHTML=about[i].title;
+    document.getElementById("about_authors").innerHTML=about[i].authors;
+    document.getElementById("about_image").src=about[i].image;
+    document.getElementById("about_content").innerHTML=about[i].content;
+    document.getElementById("about_panel").style.display="inline";
+}
+
+
+function checkLoad(){
+    if(loaded.length=7){
+        document.getElementById("loadScrn").style.display="none"; // hide loading screen
+        setAnim(6);
+    }
+}
 
 // THREE RENDER
 function render() {
