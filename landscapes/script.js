@@ -7,7 +7,6 @@
 
 // function referrers to window scope
 window.setAnim=setAnim;
-window.openAbout=openAbout;
 
 // import three and modules
 import * as THREE from "./three/build/three.module.js";
@@ -97,7 +96,7 @@ function init() {
     vj_tree_tex[0] = new THREE.TextureLoader().load("vj/tree.webp");
     vj_tree_tex[1] = new THREE.TextureLoader().load("vj/tree_highlight.webp");
 
-    
+
     // ------------- RELATION -------------
     // nav sphere
     navsph[0] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
@@ -604,7 +603,6 @@ function onPointerDown( event ) {
 
         for(let i=0; i<navsph.length; i++){
             if(raycaster.intersectObject(navsph[i]).length==1){
-                openAbout(i);
                 setAnim(i);
                 return;
             }
@@ -684,9 +682,18 @@ function openAbout(i){
     document.getElementById("about_panel").style.display="inline";
 }
 
+function closeAll(){
+    document.getElementById("about_panel").style.display="none";
+    document.getElementById("hv_panel").style.display="none";
+    document.getElementById("lp_panel").style.display="none";
+    document.getElementById("sb_panel").style.display="none";
+    document.getElementById("sr_panel").style.display="none";
+    document.getElementById("vj_panel").style.display="none";
+}
+
 
 function checkLoad(){
-    if(loaded.length=7){
+    if(loaded.length==7){
         document.getElementById("loadScrn").style.display="none"; // hide loading screen
         setAnim(6);
     }
@@ -711,16 +718,13 @@ function setAnim(c){
     // only if cam not already there and anim not running
     if(animTime==0 && Math.round(camera.position.x)!=animClick[c][1] && Math.round(camera.position.y)!=animClick[c][2] && Math.round(camera.position.z)!=animClick[c][3]){
         // hide all panels
-        /*for(let i=0;i<p.length-1;i++){
-            sph[i].children[0].visible=false;
-        }
-        sph[1].children[1].visible=false;
-        sph[2].children[1].visible=false;*/
+        closeAll();
         // set anim flag true
         animClick[c][0]=1;
         animate();
     } else if(animTime==0){
         // show panel
+        openAbout(c);
         /*sph[c].children[0].visible=true;
         labelRenderer.render( scene, camera );*/
     }
@@ -758,12 +762,11 @@ function camAnim(){
             if(animTime>=1.0){ // reset timers etc after anim finished
                 animTime=0.0;
                 animClick[i][0]=0;
-                for(let k=0;k<navsph.length-1;k++){ // open the panel for the clicked sphere - not so nice either
+                for(let k=0;k<navsph.length;k++){ // open the panel for the clicked sphere - not so nice either
                     if(i==k){ 
-                        //sph[k].children[0].visible=true;
+                        openAbout(k);
                     }
                 }
-                //labelRenderer.render( scene, camera );
             } else {
                 animTime+=0.015; // increase timer
                 animProg=easeOutCubic(animTime, 0.0, 1.0, 1.0); // increase interpolation factor
