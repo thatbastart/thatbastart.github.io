@@ -151,7 +151,7 @@ function init() {
     const rl_loader_3 = new PCDLoader();
     rl_loader_3.load( "./rl/pointcloud_3.pcd", function (points) { // callback function when pcd is loaded
         points.geometry.center();
-        points.material.size=2; // square size
+        points.material.size=1.25; // square size
         points.scale.set(2,2,2);
         points.updateMatrix();
         points.geometry.applyMatrix4(points.matrix);
