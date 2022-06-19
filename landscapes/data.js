@@ -1,7 +1,7 @@
 let about=[
     {
-        title:"",
-        authors:"",
+        title:"Relational Landscapes",
+        authors:"Myriel Milicevic, Andrés Burbano, Thiago da Costa Oliveira",
         content:"",
         image:""
     },
@@ -34,6 +34,37 @@ let about=[
         authors:"Vivien Serve & Jennifer Pilawa",
         content:"Mahogany is an internationally demanded commodity, that roots in middle- and south-america. Due to its capitalization, its listed on the “Red List of Endangered Species”. The complexity and interconnectedness of life is difficult to grasp from a siloed, dualistic and mono-humanist world view. In order to solve nowadays crisises, an understanding of the world as a pluriverse is necessary.How to design an interface that enforces different perspectives and communicates the social, economical and ecological system of mahagony in a pluriversal way?<br><br><br><br>Location of Pointcloud: <br>52°24\'16.0\"N 13°02\'18.3\"E - Sanssouci, Potsdam",
         image:"vj/cover.jpg"
+    }
+];
+
+let rl_content=[
+    {
+        x:13,
+        y:3,
+        z:-6,
+        title:"Symposium",
+        content:"<img src='rl/symposium.webp' style='width:100%;height:auto;'>"
+    },
+    {
+        x:-7,
+        y:-10,
+        z:-1,
+        title:"Visit to the Botanical Garden Berlin",
+        content:"<img src='rl/botanicalgarden/P2390298.webp' style='width:100%;height:auto;'><img src='rl/botanicalgarden/P2390455.webp' style='width:100%;height:auto;'><img src='rl/botanicalgarden/P2390822.webp' style='width:100%;height:auto;'><img src='rl/botanicalgarden/P2390848.webp' style='width:100%;height:auto;'><img src='rl/botanicalgarden/P2400019.webp' style='width:100%;height:auto;'><img src='rl/botanicalgarden/P2400113.webp' style='width:100%;height:auto;'>"
+    },
+    {
+        x:25,
+        y:15,
+        z:-10,
+        title:"Zoophonie",
+        content:""
+    },
+    {
+        x:-25,
+        y:15,
+        z:2,
+        title:"Imprint",
+        content:""
     }
 ];
 

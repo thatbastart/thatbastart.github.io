@@ -5,6 +5,9 @@
 // sr - sara
 // vj - vivien+jenny
 
+let people=["rl", "hv", "lp", "sb", "sr", "vj"];
+let sph_list=[];
+
 // function referrers to window scope
 window.setAnim=setAnim;
 
@@ -40,6 +43,7 @@ let loaded=[];
 let navsph=[];
 const about_sphGeo = new THREE.SphereGeometry(2, 32, 32 ); // sphere radius and subdivs
 const content_sphGeo = new THREE.SphereGeometry( 0.6, 16, 16 );
+let hover=[0,0,0,0,0,0]; // hover over sphere bool 
 
 // animation
 let animClick=[[0,-47,12,-72],[0,-3,15,62],[0,48,-7,-2],[0, 4, 3, 4],[0,-75,1,0],[0,65,-27,20],[0,-137,42,-100]]; // animation targets for sphere focus
@@ -58,11 +62,11 @@ let sr_pointcloud, sr_sph=[];
 // hv
 let hv_pointcloud, hv_sph=[];
 // rl 
-let rl_pointcloud;
+let rl_pointcloud_1,rl_pointcloud_2,rl_pointcloud_3, rl_sph=[];
 
+sph_list=[rl_sph, hv_sph, lp_sph, sb_sph, sr_sph];
 
 init(); // create scene
-
 
 function init() {
     // RENDERER
@@ -103,9 +107,9 @@ function init() {
     scene.add(navsph[0]);
     navsph[0].position.set(-20,8,-40);
 
-    // pointcloud
-    const rl_loader = new PCDLoader();
-    rl_loader.load( "./rl/pointcloud.pcd", function (points) { // callback function when pcd is loaded
+    // pointclouds
+    const rl_loader_1 = new PCDLoader();
+    rl_loader_1.load( "./rl/pointcloud_1.pcd", function (points) { // callback function when pcd is loaded
         points.geometry.center();
         points.material.size=1; // square size
         points.scale.set(14,14,14);
@@ -113,13 +117,54 @@ function init() {
         points.geometry.applyMatrix4(points.matrix);
         points.geometry.applyMatrix4(points.matrixWorld);
         points.scale.set(1,1,1);
-        rl_pointcloud=points;
-        rl_pointcloud.position.set(-20,8,-40);
-        rl_pointcloud.rotation.set(THREE.Math.degToRad(-90),0,0);
-        scene.add(rl_pointcloud);
+        rl_pointcloud_1=points;
+        rl_pointcloud_1.position.set(-20,8,-40);
+        rl_pointcloud_1.rotation.set(THREE.Math.degToRad(-90),0,0);
+        scene.add(rl_pointcloud_1);
+        loaded.push(1);
+        checkLoad();
+
+        for(let i=0; i<rl_content.length; i++){
+            rl_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
+            rl_pointcloud_1.add(rl_sph[i]);
+            rl_sph[i].position.set(rl_content[i].x,rl_content[i].y,rl_content[i].z);
+        }
+    } );
+
+    const rl_loader_2 = new PCDLoader();
+    rl_loader_2.load( "./rl/pointcloud_2.pcd", function (points) { // callback function when pcd is loaded
+        points.geometry.center();
+        points.material.size=1.25; // square size
+        points.scale.set(4,4,4);
+        points.updateMatrix();
+        points.geometry.applyMatrix4(points.matrix);
+        points.geometry.applyMatrix4(points.matrixWorld);
+        points.scale.set(1,1,1);
+        rl_pointcloud_2=points;
+        rl_pointcloud_2.position.set(-25,-5,65);
+        rl_pointcloud_2.rotation.set(THREE.Math.degToRad(-90),THREE.Math.degToRad(-5),0);
+        scene.add(rl_pointcloud_2);
         loaded.push(1);
         checkLoad();
     } );
+
+    const rl_loader_3 = new PCDLoader();
+    rl_loader_3.load( "./rl/pointcloud_3.pcd", function (points) { // callback function when pcd is loaded
+        points.geometry.center();
+        points.material.size=2; // square size
+        points.scale.set(2,2,2);
+        points.updateMatrix();
+        points.geometry.applyMatrix4(points.matrix);
+        points.geometry.applyMatrix4(points.matrixWorld);
+        points.scale.set(1,1,1);
+        rl_pointcloud_3=points;
+        rl_pointcloud_3.position.set(50,0,-10);
+        scene.add(rl_pointcloud_3);
+        loaded.push(1);
+        checkLoad();
+    } );
+
+
 
 
     // ------------- HANNAH + VICTOR -------------
@@ -477,8 +522,8 @@ function init() {
     let vj_tree_geo = new THREE.PlaneGeometry(103.4, 141.5, 20, 20);
     let vj_tree_mat = new THREE.MeshBasicMaterial( { map: vj_tree_tex[0], transparent: true, side: THREE.DoubleSide } );
     vj_tree = new THREE.Mesh(vj_tree_geo, vj_tree_mat);
-    vj_tree.scale.set(0.5,0.5,0.5);
-    vj_tree.position.set(0,11,0);
+    vj_tree.scale.set(0.35,0.35,0.35);
+    vj_tree.position.set(0,6,0);
     vj_tree.rotation.order="YXZ"; //switch order for rotation follow
 
 
@@ -543,6 +588,24 @@ function onMouseMove( event ) {
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
     raycaster.setFromCamera( mouse, camera );
+
+    for(let i=0; i<navsph.length; i++){ // test intersection of mouse against spheres
+        if(raycaster.intersectObject(navsph[i]).length==1){ // mouse over sphere
+            document.body.style.cursor="pointer";
+            if(navsph[i].material==matBlue){ // change material
+                navsph[i].material=matGreen;
+                render();
+            }
+            break;
+        } else if(hover[i]==0) { // mouse not over sphere and not hovering over nav point
+            document.body.style.cursor="default";
+            if(navsph[i].material==matGreen){ // change material
+                navsph[i].material=matBlue;
+                render();
+            }
+        }
+    }
+
     for(let i=0; i<vj_treepoints.length; i++){
         if(vj_treepoints[i].type==0){
             let inverseMatrix = new THREE.Matrix4();
@@ -552,8 +615,6 @@ function onMouseMove( event ) {
             if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
                 document.body.style.cursor="pointer";
                 break;
-            } else {
-                document.body.style.cursor="default";
             }
         } else {
             if(raycaster.intersectObject(vj_treepoints[i].sph).length==1){ // pointer down over sphere
@@ -568,7 +629,6 @@ function onMouseMove( event ) {
                 }
                 break;
             } else {
-                document.body.style.cursor="default";
                 if(vj_treepoints_hover!=-1){
                     vj_treepoints[vj_treepoints_hover].closePreview();
                     vj_treepoints_hover=-1;
@@ -583,7 +643,6 @@ function onMouseMove( event ) {
 
 // POINTER DOWN
 function onPointerDown( event ) {
-    console.log(camera.position);
     // set animation source to current cam pos and orbit target
     if(animTime==0){ // if no animation is running
         animSrc[0]=camera.position.x;
@@ -608,39 +667,13 @@ function onPointerDown( event ) {
             }
         }
 
-        for(let i=0; i<hv_sph.length; i++){
-            if(raycaster.intersectObject(hv_sph[i]).length==1){
-                document.getElementById("hv_headline").innerHTML=hv_content[i].title;
-                document.getElementById("hv_content").innerHTML=hv_content[i].content;
-                document.getElementById("hv_panel").style.display="inline";
-                return;
-            }
-        }
-
-        for(let i=0; i<lp_sph.length; i++){
-            if(raycaster.intersectObject(lp_sph[i]).length==1){
-                document.getElementById("lp_headline").innerHTML=lp_content[i].title;
-                document.getElementById("lp_content").innerHTML=lp_content[i].content;
-                document.getElementById("lp_panel").style.display="inline";
-                return;
-            }
-        }
-
-        for(let i=0; i<sb_sph.length; i++){
-            if(raycaster.intersectObject(sb_sph[i]).length==1){
-                document.getElementById("sb_headline").innerHTML=sb_content[i].title;
-                document.getElementById("sb_content").innerHTML=sb_content[i].content;
-                document.getElementById("sb_panel").style.display="inline";
-                return;
-            }
-        }
-
-        for(let i=0; i<sr_sph.length; i++){
-            if(raycaster.intersectObject(sr_sph[i]).length==1){
-                document.getElementById("sr_headline").innerHTML=sr_content[i].title;
-                document.getElementById("sr_content").innerHTML=sr_content[i].content;
-                document.getElementById("sr_panel").style.display="inline";
-                return;
+        for(let c=0; c<sph_list.length;c++){
+            for(let i=0; i<sph_list[c].length; i++){
+                if(raycaster.intersectObject(sph_list[c][i]).length==1){
+                    document.getElementById(people[c]+"_panel").style.display="inline";
+                    document.getElementById(people[c]+"_panel").scrollBy(0,document.getElementById(people[c]+"_part_"+i).getBoundingClientRect().y);
+                    return;
+                }
             }
         }
 
@@ -675,11 +708,8 @@ function onPointerDown( event ) {
 
 
 function openAbout(i){
-    document.getElementById("about_headline").innerHTML=about[i].title;
-    document.getElementById("about_authors").innerHTML=about[i].authors;
-    document.getElementById("about_image").src=about[i].image;
-    document.getElementById("about_content").innerHTML=about[i].content;
-    document.getElementById("about_panel").style.display="inline";
+    document.getElementById(people[i]+"_panel").style.display="inline";
+    document.getElementById(people[i]+"_panel").scrollBy(0,-document.getElementById(people[i]+"_panel").scrollTop);
 }
 
 function closeAll(){
@@ -710,6 +740,59 @@ function render() {
 // WINDOW LOAD
 window.onload=function(){
     onWindowResize(); // trigger resize event to set breakpoints
+
+    let content=[rl_content, hv_content, lp_content, sb_content, sr_content];
+
+    for(let c=0;c<=content.length;c++){
+        document.getElementById(people[c]+"_headline").innerHTML=about[c].title;
+        document.getElementById(people[c]+"_authors").innerHTML=about[c].authors;
+        document.getElementById(people[c]+"_image").src=about[c].image;
+        document.getElementById(people[c]+"_about_content").innerHTML=about[c].content;
+
+        if(c<content.length){
+            let html="";
+            for(let i=0;i<content[c].length;i++){
+                html+="<hr>";
+                html+="<div id='"+people[c]+"_part_" + i + "' class='headline'>"+content[c][i].title+"</div>";
+                html+=content[c][i].content;
+            }
+            document.getElementById(people[c]+"_content").innerHTML=html;
+        }
+    }
+
+
+
+    // handle bottom right navigation colors
+    let nav=document.getElementsByClassName("nav");
+    let navC=document.getElementsByClassName("navCircle");
+    // text
+    for(let i=0; i<nav.length;i++) {
+        nav[i].onmouseover=function(){setNavColor(i,1)};
+        nav[i].onmouseout=function(){setNavColor(i,0)};
+        nav[i].onmouseup=function(){setNavColor(i,0)};
+    }
+    // circles
+    for(let i=0; i<navC.length;i++) {
+        navC[i].onmouseover=function(){setNavColor(i,1)};
+        navC[i].onmouseout=function(){setNavColor(i,0)};
+        navC[i].onmouseup=function(){setNavColor(i,0)};
+    }
+
+    // setting the navigation color
+    function setNavColor(id, c){
+        if(c==0){ // default blue
+            nav[id].style.color="#000bff";
+            navC[id].style.backgroundColor="#000bff";
+            navsph[id].material=matBlue; // change material of 3d spheres
+            hover[id]=0;
+        } else { // hover green
+            nav[id].style.color="#72ff0d";
+            navC[id].style.backgroundColor="#72ff0d";
+            navsph[id].material=matGreen;
+            hover[id]=1;
+        }
+        render();
+    }
 }
 
 
@@ -752,7 +835,7 @@ function camAnim(){
             // interpolation between source and target; factor animProg with EaseOut
             pos.lerpVectors(new THREE.Vector3(animSrc[0],animSrc[1],animSrc[2]),new THREE.Vector3(animClick[i][1],animClick[i][2],animClick[i][3]), animProg);               
             if(i>navsph.length-1){
-                tar.lerpVectors(new THREE.Vector3(animSrc[3],animSrc[4],animSrc[5]),new THREE.Vector3(0,5,0), animProg);
+                tar.lerpVectors(new THREE.Vector3(animSrc[3],animSrc[4],animSrc[5]),new THREE.Vector3(0,-2,0), animProg); // starting animation target
             } else {
                 tar.lerpVectors(new THREE.Vector3(animSrc[3],animSrc[4],animSrc[5]),new THREE.Vector3(navsph[i].position.x, navsph[i].position.y, navsph[i].position.z), animProg);
             }

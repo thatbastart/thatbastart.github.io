@@ -29,6 +29,10 @@ body {
     background-color: var(--grey);
 }
 
+hr{
+    margin: 2vw 0 2vw 0;
+}
+
 /* LINKS */
 a {
     text-decoration: underline;
@@ -118,6 +122,52 @@ a:hover {
     position: absolute;
 }
 
+.paneltitle {
+    height: 100vh;
+    height: calc(var(--vh, 1vh)*50);
+    width: calc(100vw/3);
+    pointer-events: auto;
+    overflow: auto;
+    position: absolute;
+    top:calc(var(--vh, 1vh)*25);
+    left:calc(100vw/3);
+    background-color: var(--blue);
+    color: var(--yellow);
+    padding: 2vw;
+    box-sizing: border-box;
+}
+
+.navicons{
+    width: 33%; 
+    flex-grow: 1; 
+    aspect-ratio:1/1;
+    background-repeat:no-repeat; 
+    background-position: center; 
+    background-size: contain;
+    position: relative;
+}
+.icon_rotate{
+    background-image:url('navicons/mouse_rotate.gif');
+}
+.icon_translate{
+    background-image:url('navicons/mouse_translate.gif');
+}
+.icon_scale{
+    background-image:url('navicons/mouse_scale.gif');
+}
+@media (hover: none) {
+    .icon_rotate{
+        background-image:url('navicons/touch_rotate.gif');
+    }
+    .icon_translate{
+        background-image:url('navicons/touch_translate.gif');
+    }
+    .icon_scale{
+        background-image:url('navicons/touch_scale.gif');
+    }
+}
+
+
 .panelabout {
     background-color: var(--blue);
     color: var(--yellow);
@@ -126,13 +176,6 @@ a:hover {
 }
 
 .panelsb {
-    background-color: var(--blue);
-    color: var(--yellow);
-    top:0;
-    left:calc(100vw/3);
-}
-
-.panelsr {
     background-color: var(--blue);
     color: var(--yellow);
     top:0;
@@ -157,9 +200,6 @@ a:hover {
     .panelsb {
         left: calc(100vw/2);
     }
-    .panelsr {
-        left: calc(100vw/2);
-    }
 }
 @media only screen and (max-width: 1000px) {
     .panel {
@@ -169,9 +209,6 @@ a:hover {
         left: 0;
     }
     .panelsb {
-        left: 0;
-    }
-    .panelsr {
         left: 0;
     }
 }
@@ -193,10 +230,20 @@ a:hover {
 .panelClose {
     font-family: yoppa;
     font-size: max(3vh,25px);
-    position: absolute;
+    position: fixed;
     top: 2%;
-    right: 5%;
+    right: 35%;
     cursor: pointer;
+}
+@media only screen and (max-width: 1600px) {
+    .panelClose{
+        right: 2%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .panelClose{
+        right: 5%;
+    }
 }
 
 /* TEXT FORMATS */

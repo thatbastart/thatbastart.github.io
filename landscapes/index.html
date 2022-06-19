@@ -33,6 +33,18 @@
         <!-- title -->
         <span class="title title_rl">Relational<br>Landscapes</span>
 
+        <!-- title card -->
+        <div id="titlecard" class="paneltitle">
+            <span class="panelClose" style="top: 26vh;" onclick="document.getElementById('titlecard').style.display='none';">x</span>
+            <div id="title_headline" class="headline">Welcome</div>
+            <div class="text" style="font-size:max(2.5vh,20px);">Tracing Environmental Interconnectedness between Berlin-Brandenburg and the Amazon and the Andes.</div><br><br><br>
+            <div style="width:100%;display:flex;">
+                <div class="navicons icon_rotate text">Rotate</div>
+                <div class="navicons icon_translate text">Move</div>
+                <div class="navicons icon_scale text">Zoom</div>
+            </div>
+        </div>
+
         <!-- panels -->
         <!-- about -->
         <div id="about_panel" class="panel panelabout scroll" style="display:none;">
@@ -43,10 +55,23 @@
             <div id="about_content" class="cont text"></div>
         </div>
 
+        <!-- relation -->
+        <div id="rl_panel" class="panel panelsb scroll" style="display:none;">
+            <div id="rl_headline" class="headline"></div>
+            <span class="panelClose" onclick="document.getElementById('rl_panel').style.display='none';">x</span>
+            <div id="rl_authors" class="cont text" style="text-align: center;"></div>
+            <img id="rl_image" src="" style="width: 100%; height:auto;" class="cont">
+            <div id="rl_about_content" class="cont text"></div>
+            <div id="rl_content" class="cont text"></div>
+        </div>
+
         <!-- hannah+victor -->
         <div id="hv_panel" class="panel panelsb scroll" style="display:none;">
             <div id="hv_headline" class="headline"></div>
             <span class="panelClose" onclick="document.getElementById('hv_panel').style.display='none';">x</span>
+            <div id="hv_authors" class="cont text" style="text-align: center;"></div>
+            <img id="hv_image" src="" style="width: 100%; height:auto;" class="cont">
+            <div id="hv_about_content" class="cont text"></div>
             <div id="hv_content" class="cont text"></div>
         </div>
 
@@ -54,6 +79,9 @@
         <div id="lp_panel" class="panel panelsb scroll" style="display:none;">
             <div id="lp_headline" class="headline"></div>
             <span class="panelClose" onclick="document.getElementById('lp_panel').style.display='none';">x</span>
+            <div id="lp_authors" class="cont text" style="text-align: center;"></div>
+            <img id="lp_image" src="" style="width: 100%; height:auto;" class="cont">
+            <div id="lp_about_content" class="cont text"></div>
             <div id="lp_content" class="cont text"></div>
         </div>
 
@@ -61,21 +89,36 @@
         <div id="sb_panel" class="panel panelsb scroll" style="display:none;">
             <div id="sb_headline" class="headline"></div>
             <span class="panelClose" onclick="document.getElementById('sb_panel').style.display='none';">x</span>
+            <div id="sb_authors" class="cont text" style="text-align: center;"></div>
+            <img id="sb_image" src="" style="width: 100%; height:auto;" class="cont">
+            <div id="sb_about_content" class="cont text"></div>
             <div id="sb_content" class="cont text"></div>
         </div>
 
         <!-- sara -->
-        <div id="sr_panel" class="panel panelsr scroll" style="display:none;">
+        <div id="sr_panel" class="panel panelsb scroll" style="display:none;">
             <div id="sr_headline" class="headline"></div>
             <span class="panelClose" onclick="document.getElementById('sr_panel').style.display='none';">x</span>
+            <div id="sr_authors" class="cont text" style="text-align: center;"></div>
+            <img id="sr_image" src="" style="width: 100%; height:auto;" class="cont">
+            <div id="sr_about_content" class="cont text"></div>
             <div id="sr_content" class="cont text"></div>
         </div>
 
         <!-- vivien + jenny -->
-        <div id="vj_panel" class="panel panelvj scroll" style="display:none;">
+        <div id="vj_panel" class="panel panelsb scroll" style="display:none;">
             <div id="vj_headline" class="headline"></div>
             <span class="panelClose" onclick="document.getElementById('vj_panel').style.display='none';">x</span>
-            <div id="vj_content" class="cont"></div>
+            <div id="vj_authors" class="cont text" style="text-align: center;"></div>
+            <img id="vj_image" src="" style="width: 100%; height:auto;" class="cont">
+            <div id="vj_about_content" class="cont text"></div>
+            <div id="vj_content" class="cont text"></div>
+        </div>
+
+        <div id="vj_tree_panel" class="panel panelvj scroll" style="display:none;">
+            <div id="vj_tree_headline" class="headline"></div>
+            <span class="panelClose" onclick="document.getElementById('vj_tree_panel').style.display='none';">x</span>
+            <div id="vj_tree_content" class="cont"></div>
         </div>
         
 
