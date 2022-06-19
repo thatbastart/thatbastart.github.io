@@ -179,7 +179,7 @@ function init() {
             let vine=gltf.scene.children[0]
             scene.add( vine );
             vine.position.set(-45,-6,40);
-            let texture = new THREE.TextureLoader().load("hv/vine.png");
+            let texture = new THREE.TextureLoader().load("hv/vine.webp");
             texture.wrapS=THREE.RepeatWrapping;
             texture.wrapT=THREE.RepeatWrapping;
             texture.repeat.set(0.5,0.5);

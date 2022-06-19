@@ -9,31 +9,31 @@ let about=[
         title:"Knowledge traveling networks: Ayahuasca – from ancestral to contemporary",
         authors:"Hannah Machajdik & Victor Molina",
         content:"Ayahuasca is a pan-Amazonian psychoactive brew made out of the Banisteriopsis caapi vine (yagé), the Psychotria viridis shrub (chacruna), and possibly other ingredients. It is used both socially and as ceremonial spiritual medicine among some indigenous peoples of the Amazon. When consumed, it can cause an altered state of consciousness, including visual hallucinations and altered perceptions of reality. Ayahuasca ceremonies are getting increasingly popular around Europe and the United States and since some years tourism to South America for the purpose of taking it has grown a lot. Ayahuasca retreats are now getting founded around the world, enabling everyone to take part in the experience, may it be in a traditional or nontraditional way.<br><br>In this project we wanted to look further into the interconnectedness between Europe and South America, focussing on the boundary object, practice or concept of ayahuasca, contemplating how the cultural, social, geographical and economic landscapes around it have changed throughout the years.<br><br>The result is an augmented reality liana, that can grow anywhere in the world, by just scanning a QR-code with your phone. Once it's placed, you can walk around it and find a lot of information, articles about and experiences of ayahuasca in South America but also Europe, collected on little tokens that are placed in different parts of the plant. Additionally there is an interview with a shaman of the amazonian tribe Shuar in Ecuador who guides traditional ayahuasca experiences in his community, talking about his view on the concept of spirituality, spiritual tourism, the economic profit from it and his own path of learning about ayahuasca.<br><br>We invite you to scan the QR-code and explore the liana yourself!<br><br>",
-        image:"hv/cover.jpg"
+        image:"hv/cover.webp"
     },
     {
         title:"Granular Exchange",
         authors: "Lukas Büttenbender & Peter Schwarz",
         content:"Granular Exchange is a device which brings a new form of communication and exchange between South American landscapes and Brandenburg landscapes.<br><br>With this device we want to interface between South America and Brandenburg. With field recordings the user forms new sonic landscapes. These are processed by granular synthesis, which refers to the mixture of soil from different regions.<br><br>Simultaneously the users sonic input generates new topographic landscapes, which appear in contour lines.<br><br><br><br>Location of Pointcloud: <br>52°42\'24.1\"N 13°19\'14.9\"E - Briesetal<br><br>",
-        image:"lp/cover.png"
+        image:"lp/cover.webp"
     },
     {
         title:"Tipping Point - The fragility that connects the Amazon forest and Brandenburg forests",
         authors:"Sabrina Machado",
         content:"This project was initiated by investigating correlations between the forests in Brandenburg, Germany and the Amazon rainforest, Brazil.<br><br>According to the forest status report from 2021, 73% of all trees in Brandenburg are pine trees and from those plants, only 10% present no crown damage.The history of pine cultivation in Brandenburg is marked by the species' good adaptation to the region's sandy soil associated with the need for wood production. However, since monocultures are more susceptible to pests and forest fires, what seemed like a good solution ended up creating a new challenge for the region.<br><br>After a period of research, the aspect that most caught my attention was the fragility that both ecosystems present. I asked myself, will the Amazon forest have the same future as the Brandenburg forests?<br><br>The Amazon holds the largest tropical rainforest in the world, acting as a key component of the Earth's system. It plays a significant role in the carbon and water cycle, it displays the greatest biodiversity on Earth and it maintains climate stabilization in the basin. In addition to that, the forest harbors tremendous cultural and ethnic diversity of over 450 indigenous groups and more than 250 languages. The bad news is that Amazon is likely to have a biophysical tipping point. A combination of direct human pressures, fires and deforestation, paired with indirect pressures through climate change, could flip the system from a biodiverse moist, tropical rainforest to a less diverse dry, open forest or savanna.<br><br>Scientists agree that if the deforestation rates keep increasing, it will take about 20 to 30 years for 70 - 60 % of the forest to turn into Savanna. The only way to reverse that is to bring deforestation down to zero and start replanting the cleared areas.<br><br>This series of prints were produced In order to draw attention to the above mentioned issues. In this project the fragility of the Amazon and the Brandenburg forests is intended to become visible through the use of a sun printing technique in which the sun “burns” the image onto the paper. Unlike cyanotype, this method uses red dye, so the colour represents the lack of forest cover with more urgency.<br><br>The areas were selected based on the greater loss of forest cover and identified using the Global Forest Watch tool. In Brandenburg, the areas were chosen regarding their high pine density. To demonstrate the changes through time, the satellite images were taken from Google Timelapse in the following years 1984, 1993, 2002, 2011, and 2020. The camera distance is around 30 km and area approximately 41160 ha. <br><br>When analysing the satellite images of both forests over the years, it was noticed that the images of Brandenburg have hardly changed, in contrast to the Brazilian images, where the increase in deforestation is clearly visible. However, this does not mean that Brandenburg's forests are healthy and diverse. We can also see that deforestation in the Amazon is more recent compared to Germany.<br><br>A shift to a sustainable, post-capitalistic future is crucial to avoid the global environmental disaster that is just before us. It is not only an existential threat to our species but also a moral compromise we have with the nature and other life forms that inhabit this world.<br><br><br><br>Location of Pointcloud: <br>52°00\'18.6\"N 13°58\'48.1\"E - Biebersdorf<br><br>",
-        image:"sb/cover.jpg"
+        image:"sb/cover.webp"
     },
     {
         title:"Movement of Species between South America and Germany",
         authors:"Sara Ragel",
         content:"This project tries to collect the main causing factors, periods and cultural consequences of the movement of Species between South America and Europe (specifically Brandenburg in Germany). It’s made from an historical perspective, and focuses on the little stories of this species, that are usually unnoticed, but establish a union (on so many levels) between Brandenburg and South America.<br><br><br><br>Location of Pointcloud: <br>52°27\'19.6\"N 13°18\'13.5\"E - Botanical Garden Berlin<br><br>",
-        image:"sr/cover.png"
+        image:"sr/cover.webp"
     },
     {
         title:"Diving into the pluriverse of mahogany",
         authors:"Vivien Serve & Jennifer Pilawa",
         content:"Mahogany is an internationally demanded commodity, that roots in middle- and south-america. Due to its capitalization, its listed on the “Red List of Endangered Species”. The complexity and interconnectedness of life is difficult to grasp from a siloed, dualistic and mono-humanist world view. In order to solve nowadays crisises, an understanding of the world as a pluriverse is necessary.How to design an interface that enforces different perspectives and communicates the social, economical and ecological system of mahagony in a pluriversal way?<br><br><br><br>Location of Pointcloud: <br>52°24\'16.0\"N 13°02\'18.3\"E - Sanssouci, Potsdam",
-        image:"vj/cover.jpg"
+        image:"vj/cover.webp"
     }
 ];
 
@@ -74,42 +74,42 @@ let sb_content=[
         y:-5,
         z:10,
         title:"51° 59' 42.3\" N<br>13° 58' 39.8\" E",
-        content:"1984<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-1.jpg' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-2.jpg' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-3.jpg' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-4.jpg' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-5.jpg' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.99058,13.94403,10.41,latLng&t=1.89&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-5.webp' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.99058,13.94403,10.41,latLng&t=1.89&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
     },
     {
         x:5,
         y:-5,
         z:19,
         title:"5° 08' 14.0\" S<br>50° 22' 24.1\" W",
-        content:"1984<img src='sb/Brazil/-5.13722, -50.37335/Landscape-1.jpg' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-5.13722, -50.37335/Landscape-2.jpg' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-5.13722, -50.37335/Landscape-3.jpg' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-5.13722, -50.37335/Landscape-4.jpg' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-5.13722, -50.37335/Landscape-5.jpg' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-5.13721,-50.37334,10.539,latLng&t=1.37&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brazil/-5.13722, -50.37335/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-5.13722, -50.37335/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-5.13722, -50.37335/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-5.13722, -50.37335/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-5.13722, -50.37335/Landscape-5.webp' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-5.13721,-50.37334,10.539,latLng&t=1.37&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
     },
     {
         x:2,
         y:-3,
         z:26,
         title:"51° 46' 33.4\" N<br>13° 28' 36.1\" E",
-        content:"1984<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-1.jpg' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-2.jpg' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-3.jpg' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-4.jpg' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-5.jpg' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.78327,13.39664,10.232,latLng&t=1.91&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-5.webp' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.78327,13.39664,10.232,latLng&t=1.91&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
     },
     {
         x:2,
         y:-3.5,
         z:38,
         title:"12° 06' 09.9\" S<br>56° 02' 39.6\" W",
-        content:"1984<img src='sb/Brazil/-12.10274, -56.04432/Landscape-1.jpg' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-12.10274, -56.04432/Landscape-2.jpg' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-12.10274, -56.04432/Landscape-3.jpg' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-12.10274, -56.04432/Landscape-4.jpg' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-12.10274, -56.04432/Landscape-5.jpg' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-12.10305,-56.04314,10.472,latLng&t=3.35&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brazil/-12.10274, -56.04432/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-12.10274, -56.04432/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-12.10274, -56.04432/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-12.10274, -56.04432/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-12.10274, -56.04432/Landscape-5.webp' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-12.10305,-56.04314,10.472,latLng&t=3.35&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
     },
     {
         x:-3,
         y:-4,
         z:52,
         title:"51° 38' 56.3\" N<br>13° 25' 10.5\" E",
-        content:"1984<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-1.jpg' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-2.jpg' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-3.jpg' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-4.jpg' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-5.jpg' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.62974,13.40538,10.614,latLng&t=3.22&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-5.webp' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.62974,13.40538,10.614,latLng&t=3.22&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
     },
     {
         x:3,
         y:-4,
         z:64,
         title:"6° 31' 30.4\" S<br>52° 11' 56.7\" W",
-        content:"1984<img src='sb/Brazil/-6.52512, -52.19908/Landscape-1.jpg' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-6.52512, -52.19908/Landscape-2.jpg' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-6.52512, -52.19908/Landscape-3.jpg' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-6.52512, -52.19908/Landscape-4.jpg' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-6.52512, -52.19908/Landscape-5.jpg' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-6.52388,-52.20032,10.504,latLng&t=2&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brazil/-6.52512, -52.19908/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-6.52512, -52.19908/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-6.52512, -52.19908/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-6.52512, -52.19908/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-6.52512, -52.19908/Landscape-5.webp' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-6.52388,-52.20032,10.504,latLng&t=2&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
     }
 ];
 
@@ -119,63 +119,63 @@ let sr_content=[
         y:15,
         z:20,
         title:"Colonial Period - The ecological imperialism",
-        content:"<img src='sr/sara_8.png' style='width:100%;height:auto'><span class='italic'>The epidemics that reached America</span><br><br><br>To talk about the movement of species in this period, we must mention the Columbian Exchange. This term was first used by Alfred W. Cosby in his book The Columbian Exchange: Biological and Cultural Consequences (1972). The Columbian Exchange is the process lf biological unification between different continents that occured since the first arrival of Columbus (1492). Then, humans started playing the role that geology and climate used to perform. We could say that, gradually, the biosphere started returning to the Pangea, reversing the separation caused by the continental drift. This exchange didn’t just occur in the trading context, but unintentionally, as in the case of several diseases (flu, measles...) that travelled unilaterally from Europe and Asia to the so called “New World”. Albert W. Cosby divided the procces of the Coumbian Exchange in three sections: plants, animals and diseases, but it wasn’t just about that. The different continents exchanged knowledge, culture and habits. Maybe it’s wrong to call it exchange, considering that the way it happened was deeply unequal, having disastrous consequences for the indigenous communities that still linger nowadays. That’s why it would be more accurate to talk about ecological imperialism.<br><br>"
+        content:"<img src='sr/sara_8.webp' style='width:100%;height:auto'><span class='italic'>The epidemics that reached America</span><br><br><br>To talk about the movement of species in this period, we must mention the Columbian Exchange. This term was first used by Alfred W. Cosby in his book The Columbian Exchange: Biological and Cultural Consequences (1972). The Columbian Exchange is the process lf biological unification between different continents that occured since the first arrival of Columbus (1492). Then, humans started playing the role that geology and climate used to perform. We could say that, gradually, the biosphere started returning to the Pangea, reversing the separation caused by the continental drift. This exchange didn’t just occur in the trading context, but unintentionally, as in the case of several diseases (flu, measles...) that travelled unilaterally from Europe and Asia to the so called “New World”. Albert W. Cosby divided the procces of the Coumbian Exchange in three sections: plants, animals and diseases, but it wasn’t just about that. The different continents exchanged knowledge, culture and habits. Maybe it’s wrong to call it exchange, considering that the way it happened was deeply unequal, having disastrous consequences for the indigenous communities that still linger nowadays. That’s why it would be more accurate to talk about ecological imperialism.<br><br>"
     },
     {
         x:-23,
         y:10,
         z:35,
         title:"Plants",
-        content:"<img src='sr/sara_10.png' style='width:100%;height:auto'><span class='italic'>The first aclimatation garden in Paris, opened in 1860</span><br><br><br>Since the beginning, the plant species were esentially moved with purposes related to nutrition, so the most of them were Domesticated farmable species. However, some plants (such as the tobacco) were moved with another intention. After the XVIII century, the ornamental use of plants became more common among the wealthier countries (the correlation between the wealth of a country and the arrival of exotic species is a fact). Initially, this ornamental use was focused in the acclimitization gardens. Those institutions were intended to introduce “exotic” species from America in Europe for the pleasure of visitors. This historic episode of Europe is specially cruel because, sometimes, the exhibition also included human beings from the colonized communities. Those people were obliged to lived in a forced situation in a reconstructed enviroment.<br><br>"
+        content:"<img src='sr/sara_10.webp' style='width:100%;height:auto'><span class='italic'>The first aclimatation garden in Paris, opened in 1860</span><br><br><br>Since the beginning, the plant species were esentially moved with purposes related to nutrition, so the most of them were Domesticated farmable species. However, some plants (such as the tobacco) were moved with another intention. After the XVIII century, the ornamental use of plants became more common among the wealthier countries (the correlation between the wealth of a country and the arrival of exotic species is a fact). Initially, this ornamental use was focused in the acclimitization gardens. Those institutions were intended to introduce “exotic” species from America in Europe for the pleasure of visitors. This historic episode of Europe is specially cruel because, sometimes, the exhibition also included human beings from the colonized communities. Those people were obliged to lived in a forced situation in a reconstructed enviroment.<br><br>"
     },
     {
         x:-25,
         y:-14,
         z:35,
         title:"Potatoes",
-        content:"<img src='sr/sara_9.png' style='width:100%;height:auto'><br>The potatoe was first farmed in Peru and Bolivia, and arrived to Germany in 1647. However, due to it’s rapid growth and simple cultivation methods, it was considered a pagan food. That’s why, in the beginning, the potatoe was only used to decorate elegant gardens. But Friedrich II the Great had to introduce it in the normal diet to fight the famines ravaging his empire, whose capital was Potsdam. His marketing campaign was curious but very effective. He started including the potatoe in the royal court dishes, and releasing the edicts of the potatoe, in which he demanded the high society to show how the potatoe was a pleasant food. If it was suitable for the high class, it had to be the same for peasants. He also had the support of the religion, with priests named “tuber preachers”, in charge of spreading all knowledge related to the farming and culinary uses of potatoes. Lastly, he decided to plant it in his personal gardens, establishing strong security to guard it. But nevertheless, he spoke to the guardians to let the people steal the potato without consequences. “If it’s well protected, it must be worth it”, it’s a logical argument, and the people thought the same. With this reverse psychology he achieved the potatoe to be a key food in the feeding of the people, and to make more land dedicated to it’s cultive, fighting effectively the famines. Nowadays it still is very important, being part of the typical German dishes. This part of his reign gained him the nickname of “potatoe king”, and that his grave always has potatoes in his honor.<br><br><img src='sr/sara_2.png' style='width:100%;height:auto'><span class='italic'>Solanum Tuberosum</span><br><br>"
+        content:"<img src='sr/sara_9.webp' style='width:100%;height:auto'><br>The potatoe was first farmed in Peru and Bolivia, and arrived to Germany in 1647. However, due to it’s rapid growth and simple cultivation methods, it was considered a pagan food. That’s why, in the beginning, the potatoe was only used to decorate elegant gardens. But Friedrich II the Great had to introduce it in the normal diet to fight the famines ravaging his empire, whose capital was Potsdam. His marketing campaign was curious but very effective. He started including the potatoe in the royal court dishes, and releasing the edicts of the potatoe, in which he demanded the high society to show how the potatoe was a pleasant food. If it was suitable for the high class, it had to be the same for peasants. He also had the support of the religion, with priests named “tuber preachers”, in charge of spreading all knowledge related to the farming and culinary uses of potatoes. Lastly, he decided to plant it in his personal gardens, establishing strong security to guard it. But nevertheless, he spoke to the guardians to let the people steal the potato without consequences. “If it’s well protected, it must be worth it”, it’s a logical argument, and the people thought the same. With this reverse psychology he achieved the potatoe to be a key food in the feeding of the people, and to make more land dedicated to it’s cultive, fighting effectively the famines. Nowadays it still is very important, being part of the typical German dishes. This part of his reign gained him the nickname of “potatoe king”, and that his grave always has potatoes in his honor.<br><br><img src='sr/sara_2.webp' style='width:100%;height:auto'><span class='italic'>Solanum Tuberosum</span><br><br>"
     },
     {
         x:-15,
         y:4,
         z:42,
         title:"Tobacco",
-        content:"<img src='sr/sara_3.png' style='width:100%;height:auto'><span class='italic'>Moderate tobacco cultivation areas in Brandenburg nowadays</span><br><br><br>The tobacco has it’s origins in the Andes, and arrived to Germany in 1565, where it was called “Heiliges Kraut” (holy grass). It was inhaled, following the trend of England. It was first farmed in Rhineland-Palatinate, where the tradition of the tobacco cultivation lingers nowadays. During the War of the Thirty Years, the soldiers brought tobacco to the High Rin, and the first tobacco factories were initially located around Basel. In 1900 there were around 300 tobacco factories in the High Rin. Another regions that also standed out for the tobacco cultivation were Baden-Würtemberg, Bavaria and Brandenburg. Like other European countries, Germany farmed tobacco because of the import restriction and the strong increase of the demand, all together with the law that obliged to add a percentage of the national product (German tobacco was always for local consumption). Nevertheless, the percentage of cultivated tobacco in the country was still pretty low, because the big factories mainly used tobacco that came from the United States, Cuba or Brasil. In Uckermark (Brandenburg), the French Huguenots introduced the tobacco 400 years ago. There are still farms that cultivate it, but it’s an endangered industry.<br><br><img src='sr/sara_4.png' style='width:100%;height:auto'><span class='italic'>Nicotiana Tabacum</span><br><br>"
+        content:"<img src='sr/sara_3.webp' style='width:100%;height:auto'><span class='italic'>Moderate tobacco cultivation areas in Brandenburg nowadays</span><br><br><br>The tobacco has it’s origins in the Andes, and arrived to Germany in 1565, where it was called “Heiliges Kraut” (holy grass). It was inhaled, following the trend of England. It was first farmed in Rhineland-Palatinate, where the tradition of the tobacco cultivation lingers nowadays. During the War of the Thirty Years, the soldiers brought tobacco to the High Rin, and the first tobacco factories were initially located around Basel. In 1900 there were around 300 tobacco factories in the High Rin. Another regions that also standed out for the tobacco cultivation were Baden-Würtemberg, Bavaria and Brandenburg. Like other European countries, Germany farmed tobacco because of the import restriction and the strong increase of the demand, all together with the law that obliged to add a percentage of the national product (German tobacco was always for local consumption). Nevertheless, the percentage of cultivated tobacco in the country was still pretty low, because the big factories mainly used tobacco that came from the United States, Cuba or Brasil. In Uckermark (Brandenburg), the French Huguenots introduced the tobacco 400 years ago. There are still farms that cultivate it, but it’s an endangered industry.<br><br><img src='sr/sara_4.webp' style='width:100%;height:auto'><span class='italic'>Nicotiana Tabacum</span><br><br>"
     },
     {
         x:-5,
         y:-15,
         z:40,
         title:"Turkey",
-        content:"<img src='sr/sara_5.png' style='width:100%;height:auto'><br>The turkey was domesticated by the Aztecs in Mexico, where it had a close relationship with humans. Besides, the turkey had great relevance in the symbolic and religious aspects of the Nahuas. The cosmogonies of the ancient Mexico describe them as human beings transformed by a fire deluge. Maybe the connection between the fire and the turkey appears because, according to The legend of the five suns*, it was the only available bird in the drought periods. But the cultural value of the turkey wasn’t only spiritual: it was also an important part of the diet of several indigenous communities.<br><br>The colonists described the turkey as a “ground hen” because of it’s resemblance with the Spanish hens. The Evangelical Friars (who spread Christianity in America) quickly banned the consumption of dog meat. However, the turkeys had great gastronomic success due to their delicious taste and high fat content. It was one of the first species that Columbus presented to the Catholic Kings, and it soon became a popular dish between the Spanish nobility. An example of this is the way Carlos I had them served at the banquet celebrating his coronation in 1530. That’s how gradually the turkey became a common meal for special occasions, not only in USA but also in Germany, where the Thanksgiving (Erntedankfest) is celebrated as a religious and rural tradition.<br><br>Like in the rest of Europe, in Germany there are no wild populations of turkeys. There are only domesticated animals for gastronomic intentions. Even the domestic populations in Germany didn’t have much historical success. For example, the populations in Austria collapsed when they stopped being maintaned due to the WWII. In the XX century there were eleven attempts to settle turkeys in Germany, all of which failed.<br><br>*The Aztec myth describes how the earth and all living things were created and the role played by the gods. Each sun corresponds to a period in which a deity ruled.<br><br><img src='sr/sara_6.png' style='width:100%;height:auto'><span class='italic'>Meleagris gallopavo</span><br><br>"
+        content:"<img src='sr/sara_5.webp' style='width:100%;height:auto'><br>The turkey was domesticated by the Aztecs in Mexico, where it had a close relationship with humans. Besides, the turkey had great relevance in the symbolic and religious aspects of the Nahuas. The cosmogonies of the ancient Mexico describe them as human beings transformed by a fire deluge. Maybe the connection between the fire and the turkey appears because, according to The legend of the five suns*, it was the only available bird in the drought periods. But the cultural value of the turkey wasn’t only spiritual: it was also an important part of the diet of several indigenous communities.<br><br>The colonists described the turkey as a “ground hen” because of it’s resemblance with the Spanish hens. The Evangelical Friars (who spread Christianity in America) quickly banned the consumption of dog meat. However, the turkeys had great gastronomic success due to their delicious taste and high fat content. It was one of the first species that Columbus presented to the Catholic Kings, and it soon became a popular dish between the Spanish nobility. An example of this is the way Carlos I had them served at the banquet celebrating his coronation in 1530. That’s how gradually the turkey became a common meal for special occasions, not only in USA but also in Germany, where the Thanksgiving (Erntedankfest) is celebrated as a religious and rural tradition.<br><br>Like in the rest of Europe, in Germany there are no wild populations of turkeys. There are only domesticated animals for gastronomic intentions. Even the domestic populations in Germany didn’t have much historical success. For example, the populations in Austria collapsed when they stopped being maintaned due to the WWII. In the XX century there were eleven attempts to settle turkeys in Germany, all of which failed.<br><br>*The Aztec myth describes how the earth and all living things were created and the role played by the gods. Each sun corresponds to a period in which a deity ruled.<br><br><img src='sr/sara_6.webp' style='width:100%;height:auto'><span class='italic'>Meleagris gallopavo</span><br><br>"
     },
     {
         x:-30,
         y:-12,
         z:55,
         title:"Since the XX Century - New determining factors",
-        content:"<img src='sr/sara_7.png' style='width:100%;height:auto'><br><br>For obvious reasons, the farmable and rancher species were introduced in Europe since the second journey of Columbus (1493). Those species (rice went to America, or turkey to Europe) were exchanged in both directions for the benefit of the colonizers. However, most of American plants arrive as ornaments (even the edible ones), so, until the XVIII century, the cultivation of the American species doesn’t become widespread. In the same century, exploratory voyages increased, with the “climatization” of exotic species being the main direction of research. The exchange between domesticated species occurred in both directions, but the transportations of species with ornamental intention dind’t. These profoundly unequal trade conditions continue to this day, as Amazon countries do not benefit from the ilegal trade of their species (mainly birds) entering richer countries. During the XX century, the mechanisms of introduction of “exotic” species changed drastically. On one hand, the transportation technology increased in speed and the capacity of bringing living organisms. Transport distances became shorter so that less resistant or long-lived species could also be shipped. The ballast water system is created in order to transport more aquatic species. Another determining factor was the better lifestyle in the wealthy countries. With it, the long distance tourism became more frequent, as did exotic pets and the institutions like zoos or aquariums.<br><br>"
+        content:"<img src='sr/sara_7.webp' style='width:100%;height:auto'><br><br>For obvious reasons, the farmable and rancher species were introduced in Europe since the second journey of Columbus (1493). Those species (rice went to America, or turkey to Europe) were exchanged in both directions for the benefit of the colonizers. However, most of American plants arrive as ornaments (even the edible ones), so, until the XVIII century, the cultivation of the American species doesn’t become widespread. In the same century, exploratory voyages increased, with the “climatization” of exotic species being the main direction of research. The exchange between domesticated species occurred in both directions, but the transportations of species with ornamental intention dind’t. These profoundly unequal trade conditions continue to this day, as Amazon countries do not benefit from the ilegal trade of their species (mainly birds) entering richer countries. During the XX century, the mechanisms of introduction of “exotic” species changed drastically. On one hand, the transportation technology increased in speed and the capacity of bringing living organisms. Transport distances became shorter so that less resistant or long-lived species could also be shipped. The ballast water system is created in order to transport more aquatic species. Another determining factor was the better lifestyle in the wealthy countries. With it, the long distance tourism became more frequent, as did exotic pets and the institutions like zoos or aquariums.<br><br>"
     },
     {
         x:-10,
         y:-13,
         z:55,
         title:"Exotic Invasive Species",
-        content:"<img src='sr/sara_12.png' style='width:100%;height:auto'><span class='italic'>Nasua nasua</span><br><br><br>An invasive species is intentionally or uninentionally introduced into a new habitat, becomes established, and threatens native biodiversity and ecosystems. The expansion of invasive species has worsened because of climate change. The economical impact of such species is huge: in Europe, the cost of fighting and reparing the damages they cause is estimated around 12 billion dollars, besides affecting diverse primary sectors (like the fishing). The threat of these species is also genetic, because they sometimes hybridize with the local ones, giving place to new species that keep altering the habitat- The effects of a biological invasion can affect even human health, creating new allergies or are even toxic (like the giant parsley, for example). The main reason for their arrival is the trade of “exotic” species, a felony that moves around 20 billion dollars every year (even being legal in some countries). The pet release, tourism or fur industry are also responsible, among others.<br><br>"
+        content:"<img src='sr/sara_12.webp' style='width:100%;height:auto'><span class='italic'>Nasua nasua</span><br><br><br>An invasive species is intentionally or uninentionally introduced into a new habitat, becomes established, and threatens native biodiversity and ecosystems. The expansion of invasive species has worsened because of climate change. The economical impact of such species is huge: in Europe, the cost of fighting and reparing the damages they cause is estimated around 12 billion dollars, besides affecting diverse primary sectors (like the fishing). The threat of these species is also genetic, because they sometimes hybridize with the local ones, giving place to new species that keep altering the habitat- The effects of a biological invasion can affect even human health, creating new allergies or are even toxic (like the giant parsley, for example). The main reason for their arrival is the trade of “exotic” species, a felony that moves around 20 billion dollars every year (even being legal in some countries). The pet release, tourism or fur industry are also responsible, among others.<br><br>"
     },
     {
         x:0,
         y:-12,
         z:55,
         title:"Mink",
-        content:"<img src='sr/sara_13.png' style='width:100%;height:auto'><br>The american mink is a small predator cataloged as invasive in Europe. It’s indeed a threat for biodiversity due to it’s successful hunting, that puts a strong pressure on many species of fish, amphibians or small mammals. The damage the mink has caused in Germany is huge, insomuch as the cost to repair is estimated around 4.200.000€. The mink has a great colonization capacity, however the cause of it’s presence in Europe is the fur industry. For it’s lustrous and beautiful fur, the mink is the specie most used for the production of clothing (coats, for example). They spread in the 20th century, when the first fur companies were established and many mink disappeared from farms for lack of safety. Due to its adaptability, now they are very common in the country. Nevertheless, the European mink is extinct. And the reason is not his American namesake, but the hunt for his fur. People usually talk about how harmful these animals are to the enviroment and biodiversity, but not about the industry that brought them to Europe in the first place, and which is particularly cruel. In order to make their hair more showy the specie was even genetically modified, creating blue or silver specimens. Fortunately, in Germany the mink farms are about to disappear (many importan tones closed between 2017 and 2018), so the country is getting closer to the state objective of animal protection.<br><br><img src='sr/sara_14.png' style='width:100%;height:auto'><span class='italic'>Neovison vison</span><br><br>"
+        content:"<img src='sr/sara_13.webp' style='width:100%;height:auto'><br>The american mink is a small predator cataloged as invasive in Europe. It’s indeed a threat for biodiversity due to it’s successful hunting, that puts a strong pressure on many species of fish, amphibians or small mammals. The damage the mink has caused in Germany is huge, insomuch as the cost to repair is estimated around 4.200.000€. The mink has a great colonization capacity, however the cause of it’s presence in Europe is the fur industry. For it’s lustrous and beautiful fur, the mink is the specie most used for the production of clothing (coats, for example). They spread in the 20th century, when the first fur companies were established and many mink disappeared from farms for lack of safety. Due to its adaptability, now they are very common in the country. Nevertheless, the European mink is extinct. And the reason is not his American namesake, but the hunt for his fur. People usually talk about how harmful these animals are to the enviroment and biodiversity, but not about the industry that brought them to Europe in the first place, and which is particularly cruel. In order to make their hair more showy the specie was even genetically modified, creating blue or silver specimens. Fortunately, in Germany the mink farms are about to disappear (many importan tones closed between 2017 and 2018), so the country is getting closer to the state objective of animal protection.<br><br><img src='sr/sara_14.webp' style='width:100%;height:auto'><span class='italic'>Neovison vison</span><br><br>"
     },
     {
         x:5,
         y:-12,
         z:48,
         title:"American Red Crab",
-        content:"<img src='sr/sara_15.png' style='width:100%;height:auto'><br>The American red crab originated in the north of Mexico. These crustaceans aren’t demanding: like other invasive species, they eat almost everything they can find. Worms, fish, snails or non adult amphibians, the species family most affected by extinction. The red crab has a high and quick reproduction rate, and also is carrier of a fungal disease (aphanomyces astaci) which doesn’t affect them but causes great damage to the local crabs. This way, in the waters where this crab has been introduced, the native species will unavoidably become extinct. The red crab also damages the soil and crops (specially rice) because it is a great digger.<br><br>This crustace has relevance in the gastronomic industry and that’s the reason why it has been raised in several parts of the world, escaping from the aquariums. Because of it’s shiny color, it’s also popular as a pet, and probably some specimens were released by their owners when they got tired of them. In Europe it has been first seen in the south of the Iberian Peninsula, but now it’s pretty common in Germany, and they are reaching the north of Europe. The summer of 2017 was pretty damp in Berlin, so some parts were flooded, causing several unexpected effects. One of them was how numerous red crabs wandered in the streets in the area of Tiergarten: they were looking for a new habitat. Although the Berlin authorities reduced them successfully, unfortunately specimens are already in the Havel river (Brandenburg).<br><br><img src='sr/sara_16.png' style='width:100%;height:auto'><span class='italic'>Procambarus clarkii</span><br><br>"
+        content:"<img src='sr/sara_15.webp' style='width:100%;height:auto'><br>The American red crab originated in the north of Mexico. These crustaceans aren’t demanding: like other invasive species, they eat almost everything they can find. Worms, fish, snails or non adult amphibians, the species family most affected by extinction. The red crab has a high and quick reproduction rate, and also is carrier of a fungal disease (aphanomyces astaci) which doesn’t affect them but causes great damage to the local crabs. This way, in the waters where this crab has been introduced, the native species will unavoidably become extinct. The red crab also damages the soil and crops (specially rice) because it is a great digger.<br><br>This crustace has relevance in the gastronomic industry and that’s the reason why it has been raised in several parts of the world, escaping from the aquariums. Because of it’s shiny color, it’s also popular as a pet, and probably some specimens were released by their owners when they got tired of them. In Europe it has been first seen in the south of the Iberian Peninsula, but now it’s pretty common in Germany, and they are reaching the north of Europe. The summer of 2017 was pretty damp in Berlin, so some parts were flooded, causing several unexpected effects. One of them was how numerous red crabs wandered in the streets in the area of Tiergarten: they were looking for a new habitat. Although the Berlin authorities reduced them successfully, unfortunately specimens are already in the Havel river (Brandenburg).<br><br><img src='sr/sara_16.webp' style='width:100%;height:auto'><span class='italic'>Procambarus clarkii</span><br><br>"
     }
 ];
 
@@ -265,63 +265,63 @@ let lp_content=[
         y:-5,
         z:0,
         title:"How do we interact with landscapes?",
-        content:"During one of the first exercises in class, where we should work with satellite images, we realized that the main way to interact with landscapes in South America is in digital space. Most interesting here was the interaction of zooming and scrolling while navigate through landscapes and to get different perspectives on it.<br><br>This led us to the question: Wouldn't it be interesting to have new or alternative ways of interacting with landscapes?<br><br><br><img src='lp/pics/landscape_interact_1.png' style='width:100%;height:auto;'><img src='lp/pics/landscape_interact_2.png' style='width:100%;height:auto;'>"
+        content:"During one of the first exercises in class, where we should work with satellite images, we realized that the main way to interact with landscapes in South America is in digital space. Most interesting here was the interaction of zooming and scrolling while navigate through landscapes and to get different perspectives on it.<br><br>This led us to the question: Wouldn't it be interesting to have new or alternative ways of interacting with landscapes?<br><br><br><img src='lp/pics/landscape_interact_1.webp' style='width:100%;height:auto;'><img src='lp/pics/landscape_interact_2.webp' style='width:100%;height:auto;'>"
     },
     {
         x:-10,
         y:-3,
         z:18,
         title:"How are artificial landscapes created?",
-        content:"We talked a lot about our natural landscapes on earth that change continuously or getting destroyed. So we started thinking about artificial landscapes and how they are created. On our research we found a technique which starts with a single fragment and generates the whole landscape from this point. There we saw an interesting parallel to the texture of soil and landscapes in the physical world.<br><br></br>So we decided to think about how we could create artificial landscapes.<br><br><br><img src='lp/pics/landscape_created_1.jpg' style='width:100%;height:auto;'><img src='lp/pics/landscape_created_2.jpg' style='width:100%;height:auto;'>"
+        content:"We talked a lot about our natural landscapes on earth that change continuously or getting destroyed. So we started thinking about artificial landscapes and how they are created. On our research we found a technique which starts with a single fragment and generates the whole landscape from this point. There we saw an interesting parallel to the texture of soil and landscapes in the physical world.<br><br></br>So we decided to think about how we could create artificial landscapes.<br><br><br><img src='lp/pics/landscape_created_1.webp' style='width:100%;height:auto;'><img src='lp/pics/landscape_created_2.webp' style='width:100%;height:auto;'>"
     },
     {
         x:25,
         y:-5,
         z:0,
         title:"How are Brandenburg and South America connected?",
-        content:"The interconnectedness between Berlin-Brandenburg and the Amazon and the Andes was the main topic we discussed in class. In smaller exercises we created actor networks and analyzed things that traveled through the network. For us, it was interesting to see that the internet is in general a main connection, specially for us today. The internet was one of the main source of information about South America during class. We used it to collaborate in team and for every research we did.<br><br></br>Realizing that, we asked us: How could we create new connections between Berlin-Brandenburg and the Amazon and the Andes, by using the internet?<br><br><br><img src='lp/pics/landscape_connected.jpg' style='width:100%;height:auto;'>"
+        content:"The interconnectedness between Berlin-Brandenburg and the Amazon and the Andes was the main topic we discussed in class. In smaller exercises we created actor networks and analyzed things that traveled through the network. For us, it was interesting to see that the internet is in general a main connection, specially for us today. The internet was one of the main source of information about South America during class. We used it to collaborate in team and for every research we did.<br><br></br>Realizing that, we asked us: How could we create new connections between Berlin-Brandenburg and the Amazon and the Andes, by using the internet?<br><br><br><img src='lp/pics/landscape_connected.webp' style='width:100%;height:auto;'>"
     },
     {
         x:22,
         y:-3,
         z:10,
         title:"How do we preserve nature?",
-        content:"Our trip to the Botanical Garden in Berlin was a great inspiration for both of us. Specially the look behind the scenes led our group discussion to the preservation of nature in general. Adding to that we took a deeper look at the Wardian Case, which was also developed to protect and preserve plants (nature) during transportation.<br><br><img src='lp/pics/landscape_preserve_1.jpg' style='width:100%;height:auto;'><br><br>The Wardian Case as a technology initiated the transport of plants over long distances and thus between continents in the 19th century. Since then it created countless connections and led to a global exchange between different geographic regions. Fragments of landscapes in form of plants and soil were transported around the globe and formed new landscapes.<br><br><img src='lp/pics/landscape_preserve_3.jpeg' style='width:100%;height:auto;'><br><br>With all these questions and thoughts in mind about nature preservation, creation of artificial landscapes and new connections, as well as new possible interactions with landscapes we tried to grow a project.<br><br>At the end of the class we came up with a project which combines all of these thoughts and outlines answers to the questions we had during our whole process."
+        content:"Our trip to the Botanical Garden in Berlin was a great inspiration for both of us. Specially the look behind the scenes led our group discussion to the preservation of nature in general. Adding to that we took a deeper look at the Wardian Case, which was also developed to protect and preserve plants (nature) during transportation.<br><br><img src='lp/pics/landscape_preserve_1.webp' style='width:100%;height:auto;'><br><br>The Wardian Case as a technology initiated the transport of plants over long distances and thus between continents in the 19th century. Since then it created countless connections and led to a global exchange between different geographic regions. Fragments of landscapes in form of plants and soil were transported around the globe and formed new landscapes.<br><br><img src='lp/pics/landscape_preserve_3.webp' style='width:100%;height:auto;'><br><br>With all these questions and thoughts in mind about nature preservation, creation of artificial landscapes and new connections, as well as new possible interactions with landscapes we tried to grow a project.<br><br>At the end of the class we came up with a project which combines all of these thoughts and outlines answers to the questions we had during our whole process."
     },
     {
         x:14,
         y:-1,
         z:18,
         title:"User Journey 1",
-        content:"<img src='lp/pics/UJ-1a.png' style='width:100%;height:auto;'>Device is used for the first time.<br><br><img src='lp/pics/UJ-1b.png' style='width:100%;height:auto;'>User toggles info-panel.<br><br><img src='lp/pics/UJ-1c.png' style='width:100%;height:auto;'>Single user starts to record a sound with the device. Contour lines are starting to draw a height map.<br><br><img src='lp/pics/UJ-1d.png' style='width:100%;height:auto;'>User pauses recording.<br><br><img src='lp/pics/UJ-1e.png' style='width:100%;height:auto;'>User plays back recorded sound."
+        content:"<img src='lp/pics/UJ-1a.webp' style='width:100%;height:auto;'>Device is used for the first time.<br><br><img src='lp/pics/UJ-1b.webp' style='width:100%;height:auto;'>User toggles info-panel.<br><br><img src='lp/pics/UJ-1c.webp' style='width:100%;height:auto;'>Single user starts to record a sound with the device. Contour lines are starting to draw a height map.<br><br><img src='lp/pics/UJ-1d.webp' style='width:100%;height:auto;'>User pauses recording.<br><br><img src='lp/pics/UJ-1e.webp' style='width:100%;height:auto;'>User plays back recorded sound."
     },
     {
         x:8,
         y:-3,
         z:10,
         title:"User Journey 2",
-        content:"<img src='lp/pics/UJ-2a.png' style='width:100%;height:auto;'>Device is used for the first time.<br><br><img src='lp/pics/UJ-2b.png' style='width:100%;height:auto;'>Two users start recording. One is in Rio Urubu (Brazil), the other one in Briesetal (Germany).<br><br><img src='lp/pics/UJ-2c.png' style='width:100%;height:auto;'>The recording proceeds.<br><br><img src='lp/pics/UJ-2d.png' style='width:100%;height:auto;'>The two generated topographies are starting to intersect with each other.<br><br><img src='lp/pics/UJ-2e.png' style='width:100%;height:auto;'>A complex topography is generated by the two inputs."
+        content:"<img src='lp/pics/UJ-2a.webp' style='width:100%;height:auto;'>Device is used for the first time.<br><br><img src='lp/pics/UJ-2b.webp' style='width:100%;height:auto;'>Two users start recording. One is in Rio Urubu (Brazil), the other one in Briesetal (Germany).<br><br><img src='lp/pics/UJ-2c.webp' style='width:100%;height:auto;'>The recording proceeds.<br><br><img src='lp/pics/UJ-2d.webp' style='width:100%;height:auto;'>The two generated topographies are starting to intersect with each other.<br><br><img src='lp/pics/UJ-2e.webp' style='width:100%;height:auto;'>A complex topography is generated by the two inputs."
     },
     {
         x:5,
         y:-4,
         z:0,
         title:"User Journey 3",
-        content:"<img src='lp/pics/UJ-3a.png' style='width:100%;height:auto;'>The device has been used before.<br><br><img src='lp/pics/UJ-3b.png' style='width:100%;height:auto;'>User starts recording and generates a new landscape."
+        content:"<img src='lp/pics/UJ-3a.webp' style='width:100%;height:auto;'>The device has been used before.<br><br><img src='lp/pics/UJ-3b.webp' style='width:100%;height:auto;'>User starts recording and generates a new landscape."
     },
     {
         x:0,
         y:6,
         z:8,
         title:"How does the device work?",
-        content:"<img src='lp/pics/device_works_1.jpg' style='width:100%;height:auto;'>It uses a sound synthesis method called granular synthesis. With this method sound from Brandenburg landscapes and landscapes from Amazonas and Andes are synthesized from which new sounds are created. The recordings are split into small pieces of around 1 to 100 ms in duration. These small pieces are called grains. Multiple grains may be layered on top of each other, and may play at different speeds, phases, volume, and frequency, among other parameters.<br><br></br>We decided to choose the granular synthesis because it's parallel to the granular of soil.<img src='lp/pics/device_works_2.jpg' style='width:100%;height:auto;'>"
+        content:"<img src='lp/pics/device_works_1.webp' style='width:100%;height:auto;'>It uses a sound synthesis method called granular synthesis. With this method sound from Brandenburg landscapes and landscapes from Amazonas and Andes are synthesized from which new sounds are created. The recordings are split into small pieces of around 1 to 100 ms in duration. These small pieces are called grains. Multiple grains may be layered on top of each other, and may play at different speeds, phases, volume, and frequency, among other parameters.<br><br></br>We decided to choose the granular synthesis because it's parallel to the granular of soil.<img src='lp/pics/device_works_2.webp' style='width:100%;height:auto;'>"
     },
     {
         x:-3,
         y:9,
         z:16,
         title:"The Device",
-        content:"<video width='100%' height='auto' controls><source src='lp/demo.mp4' type='video/mp4'></video><img src='lp/pics/Device.png' style='width:100%;height:auto;'>"
+        content:"<video width='100%' height='auto' controls><source src='lp/demo.webm' type='video/webm'></video><img src='lp/pics/Device.webp' style='width:100%;height:auto;'>"
     }
 ];
 
@@ -667,7 +667,7 @@ let vj_treedata=[
         x:1.0,
         y:0.5,
         type:1,
-        thumb:"Getting_in_touch.jpg",
+        thumb:"Getting_in_touch.webp",
         story:[
             {
                 type:"subhead",
@@ -679,7 +679,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Getting in touch/1.jpg"
+                content:"vj/stories/Getting in touch/1.webp"
             },
             {
                 type:"caption",
@@ -687,7 +687,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Getting in touch/2.jpg"
+                content:"vj/stories/Getting in touch/2.webp"
             },
             {
                 type:"caption",
@@ -708,7 +708,7 @@ let vj_treedata=[
         x:25.8,
         y:30.884,
         type:1,
-        thumb:"The_rise_of_mahagony.jpg",
+        thumb:"The_rise_of_mahagony.webp",
         story:[
             {
                 type:"subhead",
@@ -739,7 +739,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/The rise of mahogany through colonial style/1.jpg"
+                content:"vj/stories/The rise of mahogany through colonial style/1.webp"
             },
             {
                 type:"caption",
@@ -747,7 +747,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/The rise of mahogany through colonial style/2.jpg"
+                content:"vj/stories/The rise of mahogany through colonial style/2.webp"
             },
             {
                 type:"caption",
@@ -773,7 +773,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/The rise of mahogany through colonial style/3.jpg"
+                content:"vj/stories/The rise of mahogany through colonial style/3.webp"
             },
             {
                 type:"caption",
@@ -781,7 +781,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/The rise of mahogany through colonial style/4.jpg"
+                content:"vj/stories/The rise of mahogany through colonial style/4.webp"
             },
             {
                 type:"caption",
@@ -794,7 +794,7 @@ let vj_treedata=[
         x:19.5,
         y:44.032,
         type:1,
-        thumb:"From_matter_to_colour.jpg",
+        thumb:"From_matter_to_colour.webp",
         story:[
             {
                 type:"text",
@@ -802,7 +802,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/From matter to colour/1.jpg"
+                content:"vj/stories/From matter to colour/1.webp"
             },
             {
                 type:"caption",
@@ -810,7 +810,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/From matter to colour/2.jpg"
+                content:"vj/stories/From matter to colour/2.webp"
             },
             {
                 type:"caption",
@@ -818,7 +818,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/From matter to colour/3.jpg"
+                content:"vj/stories/From matter to colour/3.webp"
             },
             {
                 type:"caption",
@@ -831,7 +831,7 @@ let vj_treedata=[
         x:-14.728,
         y:55.428,
         type:1,
-        thumb:"Colonial_Furniture_in_P.jpg",
+        thumb:"Colonial_Furniture_in_P.webp",
         story:[
             {
                 type:"text",
@@ -848,7 +848,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Mahogany furniture in Potsdam/1.jpg"
+                content:"vj/stories/Mahogany furniture in Potsdam/1.webp"
             },
             {
                 type:"caption",
@@ -856,7 +856,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Mahogany furniture in Potsdam/2.jpg"
+                content:"vj/stories/Mahogany furniture in Potsdam/2.webp"
             },
             {
                 type:"caption",
@@ -864,7 +864,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Mahogany furniture in Potsdam/3.jpg"
+                content:"vj/stories/Mahogany furniture in Potsdam/3.webp"
             },
             {
                 type:"caption",
@@ -877,7 +877,7 @@ let vj_treedata=[
         x:-5.762,
         y:65.428,
         type:1,
-        thumb:"Shift_forest_politics.jpg",
+        thumb:"Shift_forest_politics.webp",
         story:[
             {
                 type:"text",
@@ -895,7 +895,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Shift of forest politics/1.jpg"
+                content:"vj/stories/Shift of forest politics/1.webp"
             },
             {
                 type:"caption",
@@ -909,7 +909,7 @@ let vj_treedata=[
         x:3.762,
         y:61.428,
         type:1,
-        thumb:"Mahagony_mindshift.jpg",
+        thumb:"Mahagony_mindshift.webp",
         story:[
             {
                 type:"subhead",
@@ -930,7 +930,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Mahogany Mindshift/1.jpg"
+                content:"vj/stories/Mahogany Mindshift/1.webp"
             },
             {
                 type:"caption",
@@ -957,7 +957,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Mahogany Mindshift/2.jpg"
+                content:"vj/stories/Mahogany Mindshift/2.webp"
             },
             {
                 type:"caption",
@@ -979,7 +979,7 @@ let vj_treedata=[
         x:-5.976,
         y:-38.968,
         type:1,
-        thumb:"Shifted consequences.jpg",
+        thumb:"Shifted consequences.webp",
         story:[
             {
                 type:"subhead",
@@ -1012,7 +1012,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Shifted consequences/1.jpg"
+                content:"vj/stories/Shifted consequences/1.webp"
             },
             {
                 type:"caption",
@@ -1036,7 +1036,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Shifted consequences/2.jpg"
+                content:"vj/stories/Shifted consequences/2.webp"
             },
             {
                 type:"caption",
@@ -1044,7 +1044,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Shifted consequences/3.jpg"
+                content:"vj/stories/Shifted consequences/3.webp"
             },
             {
                 type:"caption",
@@ -1058,7 +1058,7 @@ let vj_treedata=[
         x:3.408,
         y:-10.192,
         type:1,
-        thumb:"Plantations.jpg",
+        thumb:"Plantations.webp",
         story:[
             {
                 type:"subhead",
@@ -1083,7 +1083,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Plantations_Sinner or Savior/1.jpg"
+                content:"vj/stories/Plantations_Sinner or Savior/1.webp"
             },
             {
                 type:"caption",
@@ -1108,11 +1108,11 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Plantations_Sinner or Savior/2.jpg"
+                content:"vj/stories/Plantations_Sinner or Savior/2.webp"
             },
             {
                 type:"caption",
-                content:"Mahogany plantation in Bangladesh<br>© <a href='https://en.wikipedia.org/wiki/Mahogany#/media/File:Mahagoni_tree_plantaion_in_Bangladesh.jpg'>en.wikipedia.org/wiki/Mahogany#/media/File:Mahagoni_tree_plantaion_in_Bangladesh.jpg</a>"
+                content:"Mahogany plantation in Bangladesh<br>© <a href='https://en.wikipedia.org/wiki/Mahogany#/media/File:Mahagoni_tree_plantaion_in_Bangladesh.webp'>en.wikipedia.org/wiki/Mahogany#/media/File:Mahagoni_tree_plantaion_in_Bangladesh.webp</a>"
             },
             {
                 type:"subhead",
@@ -1141,7 +1141,7 @@ let vj_treedata=[
         x:1.8,
         y:-4.192,
         type:1,
-        thumb:"Plantations_Problems.jpg",
+        thumb:"Plantations_Problems.webp",
         story:[
             {
                 type:"subhead",
@@ -1164,7 +1164,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Plantation Problems/1.jpg"
+                content:"vj/stories/Plantation Problems/1.webp"
             },
             {
                 type:"caption",
@@ -1172,7 +1172,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Plantation Problems/2.jpg"
+                content:"vj/stories/Plantation Problems/2.webp"
             },
             {
                 type:"caption",
@@ -1208,7 +1208,7 @@ let vj_treedata=[
         x:5.387,
         y:-30.83,
         type:1,
-        thumb:"The_whale_of_mahagony.jpg",
+        thumb:"The_whale_of_mahagony.webp",
         story:[
             {
                 type:"subhead",
@@ -1230,7 +1230,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/The whale of mahogany/1.jpg"
+                content:"vj/stories/The whale of mahogany/1.webp"
             },
             {
                 type:"caption",
@@ -1261,7 +1261,7 @@ let vj_treedata=[
         x:10.387,
         y:-32.83,
         type:1,
-        thumb:"Rare_ressource.jpg",
+        thumb:"Rare_ressource.webp",
         story:[
             {
                 type:"subhead",
@@ -1286,7 +1286,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Rare Resource/1.jpg"
+                content:"vj/stories/Rare Resource/1.webp"
             },
             {
                 type:"caption",
@@ -1315,7 +1315,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Rare Resource/2.png"
+                content:"vj/stories/Rare Resource/2.webp"
             },
             {
                 type:"caption",
@@ -1333,7 +1333,7 @@ let vj_treedata=[
         x:-2.387,
         y:-35.83,
         type:1,
-        thumb:"Mahagony_fading.jpg",
+        thumb:"Mahagony_fading.webp",
         story:[
             {
                 type:"subhead",
@@ -1354,11 +1354,11 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Mahogany is fading/1.jpg"
+                content:"vj/stories/Mahogany is fading/1.webp"
             },
             {
                 type:"caption",
-                content:"Loss of mahogany<br>© <a href='https://commons.wikimedia.org/wiki/File:Current_range_of_big-leaf_mahogany_in_South_America.jpg'>commons.wikimedia.org/wiki/File:Current_range_of_big-leaf_mahogany_in_South_America.jpg</a>"
+                content:"Loss of mahogany<br>© <a href='https://commons.wikimedia.org/wiki/File:Current_range_of_big-leaf_mahogany_in_South_America.webp'>commons.wikimedia.org/wiki/File:Current_range_of_big-leaf_mahogany_in_South_America.webp</a>"
             },
             {
                 type:"subhead",
@@ -1402,7 +1402,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Mahogany is fading/2.jpg"
+                content:"vj/stories/Mahogany is fading/2.webp"
             },
             {
                 type:"caption",
@@ -1416,7 +1416,7 @@ let vj_treedata=[
         x:5.375,
         y:-45.968,
         type:1,
-        thumb:"Deforestation_cultivation_companies.jpg",
+        thumb:"Deforestation_cultivation_companies.webp",
         story:[
             {
                 type:"subhead",
@@ -1437,7 +1437,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/The unnatural in the natural/1.jpg"
+                content:"vj/stories/The unnatural in the natural/1.webp"
             },
             {
                 type:"caption",
@@ -1449,7 +1449,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/The unnatural in the natural/2.jpg"
+                content:"vj/stories/The unnatural in the natural/2.webp"
             },
             {
                 type:"caption",
@@ -1479,7 +1479,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/The unnatural in the natural/3.jpg"
+                content:"vj/stories/The unnatural in the natural/3.webp"
             },
             {
                 type:"caption",
@@ -1493,7 +1493,7 @@ let vj_treedata=[
         x:14.501,
         y:-40.505,
         type:1,
-        thumb:"Value_Chain.jpg",
+        thumb:"Value_Chain.webp",
         story:[
             {
                 type:"subhead",
@@ -1522,7 +1522,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Value Chain/1.jpg"
+                content:"vj/stories/Value Chain/1.webp"
             },
             {
                 type:"caption",
@@ -1530,7 +1530,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/The unnatural in the natural/2.jpg"
+                content:"vj/stories/The unnatural in the natural/2.webp"
             },
             {
                 type:"caption",
@@ -1544,7 +1544,7 @@ let vj_treedata=[
         x:3.387,
         y:-38.83,
         type:1,
-        thumb:"Mahogany_country.jpg",
+        thumb:"Mahogany_country.webp",
         story:[
             {
                 type:"subhead",
@@ -1565,7 +1565,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Mahogany country/1.jpg"
+                content:"vj/stories/Mahogany country/1.webp"
             },
             {
                 type:"caption",
@@ -1593,7 +1593,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Mahogany country/2.jpg"
+                content:"vj/stories/Mahogany country/2.webp"
             },
             {
                 type:"caption",
@@ -1613,7 +1613,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Mahogany country/3.jpg"
+                content:"vj/stories/Mahogany country/3.webp"
             },
             {
                 type:"caption",
@@ -1627,7 +1627,7 @@ let vj_treedata=[
         x:2.408,
         y:-18.192,
         type:1,
-        thumb:"Mahogany_markets.jpg",
+        thumb:"Mahogany_markets.webp",
         story:[
             {
                 type:"subhead",
@@ -1661,7 +1661,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Mahogany markets/1.jpg"
+                content:"vj/stories/Mahogany markets/1.webp"
             },
             {
                 type:"caption",
@@ -1690,7 +1690,7 @@ let vj_treedata=[
             },
             {
                 type:"image",
-                content:"vj/stories/Mahogany markets/2.jpg"
+                content:"vj/stories/Mahogany markets/2.webp"
             },
             {
                 type:"caption",
