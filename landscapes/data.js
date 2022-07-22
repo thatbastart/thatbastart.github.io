@@ -2,13 +2,13 @@ let about=[
     {
         title:"Relational Landscapes",
         authors:"Myriel Milicevic, Andrés Burbano, Thiago da Costa Oliveira",
-        content:"",
-        image:""
+        content:"Relational Landscapes was a class with design students at FH Potsdam, aiming to discuss and make visible the hidden and unhidden connections between South America and the Brandenburg region in Germany.<br><br>The 19th-century scientific explorations of South America (such as the Prussian Langsdorff expedition to Brazil and the Alexander von Humboldt expeditions) set the scenery in which a myriad of things began to travel between South American and Central European landscapes. If at the beginning of this entangled history things traveled in the form of collections, today, in a globally interconnected world, these movements between distant lands and populations assume the form of big markets of commodities such as corn, soya, wood, meat, and rare earth and minerals, such as lithium.<br><br>The advent of these markets produced the counter-effect of changing local climatic/atmospheric conditions and ecologies on both sides of our distant but intertwined worlds. Mining and intensive agriculture destroy territories in South America. At the same time, they feed factories and industries in Brandenburg which also risk environmental harm, such as the Tesla Giga factory or the multiple intensive cattle breeding units found in Germany.<br><br>Our introductory sessions explored the numerous examples of ecological, social, economic, and cultural relationships between South America and Central Europe, highlighting the erasure of indigenous epistemologies and knowledge practices that characterize these processes and the many hidden technologies developed to transport resources between these regions. These examples were further discussed in an international symposium in which we debated indigenous epistemologies, seed journeys, guerrilla farming, media aesthetics, and the pluriverse!<br><br>On a visit to the greenhouses of the Botanical Garden of Berlin, we could approach these topics in a concrete way: plants transported from distant lands, technologies developed to keep them, scientific structures that translate indigenous knowledge to other cultural realities.<br><br>This complex set of examples and experiences inspired the students’ projects developed in the second stage of the course. After exploring a chain of connections between South America and Brandenburg, they traced multi-layered interrelations through space and time and developed experimental and interactive visualizations for a broader public.<br><br>The outcome of this learning process is the website you are now visiting and experiencing. The visual narratives were collated in a point cloud that invites you to playfully explore relational landscapes, knowledge, and traditions.",
+        image:"rl/cover.webp"
     },
     {
         title:"Knowledge traveling networks: Ayahuasca – from ancestral to contemporary",
         authors:"Hannah Machajdik & Victor Molina",
-        content:"Ayahuasca is a pan-Amazonian psychoactive brew made out of the Banisteriopsis caapi vine (yagé), the Psychotria viridis shrub (chacruna), and possibly other ingredients. It is used both socially and as ceremonial spiritual medicine among some indigenous peoples of the Amazon. When consumed, it can cause an altered state of consciousness, including visual hallucinations and altered perceptions of reality. Ayahuasca ceremonies are getting increasingly popular around Europe and the United States and since some years tourism to South America for the purpose of taking it has grown a lot. Ayahuasca retreats are now getting founded around the world, enabling everyone to take part in the experience, may it be in a traditional or nontraditional way.<br><br>In this project we wanted to look further into the interconnectedness between Europe and South America, focussing on the boundary object, practice or concept of ayahuasca, contemplating how the cultural, social, geographical and economic landscapes around it have changed throughout the years.<br><br>The result is an augmented reality liana, that can grow anywhere in the world, by just scanning a QR-code with your phone. Once it's placed, you can walk around it and find a lot of information, articles about and experiences of ayahuasca in South America but also Europe, collected on little tokens that are placed in different parts of the plant. Additionally there is an interview with a shaman of the amazonian tribe Shuar in Ecuador who guides traditional ayahuasca experiences in his community, talking about his view on the concept of spirituality, spiritual tourism, the economic profit from it and his own path of learning about ayahuasca.<br><br>We invite you to scan the QR-code and explore the liana yourself!<br><br>",
+        content:"Ayahuasca is a pan-Amazonian psychoactive brew made out of the Banisteriopsis caapi vine (yagé), the Psychotria viridis shrub (chacruna), and possibly other ingredients. It is used both socially and as ceremonial spiritual medicine among some indigenous peoples of the Amazon. When consumed, it can cause an altered state of consciousness, including visual hallucinations and altered perceptions of reality. Ayahuasca ceremonies are getting increasingly popular around Europe and the United States and since some years tourism to South America for the purpose of taking it has grown a lot. Ayahuasca retreats are now getting founded around the world, enabling everyone to take part in the experience, may it be in a traditional or nontraditional way.<br><br>In this project we wanted to look further into the interconnectedness between Europe and South America, focussing on the boundary object, practice or concept of ayahuasca, contemplating how the cultural, social, geographical and economic landscapes around it have changed throughout the years.<br><br>The result is an augmented reality liana, that can grow anywhere in the world, by just scanning a QR-code with your phone. Once it's placed, you can walk around it and find a lot of information, articles about and experiences of ayahuasca in South America but also Europe, collected on little tokens that are placed in different parts of the plant. Additionally there is an interview with a shaman of the amazonian tribe Shuar in Ecuador who guides traditional ayahuasca experiences in his community, talking about his view on the concept of spirituality, spiritual tourism, the economic profit from it and his own path of learning about ayahuasca.<br><br>We invite you to scan the QR-code and explore the liana yourself!<br><br><img src='hv/qrcode.webp' style='width:100%;height:auto;'>",
         image:"hv/cover.webp"
     },
     {
@@ -26,7 +26,7 @@ let about=[
     {
         title:"Movement of Species between South America and Germany",
         authors:"Sara Ragel",
-        content:"This project tries to collect the main causing factors, periods and cultural consequences of the movement of Species between South America and Europe (specifically Brandenburg in Germany). It’s made from an historical perspective, and focuses on the little stories of this species, that are usually unnoticed, but establish a union (on so many levels) between Brandenburg and South America.<br><br><br><br>Location of Pointcloud: <br>52°27\'19.6\"N 13°18\'13.5\"E - Botanical Garden Berlin<br><br>",
+        content:"This project tries to collect the main causing factors, periods and cultural consequences of the movement of Species between South America and Europe (specifically Brandenburg in Germany). It’s made from an historical perspective, and focuses on the little stories of this species, that are usually unnoticed, but establish a union (on so many levels) between Brandenburg and South America.<br><br>Download the PDF of the book <a href='sr/Sara Ragel - Movement of Species.pdf' target='_blank'>here</a>.<br><br><br><br>Location of Pointcloud: <br>52°27\'19.6\"N 13°18\'13.5\"E - Botanical Garden Berlin<br><br>",
         image:"sr/cover.webp"
     },
     {
@@ -34,6 +34,12 @@ let about=[
         authors:"Vivien Serve & Jennifer Pilawa",
         content:"Mahogany is an internationally demanded commodity, that roots in middle- and south-america. Due to its capitalization, its listed on the “Red List of Endangered Species”. The complexity and interconnectedness of life is difficult to grasp from a siloed, dualistic and mono-humanist world view. In order to solve nowadays crisises, an understanding of the world as a pluriverse is necessary.How to design an interface that enforces different perspectives and communicates the social, economical and ecological system of mahagony in a pluriversal way?<br><br><br><br>Location of Pointcloud: <br>52°24\'16.0\"N 13°02\'18.3\"E - Sanssouci, Potsdam",
         image:"vj/cover.webp"
+    },
+    {
+        title:"Zoophonie",
+        authors:"Myriel Milicevic & Andrés Burbano",
+        content:"The class Zoophonie was based on Hercule Florence\'s (1804-1874) practice and inventions during the explorations of the Amazon and Pantanal in the empire of Brazil between 1824 and 1832. Florence defined this field of research in the following way: »As Mineralogy is the study of inert nature, Biology is the study of living nature, the Zoophonie is the study of the voice of nature.« It was a novel scientific field of research proposed by a European visual artist overwhelmed by the sonic experience in the middle of the rainforest. Today, bioacoustics and sound ecology have become research fields of growing relevance to study biodiversity loss, changing landscapes, and environmental conditions.",
+        image:"zp/cover.webp"
     }
 ];
 
@@ -43,7 +49,7 @@ let rl_content=[
         y:3,
         z:-6,
         title:"Symposium",
-        content:"<img src='rl/symposium.webp' style='width:100%;height:auto;'>"
+        content:"How can we make evident the interconnectedness of landscapes not only locally but also at a distance? How can we make visible and narrate the diversity of relationships with communities that seem distant but are connected by shared histories, matter, atmosphere, people, non-human beings, and technologies?<br><br>At this symposium, we took a broader look through the lense of diverse presentations that navigate relational landscapes by satellite, data, foot and sail boat.<br><br>Visit the <a href='/RelationalLandscapes/symposium'>Symposium Website</a> for more information:<br><br><a href='/RelationalLandscapes/symposium'><img src='rl/symposium.webp' style='width:100%;height:auto;'></a><br><br>A highlight of the Symposium was a special interview with the anthropologist Arturo Escobar:<br><br><iframe title='vimeo-player' src='https://player.vimeo.com/video/650809025?h=78014f7118' width='100%' height='auto' style='aspect-ratio:16/9;' frameborder='0' allowfullscreen></iframe>"
     },
     {
         x:-7,
@@ -53,18 +59,11 @@ let rl_content=[
         content:"<img src='rl/botanicalgarden/P2390298.webp' style='width:100%;height:auto;'><img src='rl/botanicalgarden/P2390455.webp' style='width:100%;height:auto;'><img src='rl/botanicalgarden/P2390822.webp' style='width:100%;height:auto;'><img src='rl/botanicalgarden/P2390848.webp' style='width:100%;height:auto;'><img src='rl/botanicalgarden/P2400019.webp' style='width:100%;height:auto;'><img src='rl/botanicalgarden/P2400113.webp' style='width:100%;height:auto;'>"
     },
     {
-        x:25,
-        y:15,
-        z:-10,
-        title:"Zoophonie",
-        content:""
-    },
-    {
         x:-25,
         y:15,
         z:2,
         title:"Imprint",
-        content:""
+        content:"<br><br><span class='subHeadline'><center>Organizers</center></span><br><span class='text'>Andrés Burbano</span><br><span class='impOrg'>Universidad de los Andes, Bogotá, Colombia</span><br><br><span class='text'>Myriel Milićević</span><br><span class='impOrg'>University of Applied Sciences Potsdam, Germany</span><br><br><span class='text'>Thiago da Costa Oliveira</span><br><span class='impOrg'>Ethnological Museum Berlin and Botanical Garden Berlin, Germany</span><br><br><br><br><span class='subHeadline'><center>Web Design</center></span><br><span class='text'>Lukas Büttenbender<br>Tilmann Finner<br>Victor Molina<br>Peter Schwarz</span><br><span class='impOrg'>University of Applied Sciences Potsdam, Germany</span><br><br><br><br><span class='subHeadline'><center>Contact</center></span><br><div class='fhpLogo'></div><span class='text'><a href='https://design.fh-potsdam.de/'>Department of Design</a><br>University of Applied Sciences Potsdam<br>Kiepenheuerallee 5<br>14469 Potsdam</span><br><br><span class='impOrg'>The University of Applied Sciences Potsdam is a public corporation. It is represented by the President Prof. Dr. Eva Schmitt-Rodermund.</span><br><br><span class='text'>For questions, please email us: <br><a style='color: var(--yellow);' href='mailto:rlsymposium2021@gmail.com'>rlsymposium2021@gmail.com</a><br><br><a href='https://www.fh-potsdam.de/impressum'>Legal Notice</a><br><a href='https://www.fh-potsdam.de/datenschutzhinweis'>Data Protection</a><br><br></span>"
     }
 ];
 
@@ -74,42 +73,42 @@ let sb_content=[
         y:-5,
         z:10,
         title:"51° 59' 42.3\" N<br>13° 58' 39.8\" E",
-        content:"1984<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-5.webp' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.99058,13.94403,10.41,latLng&t=1.89&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.99509, 13.97773/Landscape-5.webp' style='width:100%;height:auto;'><br><br>"
     },
     {
         x:5,
         y:-5,
         z:19,
         title:"5° 08' 14.0\" S<br>50° 22' 24.1\" W",
-        content:"1984<img src='sb/Brazil/-5.13722, -50.37335/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-5.13722, -50.37335/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-5.13722, -50.37335/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-5.13722, -50.37335/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-5.13722, -50.37335/Landscape-5.webp' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-5.13721,-50.37334,10.539,latLng&t=1.37&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brazil/-5.13722, -50.37335/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-5.13722, -50.37335/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-5.13722, -50.37335/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-5.13722, -50.37335/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-5.13722, -50.37335/Landscape-5.webp' style='width:100%;height:auto;'><br><br>"
     },
     {
         x:2,
         y:-3,
         z:26,
         title:"51° 46' 33.4\" N<br>13° 28' 36.1\" E",
-        content:"1984<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-5.webp' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.78327,13.39664,10.232,latLng&t=1.91&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.77595, 13.47670/Landscape-5.webp' style='width:100%;height:auto;'><br><br>"
     },
     {
         x:2,
         y:-3.5,
         z:38,
         title:"12° 06' 09.9\" S<br>56° 02' 39.6\" W",
-        content:"1984<img src='sb/Brazil/-12.10274, -56.04432/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-12.10274, -56.04432/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-12.10274, -56.04432/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-12.10274, -56.04432/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-12.10274, -56.04432/Landscape-5.webp' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-12.10305,-56.04314,10.472,latLng&t=3.35&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brazil/-12.10274, -56.04432/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-12.10274, -56.04432/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-12.10274, -56.04432/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-12.10274, -56.04432/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-12.10274, -56.04432/Landscape-5.webp' style='width:100%;height:auto;'><br><br>"
     },
     {
         x:-3,
         y:-4,
         z:52,
         title:"51° 38' 56.3\" N<br>13° 25' 10.5\" E",
-        content:"1984<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-5.webp' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=51.62974,13.40538,10.614,latLng&t=3.22&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brandenburg/51.64898, 13.41957/Landscape-5.webp' style='width:100%;height:auto;'><br><br>"
     },
     {
         x:3,
         y:-4,
         z:64,
         title:"6° 31' 30.4\" S<br>52° 11' 56.7\" W",
-        content:"1984<img src='sb/Brazil/-6.52512, -52.19908/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-6.52512, -52.19908/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-6.52512, -52.19908/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-6.52512, -52.19908/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-6.52512, -52.19908/Landscape-5.webp' style='width:100%;height:auto;'><br><br><br><br><iframe width='100%' height='400' src='https://earthengine.google.com/iframes/timelapse_player_embed.html#v=-6.52388,-52.20032,10.504,latLng&t=2&ps=50&bt=19840101&et=20201231&startDwell=0&endDwell=0' frameborder='0' allowfullscreen></iframe>"
+        content:"1984<img src='sb/Brazil/-6.52512, -52.19908/Landscape-1.webp' style='width:100%;height:auto;'><br><br>1993<img src='sb/Brazil/-6.52512, -52.19908/Landscape-2.webp' style='width:100%;height:auto;'><br><br>2002<img src='sb/Brazil/-6.52512, -52.19908/Landscape-3.webp' style='width:100%;height:auto;'><br><br>2011<img src='sb/Brazil/-6.52512, -52.19908/Landscape-4.webp' style='width:100%;height:auto;'><br><br>2020<img src='sb/Brazil/-6.52512, -52.19908/Landscape-5.webp' style='width:100%;height:auto;'><br><br>"
     }
 ];
 
@@ -119,14 +118,14 @@ let sr_content=[
         y:15,
         z:20,
         title:"Colonial Period - The ecological imperialism",
-        content:"<img src='sr/sara_8.webp' style='width:100%;height:auto'><span class='italic'>The epidemics that reached America</span><br><br><br>To talk about the movement of species in this period, we must mention the Columbian Exchange. This term was first used by Alfred W. Cosby in his book The Columbian Exchange: Biological and Cultural Consequences (1972). The Columbian Exchange is the process lf biological unification between different continents that occured since the first arrival of Columbus (1492). Then, humans started playing the role that geology and climate used to perform. We could say that, gradually, the biosphere started returning to the Pangea, reversing the separation caused by the continental drift. This exchange didn’t just occur in the trading context, but unintentionally, as in the case of several diseases (flu, measles...) that travelled unilaterally from Europe and Asia to the so called “New World”. Albert W. Cosby divided the procces of the Coumbian Exchange in three sections: plants, animals and diseases, but it wasn’t just about that. The different continents exchanged knowledge, culture and habits. Maybe it’s wrong to call it exchange, considering that the way it happened was deeply unequal, having disastrous consequences for the indigenous communities that still linger nowadays. That’s why it would be more accurate to talk about ecological imperialism.<br><br>"
+        content:"<img src='sr/sara_8.webp' style='width:100%;height:auto'><span class='italic'>The epidemics that reached America</span><br><br><br>To talk about the movement of species in this period, we must mention the Columbian Exchange. This term was first used by Alfred W. Cosby in his book The Columbian Exchange: Biological and Cultural Consequences (1972). The Columbian Exchange is the process lf biological unification between different continents that occurred since the first arrival of Columbus (1492). Then, humans started playing the role that geology and climate used to perform. We could say that, gradually, the biosphere started returning to the Pangea, reversing the separation caused by the continental drift. This exchange didn’t just occur in the trading context, but unintentionally, as in the case of several diseases (flu, measles...) that travelled unilaterally from Europe and Asia to the so called “New World”. Albert W. Cosby divided the procces of the Coumbian Exchange in three sections: plants, animals and diseases, but it wasn’t just about that. The different continents exchanged knowledge, culture and habits. Maybe it’s wrong to call it exchange, considering that the way it happened was deeply unequal, having disastrous consequences for the indigenous communities that still linger nowadays. That’s why it would be more accurate to talk about ecological imperialism.<br><br>"
     },
     {
         x:-23,
         y:10,
         z:35,
         title:"Plants",
-        content:"<img src='sr/sara_10.webp' style='width:100%;height:auto'><span class='italic'>The first aclimatation garden in Paris, opened in 1860</span><br><br><br>Since the beginning, the plant species were esentially moved with purposes related to nutrition, so the most of them were Domesticated farmable species. However, some plants (such as the tobacco) were moved with another intention. After the XVIII century, the ornamental use of plants became more common among the wealthier countries (the correlation between the wealth of a country and the arrival of exotic species is a fact). Initially, this ornamental use was focused in the acclimitization gardens. Those institutions were intended to introduce “exotic” species from America in Europe for the pleasure of visitors. This historic episode of Europe is specially cruel because, sometimes, the exhibition also included human beings from the colonized communities. Those people were obliged to lived in a forced situation in a reconstructed enviroment.<br><br>"
+        content:"<img src='sr/sara_10.webp' style='width:100%;height:auto'><span class='italic'>The first aclimatation garden in Paris, opened in 1860</span><br><br><br>Since the beginning, the plant species were essentially moved with purposes related to nutrition, so the most of them were Domesticated farmable species. However, some plants (such as the tobacco) were moved with another intention. After the XVIII century, the ornamental use of plants became more common among the wealthier countries (the correlation between the wealth of a country and the arrival of exotic species is a fact). Initially, this ornamental use was focused in the acclimitization gardens. Those institutions were intended to introduce “exotic” species from America in Europe for the pleasure of visitors. This historic episode of Europe is specially cruel because, sometimes, the exhibition also included human beings from the colonized communities. Those people were obliged to lived in a forced situation in a reconstructed enviroment.<br><br>"
     },
     {
         x:-25,
@@ -181,11 +180,11 @@ let sr_content=[
 
 let hv_content=[
     {
-        x:-10,
-        y:-3,
-        z:-5,
+        x:-18,
+        y:26,
+        z:14,
         title:"Economic Environment",
-        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/Economic Environment.mp4' type='video/mp4'></video>"
+        content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/Economic Environment.mp4'></video>"
     },
     {
         x:-30,
@@ -209,14 +208,14 @@ let hv_content=[
         content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/How would you define the concept of spirituality.mp4' type='video/mp4'></video>"
     },
     {
-        x:0,
-        y:-5,
-        z:0,
+        x:-19,
+        y:13,
+        z:14,
         title:"Prosperity, economics, money and politics",
         content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/Prosperity, economics, money and politics.mp4' type='video/mp4'></video>"
     },
     {
-        x:0,
+        x:-17,
         y:4,
         z:20,
         title:"Relationship between South America and Europe",
@@ -256,6 +255,20 @@ let hv_content=[
         z:25,
         title:"Who and Where are you from?",
         content:"<br><br><br><br><video width='100%' height='auto' controls><source src='hv/videos/Who and Where are you from.mp4' type='video/mp4'></video>"
+    },
+    {
+        x:0,
+        y:4,
+        z:20,
+        title:"Visualization",
+        content:"After gathering a lot of information about ayahuasca, reading many articles, watching documentaries, doing the interview and talking to friends and family about their opinion on spiritual tourism, we started thinking about how to visualize the knowledge we had gained for sharing it with others. We really wanted to include a visualization of the liana and incorporate some of the psychedelic patterns that are often used to describe ayahuasca journeys.<br><br>According to the principle, that every story should be reflected in our vine, we modeled a Banisteriopsis caapi vine using a 3D software. The aim of our interface is to visualize each story that arrives via interviews, surveys, articles which generates international connections based on a single object, ayahuasca.<br><br><img src='hv/Relational Landscape Europe_LatAm.webp' style='width:100%;height:auto;'><img src='hv/Tokens flying.webp' style='width:100%;height:auto;'><br><br>The result is an augmented reality liana, that can grow anywhere in the world, by just scanning a QR-code with your phone. Once it's placed, you can walk around it and find a lot of information, articles about and experiences of ayahuasca collected on little tokens that are placed in different parts of the plant.<br><br>A vine grows without limits, it takes on its own shape according to its interaction with space. Our 3D model is represented by a circulating and infinite axis. There are three roots at the top that intertwine with each other, as it descends it generates a harmonic braid.<br><br>The liana in Bibao, Spain:<img src='hv/bilbao.webp' style='width:100%;height:auto;'>"
+    },
+    {
+        x:0,
+        y:-5,
+        z:0,
+        title:"Research",
+        content:"Ayahuasca is a pan-Amazonian psychoactive brew made out of the Banisteriopsis caapi vine (yagé), the Psychotria viridis shrub (chacruna), and possibly other ingredients. It is used both socially and as ceremonial spiritual medicine among some indigenous peoples of the Amazon. When consumed, it can cause an altered state of consciousness, including visual hallucinations and altered perceptions of reality. Ayahuasca ceremonies are getting increasingly popular around Europe and the United States and since some years tourism to South America for the purpose of taking it has grown a lot. Ayahuasca retreats are now getting founded around the world, enabling everyone to take part in the experience, may it be in a traditional or nontraditional way.<br><br>In this project we wanted to look further into the interconnectedness between Europe and South America, focussing on the boundary object, practice or concept of ayahuasca, contemplating how the cultural, social, geographical and economic landscapes around it have changed throughout the years.<br><br>Ayahuasca is known by many names such as caapi, cipo, hoasca, vegetal, uni, natem or shori. In the quechua languages,„aya“ can be translated as spirit, soul, corpse or dead body and „waska“ means rope, woody vine or liana. The word „ayahuasca“ has been variously translated as „liana of the soul“, „liana of the dead“ or „spirit liana“. Going back in history, ayahuasca was probably discovered by western society in the 19th century during the time of expeditions to the southamerican continent. Indigenous peoples in the Amazon already used the plant a long time before. The international interest in the brew, its medical qualities and the spiritual concepts around it has grown in recent years, making cities like Iquitos in Peru, nowadays a stronghold of ayahuasca tourism, popular destinations for many tourists.<br><br>The landscape of Iquitos has changed a lot during the last few years due to ayahuasca related tourism. The area was long inhabited by indigenous peoples and the city was probably founded around 1757 by Spanish Jesuits. It grew a lot during the Amazon rubber boom, where indigenous workers were kept in near slavery conditions. Then rubber seedlings were smuggled to Southeast Asia, undercutting prices of the Peruvian product. Now Tourism is one of the most important economic sectors in Iquitos as the city receives a considerable number of foreigners every year. Ayahuasca is known as a major cultural landmark, and spiritual tourism has increased tremendously. This boom can be noticed in the change of landscape throughout the last few decades. The city has expanded further into the amazon, hotels and ayahuasca retreats were built in the city but also the forests around it, by locals as well as by foreigners trying to make money out of commercializing the ayahuasca experience.<br><br><img src='hv/Iquitos1986.webp' style='width:100%;height:auto;'><img src='hv/Iquitos2020.webp' style='width:100%;height:auto;'><img src='hv/treecoverloss2001.webp' style='width:100%;height:auto;'><img src='hv/treecoverloss2020.webp' style='width:100%;height:auto;'><br><br>In Germany, Ayahuasca is illegal. Still, there are several retreats offering ayahuasca ceremonies. Instead of the Psychotria viridis leafs, which are prohibited because of their high DMT component, they use Peganum Harmala seeds, creating a grey zone that makes it possible to consume a similar brew. Some of the retreats fly in indigenous people from the amazon to guide the ceremonies, but most of the time they are guided by europeans claiming to be shamans due to years of experience with the brew. The retreats are often located in already existent houses away from the city. Still, the nature around it can’t be compared to the original experience in South America.<br><br><img src='hv/AyahuascaInDeutschland1.webp' style='width:100%;height:auto;'><img src='hv/AyahuascaInDeutschland2.webp' style='width:100%;height:auto;'><img src='hv/AyahuascaInDeutschland3.webp' style='width:100%;height:auto;'>"
     }
 ];
 
@@ -293,21 +306,21 @@ let lp_content=[
         y:-1,
         z:18,
         title:"User Journey 1",
-        content:"<img src='lp/pics/UJ-1a.webp' style='width:100%;height:auto;'>Device is used for the first time.<br><br><img src='lp/pics/UJ-1b.webp' style='width:100%;height:auto;'>User toggles info-panel.<br><br><img src='lp/pics/UJ-1c.webp' style='width:100%;height:auto;'>Single user starts to record a sound with the device. Contour lines are starting to draw a height map.<br><br><img src='lp/pics/UJ-1d.webp' style='width:100%;height:auto;'>User pauses recording.<br><br><img src='lp/pics/UJ-1e.webp' style='width:100%;height:auto;'>User plays back recorded sound."
+        content:"<div class='lp_grid'><div><img src='lp/pics/UJ-1a.webp' style='width:100%;height:auto;'>Device is used for the first time.</div><div><img src='lp/pics/UJ-1b.webp' style='width:100%;height:auto;'>User toggles info-panel.</div><div><img src='lp/pics/UJ-1c.webp' style='width:100%;height:auto;'>Single user starts to record a sound with the device. Contour lines are starting to draw a height map.</div><div><img src='lp/pics/UJ-1d.webp' style='width:100%;height:auto;'>User pauses recording.</div><div><img src='lp/pics/UJ-1e.webp' style='width:100%;height:auto;'>User plays back recorded sound.</div></div>"
     },
     {
         x:8,
         y:-3,
         z:10,
         title:"User Journey 2",
-        content:"<img src='lp/pics/UJ-2a.webp' style='width:100%;height:auto;'>Device is used for the first time.<br><br><img src='lp/pics/UJ-2b.webp' style='width:100%;height:auto;'>Two users start recording. One is in Rio Urubu (Brazil), the other one in Briesetal (Germany).<br><br><img src='lp/pics/UJ-2c.webp' style='width:100%;height:auto;'>The recording proceeds.<br><br><img src='lp/pics/UJ-2d.webp' style='width:100%;height:auto;'>The two generated topographies are starting to intersect with each other.<br><br><img src='lp/pics/UJ-2e.webp' style='width:100%;height:auto;'>A complex topography is generated by the two inputs."
+        content:"<div class='lp_grid'><div><img src='lp/pics/UJ-2a.webp' style='width:100%;height:auto;'>Device is used for the first time.</div><div><img src='lp/pics/UJ-2b.webp' style='width:100%;height:auto;'>Two users start recording. One is in Rio Urubu (Brazil), the other one in Briesetal (Germany).</div><div><img src='lp/pics/UJ-2c.webp' style='width:100%;height:auto;'>The recording proceeds.</div><div><img src='lp/pics/UJ-2d.webp' style='width:100%;height:auto;'>The two generated topographies are starting to intersect with each other.</div><div><img src='lp/pics/UJ-2e.webp' style='width:100%;height:auto;'>A complex topography is generated by the two inputs.</div></div>"
     },
     {
         x:5,
         y:-4,
         z:0,
         title:"User Journey 3",
-        content:"<img src='lp/pics/UJ-3a.webp' style='width:100%;height:auto;'>The device has been used before.<br><br><img src='lp/pics/UJ-3b.webp' style='width:100%;height:auto;'>User starts recording and generates a new landscape."
+        content:"<div class='lp_grid'><div><img src='lp/pics/UJ-3a.webp' style='width:100%;height:auto;'>The device has been used before.</div><div><img src='lp/pics/UJ-3b.webp' style='width:100%;height:auto;'>User starts recording and generates a new landscape.</div></div>"
     },
     {
         x:0,
@@ -324,6 +337,37 @@ let lp_content=[
         content:"<video width='100%' height='auto' controls><source src='lp/demo.webm' type='video/webm'></video><img src='lp/pics/Device.webp' style='width:100%;height:auto;'>"
     }
 ];
+
+let vj_content=[
+    {
+        x:0,
+        y:0,
+        z:0,
+        title:"Process & Research",
+        content:"<span class='subHeadline'>Impulses</span><br><br>An important impulse for our project was the excursion to the Dahlem Botanical Garden. Here we were given an exclusive, guided tour of the entire grounds, to gain a glance of the infrastructure behind the infrastructure. After that, it was clear to us that we wanted to work with a plant as a boundary object. Mahogany was quickly suggested. We liked the idea because this rare precious wood quickly evokes some associations (both negative and positive). We wanted to question these associations, which are strongly influenced by the West, and above all illuminate them from differentiated perspectives.<br><br>The symposium was also particularly influential, especially Arturo Escobar's lecture. Phrases like<br><span class='italic'>We try to put life into silos, whereas the Pluriverse depicts that it's really a flow. Our Pluriverse has been colonised by a universal strives.</span><br> remained in our minds and shaped our project idea.<br><br><br><br><span class='subHeadline'>Research Question</span><br><br>With these impulses, we asked ourselves how we could tell the story of mahogany from as many perspectives as possible without forcing a dualistic separation. As interface designers, we primarily asked ourselves how we could design an interface that makes multiple perspectives tangible and conveys the pluralistic idea behind it. This is how the project was born: „Diving into the Pluriverse of Mahogany“.<br><br><br><br><span class='subHeadline'>Research</span><br><br>We started by finding out everything we could about mahogany, reading papers and articles. We soon realised that even a concrete topic can grow enormously fast. We recorded all the relevant information on a Miro Board and gradually created an information backlog.<br><br>Our approach was to immediately record all found actors regarding Mahogany in a sociogram and to show connections between the individual topics. To support multiple perspectives, we divided the sociogram into an indigenous and an industrial perspective. With this arrangement, we quickly became aware of two problems.<br><br>1. We are caught in a dualistic world view.<br>2. Current civilization crisis are caused by western, capitalistic & white supremacy. We only know this perspective.<br><br><img src='vj/Sociogram.webp' style='width:100%;height:auto;'>"
+    },
+    {
+        x:0,
+        y:0,
+        z:0,
+        title:"Concept",
+        content:"Mahogany is an internationally demanded commodity, that roots in Middle- and South-America. Due to its capitalization, its listed on the „Red List of Endangered Species“. The complexity and interconnectedness of life is difficult to grasp from a siloed, dualistic and mono-humanist world view. In order to solve nowadays crises, an understanding of the world as a pluriverse is necessary. <br><br>How to design an interface that enforces different perspectives and communicates the social, economical and ecological system of mahogany in a pluriversal way?<br><br>By exploring interconnected stories about actors, species, forms and processes of mahogany in a web interface, the user slowly develops an understanding of the pluriverse. An illustrated mahogany tree symbolizes the original form of the resource and serves as the main interaction element and surface to host the content.<br><br><img src='vj/13.webp' style='width:100%;height:auto;'><img src='vj/16.webp' style='width:100%;height:auto;'>"
+    },
+    {
+        x:0,
+        y:0,
+        z:0,
+        title:"Design of the Interface",
+        content:"The interface is conceptually divided in three phases that the user enters through scrolling: The colonial view, the indegenious view and the pluriversal view. Stories that can be assigned predominantly to a colonial view are located in the trees crown, while predominantly indigenous views are located in the roots, to emphasize the interconnectedness and dependancy of the colonial development on its indegenious origin. The pluriversal view is the final phase to reach. It displays connections between the nodes of the stories through links. To emphasize the transition to the pluriverse, the single mahogany tree from the first phase is embedded in a whole forest, that contains diverse species. This phase also offers an option for the user to add a story to the pluriverse of mahogany, so that it can grow bigger. As being part of the relational landscape project website, the pluriversal phase directly connects to its front page, showing the connection of mahogany to other species and matters from the amazon and Brandenburg.<br><br><br><br><span class='subHeadline'>Boundary Object</span><br><br>The framework of our interface was clear very quickly: we designed a mahogany tree as the interaction surface. On the one hand, this choice was thematically very obvious, on the other hand, the branches and roots of this tree are in a certain way a visually appealing form of a network.<br><br><img src='vj/Interaction Surface.webp' style='width:100%;height:auto;'><br><br><br><br><span class='subHeadline'>Visual Design</span><br><br>The interface aims at sparking thoughts and connections while interacting with it and therefore uses a reduced visual language and a mono-spaced font. Its dominated by the mahogany tree as the main interaction element. A text panel on the right side displays the chosen topic. Main colors are a reddish-brown, used for the mahogany tree and interaction elements, black as background colour and white for the text panel. The reddish-brown colour draws connections to the color of mahogany wood, the black background symbolizes infinity and the notion of the pluriverse.<br><br><br><br><span class='subHeadline'>Stories</span><br><br>We decided to work out all the interesting, bizarre and, in our opinion, necessary topics as short, compact stories.<br><br>These stories are placed in a certain way in the sociogram and connect Brandenburg and South America. On the one hand, we highlight the sometimes absurd use of mahogany in Brandenburg in a critical and humorous way, and on the other hand, we try to tell „hidden“ stories of people living in South America.<br><br><img src='vj/Template 13.webp' style='width:100%;height:auto;'><br><br><br><br><span class='subHeadline'>Sociogram and Information Hierarchy</span><br><br>Our goal was to transform the sociogram into the tree. We arranged the stories concerning Brandenburg in the crown of the tree and the indigenous stories in the root. This is to illustrate that from our western perspective only a fraction of the stories are visible, while a large part is „hidden“ under the surface. In addition, South America is the origin of mahogany, which again matches the root analogy.<br><br>At the beginning, the sociogram is still hidden and all the stories seem to float through the mahogany space as randomised points. Only in a subsequent interaction level does the tree grow a new branch that visualises the interconnection of all stories.<br><br><img src='vj/Transformed Sociogram.webp' style='width:100%;height:auto;'><br><br><br><br><span class='subHeadline'>Participation - Growing the Pluriverse</span><br><br>Our interface offers the possibility to add own stories. In this way, we can integrate new perspectives detached from ourselves. For each story, the tree should grow a new branch.<br><br><img src='vj/Growing the Pluriverse.webp' style='width:100%;height:auto;'><img src='vj/Prototype.webp' style='width:100%;height:auto;'><br><br><br><br><span class='subHeadline'>Interdependence - Pluriverse View</span><br><br>In the course of our work, we became aware that the sociogram, even though it allows several perspectives, does not yet represent a Pluriverse view, but only an interconnection. If one realises the Pluriverse, much more has to be integrated. In a first attempt, we added more trees as examples to illustrate that more species are linked to the mahogany tree.<br><br><img src='vj/Pluriverse.webp' style='width:100%;height:auto;'><br><br><br><br><span class='subHeadline'>Navigation - Diving into the Pluriverse</span><br><br>For a long time, navigation was a crucial point of our work:<br>How is it possible to view the different perspectives without unconsciously forcing a dualistic separation?<br><br>We tried to create different layers that could be accessed through buttons. In several iterations, we reworked the wording and gradually moved away from a too westernised style. But labels always support categorisation. We realised that this was completely contrary to the content of our interface. <br><br>In the end, we decided to take the user along on the journey to understanding the Pluriverse. The journey starts with the view the average user knows, stories from Brandenburg, and leads to indigenous stories. Everything is supported by a scrolling interaction. Then the sociogram slowly crystallises and makes clear that everything is connected. The interface then expands into a Pluriverse. <br><br>In summary, our interface is a journey from a westernised universal view to a Pluriverse.<br><br><img src='vj/Label Iterations.webp' style='width:100%;height:auto;'><img src='vj/13.webp' style='width:100%;height:auto;'>"
+    },
+    {
+        x:0,
+        y:0,
+        z:0,
+        title:"Prototype",
+        content:"<iframe title='vimeo-player' src='https://player.vimeo.com/video/677277818?h=6382d42f42' width='100%' height='auto' style='aspect-ratio:16/9;' frameborder='0' allowfullscreen></iframe><iframe title='vimeo-player' src='https://player.vimeo.com/video/677277931?h=33c6f6656b' width='100%' height='auto' style='aspect-ratio:16/9;' frameborder='0' allowfullscreen></iframe>"
+    },
+]
 
 let vj_treedata=[
     {   title:"Sanssouci",
@@ -703,7 +747,7 @@ let vj_treedata=[
             }
         ]
     },
-    {   title:"The Rise of Mahogany through Colonial Style",
+    {   title:"Colonial Style",
         scale:0.8,
         x:25.8,
         y:30.884,
@@ -1708,4 +1752,42 @@ let vj_treedata=[
         ],
         connected:[]
     }
+];
+
+let zp_content=[
+    {
+        x:9,
+        y:-10,
+        z:7,
+        title:"Potsdam to Bogota - Zoophonie Performance",
+        content:"<iframe width='100%' height='auto' style='aspect-ratio:16/9;' src='https://www.youtube.com/embed/_coj6HNKCYI' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    {
+        x:-5,
+        y:-7,
+        z:16,
+        title:"the fish can hear you talk",
+        content:"<iframe width='100%' height='auto' style='aspect-ratio:16/9;' src='https://www.youtube.com/embed/o8WwyG2h3CY' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    {
+        x:15,
+        y:0,
+        z:3,
+        title:"how to leave a sound behind",
+        content:"<iframe width='100%' height='auto' style='aspect-ratio:16/9;' src='https://www.youtube.com/embed/nSIvPjkIrIQ' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    {
+        x:4,
+        y:6,
+        z:-12,
+        title:"Fallbereitung",
+        content:"<iframe width='100%' height='auto' style='aspect-ratio:16/9;' src='https://www.youtube.com/embed/Y-dYUQzvk4E' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    {
+        x:-3,
+        y:-2,
+        z:-17,
+        title:"Thalassinus",
+        content:"<iframe width='100%' height='auto' style='aspect-ratio:16/9;' src='https://www.youtube.com/embed/3HLBCerbYHU' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
 ];

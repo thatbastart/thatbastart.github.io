@@ -47,7 +47,7 @@ function init() {
     // RENDERER
     renderer = new THREE.WebGLRenderer( { antialias: true, logarithmicDepthBuffer: true} );
     renderer.setPixelRatio( window.devicePixelRatio );
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize( 4000,8000 );
     renderer.setClearColor(0xcacad0); // scene background color
 
     document.getElementById("main").appendChild( renderer.domElement ); // append renderer to document
@@ -56,7 +56,7 @@ function init() {
     // CAMERA & SCENE
     scene = new THREE.Scene();
 
-    camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
+    camera = new THREE.PerspectiveCamera( 30, 0.5, 0.01, 4000 );
     camera.position.set( -294, 226, -229 ); // starting position
     scene.add( camera );
 
@@ -93,6 +93,7 @@ function init() {
         sph[i] = new THREE.Mesh( sphereGeometry, matBlue ); // add sphere objects to array
         scene.add(sph[i]);
         sph[i].position.set(p[i].x,p[i].y,p[i].z);
+        sph[i].visible=false;
     }
 
 
@@ -393,12 +394,6 @@ function onWindowResize() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh",vh+"px");
 
-    // update three stuff
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    labelRenderer.setSize( window.innerWidth, window.innerHeight );
     render();
 
 }
@@ -433,6 +428,8 @@ function onMouseMove( event ) {
 
 // POINTER DOWN
 function onPointerDown( event ) {
+    render();
+    console.log(renderer.domElement.toDataURL( 'image/png', 0.5 ));
     // set animation source to current cam pos and orbit target
     if(animTime==0){ // if no animation is running
         animSrc[0]=camera.position.x;

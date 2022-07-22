@@ -1,12 +1,14 @@
-// rl - relation
-// hv - hannah+victor
-// lp - lukas+peter
-// sb - sabrina
-// sr - sara
-// vj - vivien+jenny
+// 0: rl - relation
+// 1: hv - hannah+victor
+// 2: lp - lukas+peter
+// 3: sb - sabrina
+// 4: sr - sara
+// 5: vj - vivien+jenny
+// 6: zp - zoophonie
 
-let people=["rl", "hv", "lp", "sb", "sr", "vj"];
+let people=["rl", "hv", "lp", "sb", "sr", "vj", "zp"];
 let sph_list=[];
+let currentPanel=document.getElementById("titlecard");
 
 // function referrers to window scope
 window.setAnim=setAnim;
@@ -43,16 +45,16 @@ let loaded=[];
 let navsph=[];
 const about_sphGeo = new THREE.SphereGeometry(2, 32, 32 ); // sphere radius and subdivs
 const content_sphGeo = new THREE.SphereGeometry( 0.6, 16, 16 );
-let hover=[0,0,0,0,0,0]; // hover over sphere bool 
+let hover=[0,0,0,0,0,0,0]; // hover over sphere bool 
 
 // animation
-let animClick=[[0,-47,12,-72],[0,-3,15,62],[0,48,-7,-2],[0, 4, 3, 4],[0,-75,1,0],[0,65,-27,20],[0,-137,42,-100]]; // animation targets for sphere focus
+let animClick=[[0,-47,12,-72],[0,-3,15,62],[0,48,-7,-2],[0, 4, 3, 4],[0,-75,1,0],[0,65,-27,20],[0,65,-27,20],[0,-137,42,-100]]; // animation targets for sphere focus
 let animProg=0.0; // lerp factor for coords
 let animTime=0.0; // anim timer
 let animSrc=[-180,130,-115,0, -5, 0] // animation source with start view coords
 
 // vj
-let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[], vj_treepoints_hover=-1;
+let vj_pointcloud, vj_tree, vj_tree_tex=[], vj_treepoints=[], vj_treepoints_hover=-1, vj_sph=[];
 // lp
 let lp_pointcloud, lp_sph=[];
 // sb
@@ -62,9 +64,11 @@ let sr_pointcloud, sr_sph=[];
 // hv
 let hv_pointcloud, hv_sph=[];
 // rl 
-let rl_pointcloud_1,rl_pointcloud_2,rl_pointcloud_3, rl_sph=[];
+let rl_pointcloud_1,rl_pointcloud_2,rl_sph=[];
+// zp
+let zp_pointcloud, zp_sph=[];
 
-sph_list=[rl_sph, hv_sph, lp_sph, sb_sph, sr_sph];
+sph_list=[rl_sph, hv_sph, lp_sph, sb_sph, sr_sph, vj_sph, zp_sph];
 
 init(); // create scene
 
@@ -147,23 +151,6 @@ function init() {
         loaded.push(1);
         checkLoad();
     } );
-
-    const rl_loader_3 = new PCDLoader();
-    rl_loader_3.load( "./rl/pointcloud_3.pcd", function (points) { // callback function when pcd is loaded
-        points.geometry.center();
-        points.material.size=1.25; // square size
-        points.scale.set(2,2,2);
-        points.updateMatrix();
-        points.geometry.applyMatrix4(points.matrix);
-        points.geometry.applyMatrix4(points.matrixWorld);
-        points.scale.set(1,1,1);
-        rl_pointcloud_3=points;
-        rl_pointcloud_3.position.set(50,0,-10);
-        scene.add(rl_pointcloud_3);
-        loaded.push(1);
-        checkLoad();
-    } );
-
 
 
 
@@ -343,6 +330,12 @@ function init() {
         navsph[5].position.set(15,-5,0)
         loaded.push(1);
         checkLoad();
+
+        for(let i=0; i<vj_content.length; i++){
+            vj_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
+            vj_pointcloud.add(vj_sph[i]);
+            vj_sph[i].position.set(vj_content[i].x,vj_content[i].y,vj_content[i].z);
+        }
     } );
 
     class vj_treepoint{
@@ -464,12 +457,22 @@ function init() {
 
         closePreview(){
             this.sph.remove(this.sph.children[0]);
+            document.body.style.cursor="default";
         }
 
         openStory(){
-            document.getElementById("vj_panel").style.display="inline";
-            document.getElementById("vj_headline").innerHTML=this.title;
-            document.getElementById("vj_content").innerHTML=this.content;
+            currentPanel=document.getElementById("vj_tree_panel");
+            document.getElementById("vj_tree_panel").style.display="inline";
+            document.getElementById("vj_tree_headline").innerHTML=this.title;
+            document.getElementById("vj_tree_content").innerHTML=this.content;
+            document.getElementById("vj_tree_panel").scrollTop=0;
+            this.closePreview();
+            function next(){
+                let n=this.getAttribute("next");
+                vj_treepoints[n].openStory();
+            }
+            document.getElementById("vj_treenext1").addEventListener("click", next);
+            document.getElementById("vj_treenext2").addEventListener("click", next);
         }
 
         content(story){
@@ -509,10 +512,18 @@ function init() {
                         break;
                 }
             }
+            let nextIndex1=this.index+1;
+            let nextIndex2=this.index+2;
+            if(nextIndex1>63){
+                nextIndex1-=16;
+            }
+            if(nextIndex2>63){
+                nextIndex2-=16;
+            }
             content+="<br>";
             content+="<span class='text'>See connected stories</span><br><br>";
-            content+="<div class='vj_preview' style='width:48%;margin-right:4%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + vj_treedata[this.index+1].thumb + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + vj_treedata[this.index+1].title + "</div></div></div>"+
-                    "<div class='vj_preview' style='width:48%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + vj_treedata[this.index+2].thumb + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + vj_treedata[this.index+2].title + "</div></div></div>";
+            content+="<div id='vj_treenext1' next='"+nextIndex1+"' class='vj_preview' style='width:48%;margin-right:4%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + vj_treedata[nextIndex1].thumb + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + vj_treedata[nextIndex1].title + "</div></div></div>"+
+                    "<div id='vj_treenext2' next='"+nextIndex2+"' class='vj_preview' style='width:48%;display:inline-block;'><div style='width:100%;height:100%;display:flex;'><div class='vj_preview_image' style=\"background-image:url('vj/preview/" + vj_treedata[nextIndex2].thumb + "');\"></div><div class='vj_preview_text' style='font-size:15px;'>" + vj_treedata[nextIndex2].title + "</div></div></div>";
             return content;
         }
     }
@@ -548,6 +559,42 @@ function init() {
 
 
 
+    // ------------- ZOOPHONIE -------------
+    // nav sphere
+    navsph[6] = new THREE.Mesh( about_sphGeo, matBlue ); // add sphere objects to array
+
+    // pointclouds
+    const zp_loader = new PCDLoader();
+    zp_loader.load( "./zp/pointcloud.pcd", function (points) { // callback function when pcd is loaded
+        points.geometry.center();
+        points.material.size=1.25; // square size
+        points.scale.set(2,2,2);
+        points.updateMatrix();
+        points.geometry.applyMatrix4(points.matrix);
+        points.geometry.applyMatrix4(points.matrixWorld);
+        points.scale.set(1,1,1);
+        zp_pointcloud=points;
+        zp_pointcloud.position.set(50,0,-10);
+        scene.add(zp_pointcloud);
+        scene.add(navsph[6]);
+        navsph[6].position.set(50,-7,-10);
+        loaded.push(1);
+        checkLoad();
+
+        for(let i=0; i<zp_content.length; i++){
+            zp_sph[i]=new THREE.Mesh( content_sphGeo, matBlue );
+            zp_pointcloud.add(zp_sph[i]);
+            zp_sph[i].position.set(zp_content[i].x,zp_content[i].y,zp_content[i].z);
+        }
+
+    } );
+
+
+
+
+
+    // ---------------------------------------------------------------------------------
+
     // CSS RENDERER
     labelRenderer = new CSS2DRenderer();
     labelRenderer.setSize( window.innerWidth, window.innerHeight );
@@ -573,7 +620,7 @@ function onWindowResize() {
     document.documentElement.style.setProperty("--vh",vh+"px");
 
     // update three stuff
-    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.aspect = window.innerWidth/window.innerHeight;
     camera.updateProjectionMatrix();
 
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -582,124 +629,155 @@ function onWindowResize() {
 
 }
 
+
+function mouseHitbox(x,y){
+    if(currentPanel.style.display!="none"){
+        let bound=currentPanel.getBoundingClientRect();
+        if(x >= bound.x && x <= bound.x + bound.width && y >= bound.y && y <= bound.y + bound.height){
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+
 // CURSOR MOVE
 function onMouseMove( event ) {
     // mouse position
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
     raycaster.setFromCamera( mouse, camera );
-
-    for(let i=0; i<navsph.length; i++){ // test intersection of mouse against spheres
-        if(raycaster.intersectObject(navsph[i]).length==1){ // mouse over sphere
-            document.body.style.cursor="pointer";
-            if(navsph[i].material==matBlue){ // change material
-                navsph[i].material=matGreen;
-                render();
-            }
-            break;
-        } else if(hover[i]==0) { // mouse not over sphere and not hovering over nav point
-            document.body.style.cursor="default";
-            if(navsph[i].material==matGreen){ // change material
-                navsph[i].material=matBlue;
-                render();
-            }
-        }
-    }
-
-    for(let i=0; i<vj_treepoints.length; i++){
-        if(vj_treepoints[i].type==0){
-            let inverseMatrix = new THREE.Matrix4();
-            let ray = new THREE.Ray();
-            inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
-            ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
-            if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
+    if(mouseHitbox(event.clientX, event.clientY)==false){
+        for(let i=0; i<navsph.length; i++){ // test intersection of mouse against spheres
+            if(raycaster.intersectObject(navsph[i]).length==1){ // mouse over sphere
                 document.body.style.cursor="pointer";
-                break;
-            }
-        } else {
-            if(raycaster.intersectObject(vj_treepoints[i].sph).length==1){ // pointer down over sphere
-                document.body.style.cursor="pointer";
-                if(vj_treepoints[i].type==1 && vj_treepoints_hover!=i){
-                        if(vj_treepoints_hover!=-1){
-                            vj_treepoints[vj_treepoints_hover].closePreview();
-                        }
-                        vj_treepoints[i].openPreview();
-                        vj_treepoints_hover=i;
-                        labelRenderer.render( scene, camera );
+                if(navsph[i].material==matBlue){ // change material
+                    navsph[i].material=matGreen;
+                    render();
                 }
-                break;
-            } else {
-                if(vj_treepoints_hover!=-1){
-                    vj_treepoints[vj_treepoints_hover].closePreview();
-                    vj_treepoints_hover=-1;
-                    labelRenderer.render( scene, camera );
-                }
-            }
-        }
-        
-    }
-    //render();
-}
-
-// POINTER DOWN
-function onPointerDown( event ) {
-    // set animation source to current cam pos and orbit target
-    if(animTime==0){ // if no animation is running
-        animSrc[0]=camera.position.x;
-        animSrc[1]=camera.position.y;
-        animSrc[2]=camera.position.z;
-        animSrc[3]=controls.target.x;
-        animSrc[4]=controls.target.y;
-        animSrc[5]=controls.target.z;
-    }
-
-    // mouse position
-    mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
-    // raycaster intersect
-    if(event.which==1){ // left click
-        raycaster.setFromCamera( mouse, camera );
-
-        for(let i=0; i<navsph.length; i++){
-            if(raycaster.intersectObject(navsph[i]).length==1){
-                setAnim(i);
                 return;
+            } else if(hover[i]==0) { // mouse not over sphere and not hovering over nav point
+                document.body.style.cursor="default";
+                if(navsph[i].material==matGreen){ // change material
+                    navsph[i].material=matBlue;
+                    render();
+                }
             }
         }
 
         for(let c=0; c<sph_list.length;c++){
-            for(let i=0; i<sph_list[c].length; i++){
-                if(raycaster.intersectObject(sph_list[c][i]).length==1){
-                    document.getElementById(people[c]+"_panel").style.display="inline";
-                    document.getElementById(people[c]+"_panel").scrollBy(0,document.getElementById(people[c]+"_part_"+i).getBoundingClientRect().y);
-                    return;
+            if(sph_list[c]!=0) {
+                for(let i=0; i<sph_list[c].length; i++){
+                    if(raycaster.intersectObject(sph_list[c][i]).length==1){
+                        document.body.style.cursor="pointer";
+                        return;
+                    } else {
+                        document.body.style.cursor="default";
+                    }
                 }
             }
         }
 
         for(let i=0; i<vj_treepoints.length; i++){
-            if(vj_treepoints[i].txt!=undefined){
+            if(vj_treepoints[i].type==0){
                 let inverseMatrix = new THREE.Matrix4();
                 let ray = new THREE.Ray();
                 inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
                 ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
                 if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
-                    if(vj_tree.material.map==vj_tree_tex[0]){
-                        vj_tree.material.map=vj_tree_tex[1];
-                    } else {
-                        vj_tree.material.map=vj_tree_tex[0];
-                    }
-                    render();
-                    return;
+                    document.body.style.cursor="pointer";
+                    break;
                 }
             } else {
-                if(raycaster.intersectObject(vj_treepoints[i].sph).length==1){
-                    if(vj_tree.material.map==vj_tree_tex[0]){
-                        vj_tree.material.map=vj_tree_tex[1];
+                if(raycaster.intersectObject(vj_treepoints[i].sph).length==1){ // pointer down over sphere
+                    document.body.style.cursor="pointer";
+                    if(vj_treepoints[i].type==1 && vj_treepoints_hover!=i){
+                            if(vj_treepoints_hover!=-1){
+                                vj_treepoints[vj_treepoints_hover].closePreview();
+                            }
+                            vj_treepoints[i].openPreview();
+                            vj_treepoints_hover=i;
+                            labelRenderer.render( scene, camera );
                     }
-                    vj_treepoints[i].openStory();
-                    render();
+                    break;
+                } else {
+                    if(vj_treepoints_hover!=-1){
+                        vj_treepoints[vj_treepoints_hover].closePreview();
+                        vj_treepoints_hover=-1;
+                        labelRenderer.render( scene, camera );
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+// POINTER DOWN
+function onPointerDown( event ) {
+    if(mouseHitbox(event.clientX, event.clientY)==false){
+        // set animation source to current cam pos and orbit target
+        if(animTime==0){ // if no animation is running
+            animSrc[0]=camera.position.x;
+            animSrc[1]=camera.position.y;
+            animSrc[2]=camera.position.z;
+            animSrc[3]=controls.target.x;
+            animSrc[4]=controls.target.y;
+            animSrc[5]=controls.target.z;
+        }
+
+        // mouse position
+        mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+        mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+        // raycaster intersect
+        if(event.which==1){ // left click
+            raycaster.setFromCamera( mouse, camera );
+
+            for(let i=0; i<navsph.length; i++){
+                if(raycaster.intersectObject(navsph[i]).length==1){
+                    setAnim(i);
                     return;
+                }
+            }
+
+            for(let c=0; c<sph_list.length;c++){
+                if(sph_list[c]!=0) {
+                    for(let i=0; i<sph_list[c].length; i++){
+                        if(raycaster.intersectObject(sph_list[c][i]).length==1){
+                            document.getElementById(people[c]+"_panel").style.display="inline";
+                            document.getElementById(people[c]+"_panel").scrollBy(0,document.getElementById(people[c]+"_part_"+i).getBoundingClientRect().y);
+                            return;
+                        }
+                    }
+                }
+            }
+
+            for(let i=0; i<vj_treepoints.length; i++){
+                if(vj_treepoints[i].txt!=undefined){
+                    let inverseMatrix = new THREE.Matrix4();
+                    let ray = new THREE.Ray();
+                    inverseMatrix.copy(vj_treepoints[i].txt.matrixWorld).invert();
+                    ray.copy(raycaster.ray).applyMatrix4(inverseMatrix);
+                    if(raycaster.intersectObject(vj_treepoints[i].sph).length==1 || ray.intersectsBox(vj_treepoints[i].txt.geometry.boundingBox) == true){ // pointer down over sphere
+                        if(vj_tree.material.map==vj_tree_tex[0]){
+                            vj_tree.material.map=vj_tree_tex[1];
+                        } else {
+                            vj_tree.material.map=vj_tree_tex[0];
+                        }
+                        render();
+                        return;
+                    }
+                } else {
+                    if(raycaster.intersectObject(vj_treepoints[i].sph).length==1){
+                        if(vj_tree.material.map==vj_tree_tex[0]){
+                            vj_tree.material.map=vj_tree_tex[1];
+                        }
+                        vj_treepoints[i].openStory();
+                        render();
+                        return;
+                    }
                 }
             }
         }
@@ -708,6 +786,8 @@ function onPointerDown( event ) {
 
 
 function openAbout(i){
+    currentPanel=document.getElementById(people[i]+"_panel");
+    document.getElementById("titlecard").style.display="none";
     document.getElementById(people[i]+"_panel").style.display="inline";
     document.getElementById(people[i]+"_panel").scrollBy(0,-document.getElementById(people[i]+"_panel").scrollTop);
 }
@@ -719,13 +799,14 @@ function closeAll(){
     document.getElementById("sb_panel").style.display="none";
     document.getElementById("sr_panel").style.display="none";
     document.getElementById("vj_panel").style.display="none";
+    document.getElementById("zp_panel").style.display="none";
 }
 
 
 function checkLoad(){
     if(loaded.length==7){
         document.getElementById("loadScrn").style.display="none"; // hide loading screen
-        setAnim(6);
+        setAnim(7);
     }
 }
 
@@ -741,23 +822,21 @@ function render() {
 window.onload=function(){
     onWindowResize(); // trigger resize event to set breakpoints
 
-    let content=[rl_content, hv_content, lp_content, sb_content, sr_content];
+    let content=[rl_content, hv_content, lp_content, sb_content, sr_content, vj_content, zp_content];
 
-    for(let c=0;c<=content.length;c++){
+    for(let c=0;c<content.length;c++){
         document.getElementById(people[c]+"_headline").innerHTML=about[c].title;
         document.getElementById(people[c]+"_authors").innerHTML=about[c].authors;
         document.getElementById(people[c]+"_image").src=about[c].image;
         document.getElementById(people[c]+"_about_content").innerHTML=about[c].content;
 
-        if(c<content.length){
-            let html="";
-            for(let i=0;i<content[c].length;i++){
-                html+="<hr>";
-                html+="<div id='"+people[c]+"_part_" + i + "' class='headline'>"+content[c][i].title+"</div>";
-                html+=content[c][i].content;
-            }
-            document.getElementById(people[c]+"_content").innerHTML=html;
+        let html="";
+        for(let i=0;i<content[c].length;i++){
+            html+="<hr>";
+            html+="<div id='"+people[c]+"_part_" + i + "' class='headline'>"+content[c][i].title+"</div>";
+            html+=content[c][i].content;
         }
+        document.getElementById(people[c]+"_content").innerHTML=html;
     }
 
 
@@ -765,6 +844,7 @@ window.onload=function(){
     // handle bottom right navigation colors
     let nav=document.getElementsByClassName("nav");
     let navC=document.getElementsByClassName("navCircle");
+    let navNmb=[0,2,5,3,1,4,6];
     // text
     for(let i=0; i<nav.length;i++) {
         nav[i].onmouseover=function(){setNavColor(i,1)};
@@ -783,13 +863,13 @@ window.onload=function(){
         if(c==0){ // default blue
             nav[id].style.color="#000bff";
             navC[id].style.backgroundColor="#000bff";
-            navsph[id].material=matBlue; // change material of 3d spheres
-            hover[id]=0;
+            navsph[navNmb[id]].material=matBlue; // change material of 3d spheres
+            hover[navNmb[id]]=0;
         } else { // hover green
             nav[id].style.color="#72ff0d";
             navC[id].style.backgroundColor="#72ff0d";
-            navsph[id].material=matGreen;
-            hover[id]=1;
+            navsph[navNmb[id]].material=matGreen;
+            hover[navNmb[id]]=1;
         }
         render();
     }

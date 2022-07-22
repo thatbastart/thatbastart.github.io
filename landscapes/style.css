@@ -123,8 +123,6 @@ a:hover {
 }
 
 .paneltitle {
-    height: 100vh;
-    height: calc(var(--vh, 1vh)*50);
     width: calc(100vw/3);
     pointer-events: auto;
     overflow: auto;
@@ -133,8 +131,38 @@ a:hover {
     left:calc(100vw/3);
     background-color: var(--blue);
     color: var(--yellow);
-    padding: 2vw;
+    padding: 0 3vmax 3vmax 3vmax;
     box-sizing: border-box;
+    overflow: hidden;
+}
+@media only screen and (max-width: 1600px) {
+    .paneltitle {
+        width: calc(100vw/2);
+        left:calc(100vw/4);
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .paneltitle {
+        width: 100vw;
+        left:0;
+    }
+}
+
+.titleClose {
+    font-family: yoppa;
+    font-size: max(3vh,25px);
+    position: absolute;
+    top:0;
+    right:2%;
+    cursor: pointer;
+}
+
+
+.lp_grid{
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2vw;
+    margin-top: 2vw;
 }
 
 .navicons{
@@ -246,6 +274,8 @@ a:hover {
     }
 }
 
+
+
 /* TEXT FORMATS */
 .headline {
     width: 82%; 
@@ -304,6 +334,7 @@ a:hover {
     display: flex;
     flex-wrap: nowrap;
     box-sizing: border-box;
+    cursor:pointer;
 }
 
 .vj_preview_image{
@@ -321,4 +352,22 @@ a:hover {
     font-size: 20px;
     flex-basis: 60%;
     padding-left:10px;
+}
+
+
+/* LOGO */
+.fhpLogo {
+    width:30%;
+    height: 55px;
+    background-image: url("rl/fhp-logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
+}
+
+.impOrg {
+    font-family: HKG_italic;
+    font-size: max(1.8vh,14px);
+    letter-spacing: 0.03em;
+    line-height: 1.2;
 }

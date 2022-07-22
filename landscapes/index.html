@@ -28,6 +28,7 @@
             <span id="navFragility" class="nav" onClick="setAnim(3);"><div id="circleFragility" class="navCircle"></div>Fragility</span><br><br>
             <span id="navKnowledge" class="nav" onClick="setAnim(1);"><div id="circleKnowledge" class="navCircle"></div>Knowledge</span><br><br>
             <span id="navMovement" class="nav" onClick="setAnim(4);"><div id="circleMovement" class="navCircle"></div>Movement</span><br><br>
+            <span id="navSensibility" class="nav" onClick="setAnim(6);"><div id="circleSensibility" class="navCircle"></div>Sensibility</span><br><br>
         </div>
 
         <!-- title -->
@@ -35,14 +36,14 @@
 
         <!-- title card -->
         <div id="titlecard" class="paneltitle">
-            <span class="panelClose" style="top: 26vh;" onclick="document.getElementById('titlecard').style.display='none';">x</span>
-            <div id="title_headline" class="headline">Welcome</div>
-            <div class="text" style="font-size:max(2.5vh,20px);">Tracing Environmental Interconnectedness between Berlin-Brandenburg and the Amazon and the Andes.</div><br><br><br>
-            <div style="width:100%;display:flex;">
-                <div class="navicons icon_rotate text">Rotate</div>
-                <div class="navicons icon_translate text">Move</div>
-                <div class="navicons icon_scale text">Zoom</div>
-            </div>
+                <div class="titleClose" onclick="document.getElementById('titlecard').style.display='none';">x</div>
+                <div id="title_headline" class="headline">Welcome</div>
+                <div class="text" style="font-size:max(2.5vh,20px);"><br>Tracing Environmental Interconnectedness between Berlin-Brandenburg and the Amazon and the Andes.</div><br><br><br>
+                <div style="width:100%;display:flex;">
+                    <div class="navicons icon_rotate text">Rotate</div>
+                    <div class="navicons icon_translate text">Move</div>
+                    <div class="navicons icon_scale text">Zoom</div>
+                </div>
         </div>
 
         <!-- panels -->
@@ -117,11 +118,19 @@
 
         <div id="vj_tree_panel" class="panel panelvj scroll" style="display:none;">
             <div id="vj_tree_headline" class="headline"></div>
-            <span class="panelClose" onclick="document.getElementById('vj_tree_panel').style.display='none';">x</span>
+            <span class="panelClose" onclick="document.getElementById('vj_tree_panel').style.display='none';" style="right:2%;">x</span>
             <div id="vj_tree_content" class="cont"></div>
         </div>
         
-
+        <!-- zoophonie -->
+        <div id="zp_panel" class="panel panelsb scroll" style="display:none;">
+            <div id="zp_headline" class="headline"></div>
+            <span class="panelClose" onclick="document.getElementById('zp_panel').style.display='none';">x</span>
+            <div id="zp_authors" class="cont text" style="text-align: center;"></div>
+            <img id="zp_image" src="" style="width: 100%; height:auto;" class="cont">
+            <div id="zp_about_content" class="cont text"></div>
+            <div id="zp_content" class="cont text"></div>
+        </div>
 
         <!-- loading screen -->
         <div id="loadScrn"><span id="loadTxt">Loading...</span></div>
