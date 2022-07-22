@@ -48,7 +48,7 @@ const content_sphGeo = new THREE.SphereGeometry( 0.6, 16, 16 );
 let hover=[0,0,0,0,0,0,0]; // hover over sphere bool 
 
 // animation
-let animClick=[[0,-47,12,-72],[0,-3,15,62],[0,48,-7,-2],[0, 4, 3, 4],[0,-75,1,0],[0,65,-27,20],[0,65,-27,20],[0,-137,42,-100]]; // animation targets for sphere focus
+let animClick=[[0,-47,12,-72],[0,-3,15,62],[0,48,-7,-2],[0, 4, 3, 4],[0,-75,1,0],[0,65,-27,20],[0,80,1,14],[0,-137,42,-100]]; // animation targets for sphere focus
 let animProg=0.0; // lerp factor for coords
 let animTime=0.0; // anim timer
 let animSrc=[-180,130,-115,0, -5, 0] // animation source with start view coords

@@ -1763,7 +1763,7 @@ let zp_content=[
         content:"<iframe width='100%' height='auto' style='aspect-ratio:16/9;' src='https://www.youtube.com/embed/_coj6HNKCYI' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
     },
     {
-        x:-5,
+        x:-10,
         y:-7,
         z:16,
         title:"the fish can hear you talk",
@@ -1790,4 +1790,32 @@ let zp_content=[
         title:"Thalassinus",
         content:"<iframe width='100%' height='auto' style='aspect-ratio:16/9;' src='https://www.youtube.com/embed/3HLBCerbYHU' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
     },
+    {
+        x:3,
+        y:-8,
+        z:20,
+        title:"Zoofonia",
+        content:"<iframe width='100%' height='auto' style='aspect-ratio:16/9;' src='https://www.youtube.com/embed/Ru6poWYd150' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    {
+        x:14,
+        y:3,
+        z:-4,
+        title:"Allouatta Paliatta Mono Aullador",
+        content:"<iframe width='100%' height='auto' style='aspect-ratio:16/9;' src='https://www.youtube.com/embed/eG5ja_SlLjI' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    {
+        x:3,
+        y:-3,
+        z:-20,
+        title:"el sonido de la naturaleza",
+        content:"<iframe width='100%' height='auto' style='aspect-ratio:16/9;' src='https://www.youtube.com/embed/BCepAfPLod4' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    },
+    {
+        x:-8,
+        y:-5,
+        z:0,
+        title:"Black Flowerpiercer",
+        content:"<iframe width='100%' height='auto' style='aspect-ratio:16/9;' src='https://www.youtube.com/embed/aHM0JF9qMYE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
+    }
 ];
