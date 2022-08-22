@@ -592,7 +592,6 @@ function init() {
 
 
 
-
     // ---------------------------------------------------------------------------------
 
     // CSS RENDERER
@@ -608,7 +607,7 @@ function init() {
     window.addEventListener( 'resize', onWindowResize );
     window.addEventListener( "mousemove", onMouseMove, false );
     window.addEventListener( "pointerdown", onPointerDown, false );
-    
+
 }
 
 
