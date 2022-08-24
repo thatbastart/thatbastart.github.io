@@ -47,7 +47,7 @@ function init() {
     // RENDERER
     renderer = new THREE.WebGLRenderer( { antialias: true, logarithmicDepthBuffer: true} );
     renderer.setPixelRatio( window.devicePixelRatio );
-    renderer.setSize( 4000,8000 );
+    renderer.setSize( window.innerWidth, window.innerHeight );
     renderer.setClearColor(0xcacad0); // scene background color
 
     document.getElementById("main").appendChild( renderer.domElement ); // append renderer to document
@@ -56,7 +56,7 @@ function init() {
     // CAMERA & SCENE
     scene = new THREE.Scene();
 
-    camera = new THREE.PerspectiveCamera( 30, 0.5, 0.01, 4000 );
+    camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 0.01, 4000 );
     camera.position.set( -294, 226, -229 ); // starting position
     scene.add( camera );
 
@@ -93,7 +93,6 @@ function init() {
         sph[i] = new THREE.Mesh( sphereGeometry, matBlue ); // add sphere objects to array
         scene.add(sph[i]);
         sph[i].position.set(p[i].x,p[i].y,p[i].z);
-        sph[i].visible=false;
     }
 
 
@@ -106,7 +105,7 @@ function init() {
         "<div class='headline'>About</div><div class='cont'>" +
         "<span class='schClose' onclick='closePanel(0,0)'>x</span>" +
         "<span class='subHeadline'><center>Relational Landscapes Symposium</center></span><br>"+
-        "<span class='text'>How can we make evident the interconnectedness of landscapes not only locally but also at a distance? How can we make visible and narrate the diversity of relationships with communities that seem distant but are connected by shared histories, matter, atmosphere, people, non-human beings, and technologies?<br><br>Relational Landscapes is the conceptual framework that gives shape to a design course at the University of Applied Sciences Potsdam to trace environmental interconnectedness between Berlin-Brandenburg and the Amazon and the Andes. Departing from the study of 19th-century scientific explorations into South America (such as the Langsdorff expedition to Brazil and the Alexander von Humboldt expeditions) and the earlier exchange of crops. The course intends to open up the myriad of hidden connections that relate South American and Central European landscapes. Historical colonial forms of geoengineering have continued to today's globally interconnected transformations that alter local climatic and atmospheric conditions and ecologies.<br><br>At this symposium, we want to take a broader look through the lense of diverse presentations that navigate relational landscapes by satellite, data, foot and sail boat.</span>"
+        "<span class='text'>How can we make evident the interconnectedness of landscapes not only locally but also at a distance? How can we make visible and narrate the diversity of relationships with communities that seem distant but are connected by shared histories, matter, atmosphere, people, non-human beings, and technologies?<br><br>Relational Landscapes is the conceptual framework that gives shape to a <a href='https://thatbastart.github.io/landscapes/'>design course at the University of Applied Sciences Potsdam</a> to trace environmental interconnectedness between Berlin-Brandenburg and the Amazon and the Andes. Departing from the study of 19th-century scientific explorations into South America (such as the Langsdorff expedition to Brazil and the Alexander von Humboldt expeditions) and the earlier exchange of crops. The course intends to open up the myriad of hidden connections that relate South American and Central European landscapes. Historical colonial forms of geoengineering have continued to today's globally interconnected transformations that alter local climatic and atmospheric conditions and ecologies.<br><br>At this symposium, we want to take a broader look through the lens of diverse presentations that navigate relational landscapes by satellite, data, foot and sailboat.</span>"
 
     const objAbout = new CSS2DObject( aboutWrap );
     objAbout.position.set(0,0,0);
@@ -297,11 +296,10 @@ function init() {
     registerWrap.innerHTML=""+
         "<div class='headline'>Register</div><div class='cont'>" +
         "<span class='schClose' onclick='closePanel(3,0)'>x</span>" +
-        "<span class='text'>For registration please email us. We will send the Zoom link to you before the symposium.<br><br>Register here: "+
-        "<a style='color: var(--yellow);' href='mailto:rlsymposium2021@gmail.com?subject=Symposium%20Registration&body=Hello.%0D%0AI%20would%20like%20to%20register%20for%20the%20Relational%20Landscapes%20Symposium%20on%20the%202nd%20December%202021%20at%205pm CET.%0D%0APlease%20send%20me%20the%20Zoom%20link%20as%20soon%20as%20available.%0D%0A%0D%0AThank%20you.'>rlsymposium2021@gmail.com</a>"+
+        "<span class='text'>Registration is closed."+
         "</span><br><br><br><br>"+
         "<span class='subHeadline'><center>Etiquette</center></span><br>"+
-        "<span class='text'>This symposium is committed to enabling a diverse, inclusive and respectful environment. We are dedicated to a harassment-free experience for everyone. We do not tolerate harassment of conference participants in any form, sexual language and imagery which are not appropriate for any symposium or lecture, including publication in social media. Symposium participants breaking these precepts may be removed from the meeting at the organizers' discretion.<br><br>For this purpose, by registering all participants agree with our etiquette.	</span><br><br><br><br>"+
+        "<span class='text'>This symposium is committed to enabling a diverse, inclusive and respectful environment. We are dedicated to a harassment-free experience for everyone. We do not tolerate harassment of conference participants in any form, sexual language and imagery which are not appropriate for any symposium or lecture, including publication in social media. Symposium participants breaking these precepts may be removed from the meeting at the organizers' discretion.<br><br>For this purpose, by registering all participants agree with our etiquette.</span><br><br><br><br>"+
         "</div>"
     const objRegister = new CSS2DObject( registerWrap );
     objRegister.position.set(0,0,0);
@@ -330,7 +328,7 @@ function init() {
         "<span class='subHeadline'><center>Contact</center></span><br>"+
         "<div class='fhpLogo'></div>"+
         "<span class='text'><a href='https://design.fh-potsdam.de/'>Department of Design</a><br>University of Applied Sciences Potsdam<br>Kiepenheuerallee 5<br>14469 Potsdam</span><br><br><span class='impOrg'>The University of Applied Sciences Potsdam is a public corporation. It is represented by the President Prof. Dr. Eva Schmitt-Rodermund.</span><br><br>"+
-        "<span class='text'>For questions, please email us: <a style='color: var(--yellow);' href='mailto:rlsymposium2021@gmail.com'>rlsymposium2021@gmail.com</a><br><br><a href='https://www.fh-potsdam.de/impressum'>Legal Notice</a><br><a href='https://www.fh-potsdam.de/datenschutzhinweis'>Data Protection</a><br><br></span>"+
+    "<span class='text'><a href='https://thatbastart.github.io/landscapes'>Relational Landscapes class</a><br><br>For questions, please email us: <a style='color: var(--yellow);' href='mailto:milicevic@fh-potsdam.de'>milicevic@fh-potsdam.de</a><br><br><a href='https://www.fh-potsdam.de/impressum'>Legal Notice</a><br><a href='https://www.fh-potsdam.de/en/privacy'>Data Protection</a><br><br></span>"+
         "</div>"
     
 
